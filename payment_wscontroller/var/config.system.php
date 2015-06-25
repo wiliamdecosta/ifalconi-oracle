@@ -10,7 +10,7 @@ $sysConfig['Theme.defaultPage'] = 'default';
 
 
 /* Web Service Connection */
-$sysConfig['WS_SERVER'] = 'http://localhost/ifalconi_ws/wsdl.php?wsdl';
+$sysConfig['WS_SERVER'] = 'http://localhost/ifalconi_ws_oci/wsdl.php?wsdl';
 
 /*
     Module Setting
