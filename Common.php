@@ -1,5 +1,5 @@
 <?php
-
+error_reporting((E_ALL ^ E_DEPRECATED ^ E_WARNING) & ~E_NOTICE);
 //Include Files @0-ED610940
 include(RelativePath . "/Classes.php");
 include(RelativePath . "/db_adapter.php");
