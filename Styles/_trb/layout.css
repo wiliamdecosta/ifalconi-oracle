@@ -1,0 +1,49 @@
+#links {
+    margin-left: 0px;
+}
+
+#links ul li a {
+/*
+	font-family: Calibri, Tahoma, Arial;
+    font-weight: normal;
+*/    
+    font-size: 8pt;
+    text-decoration: none;
+    text-align: center;
+    padding: 0;
+    margin-bottom: 0px;
+    color: #070b38;
+}
+
+#links ul li a:hover {
+    color: #ffffff;
+}
+
+#links ul {
+    list-style: none;
+    margin: 0;
+    padding: 5;
+}
+
+#links ul li {
+/*    list-style: none;*/
+    border-top: 1px solid #E1F9FB;
+    border-left: 0px solid #808080;
+    border-bottom: 0px solid #000000;
+    border-right: 0px solid #000000;
+}
+
+#links ul li span {
+    display: ;
+}
+
+#links ul li span a {
+    text-decoration: none;
+    color: #070b38;
+    font-weight: normal;
+}
+
+html>body #links ul li a {
+    width: auto;
+    height: 25px;
+}

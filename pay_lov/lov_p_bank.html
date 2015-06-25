@@ -1,0 +1,103 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<title>lov_p_job</title>
+<meta name="GENERATOR" content="CodeCharge Studio 4.3.00.7676">
+<link rel="stylesheet" type="text/css" href="../Styles/trb/Style_doctype.css">
+<script language="javascript">
+function clickReturn(retVal) {
+                strObj = document.getElementById('LOVOBJ').value;
+                strForm = document.getElementById('LOVFORM').value;
+                
+                arrVal = retVal.split('#~#');
+                arrForm = strObj.split(',');
+                for (x=0;x<arrForm.length;x++) {
+                   window.opener.document.getElementById(strForm+arrForm[x]).value = arrVal[x];
+                }
+                window.close();
+}
+
+
+</script>
+</head>
+<body>
+<!-- BEGIN Record LOV -->
+<form id="LOV" method="post" name="{HTMLFormName}" action="{Action}">
+  <table cellspacing="0" cellpadding="0" border="0">
+    <tr>
+      <td valign="top">
+        <table class="Record" cellspacing="0" cellpadding="0">
+          <!-- BEGIN Error -->
+          <tr class="Error">
+            <td colspan="2">{Error}</td>
+          </tr>
+          <!-- END Error -->
+          <tr class="Controls">
+            <td class="th"><label for="LOVs_keyword">&nbsp;</label></td> 
+            <td><input id="LOVs_keyword" class="ControlsIN" maxlength="64" size="32" value="{s_keyword}" name="{s_keyword_Name}">&nbsp; 
+              <!-- BEGIN Button Button_DoSearch --><input id="LOVButton_DoSearch" class="Button" type="submit" value="Cari" name="{Button_Name}"><!-- END Button Button_DoSearch -->&nbsp;<input id="LOVFORM" style="HEIGHT: 18px; WIDTH: 54px" size="5" type="hidden" value="{FORM}" name="FORM"><input id="LOVOBJ" style="HEIGHT: 17px; WIDTH: 51px" size="6" type="hidden" value="{OBJ}" name="OBJ"></td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</form>
+<!-- END Record LOV --><br>
+<!-- BEGIN Grid GRID -->
+<table cellspacing="0" cellpadding="0" border="0">
+  <tr>
+    <td valign="top">
+      <table class="Header" cellspacing="0" cellpadding="0" border="0">
+        <tr>
+          <td class="HeaderLeft"><img border="0" alt="" src="../Styles/trb/Images/Spacer.gif"></td> 
+          <td class="th"><strong>LIST OF BANK</strong></td> 
+          <td class="HeaderRight"><img border="0" alt="" src="../Styles/trb/Images/Spacer.gif"></td>
+        </tr>
+      </table>
+ 
+      <table class="Grid" cellspacing="0" cellpadding="0">
+        <tr class="Caption">
+          <th style="TEXT-ALIGN: center" scope="col">#</th>
+ 
+          <th scope="col">
+          <!-- BEGIN Sorter Sorter_CODE --><a href="{Sort_URL}" id="GRIDSorter_CODE">CODE</a> 
+          <!-- BEGIN Asc_On --><img border="0" alt="" src="../Styles/trb/Images/Asc.gif"><!-- END Asc_On -->
+          <!-- BEGIN Desc_On --><img border="0" alt="" src="../Styles/trb/Images/Desc.gif"><!-- END Desc_On --><!-- END Sorter Sorter_CODE --></th>
+ 
+          <th scope="col">
+          <!-- BEGIN Sorter Sorter_DESCRIPTION --><a href="{Sort_URL}" id="GRIDSorter_DESCRIPTION">DESCRIPTION</a> 
+          <!-- BEGIN Asc_On --><img border="0" alt="" src="../Styles/trb/Images/Asc.gif"><!-- END Asc_On -->
+          <!-- BEGIN Desc_On --><img border="0" alt="" src="../Styles/trb/Images/Desc.gif"><!-- END Desc_On --><!-- END Sorter Sorter_DESCRIPTION --></th>
+        </tr>
+ 
+        <!-- BEGIN Row -->
+        <tr class="Row">
+          <td style="TEXT-ALIGN: right">&nbsp; {Label1}&nbsp;&nbsp;&nbsp;&nbsp;</td> 
+          <td>{code}&nbsp;<input id="GRIDp_bank_id_{GRID:rowNumber}" style="HEIGHT: 18px; WIDTH: 64px" size="8" type="hidden" value="{p_bank_id}" name="{p_bank_id_Name}"></td> 
+          <td>{description}&nbsp;</td>
+        </tr>
+ <!-- END Row -->
+        <!-- BEGIN NoRecords -->
+        <tr class="NoRecords">
+          <td colspan="3">Data Tidak Ditemukan</td>
+        </tr>
+        <!-- END NoRecords -->
+        <tr class="Footer">
+          <td colspan="3">
+            <!-- BEGIN Navigator Navigator -->
+            <!-- BEGIN First_On --><a href="{First_URL}"><img border="0" alt="{First_URL}" src="../Styles/trb/Images/First.gif"></a> <!-- END First_On -->
+            <!-- BEGIN Prev_On --><a href="{Prev_URL}"><img border="0" alt="{Prev_URL}" src="../Styles/trb/Images/Prev.gif"></a> <!-- END Prev_On -->&nbsp; 
+            <!-- BEGIN Pages -->
+            <!-- BEGIN Page_On --><a href="{Page_URL}">{Page_Number}</a>&nbsp;<!-- END Page_On -->
+            <!-- BEGIN Page_Off -->{Page_Number}&nbsp;<!-- END Page_Off --><!-- END Pages -->&nbsp;{Total_Pages}&nbsp; 
+            <!-- BEGIN Next_On --><a href="{Next_URL}"><img border="0" alt="{Next_URL}" src="../Styles/trb/Images/Next.gif"></a> <!-- END Next_On -->
+            <!-- BEGIN Last_On --><a href="{Last_URL}"><img border="0" alt="{Last_URL}" src="../Styles/trb/Images/Last.gif"></a> <!-- END Last_On --><!-- END Navigator Navigator -->&nbsp;</td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- END Grid GRID --><br>
+</body>
+</html>

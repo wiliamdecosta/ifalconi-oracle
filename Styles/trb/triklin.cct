@@ -1,0 +1,92 @@
+<?xml version="1.0"?>
+<Theme Name="triklin" Version="3.0">
+	<Library FormTitle="1" Padding="3" Border="7" Font="{user}_Triklin Tahoma" Section="8" Filling="2" Background="1" ButtonShape="2" ButtonEffect="8" Color="{user}_ctriklin" Brightness="-12" Saturation="-45" ButtonSize="90" ButtonShadow="2_2" ButtonOutline="3" ButtonArrow="1" MenuSizeHorizontal="2" MenuSizeVertical="2" MenuMargin0="2" MenuMargin1="2" MenuEffect="7" MenuShading="1"/>
+	<Items>
+		<!-- Form Title -->
+		<Item Name="FormTitle" ClassName="Header"/>
+		<Item Name="FormTitleLeftTD" ClassName="HeaderLeft"/>
+		<Item Name="FormTitleRightTD" ClassName="HeaderRight"/>
+		<!-- Grid -->
+		<Item Name="Grid" ClassName="Grid" ExtHTML="cellspacing=&quot;0&quot; cellpadding=&quot;0&quot;"/>
+		<Item Name="HeaderTR" ClassName="Caption"/>
+		<Item Name="RowTR" ClassName="Row"/>
+		<Item Name="SeparatorTR" ClassName="Separator"/>
+		<Item Name="AltRowTR" ClassName="AltRow"/>
+		<Item Name="NoRecordsTR" ClassName="NoRecords"/>
+		<Item Name="FooterTR" ClassName="Footer"/>
+		<!-- Record -->
+		<Item Name="Record" ClassName="Record" ExtHTML="cellspacing=&quot;0&quot; cellpadding=&quot;0&quot;"/>
+		<Item Name="ErrorTR" ClassName="Error"/>
+		<Item Name="ControlsTR" ClassName="Controls"/>
+		<Item Name="BottomTR" ClassName="Bottom"/>
+		<Item Name="TdLikeTh" ClassName="th"/>
+		<!-- Report -->
+		<Item Name="GroupHeaderTR" ClassName="GroupCaption"/>
+		<Item Name="GroupFooterTR" ClassName="GroupFooter"/>
+		<Item Name="SubTotalTR" ClassName="SubTotal"/>
+		<Item Name="TotalTR" ClassName="Total"/>
+		<Item Name="HeaderCaption" ClassName="Row"/>
+		<!-- Calendar -->
+		<Item Name="Calendar" ClassName="Calendar" ExtHTML="cellspacing=&quot;3&quot; cellpadding=&quot;0&quot;"/>
+		<Item Name="CalendarWeekdayNameTD" ClassName="CalendarWeekdayName"/>
+		<Item Name="CalendarWeekdayTodayNameTD" ClassName="CalendarWeekdayTodayName"/>
+		<Item Name="CalendarWeekendNameTD" ClassName="CalendarWeekendName"/>
+		<Item Name="CalendarWeekendTodayNameTD" ClassName="CalendarWeekendTodayName"/>
+		<Item Name="CalendarDayTD" ClassName="CalendarDay"/>
+		<Item Name="CalendarWeekendTD" ClassName="CalendarWeekend"/>
+		<Item Name="CalendarTodayTD" ClassName="CalendarToday"/>
+		<Item Name="CalendarWeekendTodayTD" ClassName="CalendarWeekendToday"/>
+		<Item Name="CalendarWeekdayTodayTD" ClassName="CalendarWeekdayToday"/>
+		<Item Name="CalendarOtherMonthDayTD" ClassName="CalendarOtherMonthDay"/>
+		<Item Name="CalendarOtherMonthTodayTD" ClassName="CalendarOtherMonthToday"/>
+		<Item Name="CalendarOtherMonthWeekendTD" ClassName="CalendarOtherMonthWeekend"/>
+		<Item Name="CalendarOtherMonthWeekendTodayTD" ClassName="CalendarOtherMonthWeekendToday"/>
+		<Item Name="CalendarSelectedDayTD" ClassName="CalendarSelectedDay"/>
+		<Item Name="CalendarNavigatorTD" ClassName="CalendarNavigator"/>
+		<Item Name="CalendarSchedulerTimeScaleTD" ClassName="CalendarSchedulerTimeScale"/>
+		<Item Name="CalendarYear" ClassName="CalendarYear" ExtHTML="cellspacing=&quot;0&quot; cellpadding=&quot;0&quot;"/>
+		<Item Name="CalendarYearHeaderTD" ClassName="CalendarYearHeader"/>
+		<Item Name="CalendarMonthTD" ClassName="CalendarMonth"/>
+		<Item Name="CalendarCurrentMonthTD" ClassName="CalendarCurrentMonth"/>
+		<Item Name="CalendarButton" ClassName="CalendarButton"/>
+		<Item Name="CalendarSeparatorTR" ClassName="CalendarSeparator"/>
+		<Item Name="CalendarEventDIV" ClassName="CalendarEvent"/>
+		<Item Name="CalendarNoEventsDIV" ClassName="CalendarNoEvents"/>
+		<!-- Forms -->
+		<Item Name="Button" ClassName="Button"/>
+	</Items>
+	<Files>
+	</Files>
+	<ColorScheme><Item name="ctriklin">
+			<Var name="ColorBgPage" value="#FFFFFF"/>
+			<Var name="ColorBgFormTitle" value="#74C1ED"/>
+			<Var name="ColorFontFormTitle" value="#000000"/>
+			<Var name="ColorBgCaption" value="#E2E2E2"/>
+			<Var name="ColorFontCaption" value="#000000"/>
+			<Var name="ColorBgData" value="#FFFFFF"/>
+			<Var name="ColorBgAltData" value="#FBEF9B"/>
+			<Var name="ColorFontData" value="#000000"/>
+			<Var name="ColorFontLink" value="#000000"/>
+			<Var name="ColorFontVisitedLink" value="#000000"/>
+			<Var name="ColorFontHoverLink" value="#FF0000"/>
+			<Var name="ColorHeaderTextPage" value="#000000"/><Var name="ColorTextPage" value="#000000"/><Var name="ColorBgControlLabel" value="#FFFFFF"/><Var name="ColorFontControlLabel" value="#000000"/><Var name="ColorBgButton" value="#D0DDF1"/><Var name="ColorFontButton" value="#000000"/><Var name="ColorBgButtonPassive" value="#C0C0C0"/><Var name="ColorFontButtonPassive" value="#808080"/><Var name="ColorMenuText" value="#000000"/><Var name="ColorMenuActiveText" value=""/><Var name="ColorMenuBackground" value=""/><Var name="ColorMenuActiveBackground" value=""/><Var name="ColorMenuBorder" value=""/><Var name="ColorMenuActiveBorder" value=""/></Item>
+	</ColorScheme><FontScheme><Item name="Triklin Tahoma">
+			<Var name="PageBody" value="font-family: Tahoma; font-size: 11px; "/>
+			<Var name="PageBodyDoctype" value="font-family: Tahoma; font-size: 11px;"/>
+			<Var name="FormTitle" value="font-size: 12px; text-align: center; font-family: Tahoma; "/>
+			<Var name="FormTitleDoctype" value="font-size: 12px; text-align: center; font-family: Tahoma;"/>
+			<Var name="Caption" value="font-size: 11px; text-align: left; vertical-align: middle; font-family: Tahoma; "/>
+			<Var name="CaptionDoctype" value="font-size: 11px; text-align: left; vertical-align: middle; font-family: Tahoma;"/>
+			<Var name="Controls" value="font-size: 11px; text-align: left; vertical-align: middle; font-family: Tahoma; font-weight: normal; "/>
+			<Var name="ControlsDoctype" value="font-size: 11px; text-align: left; vertical-align: middle; font-family: Tahoma; font-weight: normal;"/>
+			<Var name="Data" value="font-size: 11px; font-family: Tahoma; "/>
+			<Var name="DataDoctype" value="font-size: 11px; font-family: Tahoma;"/>
+			<Var name="ButtonText" value="font-family: Tahoma; font-size: 10px; font-weight: normal; "/>
+			<Var name="Header1" value="font-size: 14px; font-family: Tahoma; "/>
+			<Var name="Header2" value="font-size: 13px; font-family: Tahoma;"/>
+			<Var name="Header3" value="font-size: 12px; font-style: italic; font-family: Tahoma;"/>
+			<Var name="Header4" value="font-size: 12px; font-family: Tahoma;"/>
+			<Var name="Header5" value="font-size: 11px; font-style: italic; font-family: Tahoma;"/>
+			<Var name="Header6" value="font-size: 10px; font-family: Tahoma;"/>
+		</Item>
+	</FontScheme></Theme>

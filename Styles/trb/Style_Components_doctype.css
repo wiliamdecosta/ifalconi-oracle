@@ -1,0 +1,1224 @@
+/* CCSTheme v 3.x */
+/* General */
+
+/* Colors */
+.PageBgColortriklin {
+	background-color: #f4f4f4;
+	}
+
+.FormTitleBgColortriklin {
+	background-color: #95bad0;
+	}
+
+.FormTitleFontColortriklin {
+	color: #000000;
+	}
+
+.CaptionBgColortriklin {
+	background-color: #d8d8d8;
+	}
+
+.CaptionFontColortriklin {
+	color: #000000;
+	}
+
+.DataBgColortriklin {
+	background-color: #f4f4f4;
+	}
+
+.AltDataBgColortriklin {
+	background-color: #dcd6ad;
+	}
+
+.DataFontColortriklin {
+	color: #000000;
+	}
+
+.LinkColortriklin {
+	color: #000000;
+	}
+
+.VisitedLinkColortriklin {
+	color: #000000;
+	}
+
+.HoverLinkColortriklin {
+	color: #e06464;
+	}
+
+.ColorBgButtontriklin {
+	background-color: #ccd2dd;
+}
+
+.ColorFontButtontriklin {
+	color: #000000;
+}
+
+.ColorBgButtonPassivetriklin {
+	background-color: #b8b8b8;
+}
+
+.ColorFontButtonPassivetriklin {
+	color: #7a7a7a;
+}
+
+
+
+.Headertriklin {
+	width: 100%;
+	}
+
+.Headertriklin th { 
+	font-family: Tahoma; font-size: 12px; text-align: center;
+	padding: 3px;
+	background-image: url('Images/HeaderBg.gif'); color: #000000;
+	width: 100%;
+	white-space: nowrap;
+	padding-left: 8px;
+	}
+
+
+html>body .Headertriklin th {
+	font-family: Tahoma; font-size: 12px; text-align: center;
+}
+
+
+/*ie6*/
+* html body .Headertriklin th {
+	font-family: Tahoma; font-size: 12px; text-align: center;
+}
+/*end*/
+
+.Headertriklin a:link { 
+	color: #000000;
+	}
+
+.Headertriklin a:visited { 
+	color: #000000;
+	}
+
+.Headertriklin a:hover, .Captiontriklin a:active { 
+	color: #000000; text-decoration: none;
+	}
+
+.HeaderLefttriklin { 
+	background-image: url('Images/HeaderLeft.gif');
+	}
+
+.HeaderRighttriklin { 
+	background-image: url('Images/HeaderRight.gif');
+	background-position: right top;
+	}
+
+.HeaderLefttriklin img{
+	width: 2px;
+	}
+
+.HeaderRighttriklin img{
+	width: 2px;
+	}
+
+
+/* Grid Options */
+.Gridtriklin { 
+	border: 2px solid #95bad0;
+	width: 100%;
+	}
+
+.Captiontriklin th { 
+	font-family: Tahoma; font-size: 11px; text-align: left; vertical-align: middle;
+	padding: 3px;
+	border-top: 1px solid #d8d8d8; border-right: 1px solid #d8d8d8;
+	background-image: url('Images/CaptionBg.gif'); color: #000000;
+	white-space: nowrap;
+	}
+
+.Captiontriklin td { 
+	font-family: Tahoma; font-size: 11px; text-align: left; vertical-align: middle;
+	padding: 3px;
+	border-top: 1px solid #d8d8d8; border-right: 1px solid #d8d8d8;
+	background-image: url('Images/CaptionBg.gif'); color: #000000;
+	white-space: nowrap;
+	}
+
+
+html>body .Captiontriklin th, html>body .Captiontriklin td {
+	font-family: Tahoma; font-size: 11px; text-align: left; vertical-align: middle;
+}
+
+
+/*ie6*/
+* html body .Captiontriklin th, * html body .Captiontriklin td {
+	font-family: Tahoma; font-size: 11px; text-align: left; vertical-align: middle;
+}
+/*end*/
+
+.Captiontriklin a:link { 
+	color: #000000;
+	}
+
+.Captiontriklin a:visited { 
+	color: #000000;
+	}
+
+.Captiontriklin a:hover, .Captiontriklin a:active { 
+	color: #e06464;
+	}
+
+.Captiontriklin img {
+	margin: 2px; 
+	vertical-align: middle;
+	}
+
+.Captiontriklin input {
+	vertical-align: middle;
+	}
+
+.Rowtriklin th { 
+	font-family: Tahoma; font-size: 11px; text-align: left; vertical-align: middle; font-weight: normal;
+	padding: 3px;
+	border-top: 1px solid #d8d8d8; border-right: 1px solid #d8d8d8;
+	background-color: #f4f4f4; color: #000000;
+	white-space: nowrap;
+	color: #000000;
+	}
+
+.Rowtriklin td { 
+	font-family: Tahoma; font-size: 11px;
+	padding: 3px;
+	border-top: 1px solid #d8d8d8; border-right: 1px solid #d8d8d8;
+	text-align: left;
+	vertical-align: top;
+	background-color: #f4f4f4; 
+	color: #000000;
+	}
+	
+
+html>body .Rowtriklin th, html>body .Rowtriklin td {
+	font-family: Tahoma; font-size: 11px;
+}
+
+
+/*ie6*/
+* html body .Rowtriklin th, * html body .Rowtriklin td {
+	font-family: Tahoma; font-size: 11px;
+}
+/*end*/
+
+caption.Rowtriklin { 
+	font-family: Tahoma; font-size: 11px;
+	padding: 3px;
+	border: 2px solid #95bad0; border-bottom: 0px;
+	text-align: left;
+	vertical-align: top;
+	background-color: #f4f4f4; 
+	color: #000000;
+	}
+
+
+html>body caption.Rowtriklin {
+	font-family: Tahoma; font-size: 11px;
+}
+
+
+/*ie6*/
+* html body caption.Rowtriklin {
+	font-family: Tahoma; font-size: 11px;
+}
+/*end*/
+
+.Rowtriklin a:link { 
+	color: #000000;
+	}
+
+.Rowtriklin a:visited { 
+	color: #000000;
+	}
+
+.Rowtriklin a:hover, .Rowtriklin a:active { 
+	color: #e06464;
+	}
+
+.Separatortriklin{
+	color: #95bad0;
+	}
+
+.Separatortriklin td{
+	height: 1px;
+	}
+
+
+.AltRowtriklin th { 
+	font-family: Tahoma; font-size: 11px; text-align: left; vertical-align: middle; font-weight: normal;
+	padding: 3px;
+	border-top: 1px solid #d8d8d8; border-right: 1px solid #d8d8d8;
+	background-color: #f4f4f4; color: #000000;
+	white-space: nowrap;
+	color: #000000;
+	}
+
+.AltRowtriklin td { 
+	font-family: Tahoma; font-size: 11px;
+	padding: 3px;
+	border-top: 1px solid #d8d8d8; border-right: 1px solid #d8d8d8;
+	text-align: left;
+	vertical-align: top;
+	background-color: #dcd6ad; 
+	color: #000000;
+	}
+
+
+html>body .AltRowtriklin th, html>body .AltRowtriklin td {
+	font-family: Tahoma; font-size: 11px;
+}
+
+
+/*ie6*/
+* html body .AltRowtriklin th, * html body .AltRowtriklin td {
+	font-family: Tahoma; font-size: 11px;
+}
+/*end*/
+
+.AltRowtriklin a:link { 
+	color: #000000;
+	}
+
+.AltRowtriklin a:visited { 
+	color: #000000;
+	}
+
+.AltRowtriklin a:hover, .AltRowtriklin a:active { 
+	color: #e06464;
+	}
+
+.NoRecordstriklin td { 
+	font-family: Tahoma; font-size: 11px;
+	padding: 3px;
+	border-top: 1px solid #d8d8d8; border-right: 1px solid #d8d8d8;
+	text-align: left;
+	background-color: #f4f4f4; 
+	color: #000000;
+	vertical-align: top;
+	}
+
+.Footertriklin td { 
+	font-family: Tahoma; font-size: 11px;
+	padding: 3px;
+	border: 1px solid #d8d8d8; border-left: 0px none;
+	background-color: #d8d8d8; color: #000000;
+	text-align: center;
+	vertical-align: middle;
+	white-space: nowrap;
+	color: #000000;
+	}
+
+
+html>body .NoRecordstriklin td, html>body .Footertriklin td {
+	font-family: Tahoma; font-size: 11px;
+}
+
+
+/*ie6*/
+* html body .NoRecordstriklin td, * html body .Footertriklin td {
+	font-family: Tahoma; font-size: 11px;
+}
+/*end*/
+
+.Footertriklin a:link { 
+	color: #000000;
+	}
+
+.Footertriklin a:visited { 
+	color: #000000;
+	}
+
+.Footertriklin a:hover, .Footertriklin a:active { 
+	color: #e06464;
+	}
+
+.Footertriklin img {
+	margin: 2px; 
+	vertical-align: middle;
+	}
+
+.Footertriklin input {
+	margin: 2px;
+	vertical-align: middle;
+	}
+
+/* Record Options */
+.Recordtriklin { 
+	border: 2px solid #95bad0;
+	width: 100%;
+	}
+
+.Errortriklin td { 
+	font-family: Tahoma; font-size: 11px;
+	padding: 3px;
+	border-top: 1px solid #d8d8d8; border-right: 1px solid #d8d8d8;
+	text-align: left;
+	color: #FF0000;
+	vertical-align: top;
+	background-color: #f4f4f4; 
+	}
+
+
+* html>body .Errortriklin td {
+	font-family: Tahoma; font-size: 11px;
+}
+
+
+/*ie6*/
+* html body .Errortriklin td {
+	font-family: Tahoma; font-size: 11px;
+}
+/*end*/
+
+.Controlstriklin th { 
+	font-family: Tahoma; font-size: 11px; text-align: left; vertical-align: middle; font-weight: normal;
+	padding: 3px;
+	border-top: 1px solid #d8d8d8; border-right: 1px solid #d8d8d8;
+	background-color: #f4f4f4; color: #000000;
+	white-space: nowrap;
+	color: #000000;
+	}
+
+.Controlstriklin td { 
+	font-family: Tahoma; font-size: 11px;
+	padding: 3px;
+	border-top: 1px solid #d8d8d8; border-right: 1px solid #d8d8d8;
+	text-align: left;
+	vertical-align: top;
+	background-color: #f4f4f4; 
+	color: #000000;
+	}
+	
+.Bottomtriklin td { 
+	font-family: Tahoma; font-size: 11px;
+	padding: 3px;
+	border: 1px solid #d8d8d8; border-left: 0px none;
+	background-color: #d8d8d8; color: #000000;
+	text-align: right;
+	vertical-align: middle;
+	white-space: nowrap;
+	color: #000000;
+	}
+
+
+html>body .Controlstriklin th, html>body .Controlstriklin td, html>body .Bottomtriklin td {
+	font-family: Tahoma; font-size: 11px;
+}
+
+
+/*ie6*/
+* html body .Controlstriklin th, * html body .Controlstriklin td, * html body .Bottomtriklin td {
+	font-family: Tahoma; font-size: 11px;
+}
+/*end*/
+
+.Bottomtriklin a:link { 
+	color: #000000;
+	}
+
+.Bottomtriklin a:visited { 
+	color: #000000;
+	}
+
+.Bottomtriklin a:hover, .Captiontriklin a:active { 
+	color: #e06464;
+	}
+
+.Bottomtriklin img {
+	margin: 2px;
+	vertical-align: middle; 
+	}
+
+.Bottomtriklin input {
+	margin: 2px;
+	vertical-align: middle;
+	}
+
+/* Report */
+.GroupCaptiontriklin th{
+	font-family: Tahoma; font-size: 11px;
+	padding: 3px;
+	border-top: 1px solid #d8d8d8; border-right: 1px solid #d8d8d8;
+	white-space: nowrap;
+	text-align: left;
+	vertical-align: top;
+	font-weight: bold;
+	background-color: #dcd6ad; 
+	color: #000000;
+	}
+
+.GroupCaptiontriklin td{
+	font-family: Tahoma; font-size: 11px;
+	padding: 3px;
+	border-top: 1px solid #d8d8d8; border-right: 1px solid #d8d8d8;
+	text-align: left;
+	vertical-align: top;
+	font-weight: bold;
+	background-color: #f4f4f4; 
+	color: #000000;
+	}
+
+
+html>body .GroupCaptiontriklin th, html>body .GroupCaptiontriklin td {
+	font-family: Tahoma; font-size: 11px;
+}
+
+
+/*ie6*/
+* html body .GroupCaptiontriklin th, * html body .GroupCaptiontriklin td {
+	font-family: Tahoma; font-size: 11px;
+}
+/*end*/
+
+.GroupCaptiontriklin a:link {
+	color: #000000;
+	}
+
+.GroupCaptiontriklin a:visited{
+	color: #000000;
+	}
+
+.GroupCaptiontriklin a:hover, .GroupCaptiontriklin a:active{
+	color: #e06464;
+	}
+
+.GroupFootertriklin td{
+	font-family: Tahoma; font-size: 11px;
+	padding: 3px;
+	border: 1px solid #d8d8d8; border-left: 0px none;
+	text-align: center;
+	vertical-align: middle;
+	white-space: nowrap;
+	background-color: #d8d8d8; 
+	color: #000000;
+	}
+
+
+html>body .GroupFootertriklin td {
+	font-family: Tahoma; font-size: 11px;
+}
+
+
+/*ie6*/
+* html body .GroupFootertriklin td {
+	font-family: Tahoma; font-size: 11px;
+}
+/*end*/
+
+.GroupFootertriklin a:link {
+	color: #000000;
+	}
+
+.GroupFootertriklin a:visited{
+	color: #000000;
+	}
+
+.GroupFootertriklin a:hover, .GroupFootertriklin a:active{
+	color: #e06464;
+	}
+
+.GroupFootertriklin img {
+	margin: 2px; 
+	vertical-align: middle;
+	}
+
+.GroupFootertriklin input {
+	margin: 2px;
+	vertical-align: middle;
+	}
+
+.SubTotaltriklin td{
+	font-family: Tahoma; font-size: 11px;
+	padding: 3px;
+	border-top: 1px solid #d8d8d8; border-right: 1px solid #d8d8d8;
+	text-align: left;
+	vertical-align: top;
+	font-weight: bold;
+	background-color: #dcd6ad; 
+	color: #000000;
+	border-bottom: 2px solid #95bad0;
+	}
+
+
+html>body .SubTotaltriklin td {
+	font-family: Tahoma; font-size: 11px;
+}
+
+
+/*ie6*/
+* html body .SubTotaltriklin td {
+	font-family: Tahoma; font-size: 11px;
+}
+/*end*/
+
+.SubTotaltriklin a:link {
+	color: #000000;
+	}
+
+.SubTotaltriklin a:visited{
+	color: #000000;
+	}
+
+.SubTotaltriklin a:hover, .SubTotaltriklin a:active{
+	color: #e06464;
+	}
+
+.Totaltriklin td{
+	font-family: Tahoma; font-size: 11px;
+	padding: 3px;
+	border-top: 1px solid #d8d8d8; border-right: 1px solid #d8d8d8;
+	text-align: left;
+	vertical-align: top;
+	white-space: nowrap;
+	font-weight: bold;
+	background-color: #dcd6ad; 
+	color: #000000;
+	}
+
+
+html>body .Totaltriklin td {
+	font-family: Tahoma; font-size: 11px;
+}
+
+
+/*ie6*/
+* html body .Totaltriklin td {
+	font-family: Tahoma; font-size: 11px;
+}
+/*end*/
+
+.Totaltriklin a:link {
+	color: #000000;
+	}
+
+.Totaltriklin a:visited{
+	color: #000000;
+	}
+
+.Totaltriklin a:hover, .Totaltriklin a:active{
+	color: #e06464;
+	}
+
+/* Form Options */
+.Buttontriklin { 
+	background-color: #ccd2dd; color: #000000; border-left: solid 1px #EDEDED; border-top: solid 1px #EDEDED; border-right: solid 1px #848284; border-bottom: solid 1px #848284; padding: 2px; font-weight: bold; font-family: Tahoma; font-size: 10px; font-weight: normal;
+	}
+
+/* Calendar */
+
+.Calendartriklin { 
+	border: 2px solid #95bad0;
+	width: 100%;
+	}
+
+.CalendarWeekdayNametriklin{
+	font-family: Tahoma; font-size: 11px;
+	padding: 3px;
+	border-top: 1px solid #d8d8d8; border-right: 1px solid #d8d8d8;
+	text-align: center; 
+	vertical-align: top;
+	white-space: nowrap;
+	background-color: #dcd6ad; 
+	color: #000000;
+	font-weight: normal;
+	}
+
+
+html>body .CalendarWeekdayNametriklin {
+	font-family: Tahoma; font-size: 11px;
+}
+
+
+/*ie6*/
+* html body .CalendarWeekdayNametriklin {
+	font-family: Tahoma; font-size: 11px;
+}
+/*end*/
+
+.CalendarWeekdayNametriklin a:link {
+	color: #000000;
+	}
+
+.CalendarWeekdayNametriklin a:visited{
+	color: #000000;
+	}
+
+.CalendarWeekdayNametriklin a:hover, .CalendarWeekdayNametriklin a:active{
+	color: #e06464;
+	}
+
+.CalendarWeekendNametriklin{
+	font-family: Tahoma; font-size: 11px;
+	padding: 3px;
+	border-top: 1px solid #d8d8d8; border-right: 1px solid #d8d8d8;
+	white-space: nowrap;
+	text-align: center; 
+	vertical-align: top;
+	background-color: #dcd6ad;	
+	color: #000000;
+	font-weight: normal;
+	}
+
+
+html>body .CalendarWeekendNametriklin {
+	font-family: Tahoma; font-size: 11px;
+}
+
+
+/*ie6*/
+* html body .CalendarWeekendNametriklin {
+	font-family: Tahoma; font-size: 11px;
+}
+/*end*/
+
+.CalendarWeekendNametriklin a:link {
+	color: #000000;
+	}
+
+.CalendarWeekendNametriklin a:visited{
+	color: #000000;
+	}
+
+.CalendarWeekendNametriklin a:link, .CalendarWeekendNametriklin a:visited{
+	color: #e06464;
+	}
+
+/* Calendar Day */
+.CalendarDaytriklin{
+	font-family: Tahoma; font-size: 11px;
+	padding: 3px;
+	border-top: 1px solid #d8d8d8; border-right: 1px solid #d8d8d8;
+	text-align: center;
+	background-color: #f4f4f4;	
+	color: #000000;
+	}
+
+
+html>body .CalendarDaytriklin {
+	font-family: Tahoma; font-size: 11px;
+}
+
+
+/*ie6*/
+* html body .CalendarDaytriklin {
+	font-family: Tahoma; font-size: 11px;
+}
+/*end*/
+
+.CalendarDaytriklin a:link {
+	color: #000000;
+	}
+
+.CalendarDaytriklin a:visited{
+	color: #000000;
+	}
+
+.CalendarDaytriklin a:hover, .CalendarDaytriklin a:active{
+	color: #e06464;
+	}
+
+/* Calendar Weekend */
+.CalendarWeekendtriklin{
+	font-family: Tahoma; font-size: 11px;
+	padding: 3px;
+	border-top: 1px solid #d8d8d8; border-right: 1px solid #d8d8d8;
+	text-align: center;
+	background-color: #dcd6ad;	
+	color: #000000;
+	}
+
+
+html>body .CalendarWeekendtriklin {
+	font-family: Tahoma; font-size: 11px;
+}
+
+
+/*ie6*/
+* html body .CalendarWeekendtriklin {
+	font-family: Tahoma; font-size: 11px;
+}
+/*end*/
+
+.CalendarWeekendtriklin a:link {
+	color: #000000;
+	}
+
+.CalendarWeekendtriklin a:visited{
+	color: #000000;
+	}
+
+.CalendarWeekendtriklin a:hover, .CalendarWeekendtriklin a:active{
+	color: #e06464;
+	}
+
+/* Calendar Today */
+.CalendarTodaytriklin {
+	font-family: Tahoma; font-size: 11px;
+	padding: 1px;
+	border: 2px solid #95bad0;
+	text-align: center;
+	background-color: #f4f4f4;	
+	color: #000000;
+	}
+
+
+html>body .CalendarTodaytriklin {
+	font-family: Tahoma; font-size: 11px;
+}
+
+
+/*ie6*/
+* html body .CalendarTodaytriklin {
+	font-family: Tahoma; font-size: 11px;
+}
+/*end*/
+
+.CalendarTodaytriklin a:link {
+	color: #000000;
+	}
+
+.CalendarTodaytriklin a:visited{
+	color: #000000;
+	}
+
+.CalendarTodaytriklin a:hover, .CalendarTodaytriklin a:active {
+	color: #e06464;
+	}
+
+/* Calendar Weekend Today */
+.CalendarWeekendTodaytriklin {
+	font-family: Tahoma; font-size: 11px;
+	padding: 1px;
+	border: 2px solid #95bad0;
+	text-align: center;
+	background-color: #dcd6ad;	
+	color: #000000;
+	}
+
+
+html>body .CalendarWeekendTodaytriklin {
+	font-family: Tahoma; font-size: 11px;
+}
+
+
+/*ie6*/
+* html body .CalendarWeekendTodaytriklin {
+	font-family: Tahoma; font-size: 11px;
+}
+/*end*/
+
+.CalendarWeekendTodaytriklin a:link {
+	color: #000000;
+	}
+
+.CalendarWeekendTodaytriklin a:visited{
+	color: #000000;
+	}
+
+.CalendarWeekendTodaytriklin a:hover, .CalendarWeekendTodaytriklin a:active{
+	color: #e06464;
+	}
+
+/* Calendar Other Month's Day */
+.CalendarOtherMonthDaytriklin{
+	font-family: Tahoma; font-size: 11px;
+	padding: 3px;
+	border-top: 1px solid #d8d8d8; border-right: 1px solid #d8d8d8;
+	text-align: center;
+	background-color: #f4f4f4;	
+	color: #95bad0;
+	}
+
+
+html>body .CalendarOtherMonthDaytriklin {
+	font-family: Tahoma; font-size: 11px;
+}
+
+
+/*ie6*/
+* html body .CalendarOtherMonthDaytriklin {
+	font-family: Tahoma; font-size: 11px;
+}
+/*end*/
+
+.CalendarOtherMonthDaytriklin a:link {
+	color: #95bad0;
+	}
+
+.CalendarOtherMonthDaytriklin a:visited{
+	color: #95bad0;
+	}
+
+.CalendarOtherMonthDaytriklin a:hover, .CalendarOtherMonthDaytriklin a:active{
+	color: #e06464;
+	}
+
+/* Calendar Other Month's Today */
+.CalendarOtherMonthTodaytriklin {
+	font-family: Tahoma; font-size: 11px;
+	padding: 1px;
+	border: 2px solid #95bad0;
+	text-align: center;
+	background-color: #f4f4f4;	
+	color: #95bad0;
+	}
+
+
+html>body .CalendarOtherMonthTodaytriklin {
+	font-family: Tahoma; font-size: 11px;
+}
+
+
+/*ie6*/
+* html body .CalendarOtherMonthTodaytriklin {
+	font-family: Tahoma; font-size: 11px;
+}
+/*end*/
+
+.CalendarOtherMonthTodaytriklin a:link {
+	color: #95bad0;
+	}
+
+.CalendarOtherMonthTodaytriklin a:visited{
+	color: #95bad0;
+	}
+
+.CalendarOtherMonthTodaytriklin a:hover, .CalendarOtherMonthTodaytriklin a:active{
+	color: #e06464;
+	}
+
+/* Calendar Other Month's Weekend */
+.CalendarOtherMonthWeekendtriklin {
+	font-family: Tahoma; font-size: 11px;
+	padding: 3px;
+	border-top: 1px solid #d8d8d8; border-right: 1px solid #d8d8d8;
+	text-align: center;
+	background-color: #dcd6ad;	
+	color: #95bad0;
+	}
+
+
+html>body .CalendarOtherMonthWeekendtriklin {
+	font-family: Tahoma; font-size: 11px;
+}
+
+
+/*ie6*/
+* html body .CalendarOtherMonthWeekendtriklin {
+	font-family: Tahoma; font-size: 11px;
+}
+/*end*/
+
+.CalendarOtherMonthWeekendtriklin a:link {
+	color: #95bad0;
+	}
+
+.CalendarOtherMonthWeekendtriklin a:visited{
+	color: #95bad0;
+	}
+
+.CalendarOtherMonthWeekendtriklin a:hover, .CalendarOtherMonthWeekendtriklin a:active{
+	color: #e06464;
+	}
+
+/* Calendar Other Month's Weekend Today */
+.CalendarOtherMonthWeekendTodaytriklin {
+	font-family: Tahoma; font-size: 11px;
+	padding: 1px;
+	border: 2px solid #95bad0;
+	text-align: center;
+	color: #95bad0;
+	background-color: #dcd6ad;	
+	}
+	
+
+html>body .CalendarOtherMonthWeekendTodaytriklin {
+	font-family: Tahoma; font-size: 11px;
+}
+
+
+/*ie6*/
+* html body .CalendarOtherMonthWeekendTodaytriklin {
+	font-family: Tahoma; font-size: 11px;
+}
+/*end*/
+
+.CalendarOtherMonthWeekendTodaytriklin a:link {
+	color: #95bad0;
+	}
+
+.CalendarOtherMonthWeekendTodaytriklin a:visited{
+	color: #95bad0;
+	}
+
+.CalendarOtherMonthWeekendTodaytriklin a:hover, .CalendarOtherMonthWeekendTodaytriklin a:active{
+	color: #e06464;
+	}
+
+/* Calendar Selected Day (for DatePicker) */
+.CalendarSelectedDaytriklin{
+	font-family: Tahoma; font-size: 11px;
+	padding: 3px;
+	border-top: 1px solid #d8d8d8; border-right: 1px solid #d8d8d8;
+	background-color: #d8d8d8;
+	color: #000000;
+	text-align: center;
+	font-weight: bold;
+	}
+	
+
+html>body .CalendarSelectedDaytriklin {
+	font-family: Tahoma; font-size: 11px;
+}
+
+
+/*ie6*/
+* html body .CalendarSelectedDaytriklin {
+	font-family: Tahoma; font-size: 11px;
+}
+/*end*/
+
+.CalendarSelectedDaytriklin a:link {
+	color: #000000;
+	}
+
+.CalendarSelectedDaytriklin a:visited{
+	color: #000000;
+	}
+
+.CalendarSelectedDaytriklin a:hover, .CalendarSelectedDaytriklin a:active{
+	color: #e06464;
+	}
+
+/* Calendar Navigator */
+.CalendarNavigatortriklin {
+	font-family: Tahoma; font-size: 11px;
+	padding: 3px;
+	background-color: #d8d8d8; color: #000000;
+	text-align: center;
+	vertical-align: middle;
+	white-space: nowrap;
+	color: #000000;
+	}
+
+
+html>body .CalendarNavigatortriklin {
+	font-family: Tahoma; font-size: 11px;
+}
+
+
+/*ie6*/
+* html body .CalendarNavigatortriklin {
+	font-family: Tahoma; font-size: 11px;
+}
+/*end*/
+
+.CalendarNavigatortriklin a:link {
+	color: #000000;
+	}
+
+.CalendarNavigatortriklin a:visited{
+	color: #000000;
+	}
+
+.CalendarNavigatortriklin a:hover, .CalendarNavigatortriklin a:active{
+	color: #e06464;
+	}
+
+.CalendarNavigatortriklin img{
+	margin: 2px;
+	vertical-align: middle; 	
+	}
+
+.CalendarNavigatortriklin td {
+	font-family: Tahoma; font-size: 11px;
+	}
+
+.CalendarNavigatortriklin th {
+	font-family: Tahoma; font-size: 11px;
+	}
+
+
+html>body .CalendarNavigatortriklin th, html>body .CalendarNavigatortriklin td {
+	font-family: Tahoma; font-size: 11px;
+}
+
+
+/*ie6*/
+* html body .CalendarNavigatortriklin th, * html body .CalendarNavigatortriklin td {
+	font-family: Tahoma; font-size: 11px;
+}
+/*end*/
+
+/* Calendar Extra */
+.CalendarEventtriklin{
+	font-family: Tahoma; font-size: 11px;
+	text-align: left;
+	}
+
+
+html>body .CalendarEventtriklin {
+	font-family: Tahoma; font-size: 11px;
+}
+
+
+/*ie6*/
+* html body .CalendarEventtriklin {
+	font-family: Tahoma; font-size: 11px;
+}
+/*end*/
+
+.CalendarEventtriklin a:link {
+	color: #000000;
+	}
+
+.CalendarEventtriklin a:visited{
+	color: #000000;
+	}
+
+.CalendarEventtriklin a:hover, .CalendarEventtriklin a:active{
+	color: #e06464;
+	}
+
+/* Changes for Section508 */
+table tr td strong {
+	padding: 0px;
+	margin: 0px;
+}
+
+.thtriklin { 
+	font-family: Tahoma; font-size: 11px;
+	font-weight: bold;
+}
+
+
+html>body .thtriklin {
+	font-size: 100%;
+}
+
+
+/*ie6*/
+* html body .thtriklin {
+	font-size: 100%;
+}
+/*end*/
+
+.Headertriklin .thtriklin { 
+	font-family: Tahoma; font-size: 12px; text-align: center;
+	padding: 3px;
+	background-image: url('Images/HeaderBg.gif'); color: #000000;
+	width: 100%;
+	white-space: nowrap;
+}
+
+
+html>body .Headertriklin .thtriklin {
+	font-family: Tahoma; font-size: 12px; text-align: center;
+}
+
+
+/*ie6*/
+* html body .Headertriklin .thtriklin {
+	font-family: Tahoma; font-size: 12px; text-align: center;
+}
+/*end*/
+
+.Captiontriklin .thtriklin { 
+	font-family: Tahoma; font-size: 11px; text-align: left; vertical-align: middle;
+	padding: 3px;
+	border-top: 1px solid #d8d8d8; border-right: 1px solid #d8d8d8;
+	background-image: url('Images/CaptionBg.gif'); color: #000000;
+	white-space: nowrap;
+}
+
+
+html>body .Captiontriklin .thtriklin {
+	font-family: Tahoma; font-size: 11px; text-align: left; vertical-align: middle;
+}
+
+
+/*ie6*/
+* html body .Captiontriklin .thtriklin {
+	font-family: Tahoma; font-size: 11px; text-align: left; vertical-align: middle;
+}
+/*end*/
+
+.Rowtriklin .thtriklin { 
+	font-family: Tahoma; font-size: 11px; text-align: left; vertical-align: middle; font-weight: normal;
+	padding: 3px;
+	border-top: 1px solid #d8d8d8; border-right: 1px solid #d8d8d8;
+	background-color: #f4f4f4; color: #000000;
+	white-space: nowrap;
+	color: #000000;
+}
+
+.AltRowtriklin .thtriklin { 
+	font-family: Tahoma; font-size: 11px; text-align: left; vertical-align: middle; font-weight: normal;
+	padding: 3px;
+	border-top: 1px solid #d8d8d8; border-right: 1px solid #d8d8d8;
+	background-color: #f4f4f4; color: #000000;
+	white-space: nowrap;
+	color: #000000;
+}
+
+.Controlstriklin .thtriklin { 
+	font-family: Tahoma; font-size: 11px; text-align: left; vertical-align: middle; font-weight: normal;
+	padding: 3px;
+	border-top: 1px solid #d8d8d8; border-right: 1px solid #d8d8d8;
+	background-color: #f4f4f4; color: #000000;
+	white-space: nowrap;
+	color: #000000;
+}
+
+.GroupCaptiontriklin .thtriklin {
+	font-family: Tahoma; font-size: 11px;
+	padding: 3px;
+	border-top: 1px solid #d8d8d8; border-right: 1px solid #d8d8d8;
+	text-align: left;
+	white-space: nowrap;
+	vertical-align: top;
+	font-weight: bold;
+	background-color: #dcd6ad; 
+	color: #000000;
+}
+
+
+html>body .GroupCaptiontriklin .thtriklin {
+	font-family: Tahoma; font-size: 11px;
+}
+
+html>body .Rowtriklin .thtriklin, html>body .AltRowtriklin .thtriklin, html>body .Controlstriklin .thtriklin {
+	font-family: Tahoma; font-size: 11px; text-align: left; vertical-align: middle; font-weight: normal;
+}
+
+
+/*ie6*/
+* html body .GroupCaptiontriklin .thtriklin {
+	font-family: Tahoma; font-size: 11px;
+}
+
+* html body .Rowtriklin .thtriklin, * html body .AltRowtriklin .thtriklin, * html body .Controlstriklin .thtriklin {
+	font-family: Tahoma; font-size: 11px; text-align: left; vertical-align: middle; font-weight: normal;
+}
+/*end*/
+
+/* Class for Application Builder Menu */
+.simpleMenutriklin td {
+	font-family: Tahoma; font-size: 11px;
+}
+
+
+html>body .simpleMenutriklin td {
+	font-family: Tahoma; font-size: 11px;
+} 
+
+
+/*ie6*/
+* html body .simpleMenutriklin td {
+	font-family: Tahoma; font-size: 11px;
+} 
+/*end*/

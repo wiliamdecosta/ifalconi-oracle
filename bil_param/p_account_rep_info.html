@@ -1,0 +1,270 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<title>p_account_rep_info</title>
+<meta name="GENERATOR" content="CodeCharge Studio 4.3.00.7676">
+<link rel="stylesheet" type="text/css" href="../Styles/trb/Style_doctype.css">
+<script language="JavaScript" src="../js/qs.js"></script>
+<script language="javascript" src="../js/lov.js"></script>
+<script language="JavaScript" type="text/javascript">
+function getFrom_LOV(formName,fieldList,LOV_NM)
+{
+        arrLOV = LOV_NM.split("?");
+        window.open("../lov/"+arrLOV[0]+"?FORM="+formName+"&OBJ="+fieldList+"&"+arrLOV[1],"LOV","width=600,height=500,toolbar=no,scrollbars=yes,resizable=yes");
+}
+</script>
+<script language="JavaScript" type="text/javascript">
+//Begin CCS script
+//Include Common JSFunctions @1-86BEACD2
+</script>
+<script language="JavaScript" src="../ClientI18N.php?file=Functions.js&amp;locale={res:CCS_LocaleID}" type="text/javascript" charset="utf-8"></script>
+<script language="JavaScript" src="../ClientI18N.php?file=DatePicker.js&amp;locale={res:CCS_LocaleID}" type="text/javascript" charset="utf-8"></script>
+<script language="JavaScript" type="text/javascript">
+//End Include Common JSFunctions
+
+//Date Picker Object Definitions @1-EEB73E09
+
+var p_account_rep_info1_DatePicker_VALID_FROM = new Object(); 
+p_account_rep_info1_DatePicker_VALID_FROM.format           = "ShortDate";
+p_account_rep_info1_DatePicker_VALID_FROM.style            = "Styles/trb/Style.css";
+p_account_rep_info1_DatePicker_VALID_FROM.relativePathPart = "../";
+p_account_rep_info1_DatePicker_VALID_FROM.themeVersion = "3.0";
+
+var p_account_rep_info1_DatePicker_VALID_TO = new Object(); 
+p_account_rep_info1_DatePicker_VALID_TO.format           = "ShortDate";
+p_account_rep_info1_DatePicker_VALID_TO.style            = "Styles/trb/Style.css";
+p_account_rep_info1_DatePicker_VALID_TO.relativePathPart = "../";
+p_account_rep_info1_DatePicker_VALID_TO.themeVersion = "3.0";
+
+var p_account_rep_info1_DatePicker_CREATION_DATE = new Object(); 
+p_account_rep_info1_DatePicker_CREATION_DATE.format           = "ShortDate";
+p_account_rep_info1_DatePicker_CREATION_DATE.style            = "Styles/trb/Style.css";
+p_account_rep_info1_DatePicker_CREATION_DATE.relativePathPart = "../";
+p_account_rep_info1_DatePicker_CREATION_DATE.themeVersion = "3.0";
+
+var p_account_rep_info1_DatePicker_UPDATED_DATE = new Object(); 
+p_account_rep_info1_DatePicker_UPDATED_DATE.format           = "ShortDate";
+p_account_rep_info1_DatePicker_UPDATED_DATE.style            = "Styles/trb/Style.css";
+p_account_rep_info1_DatePicker_UPDATED_DATE.relativePathPart = "../";
+p_account_rep_info1_DatePicker_UPDATED_DATE.themeVersion = "3.0";
+
+//End Date Picker Object Definitions
+
+//p_account_rep_info1Button_Delete_OnClick @54-3CD68CE8
+function p_account_rep_info1Button_Delete_OnClick()
+{
+    var result = true;
+//End p_account_rep_info1Button_Delete_OnClick
+
+//Confirmation Message @55-95E112AE
+    return confirm('Anda Yakin Ingin Menghapus Data_ Ini?');
+//End Confirmation Message
+
+//Close p_account_rep_info1Button_Delete_OnClick @54-BC33A33A
+    return result;
+}
+//End Close p_account_rep_info1Button_Delete_OnClick
+
+//p_account_rep_info1Button_Cancel_OnClick @56-C6C9FF80
+function p_account_rep_info1Button_Cancel_OnClick()
+{
+    disableValidation = true;
+}
+//End p_account_rep_info1Button_Cancel_OnClick
+
+//bind_events @1-0F1480E7
+function bind_events() {
+    addEventHandler("p_account_rep_info1Button_Delete", "click", p_account_rep_info1Button_Delete_OnClick);
+    addEventHandler("p_account_rep_info1Button_Cancel", "click", p_account_rep_info1Button_Cancel_OnClick);
+}
+//End bind_events
+
+window.onload = bind_events; //Assign bind_events @1-19F7B649
+
+//End CCS script
+</script>
+</head>
+<body leftmargin="0" topmargin="0" marginheight="0" marginwidth="0">
+<div style="POSITION: absolute; WIDTH: 100%" id="tabtop">
+  <table border="0" cellspacing="0" cellpadding="0" width="100%">
+    <tr>
+      <td><img border="0" src="../images/tab_s_on.gif"></td> 
+      <td class="th" background="../images/tab_on.gif" nowrap align="center">REP INFO AKUN</td> 
+      <td><img border="0" src="../images/tab_e_on.gif"></td> 
+      <td background="../images/tab_back.gif" width="100%"></td>
+    </tr>
+  </table>
+</div>
+<br>
+<br>
+<br>
+<table border="0" cellspacing="0" cellpadding="0" align="center">
+  <tr>
+    <td>
+      <!-- BEGIN Record P_ACCOUNT_REP_INFOSearch -->
+      <form id="P_ACCOUNT_REP_INFOSearch" method="post" name="{HTMLFormName}" action="{Action}">
+        <table border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td valign="top">
+              <table class="Record" cellspacing="0" cellpadding="0">
+                <!-- BEGIN Error -->
+                <tr class="Error">
+                  <td>{Error}</td>
+                </tr>
+                <!-- END Error -->
+                <tr class="Controls">
+                  <td><input id="P_ACCOUNT_REP_INFOSearchs_keyword" class="ControlsIN" value="{s_keyword}" maxlength="64" size="32" name="{s_keyword_Name}">&nbsp; 
+                    <!-- BEGIN Button Button_DoSearch --><input id="P_ACCOUNT_REP_INFOSearchButton_DoSearch" class="Button" value="Cari" alt="" type="submit" name="{Button_Name}"><!-- END Button Button_DoSearch -->&nbsp;&nbsp; </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </form>
+      <!-- END Record P_ACCOUNT_REP_INFOSearch --><br>
+      <!-- BEGIN Grid P_ACCOUNT_REP_INFO -->
+      <table border="0" cellspacing="0" cellpadding="0" width="100%">
+        <tr>
+          <td valign="top">
+            <table class="Header" border="0" cellspacing="0" cellpadding="0" width="100%">
+              <tr>
+                <td class="HeaderLeft"><img border="0" alt="" src="../Styles/trb/Images/Spacer.gif"></td> 
+                <td class="th"><strong>DAFTAR INFO REP AKUN</strong></td> 
+                <td class="HeaderRight"><img border="0" alt="" src="../Styles/trb/Images/Spacer.gif"></td>
+              </tr>
+            </table>
+ 
+            <table class="Grid" cellspacing="0" cellpadding="0">
+              <tr class="Caption">
+                <th style="TEXT-ALIGN: center" scope="col">#</th>
+ 
+                <th scope="col">REP AKUN</th>
+ 
+                <th scope="col">REFERENSI</th>
+ 
+                <th scope="col">KETERANGAN INFO</th>
+              </tr>
+ 
+              <!-- BEGIN Row -->
+              <tr {P_ACCOUNT_REP_INFO:rowStyle}>
+                <td style="TEXT-ALIGN: center">
+                  <!-- BEGIN Link DLink --><a href="{DLink_Src}" id="P_ACCOUNT_REP_INFODLink_{P_APP_ROLE:rowNumber}"><img border="0" src="../images/radio.gif"></a><!-- END Link DLink -->
+                  <!-- BEGIN Link ADLink --><a href="{ADLink_Src}" id="P_ACCOUNT_REP_INFOADLink_{P_APP_ROLE:rowNumber}"><img border="0" src="../images/radio_s.gif" width="16" height="16"></a><!-- END Link ADLink --></td> 
+                <td style="TEXT-ALIGN: left">{ACCOUNT_NAME}&nbsp; <input style="WIDTH: 42px; HEIGHT: 16px" id="P_ACCOUNT_REP_INFOP_ACCOUNT_REP_INFO_ID_{P_ACCOUNT_REP_INFO:rowNumber}" value="{P_ACCOUNT_REP_INFO_ID}" size="5" type="hidden" name="{P_ACCOUNT_REP_INFO_ID_Name}">&nbsp;</td> 
+                <td style="TEXT-ALIGN: left">{P_REFERENCE_LIST_NAME}&nbsp;</td> 
+                <td>{INFO_DESC}&nbsp;</td>
+              </tr>
+ <!-- END Row -->
+              <!-- BEGIN NoRecords -->
+              <tr class="NoRecords">
+                <td colspan="4">Data Tidak Ditemukan</td>
+              </tr>
+              <!-- END NoRecords -->
+              <tr class="Footer">
+                <td style="TEXT-ALIGN: center"><a href="{P_ACCOUNT_REP_INFO_Insert_Src}" id="P_ACCOUNT_REP_INFOP_ACCOUNT_REP_INFO_Insert"><img border="0" src="../Styles/trb/Images/en/ButtonTambah.gif"></a></td> 
+                <td colspan="3">&nbsp; 
+                  <!-- BEGIN Navigator Navigator -->
+                  <!-- BEGIN First_On --><a href="{First_URL}"><img border="0" alt="{First_URL}" src="../Styles/trb/Images/First.gif"></a> <!-- END First_On -->
+                  <!-- BEGIN Prev_On --><a href="{Prev_URL}"><img border="0" alt="{Prev_URL}" src="../Styles/trb/Images/Prev.gif"></a> <!-- END Prev_On -->&nbsp; 
+                  <!-- BEGIN Pages -->
+                  <!-- BEGIN Page_On --><a href="{Page_URL}">{Page_Number}</a>&nbsp;<!-- END Page_On -->
+                  <!-- BEGIN Page_Off -->{Page_Number}&nbsp;<!-- END Page_Off --><!-- END Pages -->&nbsp;{Total_Pages}&nbsp; 
+                  <!-- BEGIN Next_On --><a href="{Next_URL}"><img border="0" alt="{Next_URL}" src="../Styles/trb/Images/Next.gif"></a> <!-- END Next_On -->
+                  <!-- BEGIN Last_On --><a href="{Last_URL}"><img border="0" alt="{Last_URL}" src="../Styles/trb/Images/Last.gif"></a> <!-- END Last_On --><!-- END Navigator Navigator -->&nbsp;</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      <!-- END Grid P_ACCOUNT_REP_INFO --><br>
+      <!-- BEGIN Record p_account_rep_info1 -->
+      <form id="p_account_rep_info1" method="post" name="{HTMLFormName}" action="{Action}">
+        <table border="0" cellspacing="0" cellpadding="0" width="100%">
+          <tr>
+            <td valign="top">
+              <table class="Header" border="0" cellspacing="0" cellpadding="0" width="100%">
+                <tr>
+                  <td class="HeaderLeft"><img border="0" alt="" src="../Styles/trb/Images/Spacer.gif"></td> 
+                  <td class="th"><strong>INFO REP AKUN</strong></td> 
+                  <td class="HeaderRight"><img border="0" alt="" src="../Styles/trb/Images/Spacer.gif"></td>
+                </tr>
+              </table>
+ 
+              <table class="Record" cellspacing="0" cellpadding="0">
+                <!-- BEGIN Error -->
+                <tr class="Error">
+                  <td colspan="2">{Error}</td>
+                </tr>
+                <!-- END Error -->
+                <tr class="Controls">
+                  <td class="th"><label for="p_account_rep_info1P_ACCOUNT_REP_ID">Rep Akun</label></td> 
+                  <td><input id="p_account_rep_info1ACCOUNT_NAME" class="ControlsRO" value="{ACCOUNT_NAME}" readonly maxlength="12" size="32" name="{ACCOUNT_NAME_Name}">&nbsp;<input id="p_account_rep_info1P_ACCOUNT_REP_ID" value="{P_ACCOUNT_REP_ID}" size="8" type="hidden" name="{P_ACCOUNT_REP_ID_Name}"><img id="lov1" onclick="lov_p_account_rep()" src="../Styles/trb/Images/en/lov.gif">&nbsp; <input style="WIDTH: 59px; HEIGHT: 22px" id="p_account_rep_info1P_ACCOUNT_REP_INFO_ID" value="{P_ACCOUNT_REP_INFO_ID}" size="8" type="hidden" name="{P_ACCOUNT_REP_INFO_ID_Name}"></td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th"><label for="p_account_rep_info1P_REFERENCE_LIST_ID">Referensi</label></td> 
+                  <td><input id="p_account_rep_info1P_REFERENCE_LIST_NAME" class="ControlsRO" value="{P_REFERENCE_LIST_NAME}" readonly maxlength="12" size="32" name="{P_REFERENCE_LIST_NAME_Name}">&nbsp;<input id="p_account_rep_info1P_REFERENCE_LIST_ID" value="{P_REFERENCE_LIST_ID}" size="7" type="hidden" name="{P_REFERENCE_LIST_ID_Name}"><img id="lov2" onclick="lov_p_reference_list()" src="../Styles/trb/Images/en/lov.gif"></td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th"><label for="p_account_rep_info1INFO_DESC">Keterangan Info</label></td> 
+                  <td><input id="p_account_rep_info1INFO_DESC" class="ControlsRQ" value="{INFO_DESC}" maxlength="64" size="50" name="{INFO_DESC_Name}"></td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th"><label for="p_account_rep_info1VALID_FROM">Valid Mulai</label></td> 
+                  <td><input id="p_account_rep_info1VALID_FROM" class="ControlsRO" value="{VALID_FROM}" readonly maxlength="100" size="16" name="{VALID_FROM_Name}">
+                    <!-- BEGIN DatePicker DatePicker_VALID_FROM --><a href="javascript:showDatePicker('{Name}','{FormName}','{DateControl}');" id="p_account_rep_info1DatePicker_VALID_FROM"><img id="p_account_rep_info1DatePicker_VALID_FROM_Image" border="0" alt="Show Date Picker" src="../Styles/trb/Images/DatePicker.gif"></a><!-- END DatePicker DatePicker_VALID_FROM --></td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th"><label for="p_account_rep_info1VALID_TO">Valid Sampai</label></td> 
+                  <td><input id="p_account_rep_info1VALID_TO" class="ControlsRO" value="{VALID_TO}" readonly maxlength="100" size="16" name="{VALID_TO_Name}">
+                    <!-- BEGIN DatePicker DatePicker_VALID_TO --><a href="javascript:showDatePicker('{Name}','{FormName}','{DateControl}');" id="p_account_rep_info1DatePicker_VALID_TO"><img id="p_account_rep_info1DatePicker_VALID_TO_Image" border="0" alt="Show Date Picker" src="../Styles/trb/Images/DatePicker.gif"></a><!-- END DatePicker DatePicker_VALID_TO --></td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th"><label for="p_account_rep_info1DESCRIPTION">Keterangan</label></td> 
+                  <td><textarea id="p_account_rep_info1DESCRIPTION" class="ControlsIN" rows="3" cols="50" name="{DESCRIPTION_Name}">{DESCRIPTION}</textarea></td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th"><label for="p_account_rep_info1CREATED_BY">Pembuat</label></td> 
+                  <td><input id="p_account_rep_info1CREATED_BY" class="ControlsRO" value="{CREATED_BY}" readonly maxlength="16" size="16" name="{CREATED_BY_Name}">&nbsp; Tgl&nbsp; <input id="p_account_rep_info1CREATION_DATE" class="ControlsRO" value="{CREATION_DATE}" readonly maxlength="100" size="16" name="{CREATION_DATE_Name}"></td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th"><label for="p_account_rep_info1UPDATED_BY">Pengubah</label></td> 
+                  <td><input id="p_account_rep_info1UPDATED_BY" class="ControlsRO" value="{UPDATED_BY}" readonly maxlength="16" size="16" name="{UPDATED_BY_Name}">&nbsp; Tgl&nbsp; <input id="p_account_rep_info1UPDATED_DATE" class="ControlsRO" value="{UPDATED_DATE}" readonly maxlength="100" size="16" name="{UPDATED_DATE_Name}"></td>
+                </tr>
+ 
+                <tr class="Bottom">
+                  <td colspan="2" align="right">
+                    <!-- BEGIN Button Button_Insert --><input style="BORDER-RIGHT-WIDTH: 0px; BORDER-TOP-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px" id="p_account_rep_info1Button_Insert" value="" alt="" src="../Styles/trb/Images/en/ButtonInsert.gif" type="image" name="{Button_Name}"><!-- END Button Button_Insert -->
+                    <!-- BEGIN Button Button_Update --><input style="BORDER-RIGHT-WIDTH: 0px; BORDER-TOP-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px" id="p_account_rep_info1Button_Update" value="" alt="" src="../Styles/trb/Images/en/ButtonUpdate.gif" type="image" name="{Button_Name}"><!-- END Button Button_Update -->
+                    <!-- BEGIN Button Button_Delete --><input style="BORDER-RIGHT-WIDTH: 0px; BORDER-TOP-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px" id="p_account_rep_info1Button_Delete" value="" alt="" src="../Styles/trb/Images/en/ButtonDelete.gif" type="image" name="{Button_Name}"><!-- END Button Button_Delete -->
+                    <!-- BEGIN Button Button_Cancel --><input style="BORDER-RIGHT-WIDTH: 0px; BORDER-TOP-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px" id="p_account_rep_info1Button_Cancel" value="" alt="" src="../Styles/trb/Images/en/ButtonCancel.gif" type="image" name="{Button_Name}"><!-- END Button Button_Cancel --></td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </form>
+      <!-- END Record p_account_rep_info1 --><br>
+      <br>
+    </td>
+  </tr>
+</table>
+<script language="javascript">
+function lov_p_account_rep()
+{
+        getFrom_LOV('p_account_rep_info1','P_ACCOUNT_REP_ID,ACCOUNT_NAME','lov_p_account_rep.php?');
+}
+function lov_p_reference_list()
+{
+        getFrom_LOV('p_account_rep_info1','P_REFERENCE_LIST_ID,P_REFERENCE_LIST_NAME','lov_p_reference_list.php?');
+}
+</script>
+</body>
+</html>

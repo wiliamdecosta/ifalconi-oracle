@@ -1,0 +1,238 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<title>p_region</title>
+<meta name="GENERATOR" content="CodeCharge Studio 4.3.00.7676">
+<link rel="stylesheet" type="text/css" href="../Styles/trb/Style_doctype.css">
+<script language="JavaScript" type="text/javascript">
+//Begin CCS script
+//Include Common JSFunctions @1-86BEACD2
+</script>
+<script language="JavaScript" src="../ClientI18N.php?file=Functions.js&amp;locale={res:CCS_LocaleID}" type="text/javascript" charset="utf-8"></script>
+<script language="JavaScript" src="../ClientI18N.php?file=DatePicker.js&amp;locale={res:CCS_LocaleID}" type="text/javascript" charset="utf-8"></script>
+<script language="JavaScript" type="text/javascript">
+//End Include Common JSFunctions
+
+//Date Picker Object Definitions @1-7ED6B814
+
+var P_REGION1_DatePicker_UPDATE_DATE = new Object(); 
+P_REGION1_DatePicker_UPDATE_DATE.format           = "ShortDate";
+P_REGION1_DatePicker_UPDATE_DATE.style            = "Styles/trb/Style.css";
+P_REGION1_DatePicker_UPDATE_DATE.relativePathPart = "../";
+P_REGION1_DatePicker_UPDATE_DATE.themeVersion = "3.0";
+
+//End Date Picker Object Definitions
+
+//P_REGION1Button_Delete_OnClick @51-BCC7E81C
+function P_REGION1Button_Delete_OnClick()
+{
+    var result = true;
+//End P_REGION1Button_Delete_OnClick
+
+//Confirmation Message @52-71020255
+    return confirm('Hapus Modul?');
+//End Confirmation Message
+
+//Close P_REGION1Button_Delete_OnClick @51-BC33A33A
+    return result;
+}
+//End Close P_REGION1Button_Delete_OnClick
+
+//P_REGION1Button_Update_OnClick @50-D96E1314
+function P_REGION1Button_Update_OnClick()
+{
+    disableValidation = true;
+}
+//End P_REGION1Button_Update_OnClick
+
+//P_REGION1Button_Cancel_OnClick @53-866B40F5
+function P_REGION1Button_Cancel_OnClick()
+{
+    disableValidation = true;
+}
+//End P_REGION1Button_Cancel_OnClick
+
+//bind_events @1-2DBBC84D
+function bind_events() {
+    addEventHandler("P_REGION1Button_Delete", "click", P_REGION1Button_Delete_OnClick);
+    addEventHandler("P_REGION1Button_Update", "click", P_REGION1Button_Update_OnClick);
+    addEventHandler("P_REGION1Button_Cancel", "click", P_REGION1Button_Cancel_OnClick);
+}
+//End bind_events
+
+window.onload = bind_events; //Assign bind_events @1-19F7B649
+
+//End CCS script
+</script>
+</head>
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<div id="tabtop" style="POSITION: absolute; WIDTH: 100%">
+  <table style="BACKGROUND-COLOR: #89a5f7" cellspacing="0" cellpadding="0" width="100%" border="0">
+    <tr>
+      <td><img border="0" src="../images/tab_s_on.gif"></td> 
+      <td class="th" background="../images/tab_on.gif" nowrap align="center">WILAYAH</td> 
+      <td><img border="0" src="../images/tab_e_on.gif"></td> 
+      <td background="../images/tab_back.gif" width="100%"></td>
+    </tr>
+  </table>
+</div>
+<br>
+<br>
+<table cellspacing="0" cellpadding="0" align="center" border="0">
+  <tr>
+    <td>
+      <!-- BEGIN Record P_REGIONSearch -->
+      <form id="P_REGIONSearch" method="post" name="{HTMLFormName}" action="{Action}">
+        <table cellspacing="0" cellpadding="0" border="0">
+          <tr>
+            <td valign="top">
+              <table class="Record" cellspacing="0" cellpadding="0">
+                <!-- BEGIN Error -->
+                <tr class="Error">
+                  <td colspan="2">{Error}</td>
+                </tr>
+                <!-- END Error -->
+                <tr class="Controls">
+                  <td><input id="P_REGIONSearchs_keyword" class="ControlsIN" maxlength="32" size="32" value="{s_keyword}" name="{s_keyword_Name}"></td> 
+                  <td>
+                    <!-- BEGIN Button Button_DoSearch --><input id="P_REGIONSearchButton_DoSearch" style="BORDER-TOP: 0px; BORDER-RIGHT: 0px; BORDER-BOTTOM: 0px; BORDER-LEFT: 0px" alt="" src="../Styles/trb/Images/en/ButtonSearch.gif" type="image" value="" name="{Button_Name}"><!-- END Button Button_DoSearch -->&nbsp;&nbsp; </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </form>
+      <!-- END Record P_REGIONSearch --><br>
+      <!-- BEGIN Grid P_REGION -->
+      <table cellspacing="0" cellpadding="0" width="100%" border="0">
+        <tr>
+          <td valign="top">
+            <table class="Header" cellspacing="0" cellpadding="0" width="100%" border="0">
+              <tr>
+                <td class="HeaderLeft"><img border="0" alt="" src="../Styles/trb/Images/Spacer.gif"></td> 
+                <td class="th"><strong>DAFTAR WILAYAH</strong></td> 
+                <td class="HeaderRight"><img border="0" alt="" src="../Styles/trb/Images/Spacer.gif"></td>
+              </tr>
+            </table>
+ 
+            <table class="Grid" cellspacing="0" cellpadding="0">
+              <tr class="Caption">
+                <th style="TEXT-ALIGN: center" scope="col">#</th>
+ 
+                <th scope="col">Nama Wilayah</th>
+ 
+                <th scope="col">Level</th>
+ 
+                <th scope="col">Area Bisnis</th>
+ 
+                <th scope="col">Parent</th>
+ 
+                <th scope="col">Keterangan</th>
+              </tr>
+ 
+              <!-- BEGIN Row -->
+              <tr {P_REGION:rowStyle}>
+                <td style="TEXT-ALIGN: center">
+                  <!-- BEGIN Link DLink --><a href="{DLink_Src}" id="P_REGIONDLink_{P_APPLGrid:rowNumber}">{DLink}</a><!-- END Link DLink --></td> 
+                <td style="TEXT-ALIGN: left">{REGION_NAME}<input id="P_REGIONP_REGION_ID_{P_REGION:rowNumber}" style="HEIGHT: 16px; WIDTH: 84px" size="1" type="hidden" value="{P_REGION_ID}" name="{P_REGION_ID_Name}"></td> 
+                <td style="TEXT-ALIGN: left">{LEVEL_NAME}</td> 
+                <td style="TEXT-ALIGN: left">{CODE}</td> 
+                <td style="TEXT-ALIGN: left">{PARENT_ID}</td> 
+                <td style="TEXT-ALIGN: left">{DESCRIPTION}</td>
+              </tr>
+ <!-- END Row -->
+              <!-- BEGIN NoRecords -->
+              <tr class="NoRecords">
+                <td colspan="6">no record</td>
+              </tr>
+              <!-- END NoRecords -->
+              <tr class="Footer">
+                <td style="BORDER-RIGHT: 0px"><a href="{P_REGION_Insert_Src}" id="P_REGIONP_REGION_Insert_{P_APPLGrid:rowNumber}"><img border="0" src="../Styles/trb/Images/en/ButtonTambah.gif"></a></td> 
+                <td colspan="6">&nbsp; 
+                  <!-- BEGIN Navigator Navigator -->
+                  <!-- BEGIN First_On --><a href="{First_URL}"><img border="0" alt="{First_URL}" src="../Styles/trb/Images/First.gif"></a> <!-- END First_On -->
+                  <!-- BEGIN First_Off --><img border="0" alt="{First_URL}" src="../Styles/trb/Images/FirstOff.gif"><!-- END First_Off -->
+                  <!-- BEGIN Prev_On --><a href="{Prev_URL}"><img border="0" alt="{Prev_URL}" src="../Styles/trb/Images/Prev.gif"></a> <!-- END Prev_On -->
+                  <!-- BEGIN Prev_Off --><img border="0" alt="{Prev_URL}" src="../Styles/trb/Images/PrevOff.gif"><!-- END Prev_Off -->&nbsp; 
+                  <!-- BEGIN Pages -->
+                  <!-- BEGIN Page_On --><a href="{Page_URL}">{Page_Number}</a>&nbsp;<!-- END Page_On -->
+                  <!-- BEGIN Page_Off -->{Page_Number}&nbsp;<!-- END Page_Off --><!-- END Pages -->
+                  <!-- BEGIN Next_On --><a href="{Next_URL}"><img border="0" alt="{Next_URL}" src="../Styles/trb/Images/Next.gif"></a> <!-- END Next_On -->
+                  <!-- BEGIN Next_Off --><img border="0" alt="{Next_URL}" src="../Styles/trb/Images/NextOff.gif"><!-- END Next_Off -->
+                  <!-- BEGIN Last_On --><a href="{Last_URL}"><img border="0" alt="{Last_URL}" src="../Styles/trb/Images/Last.gif"></a> <!-- END Last_On -->
+                  <!-- BEGIN Last_Off --><img border="0" alt="{Last_URL}" src="../Styles/trb/Images/LastOff.gif"><!-- END Last_Off --><!-- END Navigator Navigator -->&nbsp;</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      <!-- END Grid P_REGION --><br>
+      <!-- BEGIN Record P_REGION1 -->
+      <form id="P_REGION1" method="post" name="{HTMLFormName}" action="{Action}">
+        <table cellspacing="0" cellpadding="0" width="100%" border="0">
+          <tr>
+            <td valign="top">
+              <table class="Header" cellspacing="0" cellpadding="0" width="100%" border="0">
+                <tr>
+                  <td class="HeaderLeft"><img border="0" alt="" src="../Styles/trb/Images/Spacer.gif"></td> 
+                  <td class="th"><strong>WILAYAH</strong></td> 
+                  <td class="HeaderRight"><img border="0" alt="" src="../Styles/trb/Images/Spacer.gif"></td>
+                </tr>
+              </table>
+ 
+              <table class="Record" cellspacing="0" cellpadding="0">
+                <!-- BEGIN Error -->
+                <tr class="Error">
+                  <td colspan="2">{Error}</td>
+                </tr>
+                <!-- END Error -->
+                <tr class="Controls">
+                  <td class="th"><label for="P_REGION1REGION_NAME">Nama Wilayah</label></td> 
+                  <td><input id="P_REGION1REGION_NAME" class="ControlsRQ" maxlength="32" size="32" value="{REGION_NAME}" name="{REGION_NAME_Name}"></td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th"><label for="P_REGION1P_REGION_LEVEL_ID">Level</label></td> 
+                  <td><input id="P_REGION1LEVEL_NAME" class="ControlsRQ" readonly maxlength="16" size="16" value="{LEVEL_NAME}" name="{LEVEL_NAME_Name}">&nbsp;&nbsp; <input id="P_REGION1P_REGION_LEVEL_ID" style="HEIGHT: 22px; WIDTH: 45px" maxlength="12" size="1" value="{P_REGION_LEVEL_ID}" name="{P_REGION_LEVEL_ID_Name}"></td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th"><label for="P_REGION1P_BUSINESS_AREA_ID">Area Bisnis</label></td> 
+                  <td><input id="P_REGION1CODE" class="ControlsRQ" readonly maxlength="16" size="16" value="{CODE}" name="{CODE_Name}">&nbsp;&nbsp;&nbsp;<input id="P_REGION1P_BUSINESS_AREA_ID" style="HEIGHT: 22px; WIDTH: 40px" maxlength="12" size="1" value="{P_BUSINESS_AREA_ID}" name="{P_BUSINESS_AREA_ID_Name}"></td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th"><label for="P_REGION1PARENT_ID">Parent</label></td> 
+                  <td><input id="P_REGION1PARENT_ID" class="ControlsRQ" maxlength="12" size="12" value="{PARENT_ID}" name="{PARENT_ID_Name}"></td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th"><label for="P_REGION1DESCRIPTION">Keterangan</label></td> 
+                  <td><textarea id="P_REGION1DESCRIPTION" class="ControlsIN" rows="3" cols="50" name="{DESCRIPTION_Name}">{DESCRIPTION}</textarea></td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th"><label for="P_REGION1UPDATE_DATE">Updated date</label></td> 
+                  <td><input id="P_REGION1UPDATE_DATE" class="ControlsRO" readonly maxlength="12" size="12" value="{UPDATE_DATE}" name="{UPDATE_DATE_Name}">
+                    <!-- BEGIN DatePicker DatePicker_UPDATE_DATE --><a href="javascript:showDatePicker('{Name}','{FormName}','{DateControl}');" id="P_REGION1DatePicker_UPDATE_DATE"><img id="P_REGION1DatePicker_UPDATE_DATE_Image" border="0" alt="Show Date Picker" src="../Styles/trb/Images/DatePicker.gif"></a><!-- END DatePicker DatePicker_UPDATE_DATE -->&nbsp; By&nbsp; <input id="P_REGION1UPDATE_BY" class="ControlsRO" readonly maxlength="12" size="12" value="{UPDATE_BY}" name="{UPDATE_BY_Name}"></td>
+                </tr>
+ 
+                <tr class="Bottom">
+                  <td colspan="2" align="right"><input id="P_REGION1P_REGION_ID" type="hidden" value="{P_REGION_ID}" name="{P_REGION_ID_Name}">
+                    <!-- BEGIN Button Button_Insert --><input id="P_REGION1Button_Insert" alt="SIMPAN" src="../Styles/trb/Images/en/ButtonUpdate.gif" type="image" name="{Button_Name}"><!-- END Button Button_Insert -->
+                    <!-- BEGIN Button Button_Update --><input id="P_REGION1Button_Update" alt="SIMPAN" src="../Styles/trb/Images/en/ButtonUpdate.gif" type="image" name="{Button_Name}"><!-- END Button Button_Update -->
+                    <!-- BEGIN Button Button_Delete --><input id="P_REGION1Button_Delete" alt="HAPUS" src="../Styles/trb/Images/en/ButtonDelete.gif" type="image" name="{Button_Name}"><!-- END Button Button_Delete -->
+                    <!-- BEGIN Button Button_Cancel --><input id="P_REGION1Button_Cancel" alt="BATAL" src="../Styles/trb/Images/en/ButtonCancel.gif" type="image" name="{Button_Name}"><!-- END Button Button_Cancel --></td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </form>
+      <!-- END Record P_REGION1 --><br>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

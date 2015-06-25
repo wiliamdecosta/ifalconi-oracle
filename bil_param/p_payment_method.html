@@ -1,0 +1,215 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<title>p_payment_method</title>
+<meta name="GENERATOR" content="CodeCharge Studio 4.3.00.7676">
+<link rel="stylesheet" type="text/css" href="../Styles/trb/Style_doctype.css">
+<script language="JavaScript" type="text/javascript">
+//Begin CCS script
+//Include Common JSFunctions @1-86BEACD2
+</script>
+<script language="JavaScript" src="../ClientI18N.php?file=Functions.js&amp;locale={res:CCS_LocaleID}" type="text/javascript" charset="utf-8"></script>
+<script language="JavaScript" src="../ClientI18N.php?file=DatePicker.js&amp;locale={res:CCS_LocaleID}" type="text/javascript" charset="utf-8"></script>
+<script language="JavaScript" type="text/javascript">
+//End Include Common JSFunctions
+
+//Date Picker Object Definitions @1-FDFCF597
+
+var p_payment_method1_DatePicker_UPDATE_DATE = new Object(); 
+p_payment_method1_DatePicker_UPDATE_DATE.format           = "ShortDate";
+p_payment_method1_DatePicker_UPDATE_DATE.style            = "Styles/trb/Style.css";
+p_payment_method1_DatePicker_UPDATE_DATE.relativePathPart = "../";
+p_payment_method1_DatePicker_UPDATE_DATE.themeVersion = "3.0";
+
+//End Date Picker Object Definitions
+
+//p_payment_method1Button_Delete_OnClick @54-E71BD935
+function p_payment_method1Button_Delete_OnClick()
+{
+    var result = true;
+//End p_payment_method1Button_Delete_OnClick
+
+//Confirmation Message @55-71020255
+    return confirm('Hapus MetodePembayaran?');
+//End Confirmation Message
+
+//Close p_payment_method1Button_Delete_OnClick @54-BC33A33A
+    return result;
+}
+//End Close p_payment_method1Button_Delete_OnClick
+
+//p_payment_method1Button_Update_OnClick @53-B471E50A
+function p_payment_method1Button_Update_OnClick()
+{
+    disableValidation = true;
+}
+//End p_payment_method1Button_Update_OnClick
+
+//p_payment_method1Button_Cancel_OnClick @56-EB74B6EB
+function p_payment_method1Button_Cancel_OnClick()
+{
+    disableValidation = true;
+}
+//End p_payment_method1Button_Cancel_OnClick
+
+//bind_events @1-D607ED86
+function bind_events() {
+    addEventHandler("p_payment_method1Button_Delete", "click", p_payment_method1Button_Delete_OnClick);
+    addEventHandler("p_payment_method1Button_Update", "click", p_payment_method1Button_Update_OnClick);
+    addEventHandler("p_payment_method1Button_Cancel", "click", p_payment_method1Button_Cancel_OnClick);
+}
+//End bind_events
+
+window.onload = bind_events; //Assign bind_events @1-19F7B649
+
+//End CCS script
+</script>
+</head>
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<div id="tabtop" style="POSITION: absolute; WIDTH: 100%">
+  <table style="BACKGROUND-COLOR: #89a5f7" cellspacing="0" cellpadding="0" width="100%" border="0">
+    <tr>
+      <td><img border="0" src="../images/tab_s_on.gif"></td> 
+      <td class="th" background="../images/tab_on.gif" nowrap align="center">METODE PEMBAYARAN</td> 
+      <td><img border="0" src="../images/tab_e_on.gif"></td> 
+      <td background="../images/tab_back.gif" width="100%"></td>
+    </tr>
+  </table>
+</div>
+<br>
+<br>
+<table cellspacing="0" cellpadding="0" align="center" border="0">
+  <tr>
+    <td>
+      <!-- BEGIN Record P_PAYMENT_METHODSearch -->
+      <form id="P_PAYMENT_METHODSearch" method="post" name="{HTMLFormName}" action="{Action}">
+        <table cellspacing="0" cellpadding="0" border="0">
+          <tr>
+            <td valign="top">
+              <table class="Record" cellspacing="0" cellpadding="0">
+                <!-- BEGIN Error -->
+                <tr class="Error">
+                  <td colspan="2">{Error}</td>
+                </tr>
+                <!-- END Error -->
+                <tr class="Controls">
+                  <td><input id="P_PAYMENT_METHODSearchs_keyword" class="ControlsIN" maxlength="32" size="32" value="{s_keyword}" name="{s_keyword_Name}"></td> 
+                  <td>
+                    <!-- BEGIN Button Button_DoSearch --><input id="P_PAYMENT_METHODSearchButton_DoSearch" style="BORDER-TOP: 0px; BORDER-RIGHT: 0px; BORDER-BOTTOM: 0px; BORDER-LEFT: 0px" alt="" src="../Styles/trb/Images/en/ButtonSearch.gif" type="image" value="" name="{Button_Name}"><!-- END Button Button_DoSearch --></td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </form>
+      <!-- END Record P_PAYMENT_METHODSearch --><br>
+      <!-- BEGIN Grid P_PAYMENT_METHOD -->
+      <table cellspacing="0" cellpadding="0" width="100%" border="0">
+        <tr>
+          <td valign="top">
+            <table class="Header" cellspacing="0" cellpadding="0" width="100%" border="0">
+              <tr>
+                <td class="HeaderLeft"><img border="0" alt="" src="../Styles/trb/Images/Spacer.gif"></td> 
+                <td class="th"><strong>DAFTAR METODE PEMBAYARAN</strong></td> 
+                <td class="HeaderRight"><img border="0" alt="" src="../Styles/trb/Images/Spacer.gif"></td>
+              </tr>
+            </table>
+ 
+            <table class="Grid" cellspacing="0" cellpadding="0">
+              <tr class="Caption">
+                <th style="TEXT-ALIGN: center" scope="col">#</th>
+ 
+                <th scope="col">Nama Metode</th>
+ 
+                <th scope="col">Keterangan</th>
+              </tr>
+ 
+              <!-- BEGIN Row -->
+              <tr {P_PAYMENT_METHOD:rowStyle}>
+                <td style="TEXT-ALIGN: center">
+                  <!-- BEGIN Link DLink --><a href="{DLink_Src}" id="P_PAYMENT_METHODDLink_{P_APP_ROLE:rowNumber}"><img border="0" src="../images/radio.gif"></a><!-- END Link DLink -->
+                  <!-- BEGIN Link ADLink --><a href="{ADLink_Src}" id="P_PAYMENT_METHODADLink_{P_APP_ROLE:rowNumber}"><img border="0" src="../images/radio_s.gif" width="16" height="16"></a><!-- END Link ADLink --></td> 
+                <td>{CODE}&nbsp;<input id="P_PAYMENT_METHODP_PAYMENT_METHOD_ID_{P_PAYMENT_METHOD:rowNumber}" style="HEIGHT: 17px; WIDTH: 78px" size="1" type="hidden" value="{P_PAYMENT_METHOD_ID}" name="{P_PAYMENT_METHOD_ID_Name}"></td> 
+                <td>{DESCRIPTION}&nbsp;</td>
+              </tr>
+ <!-- END Row -->
+              <!-- BEGIN NoRecords -->
+              <tr class="NoRecords">
+                <td colspan="3">no record</td>
+              </tr>
+              <!-- END NoRecords -->
+              <tr class="Footer">
+                <td style="TEXT-ALIGN: center"><a href="{P_PAYMENT_METHOD_Insert_Src}" id="P_PAYMENT_METHODP_PAYMENT_METHOD_Insert"><img border="0" src="../Styles/trb/Images/en/ButtonTambah.gif"></a></td> 
+                <td colspan="3">&nbsp; 
+                  <!-- BEGIN Navigator Navigator -->
+                  <!-- BEGIN First_On --><a href="{First_URL}"><img border="0" alt="{First_URL}" src="../Styles/trb/Images/First.gif"></a> <!-- END First_On -->
+                  <!-- BEGIN First_Off --><img border="0" alt="{First_URL}" src="../Styles/trb/Images/FirstOff.gif"><!-- END First_Off -->
+                  <!-- BEGIN Prev_On --><a href="{Prev_URL}"><img border="0" alt="{Prev_URL}" src="../Styles/trb/Images/Prev.gif"></a> <!-- END Prev_On -->
+                  <!-- BEGIN Prev_Off --><img border="0" alt="{Prev_URL}" src="../Styles/trb/Images/PrevOff.gif"><!-- END Prev_Off -->&nbsp; 
+                  <!-- BEGIN Pages -->
+                  <!-- BEGIN Page_On --><a href="{Page_URL}">{Page_Number}</a>&nbsp;<!-- END Page_On -->
+                  <!-- BEGIN Page_Off -->{Page_Number}&nbsp;<!-- END Page_Off --><!-- END Pages -->
+                  <!-- BEGIN Next_On --><a href="{Next_URL}"><img border="0" alt="{Next_URL}" src="../Styles/trb/Images/Next.gif"></a> <!-- END Next_On -->
+                  <!-- BEGIN Next_Off --><img border="0" alt="{Next_URL}" src="../Styles/trb/Images/NextOff.gif"><!-- END Next_Off -->
+                  <!-- BEGIN Last_On --><a href="{Last_URL}"><img border="0" alt="{Last_URL}" src="../Styles/trb/Images/Last.gif"></a> <!-- END Last_On -->
+                  <!-- BEGIN Last_Off --><img border="0" alt="{Last_URL}" src="../Styles/trb/Images/LastOff.gif"><!-- END Last_Off --><!-- END Navigator Navigator -->&nbsp;</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      <!-- END Grid P_PAYMENT_METHOD --><br>
+      <!-- BEGIN Record p_payment_method1 -->
+      <form id="p_payment_method1" method="post" name="{HTMLFormName}" action="{Action}">
+        <table cellspacing="0" cellpadding="0" width="100%" border="0">
+          <tr>
+            <td valign="top">
+              <table class="Header" cellspacing="0" cellpadding="0" width="100%" border="0">
+                <tr>
+                  <td class="HeaderLeft"><img border="0" alt="" src="../Styles/trb/Images/Spacer.gif"></td> 
+                  <td class="th"><strong>DETAIL METODE PEMBAYARAN&nbsp;</strong></td> 
+                  <td class="HeaderRight"><img border="0" alt="" src="../Styles/trb/Images/Spacer.gif"></td>
+                </tr>
+              </table>
+ 
+              <table class="Record" cellspacing="0" cellpadding="0">
+                <!-- BEGIN Error -->
+                <tr class="Error">
+                  <td colspan="2">{Error}</td>
+                </tr>
+                <!-- END Error -->
+                <tr class="Controls">
+                  <td class="th"><label for="p_payment_method1CODE">Nama Metode</label></td> 
+                  <td><input id="p_payment_method1CODE" class="ControlsRQ" maxlength="32" size="32" value="{CODE}" name="{CODE_Name}"></td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th"><label for="p_payment_method1DESCRIPTION">Keterangan</label></td> 
+                  <td><textarea id="p_payment_method1DESCRIPTION" class="ControlsIN" rows="3" cols="50" name="{DESCRIPTION_Name}">{DESCRIPTION}</textarea></td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th"><label for="p_payment_method1UPDATE_DATE">Updated Date</label></td> 
+                  <td><input id="p_payment_method1UPDATE_DATE" class="ControlsRO" readonly maxlength="12" size="12" value="{UPDATE_DATE}" name="{UPDATE_DATE_Name}">
+                    <!-- BEGIN DatePicker DatePicker_UPDATE_DATE --><a href="javascript:showDatePicker('{Name}','{FormName}','{DateControl}');" id="p_payment_method1DatePicker_UPDATE_DATE"><img id="p_payment_method1DatePicker_UPDATE_DATE_Image" border="0" alt="Show Date Picker" src="../Styles/trb/Images/DatePicker.gif"></a><!-- END DatePicker DatePicker_UPDATE_DATE -->&nbsp;&nbsp; By &nbsp;<input id="p_payment_method1UPDATE_BY" class="ControlsRO" readonly maxlength="12" size="12" value="{UPDATE_BY}" name="{UPDATE_BY_Name}"></td>
+                </tr>
+ 
+                <tr class="Bottom">
+                  <td colspan="2" align="right"><label for="p_payment_method1P_PAYMENT_METHOD_ID" style="display: none;">&nbsp;</label><input type="hidden" name="{P_PAYMENT_METHOD_ID_Name}" value="{P_PAYMENT_METHOD_ID}" id="p_payment_method1P_PAYMENT_METHOD_ID">&nbsp; 
+                    <!-- BEGIN Button Button_Insert --><input id="p_payment_method1Button_Insert" alt="SIMPAN" src="../Styles/trb/Images/en/ButtonUpdate.gif" type="image" name="{Button_Name}"><!-- END Button Button_Insert -->
+                    <!-- BEGIN Button Button_Update --><input id="p_payment_method1Button_Update" alt="SIMPAN" src="../Styles/trb/Images/en/ButtonUpdate.gif" type="image" name="{Button_Name}"><!-- END Button Button_Update -->
+                    <!-- BEGIN Button Button_Delete --><input id="p_payment_method1Button_Delete" alt="HAPUS" src="../Styles/trb/Images/en/ButtonDelete.gif" type="image" name="{Button_Name}"><!-- END Button Button_Delete -->
+                    <!-- BEGIN Button Button_Cancel --><input id="p_payment_method1Button_Cancel" alt="BATAL" src="../Styles/trb/Images/en/ButtonCancel.gif" type="image" name="{Button_Name}"><!-- END Button Button_Cancel --></td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </form>
+      <!-- END Record p_payment_method1 --><br>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

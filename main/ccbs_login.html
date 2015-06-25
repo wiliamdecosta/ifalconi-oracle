@@ -1,0 +1,94 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<title>Login</title>
+<meta name="GENERATOR" content="CodeCharge Studio 4.3.00.7676">
+<link rel="stylesheet" type="text/css" href="../Styles/trb/Style_doctype.css">
+<script language="JavaScript" type="text/javascript">
+//Begin CCS script
+//Include Common JSFunctions @1-9722A627
+</script>
+<script language="JavaScript" src="../ClientI18N.php?file=Functions.js&amp;locale={res:CCS_LocaleID}" type="text/javascript" charset="utf-8"></script>
+<script language="JavaScript" type="text/javascript">
+//End Include Common JSFunctions
+
+//_OnLoad @1-9C4F01C0
+function _OnLoad()
+{
+    var result = true;
+//End _OnLoad
+
+//Set Focus @7-D20FE9BF
+    if (document.forms["Login"] && document.forms["Login"].login) document.forms["Login"].login.focus();
+//End Set Focus
+
+//Close _OnLoad @1-BC33A33A
+    return result;
+}
+//End Close _OnLoad
+
+//bind_events @1-B4BAE7CE
+function bind_events() {
+    addEventHandler("", "load", _OnLoad);
+}
+//End bind_events
+
+window.onload = bind_events; //Assign bind_events @1-19F7B649
+
+//End CCS script
+</script>
+</head>
+<body topmargin="0" marginheight="0" marginwidth="0" style="BACKGROUND-IMAGE: url(../Styles/trb/Images/PageBgd.gif)">
+  <div style="PADDING-TOP: 150px" align="center">
+<!-- BEGIN Record Login -->
+<form id="Login" method="post" name="{HTMLFormName}" action="{Action}">
+  <table border="0" cellspacing="0" cellpadding="0" align="center" style="border:0px solid #000000">
+    <tr>
+      <td valign="top">
+        <table class="Header" border="0" cellspacing="0" cellpadding="0">
+           <tr>
+             <td background="../images/bgheader.jpg" style="text-align:center" ><img border="0" src="../images/ccbslogo.gif"></td>
+             <td background="../images/bgheader.jpg" style="text-align:center;" width="100%">&nbsp;
+             <img style="display:none" border="0" src="../images/ccbs0.gif">
+             </td>
+           </tr>
+        </table>
+
+ 
+        <table class="Record" cellspacing="0" cellpadding="0" style="text-align:center; border:0px solid">
+          <!-- BEGIN Error -->
+          <tr class="Error">
+            <td colspan="2">{Error}</td>
+          </tr>
+          <!-- END Error -->
+          <tr class="Controls">
+            <td class="th" width="35%" style="text-align:right; border:0px solid">&nbsp;<strong>User Name</strong>&nbsp;</td> 
+            <td nowrap  style="border:0px solid">:&nbsp;<input id="Loginlogin" value="{login}" maxlength="100" name="{login_Name}" size="20">&nbsp;</td>
+          </tr>
+ 
+          <tr class="Controls">
+            <td class="th" style="text-align:right; border:0px solid">&nbsp;<strong>Password</strong>&nbsp;</td> 
+            <td nowrap style="border:0px solid">:&nbsp;<input id="Loginpassword" value="{password}" maxlength="100" type="password" name="{password_Name}" size="20">&nbsp;</td>
+          </tr>
+ 
+          <tr class="Bottom">
+            <td colspan="2" align="right">
+              <!-- BEGIN Button Button_DoLogin --><input style="BORDER-RIGHT-WIDTH: 0px; BORDER-TOP-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px" id="LoginButton_DoLogin" value="" alt="" src="../Styles/trb/Images/en/ButtonLogin.gif" type="image" name="{Button_Name}"><!-- END Button Button_DoLogin --></td>
+          </tr>
+        </table>
+        
+        <table class="Header" border="0" cellspacing="0" cellpadding="0">
+           <tr>
+             <td><img border="0" src="../images/bgfooter.gif"></td>
+             <td background="../images/bgfooter.gif" style="color:#ffffff; text-align:center" width="100%">Version : 1.01-2014,&nbsp; PT. Triklin Rekatama</td>
+           </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</form>
+<!-- END Record Login -->
+</div>
+</body>
+</html>

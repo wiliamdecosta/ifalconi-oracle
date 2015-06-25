@@ -1,0 +1,288 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<title>p_job</title>
+<meta name="GENERATOR" content="CodeCharge Studio 4.3.00.7676">
+<link rel="stylesheet" type="text/css" href="../Styles/trb/Style_doctype.css">
+<script language="JavaScript" src="../js/qs.js"></script>
+<script language="javascript" src="../js/lov.js"></script>
+<script language="JavaScript" type="text/javascript">
+function getFrom_LOV(formName,fieldList,LOV_NM)
+{
+        arrLOV = LOV_NM.split("?");
+        window.open("../lov/"+arrLOV[0]+"?FORM="+formName+"&OBJ="+fieldList+"&"+arrLOV[1],"LOV","width=600,height=500,toolbar=no,scrollbars=yes,resizable=yes");
+}
+</script>
+<script language="JavaScript" type="text/javascript">
+//Begin CCS script
+//Include Common JSFunctions @1-9722A627
+</script>
+<script language="JavaScript" src="../ClientI18N.php?file=Functions.js&amp;locale={res:CCS_LocaleID}" type="text/javascript" charset="utf-8"></script>
+<script language="JavaScript" type="text/javascript">
+//End Include Common JSFunctions
+
+//p_job1Button_Delete_OnClick @59-DF0628BA
+function p_job1Button_Delete_OnClick()
+{
+    var result = true;
+//End p_job1Button_Delete_OnClick
+
+//Confirmation Message @60-95E112AE
+    return confirm('Anda Yakin Ingin Menghapus Data_ Ini?');
+//End Confirmation Message
+
+//Close p_job1Button_Delete_OnClick @59-BC33A33A
+    return result;
+}
+//End Close p_job1Button_Delete_OnClick
+
+//p_job1Button_Cancel_OnClick @61-8F79156F
+function p_job1Button_Cancel_OnClick()
+{
+    disableValidation = true;
+}
+//End p_job1Button_Cancel_OnClick
+
+//bind_events @1-2C1AE718
+function bind_events() {
+    addEventHandler("p_job1Button_Delete", "click", p_job1Button_Delete_OnClick);
+    addEventHandler("p_job1Button_Cancel", "click", p_job1Button_Cancel_OnClick);
+}
+//End bind_events
+
+window.onload = bind_events; //Assign bind_events @1-19F7B649
+
+//End CCS script
+</script>
+</head>
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<div id="tabtop" style="POSITION: absolute; WIDTH: 100%">
+  <table cellspacing="0" cellpadding="0" width="100%" border="0">
+    <tr>
+      <td><img border="0" src="../images/tab_s_off.gif"></td> 
+      <td class="th" background="../images/tab_off.gif" nowrap align="center"><label onclick="javascript:toJobType()">JOB TYPE</label></td> 
+      <td><img border="0" src="../images/tab_e_off.gif"></td> 
+      <td><img border="0" src="../images/tab_s_on.gif"></td> 
+      <td class="th" background="../images/tab_on.gif" nowrap align="center">JOB</td> 
+      <td><img border="0" src="../images/tab_e_on.gif"></td> 
+      <td background="../images/tab_back.gif" width="100%"></td>
+    </tr>
+  </table>
+</div>
+<br>
+<br>
+<br>
+<table cellspacing="0" cellpadding="0" align="center" border="0">
+  <tr>
+    <td><b>Job Type&nbsp;:&nbsp;&nbsp;{JOBTYPE_CODE}</b></td>
+  </tr>
+ 
+  <tr>
+    <td>
+      <!-- BEGIN Record P_JOBSearch -->
+      <form id="P_JOBSearch" method="post" name="{HTMLFormName}" action="{Action}">
+        <table cellspacing="0" cellpadding="0" border="0">
+          <tr>
+            <td valign="top">
+              <table class="Record" cellspacing="0" cellpadding="0">
+                <!-- BEGIN Error -->
+                <tr class="Error">
+                  <td>{Error}</td>
+                </tr>
+                <!-- END Error -->
+                <tr class="Controls">
+                  <td><input id="P_JOBSearchs_keyword" class="ControlsIN" maxlength="64" size="32" value="{s_keyword}" name="{s_keyword_Name}">
+                    <!-- BEGIN Button Button_DoSearch --><input id="P_JOBSearchButton_DoSearch" class="Button" alt="" type="submit" value="Cari" name="{Button_Name}"><!-- END Button Button_DoSearch --></td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </form>
+      <!-- END Record P_JOBSearch --><br>
+      <!-- BEGIN Grid P_JOB -->
+      <table cellspacing="0" cellpadding="0" width="100%" border="0">
+        <tr>
+          <td valign="top">
+            <table class="Header" cellspacing="0" cellpadding="0" width="100%" border="0">
+              <tr>
+                <td class="HeaderLeft"><img border="0" alt="" src="../Styles/trb/Images/Spacer.gif"></td> 
+                <td class="th"><strong>DAFTAR JOB</strong></td> 
+                <td class="HeaderRight"><img border="0" alt="" src="../Styles/trb/Images/Spacer.gif"></td>
+              </tr>
+            </table>
+ 
+            <table class="Grid" cellspacing="0" cellpadding="0">
+              <tr class="Caption">
+                <th style="TEXT-ALIGN: center" scope="col">#</th>
+ 
+                <th scope="col">KODE</th>
+ 
+                <th scope="col">NAMA PROCEDURE</th>
+ 
+                <th scope="col">LISTNO</th>
+ 
+                <th scope="col">PARALEL?</th>
+ 
+                <th scope="col">TINGKAT PARALEL</th>
+ 
+                <th scope="col">SELESAI?</th>
+              </tr>
+ 
+              <!-- BEGIN Row -->
+              <tr class="Row">
+                <td style="TEXT-ALIGN: center">
+                  <!-- BEGIN Link DLink --><a href="{DLink_Src}" id="P_JOBDLink_{P_APP_ROLE:rowNumber}"><img border="0" src="../images/radio.gif"></a><!-- END Link DLink -->
+                  <!-- BEGIN Link ADLink --><a href="{ADLink_Src}" id="P_JOBADLink_{P_APP_ROLE:rowNumber}"><img border="0" src="../images/radio_s.gif" width="16" height="16"></a><!-- END Link ADLink --></td> 
+                <td>{CODE}&nbsp;<input id="P_JOBP_JOB_ID_{P_JOB:rowNumber}" style="HEIGHT: 17px; WIDTH: 44px" size="5" type="hidden" value="{P_JOB_ID}" name="{P_JOB_ID_Name}"></td> 
+                <td>{PROCEDURE_NAME}&nbsp;</td> 
+                <td style="TEXT-ALIGN: left">{LISTING_NO}&nbsp;</td> 
+                <td>{IS_PARALLEL}&nbsp;</td> 
+                <td style="TEXT-ALIGN: left">{PARALLEL_DEGREE}&nbsp;</td> 
+                <td>{IS_FINISH}&nbsp;</td>
+              </tr>
+ <!-- END Row -->
+              <!-- BEGIN NoRecords -->
+              <tr class="NoRecords">
+                <td colspan="7">Data Tidak Ditemukan</td>
+              </tr>
+              <!-- END NoRecords -->
+              <tr class="Footer">
+                <td style="TEXT-ALIGN: center"><a href="{P_JOB_Insert_Src}" id="P_JOBP_JOB_Insert"><img border="0" src="../Styles/trb/Images/en/ButtonTambah.gif"></a></td> 
+                <td colspan="7">
+                  <!-- BEGIN Navigator Navigator -->
+                  <!-- BEGIN First_On --><a href="{First_URL}"><img border="0" alt="{First_URL}" src="../Styles/trb/Images/First.gif"></a> <!-- END First_On -->
+                  <!-- BEGIN Prev_On --><a href="{Prev_URL}"><img border="0" alt="{Prev_URL}" src="../Styles/trb/Images/Prev.gif"></a> <!-- END Prev_On -->&nbsp; 
+                  <!-- BEGIN Pages -->
+                  <!-- BEGIN Page_On --><a href="{Page_URL}">{Page_Number}</a>&nbsp;<!-- END Page_On -->
+                  <!-- BEGIN Page_Off -->{Page_Number}&nbsp;<!-- END Page_Off --><!-- END Pages -->&nbsp;{Total_Pages}&nbsp; 
+                  <!-- BEGIN Next_On --><a href="{Next_URL}"><img border="0" alt="{Next_URL}" src="../Styles/trb/Images/Next.gif"></a> <!-- END Next_On -->
+                  <!-- BEGIN Last_On --><a href="{Last_URL}"><img border="0" alt="{Last_URL}" src="../Styles/trb/Images/Last.gif"></a> <!-- END Last_On --><!-- END Navigator Navigator -->&nbsp;</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      <!-- END Grid P_JOB --><br>
+      <!-- BEGIN Record p_job1 -->
+      <form id="p_job1" method="post" name="{HTMLFormName}" action="{Action}">
+        <table cellspacing="0" cellpadding="0" width="100%" border="0">
+          <tr>
+            <td valign="top">
+              <table class="Header" cellspacing="0" cellpadding="0" width="100%" border="0">
+                <tr>
+                  <td class="HeaderLeft"><img border="0" alt="" src="../Styles/trb/Images/Spacer.gif"></td> 
+                  <td class="th"><strong>JOB</strong></td> 
+                  <td class="HeaderRight"><img border="0" alt="" src="../Styles/trb/Images/Spacer.gif"></td>
+                </tr>
+              </table>
+ 
+              <table class="Record" cellspacing="0" cellpadding="0">
+                <!-- BEGIN Error -->
+                <tr class="Error">
+                  <td colspan="2">{Error}</td>
+                </tr>
+                <!-- END Error -->
+                <tr class="Controls">
+                  <td class="th"><label for="p_job1P_JOB_TYPE_ID">Jenis JOB</label></td> 
+                  <td><input id="p_job1P_JOB_TYPE_NAME" class="ControlsRO" readonly maxlength="12" size="24" value="{P_JOB_TYPE_NAME}" name="{P_JOB_TYPE_NAME_Name}">&nbsp;<input id="p_job1P_JOB_TYPE_ID" style="HEIGHT: 17px; WIDTH: 128px" size="6" value="{P_JOB_TYPE_ID}" name="{P_JOB_TYPE_ID_Name}"></td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th"><label for="p_job1CODE">Kode</label></td> 
+                  <td><input id="p_job1CODE" class="ControlsRQ" maxlength="64" size="64" value="{CODE}" name="{CODE_Name}"><input id="p_job1P_JOB_ID" style="HEIGHT: 16px; WIDTH: 96px" size="8" type="hidden" value="{P_JOB_ID}" name="{P_JOB_ID_Name}"></td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th"><label for="p_job1PROCEDURE_NAME">Nama Procedure</label></td> 
+                  <td><input id="p_job1PROCEDURE_NAME" class="ControlsRQ" maxlength="64" size="50" value="{PROCEDURE_NAME}" name="{PROCEDURE_NAME_Name}"></td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th"><label for="p_job1LISTING_NO">List No</label></td> 
+                  <td><input id="p_job1LISTING_NO" class="ControlsRQ" maxlength="12" size="12" value="{LISTING_NO}" name="{LISTING_NO_Name}"></td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th"><label for="p_job1IS_PARALLEL">Paralel</label></td> 
+                  <td><input id="p_job1IS_PARALLEL" class="ControlsRQ" maxlength="1" size="1" value="{IS_PARALLEL}" name="{IS_PARALLEL_Name}"></td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th"><label for="p_job1PARALLEL_DEGREE">Tingkat Paralel</label></td> 
+                  <td><input id="p_job1PARALLEL_DEGREE" class="ControlsRQ" maxlength="12" size="12" value="{PARALLEL_DEGREE}" name="{PARALLEL_DEGREE_Name}"></td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th"><label for="p_job1IS_FINISH">Selesai</label></td> 
+                  <td><input id="p_job1IS_FINISH" class="ControlsRQ" maxlength="1" size="1" value="{IS_FINISH}" name="{IS_FINISH_Name}"></td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th"><label for="p_job1IS_CANCELLED_PROCESS">Dibatalkan</label></td> 
+                  <td><input id="p_job1IS_CANCELLED_PROCESS" class="ControlsRQ" maxlength="1" size="1" value="{IS_CANCELLED_PROCESS}" name="{IS_CANCELLED_PROCESS_Name}"></td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th"><label for="p_job1IS_REPROCESS">Proses Ulang</label></td> 
+                  <td><input id="p_job1IS_REPROCESS" class="ControlsRQ" maxlength="1" size="1" value="{IS_REPROCESS}" name="{IS_REPROCESS_Name}"></td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th"><label for="p_job1PARENT_ID">Induk</label></td> 
+                  <td><input id="p_job1PARENT_ID" class="ControlsRQ" readonly maxlength="12" size="12" value="{PARENT_ID}" name="{PARENT_ID_Name}"></td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th"><label for="p_job1CANCEL_PARENT_ID">Batalkan Parent</label></td> 
+                  <td><input id="p_job1CANCEL_PARENT_ID" class="ControlsRQ" maxlength="12" size="12" value="{CANCEL_PARENT_ID}" name="{CANCEL_PARENT_ID_Name}"></td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th"><label for="p_job1CONTROL_TABLE_NAME">Nama table Control</label></td> 
+                  <td><input id="p_job1CONTROL_TABLE_NAME" class="ControlsRQ" maxlength="38" size="38" value="{CONTROL_TABLE_NAME}" name="{CONTROL_TABLE_NAME_Name}"></td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th"><label for="p_job1DESCRIPTION">Keterangan</label></td> 
+                  <td><textarea id="p_job1DESCRIPTION" class="ControlsIN" rows="3" cols="50" name="{DESCRIPTION_Name}">{DESCRIPTION}</textarea></td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th"><label for="p_job1UPDATE_BY">Pengubah</label></td> 
+                  <td><input id="p_job1UPDATE_BY" class="ControlsRO" readonly maxlength="16" size="16" value="{UPDATE_BY}" name="{UPDATE_BY_Name}">&nbsp; Tgl&nbsp; <input id="p_job1UPDATE_DATE" class="ControlsRO" readonly maxlength="100" size="16" value="{UPDATE_DATE}" name="{UPDATE_DATE_Name}"></td>
+                </tr>
+ 
+                <tr class="Bottom">
+                  <td colspan="2" align="right">&nbsp; 
+                    <!-- BEGIN Button Button_Insert --><input id="p_job1Button_Insert" style="BORDER-LEFT-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-TOP-WIDTH: 0px" alt="" src="../Styles/trb/Images/en/ButtonInsert.gif" type="image" value="" name="{Button_Name}"><!-- END Button Button_Insert -->
+                    <!-- BEGIN Button Button_Update --><input id="p_job1Button_Update" style="BORDER-LEFT-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-TOP-WIDTH: 0px" alt="" src="../Styles/trb/Images/en/ButtonUpdate.gif" type="image" value="" name="{Button_Name}"><!-- END Button Button_Update -->
+                    <!-- BEGIN Button Button_Delete --><input id="p_job1Button_Delete" style="BORDER-LEFT-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-TOP-WIDTH: 0px" alt="" src="../Styles/trb/Images/en/ButtonDelete.gif" type="image" value="" name="{Button_Name}"><!-- END Button Button_Delete -->
+                    <!-- BEGIN Button Button_Cancel --><input id="p_job1Button_Cancel" style="BORDER-LEFT-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-TOP-WIDTH: 0px" alt="" src="../Styles/trb/Images/en/ButtonCancel.gif" type="image" value="" name="{Button_Name}"><!-- END Button Button_Cancel --></td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </form>
+      <!-- END Record p_job1 --><br>
+      <br>
+    </td>
+  </tr>
+</table>
+<script language="javascript">
+
+function toJobType()
+{
+        var cid=QueryString("P_JOB_TYPE_ID");
+    var skw=QueryString("P_JOB_TYPESearchs_keyword");
+    if (cid!= "" && cid != 0 && cid != false && cid != undefined &&  cid != null)
+    {
+     parent.location.href="p_job_type.php?P_JOB_TYPE_ID="+cid;
+    }
+}
+
+</script>
+</body>
+</html>

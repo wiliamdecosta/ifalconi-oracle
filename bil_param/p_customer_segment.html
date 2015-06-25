@@ -1,0 +1,284 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<title>p_customer_segment</title>
+<meta name="GENERATOR" content="CodeCharge Studio 4.3.00.7676">
+<link rel="stylesheet" type="text/css" href="../Styles/trb/Style_doctype.css">
+<script language="JavaScript" type="text/javascript">
+//Begin CCS script
+
+//Include Common JSFunctions @1-9722A627
+</script>
+<script language="JavaScript" src="../ClientI18N.php?file=Functions.js&amp;locale={res:CCS_LocaleID}" type="text/javascript" charset="utf-8"></script>
+<script language="JavaScript" type="text/javascript">
+//End Include Common JSFunctions
+
+//DEL  
+//DEL  var p_customer_segment1_DatePicker_UPDATE_DATE = new Object(); 
+//DEL  p_customer_segment1_DatePicker_UPDATE_DATE.format           = "ShortDate";
+//DEL  p_customer_segment1_DatePicker_UPDATE_DATE.style            = "Styles/trb/Style.css";
+//DEL  p_customer_segment1_DatePicker_UPDATE_DATE.relativePathPart = "../";
+//DEL  p_customer_segment1_DatePicker_UPDATE_DATE.themeVersion = "3.0";
+//DEL  
+
+
+//p_customer_segment1Button_Insert1_OnClick @48-1B3EDB73
+function p_customer_segment1Button_Insert1_OnClick()
+{
+    var result = true;
+//End p_customer_segment1Button_Insert1_OnClick
+
+//Custom Code @49-2A29BDB7
+    // -------------------------
+    // Write your own code here.
+    // -------------------------
+//End Custom Code
+
+//Confirmation Message @50-BE9BB1EE
+    return confirm('Anda Yakin Menyimpan Record Ini?');
+//End Confirmation Message
+
+//Close p_customer_segment1Button_Insert1_OnClick @48-BC33A33A
+    return result;
+}
+//End Close p_customer_segment1Button_Insert1_OnClick
+
+//p_customer_segment1Button_Update1_OnClick @51-7E193005
+function p_customer_segment1Button_Update1_OnClick()
+{
+    var result = true;
+//End p_customer_segment1Button_Update1_OnClick
+
+//Custom Code @52-2A29BDB7
+    // -------------------------
+    // Write your own code here.
+    // -------------------------
+//End Custom Code
+
+//Confirmation Message @53-88039EA5
+    return confirm('Anda Yakin Mengubah Record Ini?');
+//End Confirmation Message
+
+//Close p_customer_segment1Button_Update1_OnClick @51-BC33A33A
+    return result;
+}
+//End Close p_customer_segment1Button_Update1_OnClick
+
+//p_customer_segment1Button_Delete1_OnClick @54-8A951885
+function p_customer_segment1Button_Delete1_OnClick()
+{
+    var result = true;
+//End p_customer_segment1Button_Delete1_OnClick
+
+//Confirmation Message @55-5CB8F4D9
+    return confirm('Anda Yakin Menghapus Record Ini?');
+//End Confirmation Message
+
+//Custom Code @56-2A29BDB7
+    // -------------------------
+    // Write your own code here.
+    // -------------------------
+//End Custom Code
+
+//Close p_customer_segment1Button_Delete1_OnClick @54-BC33A33A
+    return result;
+}
+//End Close p_customer_segment1Button_Delete1_OnClick
+
+//p_customer_segment1Button_Cancel1_OnClick @57-069A2A30
+function p_customer_segment1Button_Cancel1_OnClick()
+{
+    var result = true;
+//End p_customer_segment1Button_Cancel1_OnClick
+
+//Custom Code @58-2A29BDB7
+    // -------------------------
+    // Write your own code here.
+    // -------------------------
+//End Custom Code
+
+//Close p_customer_segment1Button_Cancel1_OnClick @57-AEF500E0
+    disableValidation = true;
+    return result;
+}
+//End Close p_customer_segment1Button_Cancel1_OnClick
+
+//bind_events @1-B7588AAE
+function bind_events() {
+    addEventHandler("p_customer_segment1Button_Insert1", "click", p_customer_segment1Button_Insert1_OnClick);
+    addEventHandler("p_customer_segment1Button_Update1", "click", p_customer_segment1Button_Update1_OnClick);
+    addEventHandler("p_customer_segment1Button_Delete1", "click", p_customer_segment1Button_Delete1_OnClick);
+    addEventHandler("p_customer_segment1Button_Cancel1", "click", p_customer_segment1Button_Cancel1_OnClick);
+}
+//End bind_events
+
+window.onload = bind_events; //Assign bind_events @1-19F7B649
+
+
+//End CCS script
+</script>
+</head>
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<div id="tabtop" style="POSITION: absolute; WIDTH: 100%">
+  <table style="BACKGROUND-COLOR: #89a5f7" cellspacing="0" cellpadding="0" width="100%" border="0">
+    <tr>
+      <td><img border="0" src="../images/tab_s_on.gif"></td> 
+      <td class="th" background="../images/tab_on.gif" nowrap align="center">SEGMEN PELANGGAN </td> 
+      <td><img border="0" src="../images/tab_e_on.gif"></td> 
+      <td background="../images/tab_back.gif" width="100%"></td>
+    </tr>
+  </table>
+</div>
+<br>
+<br>
+<table cellspacing="0" cellpadding="0" align="center" border="0">
+  <tr>
+    <td>
+      <!-- BEGIN Record P_CUSTOMER_SEGMENTSearch -->
+      <form id="P_CUSTOMER_SEGMENTSearch" method="post" name="{HTMLFormName}" action="{Action}">
+        <table cellspacing="0" cellpadding="0" border="0">
+          <tr>
+            <td valign="top">
+              <table class="Record" cellspacing="0" cellpadding="0">
+                <!-- BEGIN Error -->
+                <tr class="Error">
+                  <td>{Error}</td> 
+                  <td>&nbsp;</td>
+                </tr>
+                <!-- END Error -->
+                <tr class="Controls">
+                  <td><input id="P_CUSTOMER_SEGMENTSearchs_keyword" class="ControlsIN" maxlength="64" size="50" value="{s_keyword}" name="{s_keyword_Name}"></td> 
+                  <td>
+                    <!-- BEGIN Button Button_DoSearch --><input id="P_CUSTOMER_SEGMENTSearchButton_DoSearch" alt="Search" src="../Styles/trb/Images/en/ButtonSearch.gif" type="image" name="{Button_Name}"><!-- END Button Button_DoSearch --></td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </form>
+      <!-- END Record P_CUSTOMER_SEGMENTSearch --><br>
+      <!-- BEGIN Grid P_CUSTOMER_SEGMENT -->
+      <table cellspacing="0" cellpadding="0" width="100%" border="0">
+        <tr>
+          <td valign="top">
+            <table class="Header" cellspacing="0" cellpadding="0" border="0">
+              <tr>
+                <td class="HeaderLeft"><img border="0" alt="" src="../Styles/trb/Images/Spacer.gif"></td> 
+                <td class="th"><strong>DAFTAR SEGMEN PELANGGAN&nbsp;</strong></td> 
+                <td class="HeaderRight"><img border="0" alt="" src="../Styles/trb/Images/Spacer.gif"></td>
+              </tr>
+            </table>
+ 
+            <table class="Grid" cellspacing="0" cellpadding="0">
+              <tr class="Caption">
+                <th style="TEXT-ALIGN: center" scope="col">#</th>
+ 
+                <th scope="col">KODE</th>
+ 
+                <th scope="col">KODE STANDARD</th>
+ 
+                <th scope="col">KETERANGAN</th>
+ 
+                <th scope="col">TGL UBAH</th>
+ 
+                <th scope="col">PENGUBAH</th>
+              </tr>
+ 
+              <!-- BEGIN Row -->
+              <tr class="Row">
+                <td style="TEXT-ALIGN: center">
+                  <!-- BEGIN Link DLink --><a href="{DLink_Src}" id="P_CUSTOMER_SEGMENTDLink_{P_APP_ROLE:rowNumber}"><img border="0" src="../images/radio.gif"></a><!-- END Link DLink -->
+                  <!-- BEGIN Link ADLink --><a href="{ADLink_Src}" id="P_CUSTOMER_SEGMENTADLink_{P_APP_ROLE:rowNumber}"><img border="0" src="../images/radio_s.gif" width="16" height="16"></a><!-- END Link ADLink --></td> 
+                <td>{CODE}&nbsp;&nbsp;<input id="P_CUSTOMER_SEGMENTP_CUSTOMER_SEGMENT_ID_{P_CUSTOMER_SEGMENT:rowNumber}" style="HEIGHT: 18px; WIDTH: 67px" size="9" type="hidden" value="{P_CUSTOMER_SEGMENT_ID}" name="{P_CUSTOMER_SEGMENT_ID_Name}"></td> 
+                <td>{STANDARD_CODE}&nbsp;</td> 
+                <td>{DESCRIPTION}&nbsp;</td> 
+                <td>{UPDATE_DATE}&nbsp;</td> 
+                <td>{UPDATE_BY}&nbsp;</td>
+              </tr>
+ <!-- END Row -->
+              <!-- BEGIN NoRecords -->
+              <tr class="NoRecords">
+                <td colspan="6">Data Tidak Ditemukan</td>
+              </tr>
+              <!-- END NoRecords -->
+              <tr class="Footer">
+                <td style="TEXT-ALIGN: center"><a href="{P_CUSTOMER_SEGMENT_Insert_Src}" id="P_CUSTOMER_SEGMENTP_CUSTOMER_SEGMENT_Insert"><img border="0" src="../Styles/trb/Images/en/ButtonTambah.gif"></a></td> 
+                <td colspan="6">
+                  <!-- BEGIN Navigator Navigator -->
+                  <!-- BEGIN First_On --><a href="{First_URL}"><img border="0" alt="{First_URL}" src="../Styles/trb/Images/First.gif"></a> <!-- END First_On -->
+                  <!-- BEGIN Prev_On --><a href="{Prev_URL}"><img border="0" alt="{Prev_URL}" src="../Styles/trb/Images/Prev.gif"></a> <!-- END Prev_On -->&nbsp; 
+                  <!-- BEGIN Pages -->
+                  <!-- BEGIN Page_On --><a href="{Page_URL}">{Page_Number}</a>&nbsp;<!-- END Page_On -->
+                  <!-- BEGIN Page_Off -->{Page_Number}&nbsp;<!-- END Page_Off --><!-- END Pages -->&nbsp;{Total_Pages}&nbsp; 
+                  <!-- BEGIN Next_On --><a href="{Next_URL}"><img border="0" alt="{Next_URL}" src="../Styles/trb/Images/Next.gif"></a> <!-- END Next_On -->
+                  <!-- BEGIN Last_On --><a href="{Last_URL}"><img border="0" alt="{Last_URL}" src="../Styles/trb/Images/Last.gif"></a> <!-- END Last_On --><!-- END Navigator Navigator -->&nbsp;</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      <!-- END Grid P_CUSTOMER_SEGMENT --><br>
+      <!-- BEGIN Record p_customer_segment1 -->
+      <form id="p_customer_segment1" method="post" name="{HTMLFormName}" action="{Action}">
+        <table cellspacing="0" cellpadding="0" width="100%" border="0">
+          <tr>
+            <td valign="top">
+              <table class="Header" cellspacing="0" cellpadding="0" border="0">
+                <tr>
+                  <td class="HeaderLeft"><img border="0" alt="" src="../Styles/trb/Images/Spacer.gif"></td> 
+                  <td class="th"><strong>SEGMEN PELANGGAN</strong></td> 
+                  <td class="HeaderRight"><img border="0" alt="" src="../Styles/trb/Images/Spacer.gif"></td>
+                </tr>
+              </table>
+ 
+              <table class="Record" cellspacing="0" cellpadding="0">
+                <!-- BEGIN Error -->
+                <tr class="Error">
+                  <td colspan="2">{Error}</td>
+                </tr>
+                <!-- END Error -->
+                <tr class="Controls">
+                  <td class="th"><label for="p_customer_segment1CODE">KODE</label></td> 
+                  <td><input id="p_customer_segment1CODE" class="ControlsRQ" maxlength="64" size="17" value="{CODE}" name="{CODE_Name}">&nbsp;<input id="p_customer_segment1P_CUSTOMER_SEGMENT_ID" type="hidden" value="{P_CUSTOMER_SEGMENT_ID}" name="{P_CUSTOMER_SEGMENT_ID_Name}"></td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th"><label for="p_customer_segment1STANDARD_CODE">KODE STANDARD</label></td> 
+                  <td><input id="p_customer_segment1STANDARD_CODE" class="ControlsRQ" style="HEIGHT: 17px; WIDTH: 106px" maxlength="16" size="16" value="{STANDARD_CODE}" name="{STANDARD_CODE_Name}"></td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th"><label for="p_customer_segment1DESCRIPTION">KETERANGAN</label></td> 
+                  <td><textarea id="p_customer_segment1DESCRIPTION" class="ControlsIN" style="HEIGHT: 54px; WIDTH: 295px" rows="3" cols="34" name="{DESCRIPTION_Name}">{DESCRIPTION}</textarea></td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th"><label for="p_customer_segment1UPDATE_DATE">TGL UBAH</label></td> 
+                  <td><input id="p_customer_segment1UPDATE_DATE" class="ControlsRO" maxlength="100" size="16" value="{UPDATE_DATE}" name="{UPDATE_DATE_Name}"></td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th"><label for="p_customer_segment1UPDATE_BY">PENGUBAH</label></td> 
+                  <td><input id="p_customer_segment1UPDATE_BY" class="ControlsRO" maxlength="12" size="16" value="{UPDATE_BY}" name="{UPDATE_BY_Name}"></td>
+                </tr>
+ 
+                <tr class="Bottom">
+                  <td colspan="2" align="right">&nbsp;&nbsp; 
+                    <!-- BEGIN Button Button_Insert1 --><input id="p_customer_segment1Button_Insert1" alt="SIMPAN" src="../Styles/trb/Images/en/ButtonUpdate.gif" type="image" name="{Button_Name}"><!-- END Button Button_Insert1 -->
+                    <!-- BEGIN Button Button_Update1 --><input id="p_customer_segment1Button_Update1" alt="SIMPAN" src="../Styles/trb/Images/en/ButtonUpdate.gif" type="image" name="{Button_Name}"><!-- END Button Button_Update1 -->
+                    <!-- BEGIN Button Button_Delete1 --><input id="p_customer_segment1Button_Delete1" alt="HAPUS" src="../Styles/trb/Images/en/ButtonDelete.gif" type="image" name="{Button_Name}"><!-- END Button Button_Delete1 -->
+                    <!-- BEGIN Button Button_Cancel1 --><input id="p_customer_segment1Button_Cancel1" alt="BATAL" src="../Styles/trb/Images/en/ButtonCancel.gif" type="image" name="{Button_Name}"><!-- END Button Button_Cancel1 --></td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </form>
+      <!-- END Record p_customer_segment1 --><br>
+      <br>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

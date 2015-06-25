@@ -1,0 +1,256 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<title>p_country</title>
+<meta name="GENERATOR" content="CodeCharge Studio 4.3.00.7676">
+<link rel="stylesheet" type="text/css" href="../Styles/trb/Style_doctype.css">
+<script language="JavaScript" src="../js/qs.js"></script>
+<script language="javascript" src="../js/lov.js"></script>
+<script language="JavaScript" type="text/javascript">
+function getFrom_LOV(formName,fieldList,LOV_NM)
+{
+        arrLOV = LOV_NM.split("?");
+        window.open("../lov/"+arrLOV[0]+"?FORM="+formName+"&OBJ="+fieldList+"&"+arrLOV[1],"LOV","width=600,height=500,toolbar=no,scrollbars=yes,resizable=yes");
+}
+</script>
+<script language="JavaScript" type="text/javascript">
+//Begin CCS script
+//Include Common JSFunctions @1-9722A627
+</script>
+<script language="JavaScript" src="../ClientI18N.php?file=Functions.js&amp;locale={res:CCS_LocaleID}" type="text/javascript" charset="utf-8"></script>
+<script language="JavaScript" type="text/javascript">
+//End Include Common JSFunctions
+
+//DEL  
+//DEL  var p_country1_DatePicker_CREATION_DATE = new Object(); 
+//DEL  p_country1_DatePicker_CREATION_DATE.format           = "ShortDate";
+//DEL  p_country1_DatePicker_CREATION_DATE.style            = "Styles/trb/Style.css";
+//DEL  p_country1_DatePicker_CREATION_DATE.relativePathPart = "../";
+//DEL  p_country1_DatePicker_CREATION_DATE.themeVersion = "3.0";
+//DEL  
+//DEL  var p_country1_DatePicker_UPDATED_DATE = new Object(); 
+//DEL  p_country1_DatePicker_UPDATED_DATE.format           = "ShortDate";
+//DEL  p_country1_DatePicker_UPDATED_DATE.style            = "Styles/trb/Style.css";
+//DEL  p_country1_DatePicker_UPDATED_DATE.relativePathPart = "../";
+//DEL  p_country1_DatePicker_UPDATED_DATE.themeVersion = "3.0";
+//DEL
+
+//p_country1Button_Delete_OnClick @50-2142CDF4
+function p_country1Button_Delete_OnClick()
+{
+    var result = true;
+//End p_country1Button_Delete_OnClick
+
+//Confirmation Message @51-95E112AE
+    return confirm('Anda Yakin Ingin Menghapus Data_ Ini?');
+//End Confirmation Message
+
+//Close p_country1Button_Delete_OnClick @50-BC33A33A
+    return result;
+}
+//End Close p_country1Button_Delete_OnClick
+
+//p_country1Button_Cancel_OnClick @46-CDC5CFFC
+function p_country1Button_Cancel_OnClick()
+{
+    disableValidation = true;
+}
+//End p_country1Button_Cancel_OnClick
+
+//bind_events @1-77EC2DD2
+function bind_events() {
+    addEventHandler("p_country1Button_Delete", "click", p_country1Button_Delete_OnClick);
+    addEventHandler("p_country1Button_Cancel", "click", p_country1Button_Cancel_OnClick);
+}
+//End bind_events
+
+window.onload = bind_events; //Assign bind_events @1-19F7B649
+
+//End CCS script
+</script>
+</head>
+<body leftmargin="0" topmargin="0" marginheight="0" marginwidth="0">
+<div id="tabtop" style="WIDTH: 100%; POSITION: absolute">
+  <table cellspacing="0" cellpadding="0" width="100%" border="0">
+    <tr>
+      <td><img src="../images/tab_s_on.gif" border="0"></td> 
+      <td class="th" nowrap align="center" background="../images/tab_on.gif">NEGARA</td> 
+      <td><img src="../images/tab_e_on.gif" border="0"></td> 
+      <td width="100%" background="../images/tab_back.gif"></td>
+    </tr>
+  </table>
+</div>
+<br>
+<br>
+<br>
+<table cellspacing="0" cellpadding="0" align="center" border="0">
+  <tr>
+    <td>
+      <!-- BEGIN Record P_COUNTRYSearch -->
+      <form id="P_COUNTRYSearch" name="{HTMLFormName}" action="{Action}" method="post">
+        <table cellspacing="0" cellpadding="0" border="0">
+          <tr>
+            <td valign="top">
+              <table class="Record" cellspacing="0" cellpadding="0">
+                <!-- BEGIN Error -->
+                <tr class="Error">
+                  <td>{Error}</td>
+                </tr>
+                <!-- END Error -->
+                <tr class="Controls">
+                  <td><input class="ControlsIN" id="P_COUNTRYSearchs_keyword" maxlength="64" size="27" value="{s_keyword}" name="{s_keyword_Name}">
+                    <!-- BEGIN Button Button_DoSearch --><input class="Button" id="P_COUNTRYSearchButton_DoSearch" type="submit" alt="" value="Cari" name="{Button_Name}"><!-- END Button Button_DoSearch --></td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </form>
+      <!-- END Record P_COUNTRYSearch --><br>
+      <!-- BEGIN Grid P_COUNTRY -->
+      <table cellspacing="0" cellpadding="0" width="100%" border="0">
+        <tr>
+          <td valign="top">
+            <table class="Header" cellspacing="0" cellpadding="0" border="0">
+              <tr>
+                <td class="HeaderLeft"><img alt="" src="../Styles/trb/Images/Spacer.gif" border="0"></td> 
+                <td class="th"><strong>DAFTAR NEGARA</strong></td> 
+                <td class="HeaderRight"><img alt="" src="../Styles/trb/Images/Spacer.gif" border="0"></td>
+              </tr>
+            </table>
+ 
+            <table class="Grid" cellspacing="0" cellpadding="0">
+              <tr class="Caption">
+                <th style="TEXT-ALIGN: center" scope="col">#</th>
+ 
+                <th scope="col">KODE</th>
+ 
+                <th scope="col">CAKUPAN AREA</th>
+ 
+                <th scope="col">MATA UANG</th>
+ 
+                <th scope="col">REF WAKTU</th>
+ 
+                <th scope="col">KETERANGAN</th>
+              </tr>
+ 
+              <!-- BEGIN Row -->
+              <tr class="Row">
+                <td style="TEXT-ALIGN: center">
+                  <!-- BEGIN Link DLink --><a href="{DLink_Src}" id="P_COUNTRYDLink_{P_APP_ROLE:rowNumber}"><img src="../images/radio.gif" border="0"></a><!-- END Link DLink -->
+                  <!-- BEGIN Link ADLink --><a href="{ADLink_Src}" id="P_COUNTRYADLink_{P_APP_ROLE:rowNumber}"><img height="16" src="../images/radio_s.gif" width="16" border="0"></a><!-- END Link ADLink --></td> 
+                <td>{CODE}&nbsp;&nbsp;<input id="P_COUNTRYP_COUNTRY_ID_{P_COUNTRY:rowNumber}" style="WIDTH: 74px; HEIGHT: 18px" type="hidden" size="10" value="{P_COUNTRY_ID}" name="{P_COUNTRY_ID_Name}"></td> 
+                <td style="TEXT-ALIGN: right">{P_COVERAGE_AREA_NAME}&nbsp;</td> 
+                <td style="TEXT-ALIGN: right">{P_CURRENCY_NAME}&nbsp;</td> 
+                <td style="TEXT-ALIGN: right">{TIME_REF}&nbsp;</td> 
+                <td>{DESCRIPTION}&nbsp;</td>
+              </tr>
+ <!-- END Row -->
+              <!-- BEGIN NoRecords -->
+              <tr class="NoRecords">
+                <td colspan="6">Data Tidak Ditemukan</td>
+              </tr>
+              <!-- END NoRecords -->
+              <tr class="Footer">
+                <td style="TEXT-ALIGN: center"><a href="{P_COUNTRY_Insert_Src}" id="P_COUNTRYP_COUNTRY_Insert"><img src="../Styles/trb/Images/en/ButtonTambah.gif" border="0"></a></td> 
+                <td colspan="6">
+                  <!-- BEGIN Navigator Navigator -->
+                  <!-- BEGIN First_On --><a href="{First_URL}"><img alt="{First_URL}" src="../Styles/trb/Images/First.gif" border="0"></a> <!-- END First_On -->
+                  <!-- BEGIN Prev_On --><a href="{Prev_URL}"><img alt="{Prev_URL}" src="../Styles/trb/Images/Prev.gif" border="0"></a> <!-- END Prev_On -->&nbsp; 
+                  <!-- BEGIN Pages -->
+                  <!-- BEGIN Page_On --><a href="{Page_URL}">{Page_Number}</a>&nbsp;<!-- END Page_On -->
+                  <!-- BEGIN Page_Off -->{Page_Number}&nbsp;<!-- END Page_Off --><!-- END Pages -->&nbsp;{Total_Pages}&nbsp; 
+                  <!-- BEGIN Next_On --><a href="{Next_URL}"><img alt="{Next_URL}" src="../Styles/trb/Images/Next.gif" border="0"></a> <!-- END Next_On -->
+                  <!-- BEGIN Last_On --><a href="{Last_URL}"><img alt="{Last_URL}" src="../Styles/trb/Images/Last.gif" border="0"></a> <!-- END Last_On --><!-- END Navigator Navigator -->&nbsp;</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      <!-- END Grid P_COUNTRY --><br>
+      <!-- BEGIN Record p_country1 -->
+      <form id="p_country1" name="{HTMLFormName}" action="{Action}" method="post">
+        <table cellspacing="0" cellpadding="0" width="100%" border="0">
+          <tr>
+            <td valign="top">
+              <table class="Header" cellspacing="0" cellpadding="0" border="0">
+                <tr>
+                  <td class="HeaderLeft"><img alt="" src="../Styles/trb/Images/Spacer.gif" border="0"></td> 
+                  <td class="th"><strong>NEGARA</strong></td> 
+                  <td class="HeaderRight"><img alt="" src="../Styles/trb/Images/Spacer.gif" border="0"></td>
+                </tr>
+              </table>
+ 
+              <table class="Record" cellspacing="0" cellpadding="0">
+                <!-- BEGIN Error -->
+                <tr class="Error">
+                  <td colspan="2">{Error}</td>
+                </tr>
+                <!-- END Error -->
+                <tr class="Controls">
+                  <td class="th"><label for="p_country1CODE">Kode</label></td> 
+                  <td><input class="ControlsRQ" id="p_country1CODE" style="WIDTH: 157px; HEIGHT: 17px" maxlength="64" size="28" value="{CODE}" name="{CODE_Name}"><input id="p_country1P_COUNTRY_ID" style="WIDTH: 51px; HEIGHT: 18px" type="hidden" size="6" value="{P_COUNTRY_ID}" name="{P_COUNTRY_ID_Name}"></td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th"><label for="p_country1P_COVERAGE_AREA_ID">Nama Cakupan Area</label></td> 
+                  <td><input class="ControlsRQ" id="p_country1P_COVERAGE_AREA_NAME" style="WIDTH: 158px; HEIGHT: 17px" readonly maxlength="12" size="23" value="{P_COVERAGE_AREA_NAME}" name="{P_COVERAGE_AREA_NAME_Name}"><input class="Controls" id="lov1" title="" style="WIDTH: 34px; HEIGHT: 23px" onclick="lov_p_coverage_area()" tabindex="0" type="button" value="Lov" name="lov1"><input id="p_country1P_COVERAGE_AREA_ID" type="hidden" value="{P_COVERAGE_AREA_ID}" name="{P_COVERAGE_AREA_ID_Name}"></td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th"><label for="p_country1P_CURRENCY_ID">Mata Uang</label></td> 
+                  <td><input class="ControlsRQ" id="p_country1P_CURRENCY_NAME" style="WIDTH: 156px; HEIGHT: 17px" readonly maxlength="12" size="21" value="{P_CURRENCY_NAME}" name="{P_CURRENCY_NAME_Name}"><input class="Controls" id="lov2" title="" style="WIDTH: 34px; HEIGHT: 23px" onclick="lov_p_currency()" tabindex="0" type="button" value="Lov" name="lov2"><input id="p_country1P_CURRENCY_ID" type="hidden" value="{P_CURRENCY_ID}" name="{P_CURRENCY_ID_Name}"></td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th"><label for="p_country1TIME_REF">Ref Waktu</label></td> 
+                  <td><input class="ControlsRQ" id="p_country1TIME_REF" maxlength="12" size="12" value="{TIME_REF}" name="{TIME_REF_Name}"></td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th"><label for="p_country1DESCRIPTION">Keterangan</label></td> 
+                  <td><textarea class="ControlsIN" id="p_country1DESCRIPTION" style="WIDTH: 310px; HEIGHT: 54px" name="{DESCRIPTION_Name}" rows="3" cols="36">{DESCRIPTION}</textarea></td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th"><label for="p_country1CREATED_BY">Pembuat</label></td> 
+                  <td><input class="ControlsRO" id="p_country1CREATED_BY" readonly maxlength="16" size="16" value="{CREATED_BY}" name="{CREATED_BY_Name}">&nbsp; Tgl &nbsp; <input class="ControlsRO" id="p_country1CREATION_DATE" readonly maxlength="100" size="16" value="{CREATION_DATE}" name="{CREATION_DATE_Name}"></td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th"><label for="p_country1UPDATED_BY">Pengubah</label></td> 
+                  <td><input class="ControlsRO" id="p_country1UPDATED_BY" readonly maxlength="16" size="16" value="{UPDATED_BY}" name="{UPDATED_BY_Name}">&nbsp; Tgl&nbsp; &nbsp;<input class="ControlsRO" id="p_country1UPDATED_DATE" readonly maxlength="100" size="16" value="{UPDATED_DATE}" name="{UPDATED_DATE_Name}"></td>
+                </tr>
+ 
+                <tr class="Bottom">
+                  <td align="right" colspan="2">&nbsp;&nbsp; 
+                    <!-- BEGIN Button Button_Insert --><input id="p_country1Button_Insert" style="BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px" type="image" alt="" src="../Styles/trb/Images/en/ButtonInsert.gif" value="" name="{Button_Name}"><!-- END Button Button_Insert -->
+                    <!-- BEGIN Button Button_Update --><input id="p_country1Button_Update" style="BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px" type="image" alt="" src="../Styles/trb/Images/en/ButtonUpdate.gif" value="" name="{Button_Name}"><!-- END Button Button_Update -->
+                    <!-- BEGIN Button Button_Delete --><input id="p_country1Button_Delete" style="BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px" type="image" alt="" src="../Styles/trb/Images/en/ButtonDelete.gif" value="" name="{Button_Name}"><!-- END Button Button_Delete -->
+                    <!-- BEGIN Button Button_Cancel --><input id="p_country1Button_Cancel" style="BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px" type="image" alt="" src="../Styles/trb/Images/en/ButtonCancel.gif" value="" name="{Button_Name}"><!-- END Button Button_Cancel --></td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </form>
+      <!-- END Record p_country1 --><br>
+      <br>
+    </td>
+  </tr>
+</table>
+<script language="javascript" type="text/javascript">
+function lov_p_coverage_area()
+{
+        getFrom_LOV('p_country1','P_COVERAGE_AREA_ID,P_COVERAGE_AREA_NAME','lov_p_coverage_area.php?');
+}
+function lov_p_currency()
+{
+        getFrom_LOV('p_country1','P_CURRENCY_ID,P_CURRENCY_NAME','lov_p_currency.php?');
+}
+
+
+</script>
+</body>
+</html>

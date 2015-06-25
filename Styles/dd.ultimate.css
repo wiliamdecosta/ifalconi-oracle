@@ -1,0 +1,89 @@
+@charset "UTF-8";
+
+/** 
+ * MTV.com Ultimate Horizontal CSS Drop-Down Menu Theme
+ *
+ * @file		default.ultimate.css
+ * @name		MTV.com
+ * @version		0.1
+ * @type		transitional
+ * @browsers	Windows: IE7+, Opera7+, Firefox3+
+ *				Mac OS: Safari2+, Firefox3+
+ *
+ * @link		http://www.lwis.net/free-css-drop-down-menu
+ * @copyright	2008-2012 Live Web Initiatives, http://www.lwis.net
+ *
+ */
+
+@import "dd.css";
+
+
+/* -- Base style extension -- */
+
+ul.dropdown a,
+ul.dropdown span {
+ display: block;
+ padding: 4px 30px;
+}
+
+
+/* -- Base style override -- */
+
+ul.dropdown li {
+ padding: 0;
+}
+
+ul.dropdown ul a,
+ul.dropdown ul span { /* POI: override abstract a, span */
+ padding: 8px;
+}
+
+
+/* -- Base style reinitiate: post-override activities -- */
+
+ul.dropdown *.dir { /* POI */
+ padding: 4px 30px;
+}
+
+ul.dropdown ul *.dir {
+ padding: 8px 30px 8px 8px;
+}
+
+
+/* -- Custom -- */
+
+ul.dropdown ul a {
+ width: 133px;
+}
+
+ul.dropdown ul a.dir {
+ width: 111px;
+}
+
+
+/* -- Drop-down open -- */
+
+ul.dropdown li:hover > *.dir {
+ background-color: #FF8000; 
+}
+
+ul.dropdown li:hover > a.dir:hover {
+ background-color: #FF8000;
+ color: #fff;
+}
+
+	ul.dropdown ul li:hover > *.dir {
+	 background-color: #FF8000;
+	 background-image: url(../imgmenu/select-arrow.jpg);
+	}
+
+	ul.dropdown ul li:hover > a.dir:hover {
+	 background-image: url(../imgmenu/select-arrow.jpg);
+	 color: #fff;
+	}
+
+		ul.dropdown ul ul li:hover > *.dir {
+		 background-color: #FF8000;
+		 background-image: url(../imgmenu/select-arrow.jpg);
+		 color: #fff;
+		}

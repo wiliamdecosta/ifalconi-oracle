@@ -1,0 +1,310 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<title>p_city_coordinate</title>
+<meta name="GENERATOR" content="CodeCharge Studio 4.3.00.7676">
+<link rel="stylesheet" type="text/css" href="../Styles/trb/Style_doctype.css">
+<script language="JavaScript" src="../js/qs.js"></script>
+<script language="javascript" src="../js/lov.js"></script>
+<script language="JavaScript" type="text/javascript">
+function getFrom_LOV(formName,fieldList,LOV_NM)
+{
+        arrLOV = LOV_NM.split("?");
+        window.open("../lov/"+arrLOV[0]+"?FORM="+formName+"&OBJ="+fieldList+"&"+arrLOV[1],"LOV","width=600,height=500,toolbar=no,scrollbars=yes,resizable=yes");
+}
+</script>
+<script language="JavaScript" type="text/javascript">
+//Begin CCS script
+//Include Common JSFunctions @1-9722A627
+</script>
+<script language="JavaScript" src="../ClientI18N.php?file=Functions.js&amp;locale={res:CCS_LocaleID}" type="text/javascript" charset="utf-8"></script>
+<script language="JavaScript" type="text/javascript">
+//End Include Common JSFunctions
+
+//DEL  
+//DEL  var p_city_coordinate1_DatePicker_CREATION_DATE = new Object(); 
+//DEL  p_city_coordinate1_DatePicker_CREATION_DATE.format           = "ShortDate";
+//DEL  p_city_coordinate1_DatePicker_CREATION_DATE.style            = "Styles/trb/Style.css";
+//DEL  p_city_coordinate1_DatePicker_CREATION_DATE.relativePathPart = "../";
+//DEL  p_city_coordinate1_DatePicker_CREATION_DATE.themeVersion = "3.0";
+//DEL  
+//DEL  var p_city_coordinate1_DatePicker_UPDATED_DATE = new Object(); 
+//DEL  p_city_coordinate1_DatePicker_UPDATED_DATE.format           = "ShortDate";
+//DEL  p_city_coordinate1_DatePicker_UPDATED_DATE.style            = "Styles/trb/Style.css";
+//DEL  p_city_coordinate1_DatePicker_UPDATED_DATE.relativePathPart = "../";
+//DEL  p_city_coordinate1_DatePicker_UPDATED_DATE.themeVersion = "3.0";
+//DEL  
+
+//p_city_coordinate1Button_Insert_OnClick @83-84FE3F01
+function p_city_coordinate1Button_Insert_OnClick()
+{
+    var result = true;
+//End p_city_coordinate1Button_Insert_OnClick
+
+//Custom Code @84-2A29BDB7
+    // -------------------------
+    // Write your own code here.
+    // -------------------------
+//End Custom Code
+
+//Confirmation Message @85-BE9BB1EE
+    return confirm('Anda Yakin Menyimpan Record Ini?');
+//End Confirmation Message
+
+//Close p_city_coordinate1Button_Insert_OnClick @83-BC33A33A
+    return result;
+}
+//End Close p_city_coordinate1Button_Insert_OnClick
+
+//p_city_coordinate1Button_Update_OnClick @86-13CC8F59
+function p_city_coordinate1Button_Update_OnClick()
+{
+    var result = true;
+//End p_city_coordinate1Button_Update_OnClick
+
+//Custom Code @51-2A29BDB7
+    // -------------------------
+    // Write your own code here.
+    // -------------------------
+//End Custom Code
+
+//Confirmation Message @87-88039EA5
+    return confirm('Anda Yakin Mengubah Record Ini?');
+//End Confirmation Message
+
+//Close p_city_coordinate1Button_Update_OnClick @86-BC33A33A
+    return result;
+}
+//End Close p_city_coordinate1Button_Update_OnClick
+
+//p_city_coordinate1Button_Delete_OnClick @53-4B515E4F
+function p_city_coordinate1Button_Delete_OnClick()
+{
+    var result = true;
+//End p_city_coordinate1Button_Delete_OnClick
+
+//Confirmation Message @88-5CB8F4D9
+    return confirm('Anda Yakin Menghapus Record Ini?');
+//End Confirmation Message
+
+//Custom Code @55-2A29BDB7
+    // -------------------------
+    // Write your own code here.
+    // -------------------------
+//End Custom Code
+
+//Close p_city_coordinate1Button_Delete_OnClick @53-BC33A33A
+    return result;
+}
+//End Close p_city_coordinate1Button_Delete_OnClick
+
+//p_city_coordinate1Button_Cancel_OnClick @89-59A288C1
+function p_city_coordinate1Button_Cancel_OnClick()
+{
+    disableValidation = true;
+}
+//End p_city_coordinate1Button_Cancel_OnClick
+
+//bind_events @1-9B2A682E
+function bind_events() {
+    addEventHandler("p_city_coordinate1Button_Insert", "click", p_city_coordinate1Button_Insert_OnClick);
+    addEventHandler("p_city_coordinate1Button_Update", "click", p_city_coordinate1Button_Update_OnClick);
+    addEventHandler("p_city_coordinate1Button_Delete", "click", p_city_coordinate1Button_Delete_OnClick);
+    addEventHandler("p_city_coordinate1Button_Cancel", "click", p_city_coordinate1Button_Cancel_OnClick);
+}
+//End bind_events
+
+window.onload = bind_events; //Assign bind_events @1-19F7B649
+
+//End CCS script
+</script>
+</head>
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<div style="POSITION: absolute; WIDTH: 100%" id="tabtop">
+  <table border="0" cellspacing="0" cellpadding="0" width="100%">
+    <tr>
+      <td><img border="0" src="../images/tab_s_on.gif"></td> 
+      <td class="th" background="../images/tab_on.gif" nowrap align="center">KOORDINAT KOTA</td> 
+      <td><img border="0" src="../images/tab_e_on.gif"></td> 
+      <td background="../images/tab_back.gif" width="100%"></td>
+    </tr>
+  </table>
+</div>
+<br>
+<br>
+<br>
+<table border="0" cellspacing="0" cellpadding="0" align="center">
+  <tr>
+    <td>
+      <!-- BEGIN Record P_CITY_COORDINATESearch -->
+      <form id="P_CITY_COORDINATESearch" method="post" name="{HTMLFormName}" action="{Action}">
+        <table border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td valign="top">
+              <table class="Record" cellspacing="0" cellpadding="0">
+                <!-- BEGIN Error -->
+                <tr class="Error">
+                  <td>{Error}</td>
+                </tr>
+                <!-- END Error -->
+                <tr class="Controls">
+                  <td><input id="P_CITY_COORDINATESearchs_keyword" class="ControlsIN" value="{s_keyword}" maxlength="64" size="32" name="{s_keyword_Name}">&nbsp; 
+                    <!-- BEGIN Button Button_DoSearch --><input id="P_CITY_COORDINATESearchButton_DoSearch" class="Button" value="Cari" alt="" type="submit" name="{Button_Name}"><!-- END Button Button_DoSearch --></td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </form>
+      <!-- END Record P_CITY_COORDINATESearch --><br>
+      <!-- BEGIN Grid P_CITY_COORDINATE -->
+      <table border="0" cellspacing="0" cellpadding="0" width="100%">
+        <tr>
+          <td valign="top">
+            <table class="Header" border="0" cellspacing="0" cellpadding="0" width="100%">
+              <tr>
+                <td class="HeaderLeft"><img border="0" alt="" src="../Styles/trb/Images/Spacer.gif"></td> 
+                <td class="th"><strong>DAFTAR KOORDINAT KOTA</strong></td> 
+                <td class="HeaderRight"><img border="0" alt="" src="../Styles/trb/Images/Spacer.gif"></td>
+              </tr>
+            </table>
+ 
+            <table class="Grid" cellspacing="0" cellpadding="0">
+              <tr class="Caption">
+                <th style="TEXT-ALIGN: center" scope="col">#</th>
+ 
+                <th scope="col">Kode</th>
+ 
+                <th scope="col">Nama Kota</th>
+ 
+                <th scope="col">Nama Negara</th>
+ 
+                <th scope="col">Time Ref</th>
+ 
+                <th colspan="2" scope="col">Keterangan</th>
+              </tr>
+ 
+              <!-- BEGIN Row -->
+              <tr class="Row">
+                <td style="TEXT-ALIGN: center">
+                  <!-- BEGIN Link DLink --><a href="{DLink_Src}" id="P_CITY_COORDINATEDLink_{P_APP_ROLE:rowNumber}"><img border="0" src="../images/radio.gif"></a><!-- END Link DLink -->
+                  <!-- BEGIN Link ADLink --><a href="{ADLink_Src}" id="P_CITY_COORDINATEADLink_{P_APP_ROLE:rowNumber}"><img border="0" src="../images/radio_s.gif" width="16" height="16"></a><!-- END Link ADLink --></td> 
+                <td>{CODE}&nbsp;<input style="WIDTH: 38px; HEIGHT: 15px" id="P_CITY_COORDINATEP_CITY_COORDINATE_ID_{P_CITY_COORDINATE:rowNumber}" value="{P_CITY_COORDINATE_ID}" size="5" type="hidden" name="{P_CITY_COORDINATE_ID_Name}"></td> 
+                <td>{CITY_NAME}&nbsp;</td> 
+                <td style="TEXT-ALIGN: left">{P_COUNTRY_NAME}&nbsp;</td> 
+                <td style="TEXT-ALIGN: left">{TIME_REF}&nbsp;</td> 
+                <td colspan="2">{DESCRIPTION}&nbsp;</td>
+              </tr>
+ <!-- END Row -->
+              <!-- BEGIN NoRecords -->
+              <tr class="NoRecords">
+                <td colspan="7">Data Tidak Ditemukan</td>
+              </tr>
+              <!-- END NoRecords -->
+              <tr class="Footer">
+                <td style="TEXT-ALIGN: center"><a href="{P_CITY_COORDINATE_Insert_Src}" id="P_CITY_COORDINATEP_CITY_COORDINATE_Insert"><img border="0" src="../Styles/trb/Images/en/ButtonTambah.gif"></a></td> 
+                <td colspan="6">&nbsp; 
+                  <!-- BEGIN Navigator Navigator -->
+                  <!-- BEGIN First_On --><a href="{First_URL}"><img border="0" alt="{First_URL}" src="../Styles/trb/Images/First.gif"></a> <!-- END First_On -->
+                  <!-- BEGIN Prev_On --><a href="{Prev_URL}"><img border="0" alt="{Prev_URL}" src="../Styles/trb/Images/Prev.gif"></a> <!-- END Prev_On -->&nbsp; 
+                  <!-- BEGIN Pages -->
+                  <!-- BEGIN Page_On --><a href="{Page_URL}">{Page_Number}</a>&nbsp;<!-- END Page_On -->
+                  <!-- BEGIN Page_Off -->{Page_Number}&nbsp;<!-- END Page_Off --><!-- END Pages -->&nbsp;{Total_Pages}&nbsp; 
+                  <!-- BEGIN Next_On --><a href="{Next_URL}"><img border="0" alt="{Next_URL}" src="../Styles/trb/Images/Next.gif"></a> <!-- END Next_On -->
+                  <!-- BEGIN Last_On --><a href="{Last_URL}"><img border="0" alt="{Last_URL}" src="../Styles/trb/Images/Last.gif"></a> <!-- END Last_On --><!-- END Navigator Navigator -->&nbsp;</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      <!-- END Grid P_CITY_COORDINATE --><br>
+      <!-- BEGIN Record p_city_coordinate1 -->
+      <form id="p_city_coordinate1" method="post" name="{HTMLFormName}" action="{Action}">
+        <table border="0" cellspacing="0" cellpadding="0" width="100%">
+          <tr>
+            <td valign="top">
+              <table class="Header" border="0" cellspacing="0" cellpadding="0" width="100%">
+                <tr>
+                  <td class="HeaderLeft"><img border="0" alt="" src="../Styles/trb/Images/Spacer.gif"></td> 
+                  <td class="th"><strong>KOORDINAT KOTA</strong></td> 
+                  <td class="HeaderRight"><img border="0" alt="" src="../Styles/trb/Images/Spacer.gif"></td>
+                </tr>
+              </table>
+ 
+              <table class="Record" cellspacing="0" cellpadding="0">
+                <!-- BEGIN Error -->
+                <tr class="Error">
+                  <td colspan="2">{Error}</td>
+                </tr>
+                <!-- END Error -->
+                <tr class="Controls">
+                  <td class="th"><label for="p_city_coordinate1CODE">Kode</label></td> 
+                  <td><input id="p_city_coordinate1CODE" class="ControlsRQ" value="{CODE}" maxlength="64" size="25" name="{CODE_Name}"><input style="WIDTH: 37px; HEIGHT: 15px" id="p_city_coordinate1P_CITY_COORDINATE_ID" value="{P_CITY_COORDINATE_ID}" size="5" type="hidden" name="{P_CITY_COORDINATE_ID_Name}"></td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th"><label for="p_city_coordinate1CITY_NAME">Nama Kota</label></td> 
+                  <td><input id="p_city_coordinate1CITY_NAME" class="ControlsRQ" value="{CITY_NAME}" maxlength="64" size="50" name="{CITY_NAME_Name}"></td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th"><label for="p_city_coordinate1P_COUNTRY_ID">Nama Negara</label></td> 
+                  <td><input id="p_city_coordinate1P_COUNTRY_NAME" class="ControlsRO" value="{P_COUNTRY_NAME}" readonly maxlength="12" name="{P_COUNTRY_NAME_Name}">&nbsp;&nbsp;<input style="WIDTH: 53px; HEIGHT: 17px" id="p_city_coordinate1P_COUNTRY_ID" value="{P_COUNTRY_ID}" size="7" type="hidden" name="{P_COUNTRY_ID_Name}"><img id="lov1" onclick="lov_p_country()" src="../Styles/trb/Images/en/lov.gif"></td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th"><label for="p_city_coordinate1EM_DEG">EM DEG/MIN/SEC</label></td> 
+                  <td><input id="p_city_coordinate1EM_DEG" class="ControlsRQ" value="{EM_DEG}" maxlength="12" size="12" name="{EM_DEG_Name}">&nbsp;/&nbsp; <input id="p_city_coordinate1EM_MIN" class="ControlsRQ" value="{EM_MIN}" maxlength="12" size="12" name="{EM_MIN_Name}">&nbsp;/&nbsp; <input id="p_city_coordinate1EM_SEC" class="ControlsRQ" value="{EM_SEC}" maxlength="12" size="12" name="{EM_SEC_Name}"></td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th"><label for="p_city_coordinate1SL_DEG">SL DEG/MIN/SEC</label></td> 
+                  <td><input id="p_city_coordinate1SL_DEG" class="ControlsRQ" value="{SL_DEG}" maxlength="12" size="12" name="{SL_DEG_Name}">&nbsp;/ <input id="p_city_coordinate1SL_MIN" class="ControlsRQ" value="{SL_MIN}" maxlength="12" size="12" name="{SL_MIN_Name}">&nbsp;/ <input id="p_city_coordinate1SL_SEC" class="ControlsRQ" value="{SL_SEC}" maxlength="12" size="12" name="{SL_SEC_Name}"></td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th"><label for="p_city_coordinate1TIME_REF">Referensi Waktu</label></td> 
+                  <td><input id="p_city_coordinate1TIME_REF" class="ControlsRQ" value="{TIME_REF}" maxlength="12" size="12" name="{TIME_REF_Name}"></td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th"><label for="p_city_coordinate1DESCRIPTION">Keterangan</label></td> 
+                  <td><textarea id="p_city_coordinate1DESCRIPTION" class="ControlsIN" rows="3" cols="50" name="{DESCRIPTION_Name}">{DESCRIPTION}</textarea></td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th"><label for="p_city_coordinate1CREATED_BY">Pembuat</label></td> 
+                  <td><input id="p_city_coordinate1CREATED_BY" class="ControlsRO" value="{CREATED_BY}" readonly maxlength="16" size="16" name="{CREATED_BY_Name}">&nbsp; Tgl &nbsp;<input id="p_city_coordinate1CREATION_DATE" class="ControlsRO" value="{CREATION_DATE}" readonly maxlength="100" size="16" name="{CREATION_DATE_Name}"></td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th"><label for="p_city_coordinate1UPDATED_BY">Pengubah</label></td> 
+                  <td><input id="p_city_coordinate1UPDATED_BY" class="ControlsRO" value="{UPDATED_BY}" readonly maxlength="16" size="16" name="{UPDATED_BY_Name}">&nbsp; Tgl &nbsp;<input id="p_city_coordinate1UPDATED_DATE" class="ControlsRO" value="{UPDATED_DATE}" readonly maxlength="100" size="16" name="{UPDATED_DATE_Name}"></td>
+                </tr>
+ 
+                <tr class="Bottom">
+                  <td colspan="2" align="right">&nbsp; 
+                    <!-- BEGIN Button Button_Insert --><input id="p_city_coordinate1Button_Insert" alt="SIMPAN" src="../Styles/trb/Images/en/ButtonSimpan.gif" type="image" name="{Button_Name}"><!-- END Button Button_Insert -->&nbsp;&nbsp; 
+                    <!-- BEGIN Button Button_Update --><input id="p_city_coordinate1Button_Update" alt="SIMPAN" src="../Styles/trb/Images/en/ButtonSimpan.gif" type="image" name="{Button_Name}"><!-- END Button Button_Update -->&nbsp;&nbsp;&nbsp; 
+                    <!-- BEGIN Button Button_Delete --><input id="p_city_coordinate1Button_Delete" alt="HAPUS" src="../Styles/trb/Images/en/ButtonDelete.gif" type="image" name="{Button_Name}"><!-- END Button Button_Delete -->&nbsp;&nbsp;&nbsp;&nbsp; 
+                    <!-- BEGIN Button Button_Cancel --><input style="BORDER-RIGHT-WIDTH: 0px; BORDER-TOP-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px" id="p_city_coordinate1Button_Cancel" value="" alt="" src="../Styles/trb/Images/en/ButtonCancel.gif" type="image" name="{Button_Name}"><!-- END Button Button_Cancel -->&nbsp;&nbsp; </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </form>
+      <!-- END Record p_city_coordinate1 --><br>
+      <br>
+    </td>
+  </tr>
+</table>
+<script language="javascript">
+function lov_p_country()
+{
+        getFrom_LOV('p_city_coordinate1','P_COUNTRY_ID,P_COUNTRY_NAME','lov_p_country.php?');
+}
+</script>
+</body>
+</html>

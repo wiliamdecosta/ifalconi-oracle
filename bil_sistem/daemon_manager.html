@@ -1,0 +1,186 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>daemon</title>
+<link rel="stylesheet" type="text/css" href="../Styles/trb/Style_doctype.css">
+<script type="text/javascript" src="../js/jquery.min.js"></script>
+<script type="text/javascript" src="../js/lov.js"></script>
+<script type="text/javascript" src="../js/qs.js"></script>
+<script language="javascript" type="text/javascript">
+$(document).ready(function()
+{
+    $(window).scroll(function()
+    {
+            $('#tabtop').css('top', $(window).scrollTop());
+    });
+});
+</script>
+
+<script language="JavaScript" type="text/javascript">
+//Begin CCS script
+//Include Common JSFunctions @1-9722A627
+</script>
+<script language="JavaScript" src="../ClientI18N.php?file=Functions.js&amp;locale={res:CCS_LocaleID}" type="text/javascript" charset="utf-8"></script>
+<script language="JavaScript" type="text/javascript">
+//End Include Common JSFunctions
+
+//DAEMONFormButton_Insert_OnClick @3-71041C62
+function DAEMONFormButton_Insert_OnClick()
+{
+    var result = true;
+//End DAEMONFormButton_Insert_OnClick
+
+//Confirmation Message @15-FCA0DD20
+    return confirm('Start Daemon?');
+//End Confirmation Message
+
+//Close DAEMONFormButton_Insert_OnClick @3-BC33A33A
+    return result;
+}
+//End Close DAEMONFormButton_Insert_OnClick
+
+//DAEMONFormButton_Delete_OnClick @4-BEAB7D2C
+function DAEMONFormButton_Delete_OnClick()
+{
+    var result = true;
+//End DAEMONFormButton_Delete_OnClick
+
+//Confirmation Message @5-CC440DA2
+    return confirm('Stop Daemon?');
+//End Confirmation Message
+
+//Close DAEMONFormButton_Delete_OnClick @4-BC33A33A
+    return result;
+}
+//End Close DAEMONFormButton_Delete_OnClick
+
+//DAEMONFormButton_Update_OnClick @22-E636AC3A
+function DAEMONFormButton_Update_OnClick()
+{
+    var result = true;
+//End DAEMONFormButton_Update_OnClick
+
+//Confirmation Message @23-77055FC1
+    return confirm('Force Proses?');
+//End Confirmation Message
+
+//Close DAEMONFormButton_Update_OnClick @22-BC33A33A
+    return result;
+}
+//End Close DAEMONFormButton_Update_OnClick
+
+//DAEMONFormButton_Refresh_OnClick @21-1FB86832
+function DAEMONFormButton_Refresh_OnClick()
+{
+    disableValidation = true;
+}
+//End DAEMONFormButton_Refresh_OnClick
+
+//bind_events @1-9E377947
+function bind_events() {
+    addEventHandler("DAEMONFormButton_Insert", "click", DAEMONFormButton_Insert_OnClick);
+    addEventHandler("DAEMONFormButton_Delete", "click", DAEMONFormButton_Delete_OnClick);
+    addEventHandler("DAEMONFormButton_Update", "click", DAEMONFormButton_Update_OnClick);
+    addEventHandler("DAEMONFormButton_Refresh", "click", DAEMONFormButton_Refresh_OnClick);
+}
+//End bind_events
+
+window.onload = bind_events; //Assign bind_events @1-19F7B649
+
+//End CCS script
+</script>
+</head>
+<body alink="#ff0000" leftmargin="0" link="#008200" topmargin="0" bgcolor="#ffffff" text="#000000" vlink="#008200">
+<div style="POSITION: absolute; WIDTH: 100%" id="tabtop">
+  <table style="BACKGROUND-COLOR: #89a5f7" border="0" cellspacing="0" cellpadding="0" width="100%">
+    <tr>
+      <td><img border="0" src="../images/tab_s_off.gif"></td> 
+      <td class="th" background="../images/tab_off.gif" nowrap align="center"><label onclick="javascript:toJob()">BACKGROUND JOB</label></td> 
+      <td><img border="0" src="../images/tab_e_off.gif"></td> 
+      <td><img border="0" src="../images/tab_s_on.gif"></td> 
+      <td class="th" background="../images/tab_on.gif" nowrap align="center">DAEMON MANAGER</td> 
+      <td><img border="0" src="../images/tab_e_on.gif"></td> 
+      <td background="../images/tab_back.gif" width="100%"></td>
+    </tr>
+  </table>
+</div>
+<br>
+<br>
+<br>
+<br>
+<table border="0" cellspacing="0" cellpadding="0" align="center">
+  <tr>
+    <td>
+      <!-- BEGIN Record DAEMONForm -->
+      <form id="DAEMONForm" method="post" name="{HTMLFormName}" action="{Action}">
+        <table border="0" cellspacing="0" cellpadding="0" width="100%">
+          <tr>
+            <td valign="top">
+              <table class="Header" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                  <td class="HeaderLeft"><img border="0" alt="" src="../Styles/trb/Images/Spacer.gif"></td> 
+                  <td class="th"><strong>DAEMON&nbsp;</strong></td> 
+                  <td class="th"><img onclick="javascript:close_page()" border="0" alt="close" src="../images/to_close_red.gif"></td> 
+                  <td class="HeaderRight"><img border="0" alt="" src="../Styles/trb/Images/Spacer.gif"></td>
+                </tr>
+              </table>
+ 
+              <table class="Record" cellspacing="0" cellpadding="0">
+                <!-- BEGIN Error -->
+                <tr class="Error">
+                  <td colspan="2">{Error}</td>
+                </tr>
+                <!-- END Error -->
+                <tr class="Controls">
+                  <td class="th"><label for="DAEMONFormPROCEDURE_NAME">PROCEDURE NAME</label></td> 
+                  <td><input id="DAEMONFormPROCEDURE_NAME" class="ControlsRO" value="{PROCEDURE_NAME}" readonly maxlength="250" size="50" name="{PROCEDURE_NAME_Name}"></td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th"><label for="DAEMONFormSCHEMA_USER">SCHEMA USER</label></td> 
+                  <td><input id="DAEMONFormSCHEMA_USER" class="ControlsRO" value="{SCHEMA_USER}" readonly maxlength="30" size="30" name="{SCHEMA_USER_Name}"></td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th"><label for="DAEMONFormLAST_DATE">LAST DATE</label></td> 
+                  <td><input id="DAEMONFormLAST_DATE" class="ControlsRO" value="{LAST_DATE}" readonly maxlength="100" size="22" name="{LAST_DATE_Name}"></td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th"><label for="DAEMONFormNEXT_DATE">NEXT DATE</label></td> 
+                  <td><input id="DAEMONFormNEXT_DATE" class="ControlsRO" value="{NEXT_DATE}" readonly maxlength="100" size="22" name="{NEXT_DATE_Name}"></td>
+                </tr>
+ 
+                <tr class="Bottom">
+                  <td colspan="2" align="right">
+                    <!-- BEGIN Button Button_Insert --><input id="DAEMONFormButton_Insert" src="../Styles/trb/Images/en/ButtonStartDaemon.gif" type="image" name="{Button_Name}"><!-- END Button Button_Insert -->
+                    <!-- BEGIN Button Button_Update --><input id="DAEMONFormButton_Update" src="../Styles/trb/Images/en/ButtonForce.gif" type="image" name="{Button_Name}"><!-- END Button Button_Update -->
+                    <!-- BEGIN Button Button_Delete --><input id="DAEMONFormButton_Delete" src="../Styles/trb/Images/en/ButtonStopDaemon.gif" type="image" name="{Button_Name}"><!-- END Button Button_Delete -->
+                    <!-- BEGIN Button Button_Refresh --><input id="DAEMONFormButton_Refresh" src="../Styles/trb/Images/en/ButtonRefresh.gif" type="image" name="{Button_Name}"><!-- END Button Button_Refresh --><input id="DAEMONFormJOB" value="{JOB}" type="hidden" name="{JOB_Name}"></td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </form>
+      <!-- END Record DAEMONForm --><br>
+    </td>
+  </tr>
+</table>
+<script language="JavaScript">
+
+function toJob()
+{
+   location.href="background_job.php"
+}
+
+
+function close_page()
+{
+    location.href="../main/blank.html"
+}
+
+</script>
+
+</body>
+</html>

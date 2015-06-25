@@ -1,0 +1,305 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<title>P_APP_ROLE</title>
+<meta name="GENERATOR" content="CodeCharge Studio 4.1.00.031">
+<link rel="stylesheet" type="text/css" href="../Styles/trb/Style_doctype.css">
+<script type="text/javascript" src="../js/jquery.min.js"></script>
+<script type="text/javascript" src="../js/lov.js"></script>
+<script type="text/javascript" src="../js/qs.js"></script>
+<script language="JavaScript" type="text/javascript">
+//Begin CCS script
+//Include Common JSFunctions @1-9722A627
+</script>
+<script language="JavaScript" src="../ClientI18N.php?file=Functions.js&amp;locale={res:CCS_LocaleID}" type="text/javascript" charset="utf-8"></script>
+<script language="JavaScript" type="text/javascript">
+//End Include Common JSFunctions
+
+//P_USERFormButton_Delete_OnClick @31-EE68F5A1
+function P_USERFormButton_Delete_OnClick()
+{
+    var result = true;
+//End P_USERFormButton_Delete_OnClick
+
+//Confirmation Message @32-5CB8F4D9
+    return confirm('Anda Yakin Menghapus Record Ini?');
+//End Confirmation Message
+
+//Close P_USERFormButton_Delete_OnClick @31-BC33A33A
+    return result;
+}
+//End Close P_USERFormButton_Delete_OnClick
+
+//P_USERFormButton_Reset_OnClick @202-3B88846F
+function P_USERFormButton_Reset_OnClick()
+{
+    var result = true;
+//End P_USERFormButton_Reset_OnClick
+
+//Confirmation Message @218-7D5E38FC
+    return confirm('Reset Password?');
+//End Confirmation Message
+
+//Close P_USERFormButton_Reset_OnClick @202-BC33A33A
+    return result;
+}
+//End Close P_USERFormButton_Reset_OnClick
+
+//P_USERFormButton_Cancel_OnClick @33-285B49BE
+function P_USERFormButton_Cancel_OnClick()
+{
+    disableValidation = true;
+}
+//End P_USERFormButton_Cancel_OnClick
+
+//bind_events @1-119726EC
+function bind_events() {
+    addEventHandler("P_USERFormButton_Delete", "click", P_USERFormButton_Delete_OnClick);
+    addEventHandler("P_USERFormButton_Reset", "click", P_USERFormButton_Reset_OnClick);
+    addEventHandler("P_USERFormButton_Cancel", "click", P_USERFormButton_Cancel_OnClick);
+}
+//End bind_events
+
+window.onload = bind_events; //Assign bind_events @1-19F7B649
+
+//End CCS script
+</script>
+<script language="javascript" type="text/javascript">
+$(document).ready(function()
+{
+    $(window).scroll(function()
+    {
+            $('#tabtop').css('top', $(window).scrollTop());
+    });
+});
+</script>
+</head>
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<div style="POSITION: absolute; WIDTH: 100%" id="tabtop">
+  <table style="BACKGROUND-COLOR: #89a5f7" border="0" cellspacing="0" cellpadding="0" width="100%">
+    <tr>
+      <td><img border="0" src="../images/tab_s_on.gif"></td> 
+      <td class="th" background="../images/tab_on.gif" nowrap align="center">USER</td> 
+      <td><img border="0" src="../images/tab_e_on.gif"></td> 
+      <td><img border="0" src="../images/tab_s_off.gif"></td> 
+      <td class="th" background="../images/tab_off.gif" nowrap align="center"><label onclick="javascript:toRole()">ROLE</label></td> 
+      <td><img border="0" src="../images/tab_e_off.gif"></td> 
+      <td background="../images/tab_back.gif" width="100%"></td>
+    </tr>
+  </table>
+</div>
+<br>
+<br>
+<table border="0" cellspacing="0" cellpadding="0" align="center">
+  <tr>
+    <td>
+      <!-- BEGIN Record P_USERSearch -->
+      <form id="P_USERSearch" method="post" name="{HTMLFormName}" action="{Action}">
+        <table border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td valign="top">
+              <table cellspacing="0" cellpadding="0">
+                <!-- BEGIN Error -->
+                <tr class="Error">
+                  <td colspan="2">{Error}</td>
+                </tr>
+                <!-- END Error -->
+                <tr class="Row">
+                  <td><input id="P_USERSearchs_keyword" class="ControlsIN" value="{s_keyword}" maxlength="128" size="32" name="{s_keyword_Name}"></td> 
+                  <td>
+                    <!-- BEGIN Button Button_DoSearch --><input id="P_USERSearchButton_DoSearch" alt="Search" src="../Styles/trb/Images/en/ButtonSearch.gif" type="image" name="{Button_Name}"><!-- END Button Button_DoSearch --></td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </form>
+      <!-- END Record P_USERSearch -->
+      <!-- BEGIN Grid P_USERGrid -->
+      <table border="0" cellspacing="0" cellpadding="0" width="100%">
+        <tr>
+          <td valign="top">
+            <table class="Header" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td class="HeaderLeft"><img border="0" alt="" src="../Styles/trb/images/Spacer.gif"></td> 
+                <td class="th"><strong>DAFTAR USER</strong></td> 
+                <td class="th"><img onclick="javascript:close_page()" border="0" alt="close" src="../images/to_close_red.gif"></td> 
+                <td class="HeaderRight"><img border="0" alt="" src="../Styles/trb/images/Spacer.gif"></td>
+              </tr>
+            </table>
+ 
+            <table class="Grid" cellspacing="0" cellpadding="0">
+              <tr class="Caption">
+                <th style="TEXT-ALIGN: center" width="1" scope="col">&nbsp;#</th>
+ 
+                <th scope="col">Nama User</th>
+ 
+                <th scope="col">Nama Lengkap&nbsp;</th>
+ 
+                <th scope="col">Status</th>
+ 
+                <th scope="col">Email</th>
+              </tr>
+ 
+              <!-- BEGIN Row -->
+              <tr {P_USERGrid:rowStyle}>
+                <td style="TEXT-ALIGN: center">&nbsp; 
+                  <!-- BEGIN Link DLink --><a href="{DLink_Src}" id="P_USERGridDLink_{P_USERGrid:rowNumber}">{DLink}</a><!-- END Link DLink --></td> 
+                <td>{USER_NAME}&nbsp;<input id="P_USERGridP_USER_ID_{P_USERGrid:rowNumber}" value="{P_USER_ID}" type="hidden" name="{P_USER_ID_Name}">&nbsp;</td> 
+                <td>{FULL_NAME}&nbsp;</td> 
+                <td>{USER_STATUS}&nbsp;</td> 
+                <td>{EMAIL_ADDRESS}</td>
+              </tr>
+ <!-- END Row -->
+              <!-- BEGIN NoRecords -->
+              <tr class="NoRecords">
+                <td colspan="5">Data Tidak Ditemukan</td>
+              </tr>
+              <!-- END NoRecords -->
+              <tr class="Footer">
+                <td><a href="{P_USER_Insert_Src}" id="P_USERGridP_USER_Insert"><img border="0" src="../Styles/trb/Images/en/ButtonTambah.gif"></a></a></td> 
+                <td colspan="4">
+                  <!-- BEGIN Navigator Navigator -->
+                  <!-- BEGIN First_On --><a href="{First_URL}"><img border="0" alt="{First_URL}" src="../Styles/trb/Images/First.gif"></a> <!-- END First_On -->
+                  <!-- BEGIN First_Off --><img border="0" alt="{First_URL}" src="../Styles/trb/Images/FirstOff.gif"><!-- END First_Off -->
+                  <!-- BEGIN Prev_On --><a href="{Prev_URL}"><img border="0" alt="{Prev_URL}" src="../Styles/trb/Images/Prev.gif"></a> <!-- END Prev_On -->
+                  <!-- BEGIN Prev_Off --><img border="0" alt="{Prev_URL}" src="../Styles/trb/Images/PrevOff.gif"><!-- END Prev_Off -->&nbsp; 
+                  <!-- BEGIN Pages -->
+                  <!-- BEGIN Page_On --><a href="{Page_URL}">{Page_Number}</a>&nbsp;<!-- END Page_On -->
+                  <!-- BEGIN Page_Off -->{Page_Number}&nbsp;<!-- END Page_Off --><!-- END Pages -->
+                  <!-- BEGIN Next_On --><a href="{Next_URL}"><img border="0" alt="{Next_URL}" src="../Styles/trb/Images/Next.gif"></a> <!-- END Next_On -->
+                  <!-- BEGIN Next_Off --><img border="0" alt="{Next_URL}" src="../Styles/trb/Images/NextOff.gif"><!-- END Next_Off -->
+                  <!-- BEGIN Last_On --><a href="{Last_URL}"><img border="0" alt="{Last_URL}" src="../Styles/trb/Images/Last.gif"></a> <!-- END Last_On -->
+                  <!-- BEGIN Last_Off --><img border="0" alt="{Last_URL}" src="../Styles/trb/Images/LastOff.gif"><!-- END Last_Off --><!-- END Navigator Navigator -->&nbsp;</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      <!-- END Grid P_USERGrid --><br>
+      <!-- BEGIN Record P_USERForm -->
+      <form id="P_USERForm" method="post" name="{HTMLFormName}" action="{Action}">
+        <table border="0" cellspacing="0" cellpadding="0" width="100%">
+          <tr>
+            <td valign="top">
+              <table class="Header" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                  <td class="HeaderLeft"><img border="0" alt="" src="../Styles/trb/images/Spacer.gif"></td> 
+                  <td class="th"><strong>INFORMASI USER</strong></td> 
+                  <td class="th"><img border="0" src="../images/spaceheader.gif"></td> 
+                  <td class="HeaderRight"><img border="0" alt="" src="../Styles/trb/images/Spacer.gif"></td>
+                </tr>
+              </table>
+ 
+              <table class="Record" cellspacing="0" cellpadding="0">
+                <!-- BEGIN Error -->
+                <tr class="Error">
+                  <td colspan="4">{Error}</td>
+                </tr>
+                <!-- END Error -->
+                <tr class="Controls">
+                  <td class="th"><label for="P_USERFormUSER_NAME">Nama User&nbsp;</label></td> 
+                  <td><input id="P_USERFormUSER_NAME" class="ControlsRQ" value="{USER_NAME}" maxlength="12" size="12" name="{USER_NAME_Name}">&nbsp;<input id="P_USERFormP_USER_ID" value="{P_USER_ID}" type="hidden" name="{P_USER_ID_Name}"></td> 
+                  <td class="th">Nama Lengkap&nbsp;</td> 
+                  <td><input id="P_USERFormFULL_NAME" class="ControlsIN" value="{FULL_NAME}" maxlength="64" size="50" name="{FULL_NAME_Name}"></td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th"><label for="P_USERFormEMAIL_ADDRESS">NIK</label></td> 
+                  <td><input id="P_USERFormEMPLOYEE_NO" class="ControlsIN" value="{EMPLOYEE_NO}" name="{EMPLOYEE_NO_Name}"></td> 
+                  <td class="th"><label for="P_USERFormEMAIL_ADDRESS">Status Pegawai&nbsp;&nbsp;&nbsp;&nbsp;</label></td> 
+                  <td>
+                    <select id="P_USERFormIS_EMPLOYEE" class="ControlsIN" name="{IS_EMPLOYEE_Name}">
+                      {IS_EMPLOYEE_Options}
+                    </select>
+ </td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th"><label for="p_app_user1VENDOR_ID">Status&nbsp;&nbsp;</label></td> 
+                  <td>
+                    <select id="P_USERFormUSER_STATUS" class="ControlsRQ" name="{USER_STATUS_Name}">
+                      {USER_STATUS_Options}
+                    </select>
+ </td> 
+                  <td class="th"><label for="P_USERFormEMAIL_ADDRESS">Email&nbsp;</label></td> 
+                  <td><input id="P_USERFormEMAIL_ADDRESS" class="ControlsRQ" value="{EMAIL_ADDRESS}" maxlength="128" size="50" name="{EMAIL_ADDRESS_Name}"></td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th">Deskripsi</td> 
+                  <td colspan="3"><input id="P_USERFormDESCRIPTION" class="ControlsIN" value="{DESCRIPTION}" maxlength="250" size="50" name="{DESCRIPTION_Name}">&nbsp;</td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th">User Baru?</td> 
+                  <td>
+                    <select id="P_USERFormIS_NEW_USER" class="ControlsRQ" name="{IS_NEW_USER_Name}">
+                      {IS_NEW_USER_Options}
+                    </select>
+ </td> 
+                  <td class="th">Terakhir Login</td> 
+                  <td><input id="P_USERFormLAST_LOGIN_TIME" class="ControlsRO" value="{LAST_LOGIN_TIME}" readonly maxlength="21" size="21" name="{LAST_LOGIN_TIME_Name}"></td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th">Dibuat&nbsp;&nbsp;</td> 
+                  <td><input id="P_USERFormCREATION_DATE" class="ControlsRO" value="{CREATION_DATE}" readonly maxlength="12" size="16" name="{CREATION_DATE_Name}">&nbsp;</td> 
+                  <td class="th">Diubah&nbsp;</td> 
+                  <td><input id="P_USERFormUPDATED_DATE" class="ControlsRO" value="{UPDATED_DATE}" readonly maxlength="12" size="16" name="{UPDATED_DATE_Name}">&nbsp;</td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th">Pembuat</td> 
+                  <td><input id="P_USERFormCREATED_BY" class="ControlsRO" value="{CREATED_BY}" readonly maxlength="12" size="16" name="{CREATED_BY_Name}">&nbsp;</td> 
+                  <td class="th">Pengubah&nbsp;</td> 
+                  <td><input id="P_USERFormUPDATED_BY" class="ControlsRO" value="{UPDATED_BY}" readonly maxlength="12" size="16" name="{UPDATED_BY_Name}">&nbsp;</td>
+                </tr>
+ 
+                <tr class="Bottom">
+                  <td colspan="4" align="right">
+                    <!-- BEGIN Button Button_Reset --><input id="P_USERFormButton_Reset" alt="RESET" src="../Styles/trb/Images/en/ButtonResetPassword.gif" type="image" name="{Button_Name}"><!-- END Button Button_Reset -->
+                    <!-- BEGIN Button Button_Insert --><input id="P_USERFormButton_Insert" alt="SIMPAN" src="../Styles/trb/Images/en/ButtonUpdate.gif" type="image" name="{Button_Name}"><!-- END Button Button_Insert -->
+                    <!-- BEGIN Button Button_Update --><input id="P_USERFormButton_Update" alt="SIMPAN" src="../Styles/trb/Images/en/ButtonUpdate.gif" type="image" name="{Button_Name}"><!-- END Button Button_Update -->
+                    <!-- BEGIN Button Button_Delete --><input id="P_USERFormButton_Delete" alt="HAPUS" src="../Styles/trb/Images/en/ButtonDelete.gif" type="image" name="{Button_Name}"><!-- END Button Button_Delete -->
+                    <!-- BEGIN Button Button_Cancel --><input id="P_USERFormButton_Cancel" alt="BATAL" src="../Styles/trb/Images/en/ButtonCancel.gif" type="image" name="{Button_Name}"><!-- END Button Button_Cancel --></td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </form>
+      <!-- END Record P_USERForm --><br>
+    </td>
+  </tr>
+</table>
+<script language="JavaScript">
+
+function toRole()
+{
+  var idelement;
+  if (idelement = document.getElementById('P_USERFormP_USER_ID'))
+  {
+    var cid=idelement.value;
+    var acode=document.getElementById("P_USERFormUSER_NAME").value;
+    var bcode=document.getElementById("P_USERFormFULL_NAME").value;
+    var skw=document.getElementById("P_USERSearchs_keyword").value;
+    var hlm=QueryString("P_USERGridPage");
+    if (hlm==null) hlm=1;
+    if (cid!= "" && cid != 0 && cid != false && cid != undefined &&  cid != null)
+    {
+     location.href="p_user_role.php?P_USER_ID="+cid+"&USER_NAME="+acode+"&FULL_NAME="+bcode+"&P_USERSearchs_keyword="+skw+"&P_USERGridPage="+hlm;
+    }
+  }
+}
+
+function close_page()
+{
+    location.href="../main/blank.html"
+}
+
+
+</script>
+</body>
+</html>

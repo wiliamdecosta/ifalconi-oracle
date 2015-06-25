@@ -1,0 +1,241 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<title>p_event_type</title>
+<meta name="GENERATOR" content="CodeCharge Studio 4.3.00.7676">
+<link rel="stylesheet" type="text/css" href="../Styles/trb/Style_doctype.css">
+<script language="JavaScript" src="../js/qs.js"></script>
+<script language="javascript" src="../js/lov.js"></script>
+<script language="JavaScript" type="text/javascript">
+function getFrom_LOV(formName,fieldList,LOV_NM)
+{
+        arrLOV = LOV_NM.split("?");
+        window.open("../lov/"+arrLOV[0]+"?FORM="+formName+"&OBJ="+fieldList+"&"+arrLOV[1],"LOV","width=600,height=500,toolbar=no,scrollbars=yes,resizable=yes");
+}
+</script>
+<script language="JavaScript" type="text/javascript">
+//Begin CCS script
+//Include Common JSFunctions @1-9722A627
+</script>
+<script language="JavaScript" src="../ClientI18N.php?file=Functions.js&amp;locale={res:CCS_LocaleID}" type="text/javascript" charset="utf-8"></script>
+<script language="JavaScript" type="text/javascript">
+//End Include Common JSFunctions
+
+//DEL  
+//DEL  var p_event_type1_DatePicker_CREATION_DATE = new Object(); 
+//DEL  p_event_type1_DatePicker_CREATION_DATE.format           = "ShortDate";
+//DEL  p_event_type1_DatePicker_CREATION_DATE.style            = "Styles/trb/Style.css";
+//DEL  p_event_type1_DatePicker_CREATION_DATE.relativePathPart = "../";
+//DEL  p_event_type1_DatePicker_CREATION_DATE.themeVersion = "3.0";
+//DEL  
+//DEL  var p_event_type1_DatePicker_UPDATED_DATE = new Object(); 
+//DEL  p_event_type1_DatePicker_UPDATED_DATE.format           = "ShortDate";
+//DEL  p_event_type1_DatePicker_UPDATED_DATE.style            = "Styles/trb/Style.css";
+//DEL  p_event_type1_DatePicker_UPDATED_DATE.relativePathPart = "../";
+//DEL  p_event_type1_DatePicker_UPDATED_DATE.themeVersion = "3.0";
+//DEL
+
+//p_event_type1Button_Delete_OnClick @45-BA65B825
+function p_event_type1Button_Delete_OnClick()
+{
+    var result = true;
+//End p_event_type1Button_Delete_OnClick
+
+//Confirmation Message @46-95E112AE
+    return confirm('Anda Yakin Ingin Menghapus Data_ Ini?');
+//End Confirmation Message
+
+//Close p_event_type1Button_Delete_OnClick @45-BC33A33A
+    return result;
+}
+//End Close p_event_type1Button_Delete_OnClick
+
+//p_event_type1Button_Cancel_OnClick @47-57B2E4E0
+function p_event_type1Button_Cancel_OnClick()
+{
+    disableValidation = true;
+}
+//End p_event_type1Button_Cancel_OnClick
+
+//bind_events @1-61B7645E
+function bind_events() {
+    addEventHandler("p_event_type1Button_Delete", "click", p_event_type1Button_Delete_OnClick);
+    addEventHandler("p_event_type1Button_Cancel", "click", p_event_type1Button_Cancel_OnClick);
+}
+//End bind_events
+
+window.onload = bind_events; //Assign bind_events @1-19F7B649
+
+//End CCS script
+</script>
+</head>
+<body leftmargin="0" topmargin="0" marginheight="0" marginwidth="0">
+<div style="POSITION: absolute; WIDTH: 100%" id="tabtop">
+  <table border="0" cellspacing="0" cellpadding="0" width="100%">
+    <tr>
+      <td><img border="0" src="../images/tab_s_on.gif"></td> 
+      <td class="th" background="../images/tab_on.gif" nowrap align="center">TIPE LAYANAN</td> 
+      <td><img border="0" src="../images/tab_e_on.gif"></td> 
+      <td background="../images/tab_back.gif" width="100%"></td>
+    </tr>
+  </table>
+</div>
+<br>
+<br>
+<br>
+<table border="0" cellspacing="0" cellpadding="0" align="center">
+  <tr>
+    <td>
+      <!-- BEGIN Record P_EVENT_TYPESearch -->
+      <form id="P_EVENT_TYPESearch" method="post" name="{HTMLFormName}" action="{Action}">
+        <table border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td valign="top">
+              <table class="Record" cellspacing="0" cellpadding="0">
+                <!-- BEGIN Error -->
+                <tr class="Error">
+                  <td>{Error}</td>
+                </tr>
+                <!-- END Error -->
+                <tr class="Controls">
+                  <td><input id="P_EVENT_TYPESearchs_keyword" class="ControlsIN" value="{s_keyword}" maxlength="64" size="32" name="{s_keyword_Name}">
+                    <!-- BEGIN Button Button_DoSearch --><input id="P_EVENT_TYPESearchButton_DoSearch" class="Button" value="Cari" alt="" type="submit" name="{Button_Name}"><!-- END Button Button_DoSearch --></td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </form>
+      <!-- END Record P_EVENT_TYPESearch --><br>
+      <!-- BEGIN Grid P_EVENT_TYPE -->
+      <table border="0" cellspacing="0" cellpadding="0" width="100%">
+        <tr>
+          <td valign="top">
+            <table class="Header" border="0" cellspacing="0" cellpadding="0" width="100%">
+              <tr>
+                <td class="HeaderLeft"><img border="0" alt="" src="../Styles/trb/Images/Spacer.gif"></td> 
+                <td class="th"><strong>P EVENT TYPE </strong></td> 
+                <td class="HeaderRight"><img border="0" alt="" src="../Styles/trb/Images/Spacer.gif"></td>
+              </tr>
+            </table>
+ 
+            <table class="Grid" cellspacing="0" cellpadding="0">
+              <tr class="Caption">
+                <th style="TEXT-ALIGN: center" scope="col">#</th>
+ 
+                <th scope="col">Tipe Even</th>
+ 
+                <th scope="col">Nama Event</th>
+ 
+                <th scope="col">Tipe Layanan</th>
+ 
+                <th scope="col">Keterangan</th>
+              </tr>
+ 
+              <!-- BEGIN Row -->
+              <tr {P_EVENT_TYPE:rowStyle}>
+                <td style="TEXT-ALIGN: center">
+                  <!-- BEGIN Link DLink --><a href="{DLink_Src}" id="P_EVENT_TYPEDLink_{P_APP_ROLE:rowNumber}"><img border="0" src="../images/radio.gif"></a><!-- END Link DLink -->
+                  <!-- BEGIN Link ADLink --><a href="{ADLink_Src}" id="P_EVENT_TYPEADLink_{P_APP_ROLE:rowNumber}"><img border="0" src="../images/radio_s.gif" width="16" height="16"></a><!-- END Link ADLink --></td> 
+                <td>{CODE}&nbsp;<input style="WIDTH: 64px; HEIGHT: 19px" id="P_EVENT_TYPEP_EVENT_TYPE_ID_{P_EVENT_TYPE:rowNumber}" value="{P_EVENT_TYPE_ID}" size="8" type="hidden" name="{P_EVENT_TYPE_ID_Name}"></td> 
+                <td>{EVENT_NAME}&nbsp;</td> 
+                <td style="TEXT-ALIGN: right">{P_FEATURE_TYPE_ID}&nbsp;</td> 
+                <td>{DESCRIPTION}&nbsp;</td>
+              </tr>
+ <!-- END Row -->
+              <!-- BEGIN NoRecords -->
+              <tr class="NoRecords">
+                <td colspan="5">Data Tidak Ditemukan</td>
+              </tr>
+              <!-- END NoRecords -->
+              <tr class="Footer">
+                <td style="TEXT-ALIGN: center"><a href="{P_EVENT_TYPE_Insert_Src}" id="P_EVENT_TYPEP_EVENT_TYPE_Insert"><img border="0" src="../Styles/trb/Images/en/ButtonTambah.gif"></a></td> 
+                <td colspan="5">&nbsp; 
+                  <!-- BEGIN Navigator Navigator -->
+                  <!-- BEGIN First_On --><a href="{First_URL}"><img border="0" alt="{First_URL}" src="../Styles/trb/Images/First.gif"></a> <!-- END First_On -->
+                  <!-- BEGIN Prev_On --><a href="{Prev_URL}"><img border="0" alt="{Prev_URL}" src="../Styles/trb/Images/Prev.gif"></a> <!-- END Prev_On -->&nbsp; 
+                  <!-- BEGIN Pages -->
+                  <!-- BEGIN Page_On --><a href="{Page_URL}">{Page_Number}</a>&nbsp;<!-- END Page_On -->
+                  <!-- BEGIN Page_Off -->{Page_Number}&nbsp;<!-- END Page_Off --><!-- END Pages -->&nbsp;{Total_Pages}&nbsp; 
+                  <!-- BEGIN Next_On --><a href="{Next_URL}"><img border="0" alt="{Next_URL}" src="../Styles/trb/Images/Next.gif"></a> <!-- END Next_On -->
+                  <!-- BEGIN Last_On --><a href="{Last_URL}"><img border="0" alt="{Last_URL}" src="../Styles/trb/Images/Last.gif"></a> <!-- END Last_On --><!-- END Navigator Navigator -->&nbsp;</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      <!-- END Grid P_EVENT_TYPE --><br>
+      <!-- BEGIN Record p_event_type1 -->
+      <form id="p_event_type1" method="post" name="{HTMLFormName}" action="{Action}">
+        <table border="0" cellspacing="0" cellpadding="0" width="100%">
+          <tr>
+            <td valign="top">
+              <table class="Header" border="0" cellspacing="0" cellpadding="0" width="100%">
+                <tr>
+                  <td class="HeaderLeft"><img border="0" alt="" src="../Styles/trb/Images/Spacer.gif"></td> 
+                  <td class="th"><strong>P Event Type </strong></td> 
+                  <td class="HeaderRight"><img border="0" alt="" src="../Styles/trb/Images/Spacer.gif"></td>
+                </tr>
+              </table>
+ 
+              <table class="Record" cellspacing="0" cellpadding="0">
+                <!-- BEGIN Error -->
+                <tr class="Error">
+                  <td colspan="2">{Error}</td>
+                </tr>
+                <!-- END Error -->
+                <tr class="Controls">
+                  <td class="th"><label for="p_event_type1CODE">Tipe Event</label></td> 
+                  <td><input id="p_event_type1CODE" class="ControlsRQ" value="{CODE}" maxlength="64" size="50" name="{CODE_Name}"><input style="WIDTH: 68px; HEIGHT: 18px" id="p_event_type1P_EVENT_TYPE_ID" value="{P_EVENT_TYPE_ID}" size="9" type="hidden" name="{P_EVENT_TYPE_ID_Name}"></td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th"><label for="p_event_type1EVENT_NAME">Nama Event</label></td> 
+                  <td><input id="p_event_type1EVENT_NAME" class="ControlsRQ" value="{EVENT_NAME}" maxlength="64" size="50" name="{EVENT_NAME_Name}"></td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th"><label for="p_event_type1P_FEATURE_TYPE_ID">Tipe Layanan</label></td> 
+                  <td>&nbsp;<input id="p_event_type1P_FEATURE_TYPE_ID1" class="ControlsRO" value="{P_FEATURE_TYPE_ID1}" readonly maxlength="12" size="21" name="{P_FEATURE_TYPE_ID1_Name}">&nbsp;<input id="p_event_type1P_FEATURE_TYPE_ID" class="ControlsRO" value="{P_FEATURE_TYPE_ID}" readonly maxlength="12" size="21" name="{P_FEATURE_TYPE_ID_Name}">&nbsp;<img id="lov1" onclick="lov_p_feature_type()" src="../Styles/trb/Images/en/lov.gif"></td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th"><label for="p_event_type1DESCRIPTION">Keterangan</label></td> 
+                  <td><textarea id="p_event_type1DESCRIPTION" class="ControlsIN" rows="3" cols="50" name="{DESCRIPTION_Name}">{DESCRIPTION}</textarea></td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th"><label for="p_event_type1CREATED_BY">Pembuat</label></td> 
+                  <td><input id="p_event_type1CREATED_BY" class="ControlsRO" value="{CREATED_BY}" readonly maxlength="16" size="16" name="{CREATED_BY_Name}">&nbsp; Tgl&nbsp; <input id="p_event_type1CREATION_DATE" class="ControlsRO" value="{CREATION_DATE}" maxlength="100" size="16" name="{CREATION_DATE_Name}"></td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th"><label for="p_event_type1UPDATED_BY">Pengubah</label></td> 
+                  <td><input id="p_event_type1UPDATED_BY" class="ControlsRO" value="{UPDATED_BY}" readonly maxlength="16" size="16" name="{UPDATED_BY_Name}">&nbsp; Tgl&nbsp; <input id="p_event_type1UPDATED_DATE" class="ControlsRO" value="{UPDATED_DATE}" maxlength="100" size="16" name="{UPDATED_DATE_Name}"></td>
+                </tr>
+ 
+                <tr class="Bottom">
+                  <td colspan="2" align="right">
+                    <!-- BEGIN Button Button_Insert --><input style="BORDER-RIGHT-WIDTH: 0px; BORDER-TOP-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px" id="p_event_type1Button_Insert" value="" alt="" src="../Styles/trb/Images/en/ButtonInsert.gif" type="image" name="{Button_Name}"><!-- END Button Button_Insert -->
+                    <!-- BEGIN Button Button_Update --><input style="BORDER-RIGHT-WIDTH: 0px; BORDER-TOP-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px" id="p_event_type1Button_Update" value="" alt="" src="../Styles/trb/Images/en/ButtonUbah.gif" type="image" name="{Button_Name}"><!-- END Button Button_Update -->
+                    <!-- BEGIN Button Button_Delete --><input style="BORDER-RIGHT-WIDTH: 0px; BORDER-TOP-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px" id="p_event_type1Button_Delete" value="" alt="" src="../Styles/trb/Images/en/ButtonDelete.gif" type="image" name="{Button_Name}"><!-- END Button Button_Delete -->
+                    <!-- BEGIN Button Button_Cancel --><input style="BORDER-RIGHT-WIDTH: 0px; BORDER-TOP-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px" id="p_event_type1Button_Cancel" value="" alt="" src="../Styles/trb/Images/en/ButtonCancel.gif" type="image" name="{Button_Name}"><!-- END Button Button_Cancel --></td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </form>
+      <!-- END Record p_event_type1 --><br>
+    </td>
+  </tr>
+</table>
+<script language="javascript">
+function lov_p_feature_type()
+{
+        getFrom_LOV('p_event_type1','P_FEATURE_TYPE_ID,P_FEATURE_TYPE_NAME','lov_p_feature_type.php?');
+}
+</script>
+</body>
+</html>

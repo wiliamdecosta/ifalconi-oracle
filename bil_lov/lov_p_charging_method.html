@@ -1,0 +1,123 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<title>lov</title>
+<meta name="GENERATOR" content="CodeCharge Studio 4.3.00.7676">
+<link rel="stylesheet" type="text/css" href="../Styles/trb/Style_doctype.css">
+<script language="javascript">
+function clickReturn(retVal) {
+                strObj = document.getElementById('LOVOBJ').value;
+                strForm = document.getElementById('LOVFORM').value;
+                
+                arrVal = retVal.split('#~#');
+                arrForm = strObj.split(',');
+                for (x=0;x<arrForm.length;x++) {
+                   window.opener.document.getElementById(strForm+arrForm[x]).value = arrVal[x];
+                }
+                window.close();
+}
+
+
+</script>
+</head>
+<body style="MARGIN: 0px" marginwidth="0" marginheight="0">
+<table cellspacing="0" cellpadding="0" width="100%" border="0">
+  <tr>
+    <td><img border="0" src="../images/tab_s_on.gif" width="16" height="24"></td> 
+    <td class="th" style="FONT-SIZE: 12px" background="../images/tab_on.gif" nowrap align="center">CHARGING METHOD</td> 
+    <td><img border="0" src="../images/tab_e_on.gif" width="16" height="24"></td> 
+    <td background="../images/tab_back.gif" width="100%"></td>
+  </tr>
+</table>
+<table width="100%" align="left">
+  <tr>
+    <td>
+      <!-- BEGIN Record P_CHARGING_METHODSearch -->
+      <form id="P_CHARGING_METHODSearch" method="post" name="{HTMLFormName}" action="{Action}">
+        <table cellspacing="0" cellpadding="0" width="100%" border="0">
+          <tr>
+            <td valign="top">
+              <table class="Record" cellspacing="0" cellpadding="0">
+                <!-- BEGIN Error -->
+                <tr class="Error">
+                  <td>{Error}</td>
+                </tr>
+                <!-- END Error -->
+                <tr class="Controls">
+                  <td><input id="P_CHARGING_METHODSearchs_keyword" class="ControlsIN" maxlength="64" size="27" value="{s_keyword}" name="{s_keyword_Name}"><input id="LOVFORM" style="HEIGHT: 18px; WIDTH: 50px" size="6" type="hidden" value="{FORM}" name="FORM"><input id="LOVOBJ" style="HEIGHT: 17px; WIDTH: 55px" size="7" type="hidden" value="{OBJ}" name="OBJ">
+                    <!-- BEGIN Button Button_DoSearch --><input id="P_CHARGING_METHODSearchButton_DoSearch" class="Button" style="HEIGHT: 20px; WIDTH: 32px" alt="" type="submit" value="Cari" name="{Button_Name}"><!-- END Button Button_DoSearch --></td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </form>
+      <!-- END Record P_CHARGING_METHODSearch --><br>
+      <!-- BEGIN Grid P_CHARGING_METHOD -->
+      <table cellspacing="0" cellpadding="0" width="100%" border="0">
+        <tr>
+          <td valign="top">
+            <table class="Header" cellspacing="0" cellpadding="0" width="100%" border="0">
+              <tr>
+                <td class="HeaderLeft"><img border="0" alt="" src="../Styles/trb/Images/Spacer.gif"></td> 
+                <td class="th"><strong>GROUP SERVICE</strong></td> 
+                <td class="HeaderRight"><img border="0" alt="" src="../Styles/trb/Images/Spacer.gif"></td>
+              </tr>
+            </table>
+ 
+            <table class="Grid" cellspacing="0" cellpadding="0">
+              <tr class="Caption">
+                <th style="TEXT-ALIGN: center" scope="col">PILIH</th>
+ 
+                <th scope="col">KODE </th>
+ 
+                <th scope="col">KETERANGAN</th>
+ 
+                <th scope="col">TGL BUAT</th>
+ 
+                <th scope="col">PEMBUAT</th>
+ 
+                <th scope="col">TGL UBAH</th>
+ 
+                <th scope="col">PENGUBAH</th>
+              </tr>
+ 
+              <!-- BEGIN Row -->
+              <tr class="Row">
+                <td style="TEXT-ALIGN: right">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{Label1}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td> 
+                <td>{CODE}&nbsp; <input id="P_CHARGING_METHODP_CHARGING_METHOD_ID_{P_CHARGING_METHOD:rowNumber}" style="HEIGHT: 18px; WIDTH: 62px" size="8" type="hidden" value="{P_CHARGING_METHOD_ID}" name="{P_CHARGING_METHOD_ID_Name}"></td> 
+                <td>{DESCRIPTION}&nbsp;</td> 
+                <td>{CREATION_DATE}&nbsp;</td> 
+                <td>{CREATED_BY}&nbsp;</td> 
+                <td>{UPDATE_DATE}&nbsp;</td> 
+                <td>{UPDATE_BY}&nbsp;</td>
+              </tr>
+ <!-- END Row -->
+              <!-- BEGIN NoRecords -->
+              <tr class="NoRecords">
+                <td colspan="7">Data Tidak Ditemukan</td>
+              </tr>
+              <!-- END NoRecords -->
+              <tr class="Footer">
+                <td colspan="7">
+                  <!-- BEGIN Navigator Navigator -->
+                  <!-- BEGIN First_On --><a href="{First_URL}"><img border="0" alt="{First_URL}" src="../Styles/trb/Images/First.gif"></a> <!-- END First_On -->
+                  <!-- BEGIN Prev_On --><a href="{Prev_URL}"><img border="0" alt="{Prev_URL}" src="../Styles/trb/Images/Prev.gif"></a> <!-- END Prev_On -->&nbsp; 
+                  <!-- BEGIN Pages -->
+                  <!-- BEGIN Page_On --><a href="{Page_URL}">{Page_Number}</a>&nbsp;<!-- END Page_On -->
+                  <!-- BEGIN Page_Off -->{Page_Number}&nbsp;<!-- END Page_Off --><!-- END Pages -->&nbsp;{Total_Pages}&nbsp; 
+                  <!-- BEGIN Next_On --><a href="{Next_URL}"><img border="0" alt="{Next_URL}" src="../Styles/trb/Images/Next.gif"></a> <!-- END Next_On -->
+                  <!-- BEGIN Last_On --><a href="{Last_URL}"><img border="0" alt="{Last_URL}" src="../Styles/trb/Images/Last.gif"></a> <!-- END Last_On --><!-- END Navigator Navigator -->&nbsp;</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      <!-- END Grid P_CHARGING_METHOD --><br>
+      <br>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,171 @@
+@charset "UTF-8";
+
+/** 
+ * MTV.com CSS Drop-Down Menu Theme
+ *
+ * @file		default.css
+ * @name		MTV
+ * @version		0.1
+ * @type		transitional
+ * @browsers	Windows: IE6+, Opera7+, Firefox3+
+ *				Mac OS: Safari2+, Firefox3+
+ *
+ * @link		http://www.lwis.net/free-css-drop-down-menu
+ * @copyright	2008-2012 Live Web Initiatives, http://www.lwis.net
+ *
+ */
+
+
+/* -- Base drop-down styling -- */
+
+ul.dropdown {
+ font: 12px/normal Arial, Helvetica, sans-serif;
+}
+
+	li.top {
+	 background: #FF8000 url(../imgmenu/topnormal.jpg) 0 0 repeat-x !important;
+	 color: #ffffff;
+	}
+
+	li.top:active {
+	 background: #FF8000 url(../imgmenu/topactive.jpg) 0 0 repeat-x !important;
+	 color: #ffffff;
+	}
+
+	li.top:hover {
+	 background: #FF8000 url(../imgmenu/topactive.jpg) 0 0 repeat-x !important;
+	 color: #ffffff;
+	}
+
+	ul.dropdown li {
+	 padding: 4px;
+	 background-color: #0080CC;
+	 color: #fff;
+	}
+
+	ul.dropdown a:link,
+	ul.dropdown a:visited { color: #fff; text-decoration: none;}
+	ul.dropdown a:hover {
+	 border-top-color: #804000 !important;
+	 border-left-color: #804000;
+	 background-color: #FF8000;
+	 color: #ffffff;
+	}
+
+	ul.dropdown ul a.dir:hover {
+	 background-color: #FF8000;
+	 background-image: url(../imgmenu/select-arrow.jpg);
+	 color: #ffffff;
+	}
+
+	ul.dropdown a:active {
+	 background-color: #FF8000;
+	 color: #ffffff;
+	}
+
+	/* -- level mark -- */
+
+	ul.dropdown ul {
+	 left: auto;
+	 right: 0;
+	 width: 150px;
+	 margin-top: -1px;
+	 border-top: 1px solid #0077B0;
+	 border-left: solid 1px #0077B0;
+	 font: 11px/1em Tahoma, Geneva, Verdana, sans-serif;
+	}
+
+		ul.dropdown ul li {
+		 background-color: #0080CC;
+		}
+
+		/* -- level mark -- */
+
+		ul.dropdown ul ul {
+		 top: 0;
+		 right: auto;
+		 left: 100%;
+		 margin-top: 0;
+		 border-top: none;
+		 border-left: none;
+		 font-weight: normal;
+		}
+
+			ul.dropdown ul ul li {
+			 background-color: #0080CC; 
+			}
+
+			/* -- level mark -- */
+
+				ul.dropdown ul ul ul li {
+				 background-color: #0080CC;
+				}
+
+
+/* -- Supporting class `dir` -- */
+
+ul.dropdown *.dir {
+ padding-right: 30px;
+ background-image: none;
+ background-position: 100% 50%;
+ background-repeat: no-repeat;
+}
+
+	/* -- level mark -- */
+
+	ul.dropdown ul *.dir {
+	 padding-right: 15px;
+	 background-image: url(../imgmenu/normal-arrow.jpg);
+	 background-position: 100% 50%;
+	 background-repeat: no-repeat;
+	}
+
+	ul.dropdown ul ul *.dir {
+	 background-image: url(../imgmenu/normal-arrow.jpg);
+	}
+
+
+/* -- Components override -- */
+
+ul.dropdown-vertical *.dir {
+ background-image: url(../imgmenu/normal-arrow.jpg);
+}
+
+ul.dropdown-vertical-rtl *.dir {
+ padding-right: 15px;
+ background-image: url(../imgmenu/normal-arrow.jpg);
+ background-position: 0 50%;
+}
+
+
+/* -- Mixed -- */
+
+ul.dropdown li a,
+ul.dropdown *.dir {
+ border-style: solid;
+ border-width: 1px;
+ border-color: #004080 #004080 #004080 #004080;
+}
+
+ul.dropdown ul li a,
+ul.dropdown ul *.dir { border-color: #0077B0 #0077B0 #0077B0; border-left: none; }
+
+ul.dropdown ul ul li a,
+ul.dropdown ul ul *.dir { border-color: #0077B0 #0077B0 #0077B0; }
+
+ul.dropdown ul ul ul li a,
+ul.dropdown ul ul ul *.dir { border-color: #0077B0 #0077B0 #0077B0; }
+
+
+/* -- Custom elements -- */
+
+#logout { color:#ffff00; text-decoration:none; font: 12px/normal Arial, Helvetica, sans-serif; padding-left: 10px; padding-right: 10px;}
+
+#-n-movies { width: 250px; text-align: center; }
+#-n-movies ul { right: auto; left: 0; width: 249px; text-align: left; }
+#-n-movies ul ul { left: 249px; width: 150px; }
+#-n-movies ul a { width: 232px; }
+#-n-movies ul a.dir { width: 210px; }
+#-n-movies ul ul a { width: 133px; }
+#-n-movies ul ul a.dir { width: 111px; }
+#-n-movies ul ul ul { left: 100%; }

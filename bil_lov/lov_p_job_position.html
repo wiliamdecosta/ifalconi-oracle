@@ -1,0 +1,130 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<title>lov_p_title_position</title>
+<meta name="GENERATOR" content="CodeCharge Studio 4.3.00.7676">
+<link rel="stylesheet" type="text/css" href="../Styles/trb/Style_doctype.css">
+<script language="javascript">
+function clickReturn(retVal) {
+                strObj = document.getElementById('LOVOBJ').value;
+                strForm = document.getElementById('LOVFORM').value;
+                
+                arrVal = retVal.split('#~#');
+                arrForm = strObj.split(',');
+                for (x=0;x<arrForm.length;x++) {
+                   window.opener.document.getElementById(strForm+arrForm[x]).value = arrVal[x];
+                }
+                window.close();
+}
+
+
+</script>
+</head>
+<body>
+<!-- BEGIN Record P_JOB_POSITIONSearch -->
+<form id="P_JOB_POSITIONSearch" method="post" name="{HTMLFormName}" action="{Action}">
+  <table cellspacing="0" cellpadding="0" border="0">
+    <tr>
+      <td valign="top">
+        <table class="Header" cellspacing="0" cellpadding="0" border="0">
+          <tr>
+            <td class="HeaderLeft"><img border="0" alt="" src="../Styles/trb/Images/Spacer.gif"></td> 
+            <td class="th"><strong>P&nbsp;JOB POSITION </strong></td> 
+            <td class="HeaderRight"><img border="0" alt="" src="../Styles/trb/Images/Spacer.gif"></td>
+          </tr>
+        </table>
+ 
+        <table class="Record" cellspacing="0" cellpadding="0">
+          <!-- BEGIN Error -->
+          <tr class="Error">
+            <td colspan="2">{Error}</td>
+          </tr>
+          <!-- END Error -->
+          <tr class="Controls">
+            <td class="th"><label for="P_JOB_POSITIONSearchs_keyword">&nbsp;</label></td> 
+            <td><input id="P_JOB_POSITIONSearchs_keyword" maxlength="64" size="50" value="{s_keyword}" name="{s_keyword_Name}">&nbsp; 
+              <!-- BEGIN Button Button_DoSearch --><input id="P_JOB_POSITIONSearchButton_DoSearch" class="Button" type="submit" value="Cari" name="{Button_Name}"><!-- END Button Button_DoSearch -->&nbsp;<input id="LOVFORM" style="HEIGHT: 18px; WIDTH: 54px" size="5" type="hidden" value="{FORM}" name="FORM"><input id="LOVOBJ" style="HEIGHT: 17px; WIDTH: 51px" size="6" type="hidden" value="{OBJ}" name="OBJ"></td>
+          </tr>
+ 
+          <tr class="Bottom">
+            <td colspan="2" align="right"></td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</form>
+<!-- END Record P_JOB_POSITIONSearch --><br>
+<!-- BEGIN Grid P_JOB_POSITION -->
+<table cellspacing="0" cellpadding="0" border="0">
+  <tr>
+    <td valign="top">
+      <table class="Header" cellspacing="0" cellpadding="0" border="0">
+        <tr>
+          <td class="HeaderLeft"><img border="0" alt="" src="../Styles/trb/Images/Spacer.gif"></td> 
+          <td class="th"><strong>P&nbsp;JOB POSITION </strong></td> 
+          <td class="HeaderRight"><img border="0" alt="" src="../Styles/trb/Images/Spacer.gif"></td>
+        </tr>
+      </table>
+ 
+      <table class="Grid" cellspacing="0" cellpadding="0">
+        <tr class="Caption">
+          <th scope="col">
+          <!-- BEGIN Sorter Sorter_P_JOB_POSITION_ID --><a href="{Sort_URL}" id="P_JOB_POSITIONSorter_P_JOB_POSITION_ID">ID</a> 
+          <!-- BEGIN Asc_On --><img border="0" alt="" src="../Styles/trb/Images/Asc.gif"><!-- END Asc_On -->
+          <!-- BEGIN Desc_On --><img border="0" alt="" src="../Styles/trb/Images/Desc.gif"><!-- END Desc_On --><!-- END Sorter Sorter_P_JOB_POSITION_ID --></th>
+ 
+          <th scope="col">
+          <!-- BEGIN Sorter Sorter_CODE --><a href="{Sort_URL}" id="P_JOB_POSITIONSorter_CODE">CODE</a> 
+          <!-- BEGIN Asc_On --><img border="0" alt="" src="../Styles/trb/Images/Asc.gif"><!-- END Asc_On -->
+          <!-- BEGIN Desc_On --><img border="0" alt="" src="../Styles/trb/Images/Desc.gif"><!-- END Desc_On --><!-- END Sorter Sorter_CODE --></th>
+ 
+          <th scope="col">
+          <!-- BEGIN Sorter Sorter_DESCRIPTION --><a href="{Sort_URL}" id="P_JOB_POSITIONSorter_DESCRIPTION">DESCRIPTION</a> 
+          <!-- BEGIN Asc_On --><img border="0" alt="" src="../Styles/trb/Images/Asc.gif"><!-- END Asc_On -->
+          <!-- BEGIN Desc_On --><img border="0" alt="" src="../Styles/trb/Images/Desc.gif"><!-- END Desc_On --><!-- END Sorter Sorter_DESCRIPTION --></th>
+ 
+          <th scope="col">
+          <!-- BEGIN Sorter Sorter_UPDATED_DATE --><a href="{Sort_URL}" id="P_JOB_POSITIONSorter_UPDATED_DATE">UPDATED DATE</a> 
+          <!-- BEGIN Asc_On --><img border="0" alt="" src="../Styles/trb/Images/Asc.gif"><!-- END Asc_On -->
+          <!-- BEGIN Desc_On --><img border="0" alt="" src="../Styles/trb/Images/Desc.gif"><!-- END Desc_On --><!-- END Sorter Sorter_UPDATED_DATE --></th>
+ 
+          <th scope="col">
+          <!-- BEGIN Sorter Sorter_UPDATED_BY --><a href="{Sort_URL}" id="P_JOB_POSITIONSorter_UPDATED_BY">UPDATED BY</a> 
+          <!-- BEGIN Asc_On --><img border="0" alt="" src="../Styles/trb/Images/Asc.gif"><!-- END Asc_On -->
+          <!-- BEGIN Desc_On --><img border="0" alt="" src="../Styles/trb/Images/Desc.gif"><!-- END Desc_On --><!-- END Sorter Sorter_UPDATED_BY --></th>
+        </tr>
+ 
+        <!-- BEGIN Row -->
+        <tr class="Row">
+          <td style="TEXT-ALIGN: right">&nbsp; {Label1}&nbsp;&nbsp;&nbsp;&nbsp;</td> 
+          <td>{CODE}&nbsp;<input id="P_JOB_POSITIONP_JOB_POSITION_ID_{P_JOB_POSITION:rowNumber}" style="HEIGHT: 18px; WIDTH: 64px" size="8" type="hidden" value="{P_JOB_POSITION_ID}" name="{P_JOB_POSITION_ID_Name}"></td> 
+          <td>{DESCRIPTION}&nbsp;</td> 
+          <td>{UPDATED_DATE}&nbsp;</td> 
+          <td>{UPDATED_BY}&nbsp;</td>
+        </tr>
+ <!-- END Row -->
+        <!-- BEGIN NoRecords -->
+        <tr class="NoRecords">
+          <td colspan="5">Data Tidak Ditemukan</td>
+        </tr>
+        <!-- END NoRecords -->
+        <tr class="Footer">
+          <td colspan="5">
+            <!-- BEGIN Navigator Navigator -->
+            <!-- BEGIN First_On --><a href="{First_URL}"><img border="0" alt="{First_URL}" src="../Styles/trb/Images/First.gif"></a> <!-- END First_On -->
+            <!-- BEGIN Prev_On --><a href="{Prev_URL}"><img border="0" alt="{Prev_URL}" src="../Styles/trb/Images/Prev.gif"></a> <!-- END Prev_On -->&nbsp; 
+            <!-- BEGIN Pages -->
+            <!-- BEGIN Page_On --><a href="{Page_URL}">{Page_Number}</a>&nbsp;<!-- END Page_On -->
+            <!-- BEGIN Page_Off -->{Page_Number}&nbsp;<!-- END Page_Off --><!-- END Pages -->&nbsp;{Total_Pages}&nbsp; 
+            <!-- BEGIN Next_On --><a href="{Next_URL}"><img border="0" alt="{Next_URL}" src="../Styles/trb/Images/Next.gif"></a> <!-- END Next_On -->
+            <!-- BEGIN Last_On --><a href="{Last_URL}"><img border="0" alt="{Last_URL}" src="../Styles/trb/Images/Last.gif"></a> <!-- END Last_On --><!-- END Navigator Navigator -->&nbsp;</td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- END Grid P_JOB_POSITION --><br>
+</body>
+</html>

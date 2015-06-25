@@ -1,0 +1,262 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<title>P_APP_ROLE</title>
+<meta name="GENERATOR" content="CodeCharge Studio 4.1.00.031">
+<link rel="stylesheet" type="text/css" href="../Styles/trb/Style_doctype.css" />
+<script type="text/javascript" src="../js/jquery.min.js"></script>
+<script type="text/javascript" src="../js/lov.js"></script>
+<script type="text/javascript" src="../js/qs.js"></script>
+<script language="JavaScript" type="text/javascript">
+//Begin CCS script
+//Include Common JSFunctions @1-9722A627
+</script>
+<script language="JavaScript" src="../ClientI18N.php?file=Functions.js&amp;locale={res:CCS_LocaleID}" type="text/javascript" charset="utf-8"></script>
+<script language="JavaScript" type="text/javascript">
+//End Include Common JSFunctions
+
+//P_ROLEFormButton_Delete_OnClick @22-706A87DE
+function P_ROLEFormButton_Delete_OnClick()
+{
+    var result = true;
+//End P_ROLEFormButton_Delete_OnClick
+
+//Confirmation Message @23-6341842A
+    return confirm('Hapus Record?');
+//End Confirmation Message
+
+//Close P_ROLEFormButton_Delete_OnClick @22-BC33A33A
+    return result;
+}
+//End Close P_ROLEFormButton_Delete_OnClick
+
+//P_ROLEFormButton_Cancel_OnClick @24-59C7B54D
+function P_ROLEFormButton_Cancel_OnClick()
+{
+    disableValidation = true;
+}
+//End P_ROLEFormButton_Cancel_OnClick
+
+//bind_events @1-B8494CE4
+function bind_events() {
+    addEventHandler("P_ROLEFormButton_Delete", "click", P_ROLEFormButton_Delete_OnClick);
+    addEventHandler("P_ROLEFormButton_Cancel", "click", P_ROLEFormButton_Cancel_OnClick);
+}
+//End bind_events
+
+window.onload = bind_events; //Assign bind_events @1-19F7B649
+
+//End CCS script
+</script>
+<script language="javascript" type="text/javascript">
+$(document).ready(function()
+{
+    $(window).scroll(function()
+    {
+            $('#tabtop').css('top', $(window).scrollTop());
+    });
+});
+</script>
+</head>
+<body leftmargin="0" topmargin="0" marginheight="0" marginwidth="0">
+<div id="tabtop" style="WIDTH: 100%; POSITION: absolute">
+  <table border="0" cellspacing="0" cellpadding="0" width="100%" style="background-color:#89a5f7">
+    <tr>
+      <td><img border="0" src="../images/tab_s_on.gif"></td> 
+      <td class="th" background="../images/tab_on.gif" nowrap align="center">ROLE</td> 
+      <td><img border="0" src="../images/tab_e_on.gif"></td> 
+      <td><img border="0" src="../images/tab_s_off.gif"></td> 
+      <td class="th" background="../images/tab_off.gif" nowrap align="center"><label onclick="javascript:toModule()">MODUL</label></td> 
+      <td><img border="0" src="../images/tab_e_off.gif"></td> 
+      <td background="../images/tab_back.gif" width="100%"></td> 
+    </tr>
+ 
+  </table>
+</div>
+<br>
+<br>
+<table border="0" cellspacing="0" cellpadding="0" align="center">
+  <tr>
+    <td>
+      <!-- BEGIN Record P_ROLESearch -->
+      <form id="P_ROLESearch" method="post" name="{HTMLFormName}" action="{Action}">
+        <table border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td valign="top">
+              <table border="0" cellspacing="0" cellpadding="0">
+                <!-- BEGIN Error -->
+                <tr class="Error">
+                  <td colspan="2">{Error}</td> 
+                </tr>
+ <!-- END Error -->
+                <tr class="Row">
+                  <td><input style="TEXT-TRANSFORM: uppercase" id="P_ROLESearchs_keyword" class="ControlsIN" value="{s_keyword}" maxlength="32" size="32" name="{s_keyword_Name}"></td>
+                  <td><!-- BEGIN Button Button_DoSearch --><input id="P_ROLESearchButton_DoSearch" alt="Search" src="../Styles/trb/Images/en/ButtonSearch.gif" type="image" name="{Button_Name}"><!-- END Button Button_DoSearch --></td> 
+                </tr>
+ 
+              </table>
+ </td> 
+          </tr>
+ 
+        </table>
+ 
+      </form>
+ <!-- END Record P_ROLESearch -->
+      <!-- BEGIN Grid P_ROLEGrid -->
+      <table border="0" cellspacing="0" cellpadding="0" width="100%">
+        <tr>
+          <td valign="top">
+            <table class="Header" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td class="HeaderLeft"><img border="0" alt="" src="../Styles/trb/images/Spacer.gif"></td> 
+                <td class="th"><strong>DAFTAR ROLE</strong></td> 
+                <td class="th"><img onclick="javascript:close_page()" border="0" alt="close" src="../images/to_close_red.gif"></td> 
+                <td class="HeaderRight"><img border="0" alt="" src="../Styles/trb/images/Spacer.gif"></td> 
+              </tr>
+ 
+            </table>
+ 
+            <table class="Grid" cellspacing="0" cellpadding="0">
+              <tr class="Caption">
+                <th style="TEXT-ALIGN: center" width="1" scope="col">&nbsp;#</th>
+ 
+                <th scope="col">Role</th>
+ 
+                <th scope="col">Keterangan</th>
+ 
+              </tr>
+ 
+              <!-- BEGIN Row -->
+              <tr {P_ROLEGrid:rowStyle}>
+                <td style="TEXT-ALIGN: center">
+                  <!-- BEGIN Link DLink --><a href="{DLink_Src}" id="P_ROLEGridDLink_{P_ROLEGrid:rowNumber}">{DLink}</a><!-- END Link DLink --></td> 
+                <td>{CODE}&nbsp;<input id="P_ROLEGridP_ROLE_ID" value="{P_ROLE_ID}" type="hidden" name="{P_ROLE_ID_Name}"></td> 
+                <td>{DESCRIPTION}&nbsp;</td> 
+              </tr>
+ <!-- END Row -->
+              <!-- BEGIN NoRecords -->
+              <tr class="NoRecords">
+                <td colspan="3">Data Tidak Ditemukan</td> 
+              </tr>
+ <!-- END NoRecords -->
+              <tr class="Footer">
+                <td style="TEXT-ALIGN: center"><a href="{P_ROLE_Insert_Src}" id="P_ROLEGridP_ROLE_Insert"><img border="0" src="../Styles/trb/Images/en/ButtonTambah.gif"></a></a></td> 
+                <td colspan="2">
+                  <!-- BEGIN Navigator Navigator -->
+                  <!-- BEGIN First_On --><a href="{First_URL}"><img border="0" alt="{First_URL}" src="../Styles/trb/Images/First.gif"></a> <!-- END First_On -->
+                  <!-- BEGIN First_Off --><img border="0" alt="{First_URL}" src="../Styles/trb/Images/FirstOff.gif"><!-- END First_Off -->
+                  <!-- BEGIN Prev_On --><a href="{Prev_URL}"><img border="0" alt="{Prev_URL}" src="../Styles/trb/Images/Prev.gif"></a> <!-- END Prev_On -->
+                  <!-- BEGIN Prev_Off --><img border="0" alt="{Prev_URL}" src="../Styles/trb/Images/PrevOff.gif"><!-- END Prev_Off -->&nbsp; 
+                  <!-- BEGIN Pages -->
+                  <!-- BEGIN Page_On --><a href="{Page_URL}">{Page_Number}</a>&nbsp;<!-- END Page_On -->
+                  <!-- BEGIN Page_Off -->{Page_Number}&nbsp;<!-- END Page_Off --><!-- END Pages -->
+                  <!-- BEGIN Next_On --><a href="{Next_URL}"><img border="0" alt="{Next_URL}" src="../Styles/trb/Images/Next.gif"></a> <!-- END Next_On -->
+                  <!-- BEGIN Next_Off --><img border="0" alt="{Next_URL}" src="../Styles/trb/Images/NextOff.gif"><!-- END Next_Off -->
+                  <!-- BEGIN Last_On --><a href="{Last_URL}"><img border="0" alt="{Last_URL}" src="../Styles/trb/Images/Last.gif"></a> <!-- END Last_On -->
+                  <!-- BEGIN Last_Off --><img border="0" alt="{Last_URL}" src="../Styles/trb/Images/LastOff.gif"><!-- END Last_Off --><!-- END Navigator Navigator -->&nbsp;</td> 
+              </tr>
+ 
+            </table>
+ </td> 
+        </tr>
+ 
+      </table>
+ <!-- END Grid P_ROLEGrid --><br>
+      <!-- BEGIN Record P_ROLEForm -->
+      <form id="P_ROLEForm" method="post" name="{HTMLFormName}" action="{Action}">
+        <table border="0" cellspacing="0" cellpadding="0" width="100%">
+          <tr>
+            <td valign="top">
+              <table class="Header" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                  <td class="HeaderLeft"><img border="0" alt="" src="../Styles/trb/images/Spacer.gif"></td> 
+                  <td class="th"><strong>INFORMASI ROLE</strong></td> 
+                  <td class="th"><img border="0" src="../images/spaceheader.gif"></td> 
+                  <td class="HeaderRight"><img border="0" alt="" src="../Styles/trb/images/Spacer.gif"></td> 
+                </tr>
+ 
+              </table>
+ 
+              <table class="Record" cellspacing="0" cellpadding="0">
+                <!-- BEGIN Error -->
+                <tr class="Error">
+                  <td colspan="2">{Error}</td> 
+                </tr>
+ <!-- END Error -->
+                <tr class="Controls">
+                  <td class="th"><label for="P_ROLEFormCODE">Role</label></td> 
+                  <td><input style="TEXT-TRANSFORM: uppercase" id="P_ROLEFormCODE" class="ControlsRQ" value="{CODE}" maxlength="32" size="32" name="{CODE_Name}">&nbsp;</td> 
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th">Keterangan</td> 
+                  <td><textarea id="P_ROLEFormDESCRIPTION" class="ControlsIN" rows="3" cols="50" name="{DESCRIPTION_Name}">{DESCRIPTION}</textarea>&nbsp;&nbsp;&nbsp;&nbsp;</td> 
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th"><label for="P_ROLEFormIS_ACTIVE">Status</label></td> 
+                  <td>
+                    <select id="P_ROLEFormIS_ACTIVE" class="ControlsRQ" name="{IS_ACTIVE_Name}">
+                      {IS_ACTIVE_Options} 
+                    </select>
+ </td> 
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th"><label for="P_ROLEFormCREATED_BY">Pembuat</label></td> 
+                  <td><input style="TEXT-TRANSFORM: uppercase" id="P_ROLEFormCREATED_BY" class="ControlsRO" value="{CREATED_BY}" readonly maxlength="12" size="12" name="{CREATED_BY_Name}">&nbsp;Tgl <input style="TEXT-TRANSFORM: uppercase" id="P_ROLEFormCREATION_DATE" class="ControlsRO" value="{CREATION_DATE}" readonly maxlength="12" size="12" name="{CREATION_DATE_Name}"></td> 
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th">Pengubah</td> 
+                  <td><input style="TEXT-TRANSFORM: uppercase" id="P_ROLEFormUPDATED_BY" class="ControlsRO" value="{UPDATED_BY}" readonly maxlength="12" size="12" name="{UPDATED_BY_Name}">&nbsp;Tgl <input style="TEXT-TRANSFORM: uppercase" id="P_ROLEFormUPDATED_DATE" language="Jscript" class="ControlsRO" value="{UPDATED_DATE}" readonly maxlength="12" size="12" name="{UPDATED_DATE_Name}">&nbsp;</td> 
+                </tr>
+ 
+                <tr class="Bottom">
+                  <td colspan="2" align="right"><input id="P_ROLEFormP_ROLE_ID" value="{P_ROLE_ID}" type="hidden" name="{P_ROLE_ID_Name}">&nbsp; 
+                    <!-- BEGIN Button Button_Insert --><input id="P_ROLEFormButton_Insert" alt="SIMPAN" src="../Styles/trb/Images/en/ButtonUpdate.gif" type="image" name="{Button_Name}"><!-- END Button Button_Insert -->
+                    <!-- BEGIN Button Button_Update --><input id="P_ROLEFormButton_Update" alt="SIMPAN" src="../Styles/trb/Images/en/ButtonUpdate.gif" type="image" name="{Button_Name}"><!-- END Button Button_Update -->
+                    <!-- BEGIN Button Button_Delete --><input id="P_ROLEFormButton_Delete" alt="HAPUS" src="../Styles/trb/Images/en/ButtonDelete.gif" type="image" name="{Button_Name}"><!-- END Button Button_Delete -->
+                    <!-- BEGIN Button Button_Cancel --><input id="P_ROLEFormButton_Cancel" alt="BATAL" src="../Styles/trb/Images/en/ButtonCancel.gif" type="image" name="{Button_Name}"><!-- END Button Button_Cancel --></td> 
+                </tr>
+ 
+              </table>
+ </td> 
+          </tr>
+ 
+        </table>
+ 
+      </form>
+ <!-- END Record P_ROLEForm --><br>
+    </td> 
+  </tr>
+</table>
+<!--#include File="../include/function.inc"-->
+<script language="JavaScript">
+
+function toModule()
+{
+  var idelement;
+  if (idelement = document.getElementById('P_ROLEFormP_ROLE_ID'))
+  {
+    var cid=idelement.value;
+    var acode=document.getElementById("P_ROLEFormCODE").value;
+    var skw=document.getElementById("P_ROLESearchs_keyword").value;
+    var hlm=QueryString("P_ROLEGridPage");
+    if (hlm==null) hlm=1;
+    if (cid!= "" && cid != 0 && cid != false && cid != undefined &&  cid != null)
+    {
+     location.href="p_application_role.php?P_ROLE_ID="+cid+"&ROLE_CODE="+acode+"&P_ROLESearchs_keyword="+skw+"&P_ROLEGridPage="+hlm;
+    }
+  }
+}
+
+function close_page()
+{
+    location.href="../main/blank.html"
+}
+
+</script>
+</body>
+</html>

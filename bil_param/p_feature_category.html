@@ -1,0 +1,272 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<title>p_feature_category</title>
+<meta name="GENERATOR" content="CodeCharge Studio 4.3.00.7676">
+<link rel="stylesheet" type="text/css" href="../Styles/trb/Style_doctype.css">
+<script language="JavaScript" type="text/javascript">
+//Begin CCS script
+//Include Common JSFunctions @1-9722A627
+</script>
+<script language="JavaScript" src="../ClientI18N.php?file=Functions.js&amp;locale={res:CCS_LocaleID}" type="text/javascript" charset="utf-8"></script>
+<script language="JavaScript" type="text/javascript">
+//End Include Common JSFunctions
+
+
+//p_feature_category1Button_Insert_OnClick @56-A581C892
+function p_feature_category1Button_Insert_OnClick()
+{
+    var result = true;
+//End p_feature_category1Button_Insert_OnClick
+
+//Custom Code @57-2A29BDB7
+    // -------------------------
+    // Write your own code here.
+    // -------------------------
+//End Custom Code
+
+//Confirmation Message @58-BE9BB1EE
+    return confirm('Anda Yakin Menyimpan Record Ini?');
+//End Confirmation Message
+
+//Close p_feature_category1Button_Insert_OnClick @56-BC33A33A
+    return result;
+}
+//End Close p_feature_category1Button_Insert_OnClick
+
+//p_feature_category1Button_Update_OnClick @59-32B378CA
+function p_feature_category1Button_Update_OnClick()
+{
+    var result = true;
+//End p_feature_category1Button_Update_OnClick
+
+//Custom Code @60-2A29BDB7
+    // -------------------------
+    // Write your own code here.
+    // -------------------------
+//End Custom Code
+
+//Confirmation Message @61-88039EA5
+    return confirm('Anda Yakin Mengubah Record Ini?');
+//End Confirmation Message
+
+//Close p_feature_category1Button_Update_OnClick @59-BC33A33A
+    return result;
+}
+//End Close p_feature_category1Button_Update_OnClick
+
+//p_feature_category1Button_Delete_OnClick @62-6A2EA9DC
+function p_feature_category1Button_Delete_OnClick()
+{
+    var result = true;
+//End p_feature_category1Button_Delete_OnClick
+
+//Confirmation Message @63-95E112AE
+    return confirm('');
+//End Confirmation Message
+
+//Close p_feature_category1Button_Delete_OnClick @62-BC33A33A
+    return result;
+}
+//End Close p_feature_category1Button_Delete_OnClick
+
+//p_feature_category1Button_Cancel_OnClick @64-B660EF82
+function p_feature_category1Button_Cancel_OnClick()
+{
+    var result = true;
+//End p_feature_category1Button_Cancel_OnClick
+
+//Custom Code @65-2A29BDB7
+    // -------------------------
+    // Write your own code here.
+    // -------------------------
+//End Custom Code
+
+//Close p_feature_category1Button_Cancel_OnClick @64-AEF500E0
+    disableValidation = true;
+    return result;
+}
+//End Close p_feature_category1Button_Cancel_OnClick
+
+//bind_events @1-A9798248
+function bind_events() {
+    addEventHandler("p_feature_category1Button_Insert", "click", p_feature_category1Button_Insert_OnClick);
+    addEventHandler("p_feature_category1Button_Update", "click", p_feature_category1Button_Update_OnClick);
+    addEventHandler("p_feature_category1Button_Delete", "click", p_feature_category1Button_Delete_OnClick);
+    addEventHandler("p_feature_category1Button_Cancel", "click", p_feature_category1Button_Cancel_OnClick);
+}
+//End bind_events
+
+window.onload = bind_events; //Assign bind_events @1-19F7B649
+
+//End CCS script
+</script>
+<script language="javascript" type="text/javascript">
+$(document).ready(function()
+{
+    $(window).scroll(function()
+    {
+            $('#tabtop').css('top', $(window).scrollTop());
+    });
+});
+</script>
+</head>
+<body leftmargin="0" topmargin="0" marginheight="0" marginwidth="0">
+<div id="tabtop" style="WIDTH: 100%; POSITION: absolute">
+<table border="0" cellspacing="0" cellpadding="0" width="100%" style="background-color:#89a5f7">
+    <tr>
+      <td><img src="../images/tab_s_on.gif" border="0"></td> 
+      <td class="th" nowrap align="center" background="../images/tab_on.gif">KATEGORI FEATURE</td> 
+      <td><img src="../images/tab_e_on.gif" border="0"></td> 
+      <td width="100%" background="../images/tab_back.gif"></td>
+    </tr>
+  </table>
+</div>
+<br><br>
+<table border="0" cellspacing="0" cellpadding="0" align="center">
+  <tr>
+    <td>
+      <!-- BEGIN Record P_FEATURE_CATEGORYSearch -->
+      <form id="P_FEATURE_CATEGORYSearch" name="{HTMLFormName}" action="{Action}" method="post">
+        <table cellspacing="0" cellpadding="0" width="100%" border="0">
+          <tr>
+            <td valign="top">
+              <table class="Record" cellspacing="0" cellpadding="0">
+                <!-- BEGIN Error -->
+                <tr class="Error">
+                  <td>{Error}</td>
+                </tr>
+                <!-- END Error -->
+                <tr class="Controls">
+                  <td><input class="ControlsIN" id="P_FEATURE_CATEGORYSearchs_keyword" maxlength="64" size="26" value="{s_keyword}" name="{s_keyword_Name}">
+                    <!-- BEGIN Button Button_DoSearch --><input class="Button" id="P_FEATURE_CATEGORYSearchButton_DoSearch" style="WIDTH: 36px; HEIGHT: 19px" type="submit" alt="" size="5" value="Cari" name="{Button_Name}"><!-- END Button Button_DoSearch --></td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </form>
+      <!-- END Record P_FEATURE_CATEGORYSearch --><br>
+      <!-- BEGIN Grid P_FEATURE_CATEGORY -->
+      <table cellspacing="0" cellpadding="0" width="100%" border="0">
+        <tr>
+          <td valign="top">
+            <table class="Header" cellspacing="0" cellpadding="0" border="0">
+              <tr>
+                <td class="HeaderLeft"><img alt="" src="../Styles/trb/Images/Spacer.gif" border="0"></td> 
+                <td class="th"><strong>DAFTAR KATEGORI FEATURE&nbsp;</strong></td> 
+                <td class="HeaderRight"><img alt="" src="../Styles/trb/Images/Spacer.gif" border="0"></td>
+              </tr>
+            </table>
+ 
+            <table class="Grid" cellspacing="0" cellpadding="0">
+              <tr class="Caption">
+                <th style="TEXT-ALIGN: center" scope="col">#</th>
+ 
+                <th scope="col">KODE</th>
+ 
+                <th scope="col">KETERANGAN</th>
+ 
+                <th scope="col">Tgl BUAT</th>
+ 
+                <th scope="col">Pembuat</th>
+ 
+                <th scope="col">Tgl Ubah</th>
+ 
+                <th scope="col">Pengubah</th>
+              </tr>
+ 
+              <!-- BEGIN Row -->
+              <tr {P_FEATURE_CATEGORY:rowStyle}>
+                <td style="TEXT-ALIGN: center">
+                  <!-- BEGIN Link DLink --><a href="{DLink_Src}" id="P_FEATURE_CATEGORYDLink_{P_APP_ROLE:rowNumber}"><img src="../images/radio.gif" border="0"></a><!-- END Link DLink -->
+                  <!-- BEGIN Link ADLink --><a href="{ADLink_Src}" id="P_FEATURE_CATEGORYADLink_{P_APP_ROLE:rowNumber}"><img height="16" src="../images/radio_s.gif" width="16" border="0"></a><!-- END Link ADLink --></td> 
+                <td>{CODE}&nbsp;<label style="display: none;" for="P_FEATURE_CATEGORYP_FEATURE_CATEGORY_ID_{P_FEATURE_CATEGORY:rowNumber}">ID</label><input id="P_FEATURE_CATEGORYP_FEATURE_CATEGORY_ID_{P_FEATURE_CATEGORY:rowNumber}" style="WIDTH: 49px; HEIGHT: 15px" type="hidden" size="6" value="{P_FEATURE_CATEGORY_ID}" name="{P_FEATURE_CATEGORY_ID_Name}"></td> 
+                <td>{DESCRIPTION}&nbsp;</td> 
+                <td>{CREATION_DATE}&nbsp;</td> 
+                <td>{CREATED_BY}&nbsp;</td> 
+                <td>{UPDATED_DATE}&nbsp;</td> 
+                <td>{UPDATED_BY}&nbsp;</td>
+              </tr>
+ <!-- END Row -->
+              <!-- BEGIN NoRecords -->
+              <tr class="NoRecords">
+                <td colspan="7">Data Tidak Ditemukan</td>
+              </tr>
+              <!-- END NoRecords -->
+              <tr class="Footer">
+                <td style="TEXT-ALIGN: center"><a href="{P_FEATURE_CATEGORY_Insert_Src}" id="P_FEATURE_CATEGORYP_FEATURE_CATEGORY_Insert"><img src="../Styles/trb/Images/en/ButtonTambah.gif" border="0"></a></a></td> 
+                <td colspan="7">
+                  <!-- BEGIN Navigator Navigator -->
+                  <!-- BEGIN First_On --><a href="{First_URL}"><img alt="{First_URL}" src="../Styles/trb/Images/First.gif" border="0"></a> <!-- END First_On -->
+                  <!-- BEGIN Prev_On --><a href="{Prev_URL}"><img alt="{Prev_URL}" src="../Styles/trb/Images/Prev.gif" border="0"></a> <!-- END Prev_On -->&nbsp; 
+                  <!-- BEGIN Pages -->
+                  <!-- BEGIN Page_On --><a href="{Page_URL}">{Page_Number}</a>&nbsp;<!-- END Page_On -->
+                  <!-- BEGIN Page_Off -->{Page_Number}&nbsp;<!-- END Page_Off --><!-- END Pages -->&nbsp;{Total_Pages}&nbsp; 
+                  <!-- BEGIN Next_On --><a href="{Next_URL}"><img alt="{Next_URL}" src="../Styles/trb/Images/Next.gif" border="0"></a> <!-- END Next_On -->
+                  <!-- BEGIN Last_On --><a href="{Last_URL}"><img alt="{Last_URL}" src="../Styles/trb/Images/Last.gif" border="0"></a> <!-- END Last_On --><!-- END Navigator Navigator -->&nbsp;</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      <!-- END Grid P_FEATURE_CATEGORY --><br>
+      <!-- BEGIN Record p_feature_category1 -->
+      <form id="p_feature_category1" name="{HTMLFormName}" action="{Action}" method="post">
+        <table cellspacing="0" cellpadding="0" width="100%" border="0">
+          <tr>
+            <td valign="top">
+              <table class="Header" cellspacing="0" cellpadding="0" border="0">
+                <tr>
+                  <td class="HeaderLeft"><img alt="" src="../Styles/trb/Images/Spacer.gif" border="0"></td> 
+                  <td class="th"><strong>KATEGORI FEATURE&nbsp;</strong></td> 
+                  <td class="HeaderRight"><img alt="" src="../Styles/trb/Images/Spacer.gif" border="0"></td>
+                </tr>
+              </table>
+ 
+              <table class="Record" cellspacing="0" cellpadding="0">
+                <!-- BEGIN Error -->
+                <tr class="Error">
+                  <td colspan="2">{Error}</td>
+                </tr>
+                <!-- END Error -->
+                <tr class="Controls">
+                  <td class="th"><label for="p_feature_category1CODE">KODE</label></td> 
+                  <td><input class="ControlsRQ" id="p_feature_category1CODE" maxlength="32" size="32" value="{CODE}" name="{CODE_Name}">&nbsp;<input id="p_feature_category1P_FEATURE_CATEGORY_ID" style="WIDTH: 51px; HEIGHT: 15px" type="hidden" size="6" value="{P_FEATURE_CATEGORY_ID}" name="{P_FEATURE_CATEGORY_ID_Name}"></td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th"><label for="p_feature_category1DESCRIPTION">KETERANGAN</label></td> 
+                  <td><textarea class="ControlsRQ" id="p_feature_category1DESCRIPTION" style="WIDTH: 256px; HEIGHT: 54px" name="{DESCRIPTION_Name}" rows="3" cols="30">{DESCRIPTION}</textarea></td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th"><label for="p_feature_category1CREATED_BY">PEMBUAT</label></td> 
+                  <td><input class="ControlsRO" id="p_feature_category1CREATED_BY" readonly maxlength="12" size="16" value="{CREATED_BY}" name="{CREATED_BY_Name}">&nbsp;Tgl&nbsp;&nbsp;<input class="ControlsRO" id="p_feature_category1CREATION_DATE" readonly maxlength="12" size="12" value="{CREATION_DATE}" name="{CREATION_DATE_Name}"></td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th"><label for="p_feature_category1UPDATED_BY">PENGUBAH</label></td> 
+                  <td><input class="ControlsRO" id="p_feature_category1UPDATED_BY" maxlength="12" size="16" value="{UPDATED_BY}" name="{UPDATED_BY_Name}">&nbsp;Tgl&nbsp; <input class="ControlsRO" id="p_feature_category1UPDATED_DATE" readonly maxlength="12" size="12" value="{UPDATED_DATE}" name="{UPDATED_DATE_Name}"></td>
+                </tr>
+ 
+                <tr class="Bottom">
+                  <td align="right" colspan="2">
+                    <!-- BEGIN Button Button_Insert --><input id="p_feature_category1Button_Insert" type="image" alt="SIMPAN" src="../Styles/trb/Images/en/ButtonUpdate.gif" name="{Button_Name}"><!-- END Button Button_Insert -->
+                    <!-- BEGIN Button Button_Update --><input id="p_feature_category1Button_Update" type="image" alt="SIMPAN" src="../Styles/trb/Images/en/ButtonUpdate.gif" name="{Button_Name}"><!-- END Button Button_Update -->
+                    <!-- BEGIN Button Button_Delete --><input id="p_feature_category1Button_Delete" style="BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px" type="image" alt="" src="../Styles/trb/Images/en/ButtonDelete.gif" value="" name="{Button_Name}"><!-- END Button Button_Delete -->
+                    <!-- BEGIN Button Button_Cancel --><input id="p_feature_category1Button_Cancel" type="image" alt="BATAL" src="../Styles/trb/Images/en/ButtonCancel.gif" name="{Button_Name}"><!-- END Button Button_Cancel --></td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </form>
+      <!-- END Record p_feature_category1 --><br>
+      <br>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

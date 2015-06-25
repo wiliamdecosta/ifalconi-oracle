@@ -1,0 +1,283 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<title>p_company</title>
+<meta name="GENERATOR" content="CodeCharge Studio 4.3.00.7676">
+<link rel="stylesheet" type="text/css" href="../Styles/trb/Style_doctype.css">
+<script language="JavaScript" src="../js/qs.js"></script>
+<script language="javascript" src="../js/lov.js"></script>
+<script language="JavaScript" type="text/javascript">
+function getFrom_LOV(formName,fieldList,LOV_NM)
+{
+        arrLOV = LOV_NM.split("?");
+        window.open("../lov/"+arrLOV[0]+"?FORM="+formName+"&OBJ="+fieldList+"&"+arrLOV[1],"LOV","width=600,height=500,toolbar=no,scrollbars=yes,resizable=yes");
+}
+</script>
+<script language="JavaScript" type="text/javascript">
+//Begin CCS script
+//Include Common JSFunctions @1-9722A627
+</script>
+<script language="JavaScript" src="../ClientI18N.php?file=Functions.js&amp;locale={res:CCS_LocaleID}" type="text/javascript" charset="utf-8"></script>
+<script language="JavaScript" type="text/javascript">
+//End Include Common JSFunctions
+
+//DEL  
+//DEL  var p_company1_DatePicker_CREATION_DATE = new Object(); 
+//DEL  p_company1_DatePicker_CREATION_DATE.format           = "ShortDate";
+//DEL  p_company1_DatePicker_CREATION_DATE.style            = "Styles/trb/Style.css";
+//DEL  p_company1_DatePicker_CREATION_DATE.relativePathPart = "../";
+//DEL  p_company1_DatePicker_CREATION_DATE.themeVersion = "3.0";
+//DEL  
+//DEL  var p_company1_DatePicker_UPDATED_DATE = new Object(); 
+//DEL  p_company1_DatePicker_UPDATED_DATE.format           = "ShortDate";
+//DEL  p_company1_DatePicker_UPDATED_DATE.style            = "Styles/trb/Style.css";
+//DEL  p_company1_DatePicker_UPDATED_DATE.relativePathPart = "../";
+//DEL  p_company1_DatePicker_UPDATED_DATE.themeVersion = "3.0";
+//DEL
+
+//p_company1Button_Delete_OnClick @88-6454F221
+function p_company1Button_Delete_OnClick()
+{
+    var result = true;
+//End p_company1Button_Delete_OnClick
+
+//Confirmation Message @89-95E112AE
+    return confirm('Anda Yakin Ingin Menghapus Data_ Ini?');
+//End Confirmation Message
+
+//Close p_company1Button_Delete_OnClick @88-BC33A33A
+    return result;
+}
+//End Close p_company1Button_Delete_OnClick
+
+//p_company1Button_Cancel_OnClick @90-9423B870
+function p_company1Button_Cancel_OnClick()
+{
+    disableValidation = true;
+}
+//End p_company1Button_Cancel_OnClick
+
+//bind_events @1-C1776E07
+function bind_events() {
+    addEventHandler("p_company1Button_Delete", "click", p_company1Button_Delete_OnClick);
+    addEventHandler("p_company1Button_Cancel", "click", p_company1Button_Cancel_OnClick);
+}
+//End bind_events
+
+window.onload = bind_events; //Assign bind_events @1-19F7B649
+
+//End CCS script
+</script>
+</head>
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<div style="POSITION: absolute; WIDTH: 100%" id="tabtop">
+  <table border="0" cellspacing="0" cellpadding="0" width="100%">
+    <tr>
+      <td><img border="0" src="../images/tab_s_on.gif"></td> 
+      <td class="th" background="../images/tab_on.gif" nowrap align="center">KODE AKSES</td> 
+      <td><img border="0" src="../images/tab_e_on.gif"></td> 
+      <td background="../images/tab_back.gif" width="100%"></td>
+    </tr>
+  </table>
+</div>
+<br>
+<br>
+<br>
+<table border="0" cellspacing="0" cellpadding="0" align="center">
+  <tr>
+    <td>
+      <!-- BEGIN Record P_COMPANYSearch -->
+      <form id="P_COMPANYSearch" method="post" name="{HTMLFormName}" action="{Action}">
+        <table border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td valign="top">
+              <table class="Record" cellspacing="0" cellpadding="0">
+                <!-- BEGIN Error -->
+                <tr class="Error">
+                  <td>{Error}</td>
+                </tr>
+                <!-- END Error -->
+                <tr class="Controls">
+                  <td><input id="P_COMPANYSearchs_keyword" class="ControlsIN" value="{s_keyword}" maxlength="64" size="32" name="{s_keyword_Name}">
+                    <!-- BEGIN Button Button_DoSearch --><input id="P_COMPANYSearchButton_DoSearch" class="Button" value="Cari" alt="" type="submit" name="{Button_Name}"><!-- END Button Button_DoSearch --></td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </form>
+      <!-- END Record P_COMPANYSearch --><br>
+      <!-- BEGIN Grid P_COMPANY -->
+      <table border="0" cellspacing="0" cellpadding="0" width="100%">
+        <tr>
+          <td valign="top">
+            <table class="Header" border="0" cellspacing="0" cellpadding="0" width="100%">
+              <tr>
+                <td class="HeaderLeft"><img border="0" alt="" src="../Styles/trb/Images/Spacer.gif"></td> 
+                <td class="th"><strong>DAFTAR PERUSAHAAN</strong></td> 
+                <td class="HeaderRight"><img border="0" alt="" src="../Styles/trb/Images/Spacer.gif"></td>
+              </tr>
+            </table>
+ 
+            <table class="Grid" cellspacing="0" cellpadding="0">
+              <tr class="Caption">
+                <th style="TEXT-ALIGN: center" scope="col">#</th>
+ 
+                <th scope="col">Kode</th>
+ 
+                <th scope="col">Nama Perusahaan</th>
+ 
+                <th scope="col">IDTipe</th>
+ 
+                <th scope="col">Wilayah</th>
+ 
+                <th scope="col">Kota</th>
+              </tr>
+ 
+              <!-- BEGIN Row -->
+              <tr {P_COMPANY:rowStyle}>
+                <td style="TEXT-ALIGN: center">
+                  <!-- BEGIN Link DLink --><a href="{DLink_Src}" id="P_COMPANYDLink_{P_APP_ROLE:rowNumber}"><img border="0" src="../images/radio.gif"></a><!-- END Link DLink -->
+                  <!-- BEGIN Link ADLink --><a href="{ADLink_Src}" id="P_COMPANYADLink_{P_APP_ROLE:rowNumber}"><img border="0" src="../images/radio_s.gif" width="16" height="16"></a><!-- END Link ADLink --></td> 
+                <td>{CODE}<input style="WIDTH: 38px; HEIGHT: 14px" id="P_COMPANYP_COMPANY_ID_{P_COMPANY:rowNumber}" value="{P_COMPANY_ID}" size="4" type="hidden" name="{P_COMPANY_ID_Name}">&nbsp;</td> 
+                <td>{COMPANY_NAME}&nbsp;</td> 
+                <td style="TEXT-ALIGN: left">{P_COMPANY_TYPE_NAME}&nbsp;</td> 
+                <td style="TEXT-ALIGN: left">{P_REGION_NAME}&nbsp;</td> 
+                <td style="TEXT-ALIGN: left">{P_COUNTRY_NAME}&nbsp;</td>
+              </tr>
+ <!-- END Row -->
+              <!-- BEGIN NoRecords -->
+              <tr class="NoRecords">
+                <td colspan="6">Data Tidak Ditemukan</td>
+              </tr>
+              <!-- END NoRecords -->
+              <tr class="Footer">
+                <td style="TEXT-ALIGN: center"><a href="{P_COMPANY_Insert_Src}" id="P_COMPANYP_COMPANY_Insert"><img border="0" src="../Styles/trb/Images/en/ButtonTambah.gif"></a></td> 
+                <td colspan="5">&nbsp; 
+                  <!-- BEGIN Navigator Navigator -->
+                  <!-- BEGIN First_On --><a href="{First_URL}"><img border="0" alt="{First_URL}" src="../Styles/trb/Images/First.gif"></a> <!-- END First_On -->
+                  <!-- BEGIN Prev_On --><a href="{Prev_URL}"><img border="0" alt="{Prev_URL}" src="../Styles/trb/Images/Prev.gif"></a> <!-- END Prev_On -->&nbsp; 
+                  <!-- BEGIN Pages -->
+                  <!-- BEGIN Page_On --><a href="{Page_URL}">{Page_Number}</a>&nbsp;<!-- END Page_On -->
+                  <!-- BEGIN Page_Off -->{Page_Number}&nbsp;<!-- END Page_Off --><!-- END Pages -->&nbsp;{Total_Pages}&nbsp; 
+                  <!-- BEGIN Next_On --><a href="{Next_URL}"><img border="0" alt="{Next_URL}" src="../Styles/trb/Images/Next.gif"></a> <!-- END Next_On -->
+                  <!-- BEGIN Last_On --><a href="{Last_URL}"><img border="0" alt="{Last_URL}" src="../Styles/trb/Images/Last.gif"></a> <!-- END Last_On --><!-- END Navigator Navigator -->&nbsp;</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      <!-- END Grid P_COMPANY --><br>
+      <!-- BEGIN Record p_company1 -->
+      <form id="p_company1" method="post" name="{HTMLFormName}" action="{Action}">
+        <table border="0" cellspacing="0" cellpadding="0" width="100%">
+          <tr>
+            <td valign="top">
+              <table class="Header" border="0" cellspacing="0" cellpadding="0" width="100%">
+                <tr>
+                  <td class="HeaderLeft"><img border="0" alt="" src="../Styles/trb/Images/Spacer.gif"></td> 
+                  <td class="th"><strong>PERUSAHAAN</strong></td> 
+                  <td class="HeaderRight"><img border="0" alt="" src="../Styles/trb/Images/Spacer.gif"></td>
+                </tr>
+              </table>
+ 
+              <table class="Record" cellspacing="0" cellpadding="0">
+                <!-- BEGIN Error -->
+                <tr class="Error">
+                  <td colspan="2">{Error}</td>
+                </tr>
+                <!-- END Error -->
+                <tr class="Controls">
+                  <td class="th"><label for="p_company1CODE">Kode</label></td> 
+                  <td><input id="p_company1CODE" class="ControlsRQ" value="{CODE}" maxlength="64" name="{CODE_Name}"><input style="WIDTH: 40px; HEIGHT: 17px" id="p_company1P_COMPANY_ID" value="{P_COMPANY_ID}" size="5" type="hidden" name="{P_COMPANY_ID_Name}"></td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th"><label for="p_company1COMPANY_NAME">Nama Perusahaan</label></td> 
+                  <td><input id="p_company1COMPANY_NAME" class="ControlsRQ" value="{COMPANY_NAME}" maxlength="64" size="50" name="{COMPANY_NAME_Name}"></td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th"><label for="p_company1P_COMPANY_TYPE_ID">Jenis Perushaan</label></td> 
+                  <td><input id="p_company1P_COMPANY_TYPE_NAME" class="ControlsRO" value="{P_COMPANY_TYPE_NAME}" readonly maxlength="12" size="19" name="{P_COMPANY_TYPE_NAME_Name}">&nbsp;&nbsp;<input style="WIDTH: 39px; HEIGHT: 16px" id="p_company1P_COMPANY_TYPE_ID" value="{P_COMPANY_TYPE_ID}" size="5" type="hidden" name="{P_COMPANY_TYPE_ID_Name}"><img id="lov1" onclick="lov_p_company_type()" src="../Styles/trb/Images/en/lov.gif"></td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th"><label for="p_company1ADDRESS_1">Alamat 1</label></td> 
+                  <td><textarea id="p_company1ADDRESS_1" class="ControlsIN" rows="3" cols="50" name="{ADDRESS_1_Name}">{ADDRESS_1}</textarea></td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th"><label for="p_company1ADDRESS_2">Alamat 2</label></td> 
+                  <td><textarea id="p_company1ADDRESS_2" class="ControlsIN" rows="3" cols="50" name="{ADDRESS_2_Name}">{ADDRESS_2}</textarea></td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th"><label for="p_company1ADDRESS_3">Alamat 3</label></td> 
+                  <td><textarea id="p_company1ADDRESS_3" class="ControlsIN" rows="3" cols="50" name="{ADDRESS_3_Name}">{ADDRESS_3}</textarea></td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th"><label for="p_company1P_REGION_ID">Kota</label></td> 
+                  <td><input id="p_company1P_REGION_NAME" class="ControlsRO" value="{P_REGION_NAME}" readonly maxlength="12" name="{P_REGION_NAME_Name}">&nbsp;&nbsp;&nbsp;<input style="WIDTH: 56px; HEIGHT: 17px" id="p_company1P_REGION_ID" value="{P_REGION_ID}" size="7" type="hidden" name="{P_REGION_ID_Name}"><img id="lov2" onclick="lov_p_region()" src="../Styles/trb/Images/en/lov.gif">&nbsp;&nbsp;&nbsp;&nbsp; Kode POS &nbsp; <input id="p_company1ZIP_CODE" class="ControlsRQ" value="{ZIP_CODE}" maxlength="12" size="12" name="{ZIP_CODE_Name}"></td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th"><label for="p_company1P_COUNTRY_ID">Negara</label></td> 
+                  <td><input id="p_company1P_COUNTRY_NAME" class="ControlsRO" value="{P_COUNTRY_NAME}" readonly maxlength="12" name="{P_COUNTRY_NAME_Name}">&nbsp;<input style="WIDTH: 44px; HEIGHT: 17px" id="p_company1P_COUNTRY_ID" value="{P_COUNTRY_ID}" size="5" type="hidden" name="{P_COUNTRY_ID_Name}"><img id="lov3" onclick="lov_p_country()" src="../Styles/trb/Images/en/lov.gif"></td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th"><label for="p_company1PAYMENT_PRIORITY">Prioritas Pembayaran</label></td> 
+                  <td><input id="p_company1PAYMENT_PRIORITY" class="ControlsRQ" value="{PAYMENT_PRIORITY}" maxlength="12" size="12" name="{PAYMENT_PRIORITY_Name}"></td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th"><label for="p_company1DESCRIPTION">Keterangan</label></td> 
+                  <td><textarea id="p_company1DESCRIPTION" class="ControlsIN" rows="3" cols="50" name="{DESCRIPTION_Name}">{DESCRIPTION}</textarea></td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th"><label for="p_company1CREATED_BY">Pembuat</label></td> 
+                  <td><input id="p_company1CREATED_BY" class="ControlsRO" value="{CREATED_BY}" readonly maxlength="16" size="16" name="{CREATED_BY_Name}">&nbsp; Tgl &nbsp;<input id="p_company1CREATION_DATE" class="ControlsRO" value="{CREATION_DATE}" readonly maxlength="100" size="16" name="{CREATION_DATE_Name}"></td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th"><label for="p_company1UPDATED_BY">Pengubah</label></td> 
+                  <td><input id="p_company1UPDATED_BY" class="ControlsRO" value="{UPDATED_BY}" readonly maxlength="16" size="16" name="{UPDATED_BY_Name}">&nbsp; Tgl &nbsp;<input id="p_company1UPDATED_DATE" class="ControlsRO" value="{UPDATED_DATE}" readonly maxlength="100" size="16" name="{UPDATED_DATE_Name}"></td>
+                </tr>
+ 
+                <tr class="Bottom">
+                  <td colspan="2" align="right">&nbsp; 
+                    <!-- BEGIN Button Button_Insert --><input style="BORDER-RIGHT-WIDTH: 0px; BORDER-TOP-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px" id="p_company1Button_Insert" value="" alt="" src="../Styles/trb/Images/en/ButtonInsert.gif" type="image" name="{Button_Name}"><!-- END Button Button_Insert -->
+                    <!-- BEGIN Button Button_Update --><input style="BORDER-RIGHT-WIDTH: 0px; BORDER-TOP-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px" id="p_company1Button_Update" value="" alt="" src="../Styles/trb/Images/en/ButtonUpdate.gif" type="image" name="{Button_Name}"><!-- END Button Button_Update -->
+                    <!-- BEGIN Button Button_Delete --><input style="BORDER-RIGHT-WIDTH: 0px; BORDER-TOP-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px" id="p_company1Button_Delete" value="" alt="" src="../Styles/trb/Images/en/ButtonDelete.gif" type="image" name="{Button_Name}"><!-- END Button Button_Delete -->
+                    <!-- BEGIN Button Button_Cancel --><input style="BORDER-RIGHT-WIDTH: 0px; BORDER-TOP-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px" id="p_company1Button_Cancel" value="" alt="" src="../Styles/trb/Images/en/ButtonCancel.gif" type="image" name="{Button_Name}"><!-- END Button Button_Cancel --></td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </form>
+      <!-- END Record p_company1 --><br>
+      <br>
+    </td>
+  </tr>
+</table>
+<script language="javascript">
+function lov_p_company_type()
+{
+        getFrom_LOV('p_company1','P_COMPANY_TYPE_ID,P_COMPANY_TYPE_NAME','lov_p_company_type.php?');
+}
+function lov_p_region() 
+{
+        getFrom_LOV('p_company1','P_REGION_ID,P_REGION_NAME','lov_p_region.php?');
+}
+function lov_p_country()
+{
+        getFrom_LOV('p_company1','P_COUNTRY_ID,P_COUNTRY_NAME','lov_p_country.php?');
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,269 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<title>p_reference_type</title>
+<meta name="GENERATOR" content="CodeCharge Studio 4.3.00.7676">
+<link rel="stylesheet" type="text/css" href="../Styles/trb/Style_doctype.css" />
+<script type="text/javascript" src="../js/jquery.min.js"></script>
+<script type="text/javascript" src="../js/lov.js"></script>
+<script type="text/javascript" src="../js/qs.js"></script>
+<script language="JavaScript" type="text/javascript">
+//Begin CCS script
+//Include Common JSFunctions @1-9722A627
+</script>
+<script language="JavaScript" src="../ClientI18N.php?file=Functions.js&amp;locale={res:CCS_LocaleID}" type="text/javascript" charset="utf-8"></script>
+<script language="JavaScript" type="text/javascript">
+//End Include Common JSFunctions
+
+//P_REFERENCE_TYPEFormButton_Delete_OnClick @57-DA21636C
+function P_REFERENCE_TYPEFormButton_Delete_OnClick()
+{
+    var result = true;
+//End P_REFERENCE_TYPEFormButton_Delete_OnClick
+
+//Confirmation Message @58-6341842A
+    return confirm('Hapus Record?');
+//End Confirmation Message
+
+//Close P_REFERENCE_TYPEFormButton_Delete_OnClick @57-BC33A33A
+    return result;
+}
+//End Close P_REFERENCE_TYPEFormButton_Delete_OnClick
+
+//P_REFERENCE_TYPEFormButton_Cancel_OnClick @60-C64465C6
+function P_REFERENCE_TYPEFormButton_Cancel_OnClick()
+{
+    disableValidation = true;
+}
+//End P_REFERENCE_TYPEFormButton_Cancel_OnClick
+
+//bind_events @1-4C77D635
+function bind_events() {
+    addEventHandler("P_REFERENCE_TYPEFormButton_Delete", "click", P_REFERENCE_TYPEFormButton_Delete_OnClick);
+    addEventHandler("P_REFERENCE_TYPEFormButton_Cancel", "click", P_REFERENCE_TYPEFormButton_Cancel_OnClick);
+}
+//End bind_events
+
+window.onload = bind_events; //Assign bind_events @1-19F7B649
+
+//End CCS script
+</script>
+<script language="javascript" type="text/javascript">
+$(document).ready(function()
+{
+    $(window).scroll(function()
+    {
+            $('#tabtop').css('top', $(window).scrollTop());
+    });
+});
+</script>
+</head>
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<div style="POSITION: absolute; WIDTH: 100%" id="tabtop">
+  <table style="BACKGROUND-COLOR: #89a5f7" border="0" cellspacing="0" cellpadding="0" width="100%">
+    <tr>
+      <td><img border="0" src="../images/tab_s_on.gif"></td> 
+      <td class="th" background="../images/tab_on.gif" nowrap align="center">TIPE REFERENSI</td> 
+      <td><img border="0" src="../images/tab_e_on.gif"></td> 
+      <td><img border="0" src="../images/tab_s_off.gif"></td> 
+      <td class="th" background="../images/tab_off.gif" nowrap align="center"><label onclick="javascript:toList()">DAFTAR REFERENSI</label></td> 
+      <td><img border="0" src="../images/tab_e_off.gif"></td> 
+      <td background="../images/tab_back.gif" width="100%"></td> 
+    </tr>
+ 
+  </table>
+</div>
+<br>
+<br>
+<table border="0" cellspacing="0" cellpadding="0" align="center">
+  <tr>
+    <td>
+      <!-- BEGIN Record P_REFERENCE_TYPESearch -->
+      <form id="P_REFERENCE_TYPESearch" method="post" name="{HTMLFormName}" action="{Action}">
+        <table border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td valign="top">
+              <table class="Record" cellspacing="0" cellpadding="0">
+                <!-- BEGIN Error -->
+                <tr class="Error">
+                  <td colspan="2">{Error}</td> 
+                </tr>
+ <!-- END Error -->
+                <tr class="Bottom">
+                  <td><input id="P_REFERENCE_TYPESearchs_keyword" class="ControlsIN" value="{s_keyword}" maxlength="64" size="28" name="{s_keyword_Name}">
+                    <!-- BEGIN Button Button_DoSearch --><input id="P_REFERENCE_TYPESearchButton_DoSearch" alt="Search" src="../Styles/trb/Images/en/ButtonSearch.gif" type="image" name="{Button_Name}"><!-- END Button Button_DoSearch --></td> 
+                </tr>
+ 
+              </table>
+ </td> 
+          </tr>
+ 
+        </table>
+ 
+      </form>
+ <!-- END Record P_REFERENCE_TYPESearch -->
+    </td>
+  </tr>
+
+  <tr>
+    <td valign="top">
+      <!-- BEGIN Grid P_REFERENCE_TYPEGrid -->
+      <table border="0" cellspacing="0" cellpadding="0" width="100%">
+        <tr>
+          <td valign="top">
+            <table class="Header" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td class="HeaderLeft"><img border="0" alt="" src="../Styles/trb/Images/Spacer.gif"></td> 
+                <td class="th"><strong>DAFTAR TIPE REFERENSI</strong></td> 
+                <td class="th"><img onclick="javascript:close_page()" border="0" alt="close" src="../images/to_close_red.gif"></td> 
+                <td class="HeaderRight"><img border="0" alt="" src="../Styles/trb/Images/Spacer.gif"></td> 
+              </tr>
+ 
+            </table>
+ 
+            <table class="Grid" cellspacing="0" cellpadding="0">
+              <tr class="Caption">
+                <th nowrap style="TEXT-ALIGN: center;" width="1" scope="col">#</th>
+ 
+                <th nowrap scope="col">Kode</th>
+ 
+                <th nowrap scope="col">Tipe Referensi</th>
+ 
+                <th nowrap scope="col" style="display:none">Deskripsi</th>
+ 
+              </tr>
+ 
+              <!-- BEGIN Row -->
+              <tr {P_REFERENCE_TYPEGrid:RowStyle}>
+                <td nowrap style="TEXT-ALIGN: center">
+                  <!-- BEGIN Link DLink --><a href="{DLink_Src}" id="P_REFERENCE_TYPEGridDLink_{P_REFERENCE_TYPEGrid:rowNumber}">{DLink}</a><!-- END Link DLink --></td> 
+                <td nowrap>{CODE}&nbsp;<input id="P_REFERENCE_TYPEGridP_REFERENCE_TYPE_ID_{P_REFERENCE_TYPEGrid:rowNumber}" value="{P_REFERENCE_TYPE_ID}" type="hidden" name="{P_REFERENCE_TYPE_ID_Name}">&nbsp; </td> 
+                <td nowrap>{REFERENCE_NAME}&nbsp;</td> 
+                <td nowrap style="display:none">{DESCRIPTION}&nbsp;</td> 
+              </tr>
+ <!-- END Row -->
+              <!-- BEGIN NoRecords -->
+              <tr class="NoRecords">
+                <td colspan="4">-</td> 
+              </tr>
+ <!-- END NoRecords -->
+              <tr class="Footer">
+                <td style="TEXT-ALIGN: center; border-right:0"><a href="{P_REFERENCE_TYPE_Insert_Src}" id="P_REFERENCE_TYPEGridP_REFERENCE_TYPE_Insert"><img border="0" src="../Styles/trb/Images/en/ButtonTambah.gif"></a></td> 
+                <td colspan="3">
+                  <!-- BEGIN Navigator Navigator -->
+                  <!-- BEGIN First_On --><a href="{First_URL}"><img border="0" src="../Styles/trb/Images/First.gif" alt="{First_URL}"></a> <!-- END First_On -->
+                  <!-- BEGIN First_Off --><img border="0" src="../Styles/trb/Images/FirstOff.gif" alt="{First_URL}"><!-- END First_Off -->
+                  <!-- BEGIN Prev_On --><a href="{Prev_URL}"><img border="0" src="../Styles/trb/Images/Prev.gif" alt="{Prev_URL}"></a> <!-- END Prev_On -->
+                  <!-- BEGIN Prev_Off --><img border="0" src="../Styles/trb/Images/PrevOff.gif" alt="{Prev_URL}"><!-- END Prev_Off -->&nbsp; 
+                  <!-- BEGIN Pages -->
+                  <!-- BEGIN Page_On --><a href="{Page_URL}">{Page_Number}</a>&nbsp;<!-- END Page_On -->
+                  <!-- BEGIN Page_Off -->{Page_Number}&nbsp;<!-- END Page_Off --><!-- END Pages -->
+                  <!-- BEGIN Next_On --><a href="{Next_URL}"><img border="0" src="../Styles/trb/Images/Next.gif" alt="{Next_URL}"></a> <!-- END Next_On -->
+                  <!-- BEGIN Next_Off --><img border="0" src="../Styles/trb/Images/NextOff.gif" alt="{Next_URL}"><!-- END Next_Off -->
+                  <!-- BEGIN Last_On --><a href="{Last_URL}"><img border="0" src="../Styles/trb/Images/Last.gif" alt="{Last_URL}"></a> <!-- END Last_On -->
+                  <!-- BEGIN Last_Off --><img border="0" src="../Styles/trb/Images/LastOff.gif" alt="{Last_URL}"><!-- END Last_Off --><!-- END Navigator Navigator -->&nbsp;</td> 
+              </tr>
+ 
+            </table>
+ </td> 
+        </tr>
+ 
+      </table>
+ <!-- END Grid P_REFERENCE_TYPEGrid --><br>
+ </td><td nowrap>&nbsp;&nbsp;&nbsp;</td><td valign="top">
+      <!-- BEGIN Record P_REFERENCE_TYPEForm -->
+      <form id="P_REFERENCE_TYPEForm" method="post" name="{HTMLFormName}" action="{Action}">
+        <table border="0" cellspacing="0" cellpadding="0" width="100%">
+          <tr>
+            <td valign="top">
+              <table class="Header" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                  <td class="HeaderLeft"><img border="0" alt="" src="../Styles/trb/Images/Spacer.gif"></td> 
+                  <td class="th"><strong>TIPE REFERENSI</strong></td> 
+                   <td class="th"><img border="0" alt="" src="../images/spaceheader.gif"></td> 
+                  <td class="HeaderRight"><img border="0" alt="" src="../Styles/trb/Images/Spacer.gif"></td> 
+                </tr>
+ 
+              </table>
+ 
+              <table class="Record" cellspacing="0" cellpadding="0">
+                <!-- BEGIN Error -->
+                <tr class="Error">
+                  <td colspan="2">{Error}</td> 
+                </tr>
+ <!-- END Error -->
+                <tr class="Controls">
+                  <td class="th"><label for="P_REFERENCE_TYPEFormCODE">Kode</label></td> 
+                  <td><input id="P_REFERENCE_TYPEFormCODE" class="ControlsRQ" value="{CODE}" maxlength="64" size="24" name="{CODE_Name}">&nbsp;<input id="P_REFERENCE_TYPEFormP_REFERENCE_TYPE_ID" value="{P_REFERENCE_TYPE_ID}" type="hidden" name="{P_REFERENCE_TYPE_ID_Name}"></td> 
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th"><label for="P_REFERENCE_TYPEFormREFERENCE_NAME">Nama Referensi</label></td> 
+                  <td><input id="P_REFERENCE_TYPEFormREFERENCE_NAME" class="ControlsRQ" value="{REFERENCE_NAME}" maxlength="64" size="43" name="{REFERENCE_NAME_Name}"></td> 
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th"><label for="P_REFERENCE_TYPEFormDESCRIPTION">Deskripsi</label></td> 
+                  <td><textarea id="P_REFERENCE_TYPEFormDESCRIPTION" class="ControlsIN" rows="3" cols="50" name="{DESCRIPTION_Name}">{DESCRIPTION}</textarea>&nbsp;</td> 
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th"><label for="P_REFERENCE_TYPEFormCREATED_BY">Pembuat</label></td> 
+                  <td><input id="P_REFERENCE_TYPEFormCREATED_BY" class="ControlsRO" value="{CREATED_BY}" readonly maxlength="16" size="16" name="{CREATED_BY_Name}">&nbsp; Tgl &nbsp;<input id="P_REFERENCE_TYPEFormCREATION_DATE" class="ControlsRO" value="{CREATION_DATE}" readonly maxlength="100" size="16" name="{CREATION_DATE_Name}"></td> 
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th"><label for="P_REFERENCE_TYPEFormUPDATED_BY">Pengubah</label></td> 
+                  <td><input id="P_REFERENCE_TYPEFormUPDATED_BY" class="ControlsRO" value="{UPDATED_BY}" readonly maxlength="16" size="16" name="{UPDATED_BY_Name}">&nbsp; Tgl&nbsp; <input id="P_REFERENCE_TYPEFormUPDATED_DATE" class="ControlsRO" value="{UPDATED_DATE}" readonly maxlength="100" size="16" name="{UPDATED_DATE_Name}"></td> 
+                </tr>
+ 
+                <tr class="Bottom">
+                  <td colspan="2" align="right">&nbsp;&nbsp; 
+                    <!-- BEGIN Button Button_Insert --><input id="P_REFERENCE_TYPEFormButton_Insert" alt="SIMPAN" src="../Styles/trb/Images/en/ButtonUpdate.gif" type="image" name="{Button_Name}"><!-- END Button Button_Insert -->
+                    <!-- BEGIN Button Button_Update --><input id="P_REFERENCE_TYPEFormButton_Update" alt="SIMPAN" src="../Styles/trb/Images/en/ButtonUpdate.gif" type="image" name="{Button_Name}"><!-- END Button Button_Update -->
+                    <!-- BEGIN Button Button_Delete --><input id="P_REFERENCE_TYPEFormButton_Delete" alt="HAPUS" src="../Styles/trb/Images/en/ButtonDelete.gif" type="image" name="{Button_Name}"><!-- END Button Button_Delete -->
+                    <!-- BEGIN Button Button_Cancel --><input id="P_REFERENCE_TYPEFormButton_Cancel" alt="BATAL" src="../Styles/trb/Images/en/ButtonCancel.gif" type="image" name="{Button_Name}"><!-- END Button Button_Cancel --></td> 
+                </tr>
+ 
+              </table>
+ </td> 
+          </tr>
+ 
+        </table>
+ 
+      </form>
+ <!-- END Record P_REFERENCE_TYPEForm --><br>
+      <br>
+    </td> 
+  </tr>
+</table>
+<script language="JavaScript">
+
+function toList()
+{
+  var idelement;
+  if (idelement = document.getElementById('P_REFERENCE_TYPEFormP_REFERENCE_TYPE_ID'))
+  {
+    var cid=idelement.value;
+    var acode=document.getElementById("P_REFERENCE_TYPEFormCODE").value;
+    var skw=document.getElementById("P_REFERENCE_TYPESearchs_keyword").value;
+    var hlm=QueryString("P_REFERENCE_TYPEGridPage");
+    if (hlm==null) hlm=1;
+    if (cid!= "" && cid != 0 && cid != false && cid != undefined &&  cid != null)
+    {
+     location.href="p_reference_list.php?P_REFERENCE_TYPE_ID="+cid+"&REFERENCE_TYPE_CODE="+acode+"&P_REFERENCE_TYPESearchs_keyword="+skw+"&P_REFERENCE_TYPEGridPage="+hlm;
+    }
+  }
+}
+
+
+function close_page()
+{
+    location.href="../main/blank.html"
+}
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,189 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<title>p_application_role</title>
+<meta name="GENERATOR" content="CodeCharge Studio 4.1.00.031">
+<script type="text/javascript" src="../js/jquery.min.js"></script>
+<script type="text/javascript" src="../js/lov.js"></script>
+<script type="text/javascript" src="../js/qs.js"></script>
+<script language="javascript" type="text/javascript">
+$(document).ready(function()
+{
+    $(window).scroll(function()
+    {
+            $('#tabtop').css('top', $(window).scrollTop());
+    });
+});
+</script>
+<script language="JavaScript" type="text/javascript">
+//Begin CCS script
+//Include Common JSFunctions @1-9722A627
+</script>
+<script language="JavaScript" src="../ClientI18N.php?file=Functions.js&amp;locale={res:CCS_LocaleID}" type="text/javascript" charset="utf-8"></script>
+<script language="JavaScript" type="text/javascript">
+//End Include Common JSFunctions
+
+//P_UROLEGridButton_Submit_OnClick @121-23AA1E7A
+function P_UROLEGridButton_Submit_OnClick()
+{
+    var result = true;
+//End P_UROLEGridButton_Submit_OnClick
+
+//Confirmation Message @122-D3AEAFAC
+    return confirm('Submit?');
+//End Confirmation Message
+
+//Close P_UROLEGridButton_Submit_OnClick @121-BC33A33A
+    return result;
+}
+//End Close P_UROLEGridButton_Submit_OnClick
+
+//P_UROLEGridCancel_OnClick @123-25EEC4B8
+function P_UROLEGridCancel_OnClick()
+{
+    disableValidation = true;
+}
+//End P_UROLEGridCancel_OnClick
+
+//bind_events @1-F433E9A6
+function bind_events() {
+    addEventHandler("P_UROLEGridButton_Submit", "click", P_UROLEGridButton_Submit_OnClick);
+    addEventHandler("P_UROLEGridCancel", "click", P_UROLEGridCancel_OnClick);
+}
+//End bind_events
+
+window.onload = bind_events; //Assign bind_events @1-19F7B649
+
+//End CCS script
+</script>
+<link rel="stylesheet" type="text/css" href="../Styles/trb/Style_doctype.css">
+</head>
+<body leftmargin="0" topmargin="0" marginheight="0" marginwidth="0">
+<div style="POSITION: absolute; WIDTH: 100%" id="tabtop">
+  <table style="BACKGROUND-COLOR: #89a5f7" border="0" cellspacing="0" cellpadding="0" width="100%">
+    <tr>
+      <td><img border="0" src="../images/tab_s_off.gif"></td> 
+      <td class="th" background="../images/tab_off.gif" nowrap><label onclick="javascript:toUser()">USER</label></td> 
+      <td><img border="0" src="../images/tab_e_off.gif"></td> 
+      <td><img border="0" src="../images/tab_s_on.gif"></td> 
+      <td class="th" background="../images/tab_on.gif" nowrap>ROLE</td> 
+      <td><img border="0" src="../images/tab_e_on.gif"></td> 
+      <td background="../images/tab_back.gif" width="100%"></td>
+    </tr>
+  </table>
+</div>
+<br>
+<br>
+<table border="0" cellspacing="0" cellpadding="0" align="center">
+  <tr>
+    <td><b>User&nbsp;:&nbsp;{user_name}</b></td>
+  </tr>
+ 
+  <tr>
+    <td>
+      <!-- BEGIN EditableGrid P_UROLEGrid -->
+      <form id="P_UROLEGrid" method="post" name="{HTMLFormName}" action="{Action}">
+        <input value="{FormState}" type="hidden" name="FormState">{FormScript} 
+        <table border="0" cellspacing="0" cellpadding="0" width="100%">
+          <tr>
+            <td valign="top">
+              <table class="Header" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                  <td class="HeaderLeft"><img border="0" alt="" src="../Styles/trb/Images/Spacer.gif"></td> 
+                  <td class="th"><strong>DAFTAR ROLE&nbsp;</strong></td> 
+                <td class="th"><img onclick="javascript:close_page()" border="0" alt="close" src="../images/to_close_red.gif"></td> 
+                  <td class="HeaderRight"><img border="0" alt="" src="../Styles/trb/Images/Spacer.gif"></td>
+                </tr>
+              </table>
+ 
+              <table class="Grid" cellspacing="0" cellpadding="0">
+                <!-- BEGIN Error -->
+                <tr class="Error">
+                  <td colspan="4">{Error}</td>
+                </tr>
+                <!-- END Error -->
+                <tr class="Caption">
+ 
+                  <th scope="col">Role</th>
+ 
+                  <th scope="col">User</th>
+ 
+                  <th scope="col">Tanggal</th>
+ 
+                  <th scope="col">Delete?&nbsp;</th>
+                </tr>
+ 
+                <!-- BEGIN Row -->
+                <!-- BEGIN RowError -->
+                <tr class="Error">
+                  <td colspan="4">{Error}</td>
+                </tr>
+                <!-- END RowError -->
+                <tr class="Row">
+                  <td>
+                    <select id="P_UROLEGridP_ROLE_ID_{P_UROLEGrid:rowNumber}" class="ControlsRQ" name="{P_ROLE_ID_Name}">
+                      <option selected value="">-</option>
+                      {P_ROLE_ID_Options}
+                    </select>
+ <input id="P_UROLEGridP_USER_ID_{P_UROLEGrid:rowNumber}" value="{P_USER_ID}" type="hidden" name="{P_USER_ID_Name}"><input id="P_UROLEGridP_USER_ROLE_ID_{P_UROLEGrid:rowNumber}" value="{P_USER_ROLE_ID}" type="hidden" name="{P_USER_ROLE_ID_Name}"></td> 
+                  <td>{CREATED_BY}&nbsp;</td> 
+                  <td>{CREATION_DATE}&nbsp;</td> 
+                  <td>
+                    <!-- BEGIN Panel CheckBox_Delete_Panel --><label for="P_UROLEGridCheckBox_Delete_PanelCheckBox_Delete_{P_UROLEGrid:rowNumber}" style="display: none;">&nbsp;</label> 
+                    <!-- BEGIN CheckBox CheckBox_Delete --><input id="P_UROLEGridCheckBox_Delete_PanelCheckBox_Delete_{P_UROLEGrid:rowNumber}" value="1" type="checkbox" name="{CheckBox_Delete_Name}" {CheckBox_Delete}><!-- END CheckBox CheckBox_Delete --><!-- END Panel CheckBox_Delete_Panel -->&nbsp;</td>
+                </tr>
+ <!-- END Row -->
+                <!-- BEGIN NoRecords -->
+                <tr class="NoRecords">
+                  <td colspan="4">-</td>
+                </tr>
+                <!-- END NoRecords -->
+                <tr class="Footer">
+                  <td style="TEXT-ALIGN: right" colspan="4">
+                    <!-- BEGIN Navigator Navigator -->
+                    <!-- BEGIN First_On --><a href="{First_URL}"><img border="0" alt="{First_URL}" src="../Styles/trb/Images/First.gif"></a> <!-- END First_On -->
+                    <!-- BEGIN First_Off --><img border="0" alt="{First_URL}" src="../Styles/trb/Images/FirstOff.gif"><!-- END First_Off -->
+                    <!-- BEGIN Prev_On --><a href="{Prev_URL}"><img border="0" alt="{Prev_URL}" src="../Styles/trb/Images/Prev.gif"></a> <!-- END Prev_On -->
+                    <!-- BEGIN Prev_Off --><img border="0" alt="{Prev_URL}" src="../Styles/trb/Images/PrevOff.gif"><!-- END Prev_Off -->&nbsp; 
+                    <!-- BEGIN Pages -->
+                    <!-- BEGIN Page_On --><a href="{Page_URL}">{Page_Number}</a>&nbsp;<!-- END Page_On -->
+                    <!-- BEGIN Page_Off -->{Page_Number}&nbsp;<!-- END Page_Off --><!-- END Pages -->
+                    <!-- BEGIN Next_On --><a href="{Next_URL}"><img border="0" alt="{Next_URL}" src="../Styles/trb/Images/Next.gif"></a> <!-- END Next_On -->
+                    <!-- BEGIN Next_Off --><img border="0" alt="{Next_URL}" src="../Styles/trb/Images/NextOff.gif"><!-- END Next_Off -->
+                    <!-- BEGIN Last_On --><a href="{Last_URL}"><img border="0" alt="{Last_URL}" src="../Styles/trb/Images/Last.gif"></a> <!-- END Last_On -->
+                    <!-- BEGIN Last_Off --><img border="0" alt="{Last_URL}" src="../Styles/trb/Images/LastOff.gif"><!-- END Last_Off --><!-- END Navigator Navigator -->
+                    <!-- BEGIN Button Button_Submit --><input style="BORDER-RIGHT-WIDTH: 0px; BORDER-TOP-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px" id="P_UROLEGridButton_Submit" value="" alt="" src="../Styles/trb/Images/en/ButtonSubmit.gif" type="image" name="{Button_Name}"><!-- END Button Button_Submit -->
+                    <!-- BEGIN Button Cancel --><input style="BORDER-RIGHT-WIDTH: 0px; BORDER-TOP-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px" id="P_UROLEGridCancel" value="" alt="" src="../Styles/trb/Images/en/ButtonCancel.gif" type="image" name="{Button_Name}"><!-- END Button Cancel --></td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </form>
+      <!-- END EditableGrid P_UROLEGrid --><br>
+    </td>
+  </tr>
+</table>
+<script language="JavaScript">
+
+function toUser()
+{
+    var cid=QueryString("P_USER_ID");
+    var skw=QueryString("P_USERSearchs_keyword");
+    var hlm=QueryString("P_USERGridPage");
+    if (hlm==null) hlm=1;
+    if (cid!= "" && cid != 0 && cid != false && cid != undefined &&  cid != null)
+    {
+     location.href="p_user.php?P_USER_ID="+cid+"&s_keyword="+skw+"&P_USERGridPage="+hlm;
+    }
+}
+
+function close_page()
+{
+    location.href="../main/blank.html"
+}
+
+</script>
+</body>
+</html>
