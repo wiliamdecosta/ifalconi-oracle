@@ -393,10 +393,10 @@ class clsp_app_userDataSource extends clsDBConn {  //p_app_userDataSource Class 
             $this->cp["password2"]->SetValue($this->password2->GetValue(true));
         if (!is_null($this->cp["user_pwd"]->GetValue()) and !strlen($this->cp["user_pwd"]->GetText()) and !is_bool($this->cp["user_pwd"]->GetValue())) 
             $this->cp["user_pwd"]->SetValue($this->user_pwd->GetValue(true));
-		if( strtoupper(md5($this->SQLValue($this->cp["old_pass"]->GetDBValue(), ccsText))) == $this->SQLValue($this->cp["user_pwd"]->GetDBValue(), ccsText) ) {
+		if( md5($this->SQLValue($this->cp["old_pass"]->GetDBValue(), ccsText)) == $this->SQLValue($this->cp["user_pwd"]->GetDBValue(), ccsText) ) {
 			if($this->SQLValue($this->cp["password1"]->GetDBValue(), ccsText)==$this->SQLValue($this->cp["password2"]->GetDBValue(), ccsText)){
 
-        $this->SQL = "UPDATE P_USER SET user_pwd=UPPER('" . md5($this->SQLValue($this->cp["password1"]->GetDBValue(), ccsText)) . "') WHERE  P_USER_ID = " . $this->SQLValue($this->cp["user_id"]->GetDBValue(), ccsFloat) . "";
+        $this->SQL = "UPDATE P_USER SET user_pwd='" . md5($this->SQLValue($this->cp["password1"]->GetDBValue(), ccsText)) . "' WHERE  P_USER_ID = " . $this->SQLValue($this->cp["user_id"]->GetDBValue(), ccsFloat) . "";
         $this->CCSEventResult = CCGetEvent($this->CCSEvents, "BeforeExecuteUpdate", $this->Parent);
         if($this->Errors->Count() == 0 && $this->CmdExecution) {
             $this->query($this->SQL);
