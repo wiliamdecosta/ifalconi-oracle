@@ -16,14 +16,13 @@ function GRID_BeforeShowRow(& $sender)
     global $GRID; //Compatibility
 //End GRID_BeforeShowRow
 
-//Custom Code @20-2A29BDB7
-// -------------------------
-    // Write your own code here.
-	$nilai=$GRID->p_area_id->GetValue()."#~#".$GRID->code->GetValue();
-	$GRID->Label1->SetValue("<input type=button value=PILIH class=Button onclick=clickReturn('".$nilai."')>");
-	//$P_CURRENCY->Label1->SetValue("<input type=button value=PILIH class=Button onclick=clickReturn('".$nilai."')>");
-// -------------------------
-//End Custom Code
+  // -------------------------
+      // Write your own code here.
+  	$nilai=$GRID->p_area_id->GetValue()."#~#".$GRID->code->GetValue();
+  	$GRID->Label1->SetValue("<input type=button value=PILIH class=Button onclick=clickReturn('".$nilai."')>");
+  	//$P_CURRENCY->Label1->SetValue("<input type=button value=PILIH class=Button onclick=clickReturn('".$nilai."')>");
+  // -------------------------
+
 
 //Close GRID_BeforeShowRow @2-9BECCA60
     return $GRID_BeforeShowRow;

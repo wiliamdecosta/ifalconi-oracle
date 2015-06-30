@@ -45,7 +45,7 @@ upper(a.description) like upper('%{s_keyword}%')
 					<Events/>
 					<LinkParameters>
 						<LinkParameter id="196" sourceType="DataField" name="p_bank_id" source="p_bank_id"/>
-</LinkParameters>
+					</LinkParameters>
 					<Attributes/>
 					<Features/>
 				</Link>
@@ -54,7 +54,7 @@ upper(a.description) like upper('%{s_keyword}%')
 					<Events/>
 					<LinkParameters>
 						<LinkParameter id="197" sourceType="DataField" name="p_bank_id" source="p_bank_id"/>
-</LinkParameters>
+					</LinkParameters>
 					<Attributes/>
 					<Features/>
 				</Link>
@@ -130,7 +130,9 @@ upper(a.description) like upper('%{s_keyword}%')
 			<Attributes/>
 			<Features/>
 		</Record>
-		<Record id="61" sourceType="Table" urlType="Relative" secured="False" allowInsert="True" allowUpdate="True" allowDelete="True" validateData="True" preserveParameters="GET" returnValueType="Number" returnValueTypeForDelete="Number" returnValueTypeForInsert="Number" returnValueTypeForUpdate="Number" connection="Conn" name="FORM" errorSummator="Error" wizardCaption=" P Company " wizardFormMethod="post" PathID="FORM" pasteActions="pasteActions" customInsertType="SQL" parameterTypeListName="ParameterTypeList" activeCollection="DConditions" customUpdateType="SQL" customDeleteType="SQL" dataSource="ifp.p_bank" returnPage="P_BANK.ccp" customInsert="INSERT into ifp.p_bank(
+		<Record id="61" sourceType="SQL" urlType="Relative" secured="False" allowInsert="True" allowUpdate="True" allowDelete="True" validateData="True" preserveParameters="GET" returnValueType="Number" returnValueTypeForDelete="Number" returnValueTypeForInsert="Number" returnValueTypeForUpdate="Number" connection="Conn" name="FORM" errorSummator="Error" wizardCaption=" P Company " wizardFormMethod="post" PathID="FORM" pasteActions="pasteActions" customInsertType="SQL" parameterTypeListName="ParameterTypeList" activeCollection="DConditions" customUpdateType="SQL" customDeleteType="SQL" dataSource="SELECT * 
+FROM ifp.p_bank
+WHERE p_bank_id = {p_bank_id} " returnPage="P_BANK.ccp" customInsert="INSERT into ifp.p_bank(
 code, 
 description, 
 create_by, 
@@ -143,15 +145,15 @@ upper('{Code}'),
 '{Description}', 
 '{CREATED_BY}', 
 '{UPDATED_BY}', 
-current_date,
-current_date,
-(select COALESCE(NULLIF(MAX(p_bank_id) ,0),0)+1 from ifp.p_bank)
+sysdate,
+sysdate,
+(select NVL(MAX(p_bank_id) ,0)+1 from ifp.p_bank)
 )" customUpdate="UPDATE ifp.p_bank 
 SET 
 code=upper('{Code}'), 
 description='{Description}', 
 update_by='{UPDATED_BY}',  
-update_date=current_date, 
+update_date=sysdate, 
 p_bank_id={p_bank_id} 
 WHERE  p_bank_id = {p_bank_id}" activeTableType="customDelete" customDelete="DELETE FROM ifp.p_bank WHERE  p_bank_id = {p_bank_id}">
 			<Components>
@@ -234,11 +236,11 @@ WHERE  p_bank_id = {p_bank_id}" activeTableType="customDelete" customDelete="DEL
 			</TableParameters>
 			<SPParameters/>
 			<SQLParameters>
-				<SQLParameter id="161" parameterType="URL" variable="P_COMPANY_ID" dataType="Float" parameterSource="P_COMPANY_ID"/>
-			</SQLParameters>
+				<SQLParameter id="200" parameterType="URL" variable="p_bank_id" dataType="Float" parameterSource="p_bank_id"/>
+</SQLParameters>
 			<JoinTables>
 				<JoinTable id="198" tableName="ifp.p_bank" posLeft="10" posTop="10" posWidth="20" posHeight="40"/>
-</JoinTables>
+			</JoinTables>
 			<JoinLinks/>
 			<Fields/>
 			<ISPParameters/>
@@ -286,7 +288,7 @@ WHERE  p_bank_id = {p_bank_id}" activeTableType="customDelete" customDelete="DEL
 			<DSPParameters/>
 			<DSQLParameters>
 				<SQLParameter id="199" variable="p_bank_id" parameterType="Control" dataType="Float" parameterSource="p_bank_id" defaultValue="0"/>
-</DSQLParameters>
+			</DSQLParameters>
 			<DConditions>
 				<TableParameter id="179" conditionType="Parameter" useIsNull="False" field="p_bank_id" dataType="Float" parameterType="Control" searchConditionType="Equal" logicOperator="And" parameterSource="p_bank_id"/>
 			</DConditions>

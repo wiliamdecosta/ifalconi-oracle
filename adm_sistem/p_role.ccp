@@ -1,4 +1,4 @@
-<Page id="1" templateExtension="html" relativePath=".." fullRelativePath=".\admin" secured="False" urlType="Relative" isIncluded="False" SSLAccess="False" isService="False" cachingEnabled="False" validateRequest="True" cachingDuration="1 minutes" wizardTheme="sikm" wizardThemeVersion="3.0" needGeneration="0">
+<Page id="1" templateExtension="html" relativePath=".." fullRelativePath=".\adm_sistem" secured="False" urlType="Relative" isIncluded="False" SSLAccess="False" isService="False" cachingEnabled="False" validateRequest="True" cachingDuration="1 minutes" wizardTheme="sikm" wizardThemeVersion="3.0" needGeneration="0">
 	<Components>
 		<Grid id="2" secured="False" sourceType="Table" returnValueType="Number" defaultPageSize="5" connection="Conn" name="P_ROLEGrid" pageSizeLimit="100" wizardCaption="List of P APP ROLE " wizardGridType="Tabular" wizardSortingType="SimpleDir" wizardAllowInsert="True" wizardAltRecord="False" wizardAltRecordType="Style" wizardRecordSeparator="False" wizardNoRecords="Data Tidak Ditemukan" pasteAsReplace="pasteAsReplace" pasteActions="pasteActions" dataSource="P_ROLE" activeCollection="TableParameters">
 			<Components>
@@ -111,8 +111,30 @@
 			<Attributes/>
 			<Features/>
 		</Record>
-		<Record id="19" sourceType="Table" urlType="Relative" secured="False" allowInsert="True" allowUpdate="True" allowDelete="True" validateData="True" preserveParameters="GET" returnValueType="Number" returnValueTypeForDelete="Number" returnValueTypeForInsert="Number" returnValueTypeForUpdate="Number" connection="Conn" name="P_ROLEForm" errorSummator="Error" wizardCaption="Add/Edit P APP ROLE " wizardFormMethod="post" PathID="P_ROLEForm" activeCollection="DSQLParameters" customInsertType="SQL" customUpdateType="SQL" customDeleteType="SQL" customDelete="DELETE FROM P_ROLE WHERE P_ROLE_ID = {P_ROLE_ID}" pasteAsReplace="pasteAsReplace" pasteActions="pasteActions" parameterTypeListName="ParameterTypeList" customInsert="INSERT INTO P_ROLE(CODE, IS_ACTIVE, DESCRIPTION, CREATED_BY, CREATION_DATE, UPDATED_DATE, UPDATED_BY, P_ROLE_ID) 
-VALUES(UPPER('{CODE}'), '{IS_ACTIVE}', '{DESCRIPTION}', '{CREATED_BY}', sysdate, sysdate, '{UPDATED_BY}', generate_id('','P_ROLE','P_ROLE_ID'))" customUpdate="UPDATE P_ROLE SET CODE=UPPER('{CODE}'), IS_ACTIVE='{IS_ACTIVE}', DESCRIPTION='{DESCRIPTION}', UPDATED_DATE=sysdate, UPDATED_BY='{UPDATED_BY}' WHERE  P_ROLE_ID = {P_ROLE_ID}" dataSource="P_ROLE">
+		<Record id="19" sourceType="Table" urlType="Relative" secured="False" allowInsert="True" allowUpdate="True" allowDelete="True" validateData="True" preserveParameters="GET" returnValueType="Number" returnValueTypeForDelete="Number" returnValueTypeForInsert="Number" returnValueTypeForUpdate="Number" connection="Conn" name="P_ROLEForm" errorSummator="Error" wizardCaption="Add/Edit P APP ROLE " wizardFormMethod="post" PathID="P_ROLEForm" activeCollection="USQLParameters" customInsertType="SQL" customUpdateType="SQL" customDeleteType="SQL" customDelete="DELETE FROM IFL.P_ROLE WHERE P_ROLE_ID = {P_ROLE_ID}" pasteAsReplace="pasteAsReplace" pasteActions="pasteActions" parameterTypeListName="ParameterTypeList" customInsert="INSERT INTO IFL.P_ROLE(
+CODE, 
+IS_ACTIVE, 
+DESCRIPTION, 
+CREATED_BY, 
+CREATION_DATE, 
+UPDATED_DATE, 
+UPDATED_BY, 
+P_ROLE_ID)VALUES(
+UPPER('{CODE}'), 
+'{IS_ACTIVE}', 
+'{DESCRIPTION}', 
+'{CREATED_BY}', 
+sysdate, 
+sysdate, 
+'{UPDATED_BY}', 
+IFL.generate_id('IFL','P_ROLE','P_ROLE_ID'))" dataSource="P_ROLE" customUpdate="UPDATE IFL.P_ROLE 
+SET 
+CODE=UPPER('{CODE}'), 
+IS_ACTIVE='{IS_ACTIVE}', 
+DESCRIPTION='{DESCRIPTION}', 
+UPDATED_DATE=sysdate, 
+UPDATED_BY='{UPDATED_BY}' 
+WHERE  P_ROLE_ID = {P_ROLE_ID}">
 			<Components>
 				<Button id="20" urlType="Relative" enableValidation="True" isDefault="False" name="Button_Insert" operation="Insert" wizardCaption="Add" PathID="P_ROLEFormButton_Insert" removeParameters="FLAG">
 					<Components/>
@@ -128,7 +150,7 @@ VALUES(UPPER('{CODE}'), '{IS_ACTIVE}', '{DESCRIPTION}', '{CREATED_BY}', sysdate,
 					<Attributes/>
 					<Features/>
 				</Button>
-				<Button id="22" urlType="Relative" enableValidation="False" isDefault="False" name="Button_Delete" operation="Delete" wizardCaption="Delete" PathID="P_ROLEFormButton_Delete" removeParameters="FLAG;P_APP_ROLE_ID">
+				<Button id="22" urlType="Relative" enableValidation="False" isDefault="False" name="Button_Delete" operation="Delete" wizardCaption="Delete" PathID="P_ROLEFormButton_Delete" removeParameters="FLAG;P_ROLE_ID">
 					<Components/>
 					<Events>
 						<Event name="OnClick" type="Client">
@@ -245,12 +267,13 @@ VALUES(UPPER('{CODE}'), '{IS_ACTIVE}', '{DESCRIPTION}', '{CREATED_BY}', sysdate,
 				<SQLParameter id="166" variable="CODE" dataType="Text" parameterType="Control" parameterSource="CODE"/>
 				<SQLParameter id="167" variable="IS_ACTIVE" dataType="Text" parameterType="Control" parameterSource="IS_ACTIVE"/>
 				<SQLParameter id="168" variable="DESCRIPTION" dataType="Text" parameterType="Control" parameterSource="DESCRIPTION"/>
-				<SQLParameter id="170" variable="UPDATED_BY" dataType="Text" parameterType="Session" parameterSource="UserName"/>
+				<SQLParameter id="170" variable="UPDATED_BY" dataType="Text" parameterType="Control" parameterSource="UPDATED_BY"/>
 				<SQLParameter id="171" variable="P_ROLE_ID" parameterType="Control" dataType="Float" parameterSource="P_ROLE_ID" defaultValue="0"/>
-			</USQLParameters>
+				<SQLParameter id="183" variable="UPDATED_DATE" dataType="Text" parameterType="Control" parameterSource="UPDATED_DATE" format="dd-mmm-yyyy"/>
+</USQLParameters>
 			<UConditions>
-				<TableParameter id="165" conditionType="Parameter" useIsNull="False" field="P_APP_ROLE_ID" dataType="Float" searchConditionType="Equal" parameterType="Control" logicOperator="And" parameterSource="P_APP_ROLE_ID"/>
-			</UConditions>
+				<TableParameter id="182" conditionType="Parameter" useIsNull="False" field="P_ROLE_ID" dataType="Float" parameterType="URL" parameterSource="P_ROLE_ID" searchConditionType="Equal" logicOperator="And"/>
+</UConditions>
 			<UFormElements>
 				<CustomParameter id="157" field="CODE" dataType="Text" parameterType="Control" parameterSource="CODE" omitIfEmpty="True"/>
 				<CustomParameter id="158" field="IS_ACTIVE" dataType="Text" parameterType="Control" parameterSource="IS_ACTIVE" omitIfEmpty="True"/>

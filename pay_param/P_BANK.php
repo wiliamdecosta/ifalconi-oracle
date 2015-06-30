@@ -899,7 +899,7 @@ class clsFORMDataSource extends clsDBConn {  //FORMDataSource Class @61-8EF59207
     }
 //End DataSourceClass_Initialize Event
 
-//Prepare Method @61-A1801AF0
+//Prepare Method @61-AA4D8F31
     function Prepare()
     {
         global $CCSLocales;
@@ -907,18 +907,17 @@ class clsFORMDataSource extends clsDBConn {  //FORMDataSource Class @61-8EF59207
         $this->wp = new clsSQLParameters($this->ErrorBlock);
         $this->wp->AddParameter("1", "urlp_bank_id", ccsFloat, "", "", $this->Parameters["urlp_bank_id"], "", false);
         $this->AllParametersSet = $this->wp->AllParamsSet();
-        $this->wp->Criterion[1] = $this->wp->Operation(opEqual, "p_bank_id", $this->wp->GetDBValue("1"), $this->ToSQL($this->wp->GetDBValue("1"), ccsFloat),false);
-        $this->Where = 
-             $this->wp->Criterion[1];
     }
 //End Prepare Method
 
-//Open Method @61-C5570D2B
+//Open Method @61-F6A6DCB6
     function Open()
     {
         $this->CCSEventResult = CCGetEvent($this->CCSEvents, "BeforeBuildSelect", $this->Parent);
-        $this->SQL = "SELECT * \n\n" .
-        "FROM ifp.p_bank {SQL_Where} {SQL_OrderBy}";
+        $this->SQL = "SELECT * \n" .
+        "FROM ifp.p_bank\n" .
+        "WHERE p_bank_id = " . $this->SQLValue($this->wp->GetDBValue("1"), ccsFloat) . " ";
+        $this->Order = "";
         $this->CCSEventResult = CCGetEvent($this->CCSEvents, "BeforeExecuteSelect", $this->Parent);
         $this->query(CCBuildSQL($this->SQL, $this->Where, $this->Order));
         $this->CCSEventResult = CCGetEvent($this->CCSEvents, "AfterExecuteSelect", $this->Parent);
@@ -938,7 +937,7 @@ class clsFORMDataSource extends clsDBConn {  //FORMDataSource Class @61-8EF59207
     }
 //End SetValues Method
 
-//Insert Method @61-4C18C7A0
+//Insert Method @61-49B967E7
     function Insert()
     {
         global $CCSLocales;
@@ -979,9 +978,9 @@ class clsFORMDataSource extends clsDBConn {  //FORMDataSource Class @61-8EF59207
         "'" . $this->SQLValue($this->cp["Description"]->GetDBValue(), ccsText) . "', \n" .
         "'" . $this->SQLValue($this->cp["CREATED_BY"]->GetDBValue(), ccsText) . "', \n" .
         "'" . $this->SQLValue($this->cp["UPDATED_BY"]->GetDBValue(), ccsText) . "', \n" .
-        "current_date,\n" .
-        "current_date,\n" .
-        "(select COALESCE(NULLIF(MAX(p_bank_id) ,0),0)+1 from ifp.p_bank)\n" .
+        "sysdate,\n" .
+        "sysdate,\n" .
+        "(select NVL(MAX(p_bank_id) ,0)+1 from ifp.p_bank)\n" .
         ")";
         $this->CCSEventResult = CCGetEvent($this->CCSEvents, "BeforeExecuteInsert", $this->Parent);
         if($this->Errors->Count() == 0 && $this->CmdExecution) {
@@ -991,7 +990,7 @@ class clsFORMDataSource extends clsDBConn {  //FORMDataSource Class @61-8EF59207
     }
 //End Insert Method
 
-//Update Method @61-78041392
+//Update Method @61-48208149
     function Update()
     {
         global $CCSLocales;
@@ -1029,7 +1028,7 @@ class clsFORMDataSource extends clsDBConn {  //FORMDataSource Class @61-8EF59207
         "code=upper('" . $this->SQLValue($this->cp["Code"]->GetDBValue(), ccsText) . "'), \n" .
         "description='" . $this->SQLValue($this->cp["Description"]->GetDBValue(), ccsText) . "', \n" .
         "update_by='" . $this->SQLValue($this->cp["UPDATED_BY"]->GetDBValue(), ccsText) . "',  \n" .
-        "update_date=current_date, \n" .
+        "update_date=sysdate, \n" .
         "p_bank_id=" . $this->SQLValue($this->cp["p_bank_id"]->GetDBValue(), ccsFloat) . " \n" .
         "WHERE  p_bank_id = " . $this->SQLValue($this->cp["p_bank_id"]->GetDBValue(), ccsFloat) . "";
         $this->CCSEventResult = CCGetEvent($this->CCSEvents, "BeforeExecuteUpdate", $this->Parent);

@@ -57,17 +57,17 @@ OR upper(description) LIKE upper('%{s_keyword}%') ">
 			</Events>
 			<TableParameters>
 				<TableParameter id="24" conditionType="Parameter" useIsNull="False" field="upper(code)" dataType="Text" searchConditionType="Contains" parameterType="URL" logicOperator="Or" parameterSource="s_keyword"/>
-<TableParameter id="25" conditionType="Parameter" useIsNull="False" field="upper(description)" dataType="Text" searchConditionType="Contains" parameterType="URL" logicOperator="And" parameterSource="s_keyword"/>
-</TableParameters>
+				<TableParameter id="25" conditionType="Parameter" useIsNull="False" field="upper(description)" dataType="Text" searchConditionType="Contains" parameterType="URL" logicOperator="And" parameterSource="s_keyword"/>
+			</TableParameters>
 			<JoinTables>
-				<JoinTable id="23" tableName="p_bank" schemaName="ifp" posLeft="10" posTop="10" posWidth="115" posHeight="168"/>
+				<JoinTable id="23" tableName="p_bank" posWidth="115" posHeight="168" posLeft="10" posTop="10"/>
 </JoinTables>
 			<JoinLinks/>
 			<Fields/>
 			<SPParameters/>
 			<SQLParameters>
-<SQLParameter id="26" parameterType="URL" variable="s_keyword" dataType="Text" parameterSource="s_keyword"/>
-</SQLParameters>
+				<SQLParameter id="26" parameterType="URL" variable="s_keyword" dataType="Text" parameterSource="s_keyword"/>
+			</SQLParameters>
 			<SecurityGroups/>
 			<Attributes/>
 			<Features/>

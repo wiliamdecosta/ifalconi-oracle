@@ -892,7 +892,7 @@ class clsFORMDataSource extends clsDBConn {  //FORMDataSource Class @61-8EF59207
     }
 //End DataSourceClass_Initialize Event
 
-//Prepare Method @61-CFD8749A
+//Prepare Method @61-A4CA2F45
     function Prepare()
     {
         global $CCSLocales;
@@ -900,18 +900,17 @@ class clsFORMDataSource extends clsDBConn {  //FORMDataSource Class @61-8EF59207
         $this->wp = new clsSQLParameters($this->ErrorBlock);
         $this->wp->AddParameter("1", "urlp_area_id", ccsFloat, "", "", $this->Parameters["urlp_area_id"], "", false);
         $this->AllParametersSet = $this->wp->AllParamsSet();
-        $this->wp->Criterion[1] = $this->wp->Operation(opEqual, "p_area_id", $this->wp->GetDBValue("1"), $this->ToSQL($this->wp->GetDBValue("1"), ccsFloat),false);
-        $this->Where = 
-             $this->wp->Criterion[1];
     }
 //End Prepare Method
 
-//Open Method @61-E88F4D8A
+//Open Method @61-F74067C1
     function Open()
     {
         $this->CCSEventResult = CCGetEvent($this->CCSEvents, "BeforeBuildSelect", $this->Parent);
-        $this->SQL = "SELECT * \n\n" .
-        "FROM p_area {SQL_Where} {SQL_OrderBy}";
+        $this->SQL = "SELECT * \n" .
+        "FROM ifp.p_area\n" .
+        "WHERE p_area_id = " . $this->SQLValue($this->wp->GetDBValue("1"), ccsFloat) . " ";
+        $this->Order = "";
         $this->CCSEventResult = CCGetEvent($this->CCSEvents, "BeforeExecuteSelect", $this->Parent);
         $this->query(CCBuildSQL($this->SQL, $this->Where, $this->Order));
         $this->CCSEventResult = CCGetEvent($this->CCSEvents, "AfterExecuteSelect", $this->Parent);
@@ -931,7 +930,7 @@ class clsFORMDataSource extends clsDBConn {  //FORMDataSource Class @61-8EF59207
     }
 //End SetValues Method
 
-//Insert Method @61-C7E7DD83
+//Insert Method @61-9E89C672
     function Insert()
     {
         global $CCSLocales;
@@ -959,7 +958,7 @@ class clsFORMDataSource extends clsDBConn {  //FORMDataSource Class @61-8EF59207
             $this->cp["UPDATED_DATE"]->SetValue($this->UPDATED_DATE->GetValue(true));
         if (!is_null($this->cp["p_area_id"]->GetValue()) and !strlen($this->cp["p_area_id"]->GetText()) and !is_bool($this->cp["p_area_id"]->GetValue())) 
             $this->cp["p_area_id"]->SetValue($this->p_area_id->GetValue(true));
-        $this->SQL = "INSERT INTO ifp.p_area(code, description, create_by, update_by, create_date, update_date, p_area_id) VALUES(upper('" . $this->SQLValue($this->cp["Code"]->GetDBValue(), ccsText) . "'), '" . $this->SQLValue($this->cp["Description"]->GetDBValue(), ccsText) . "', '" . $this->SQLValue($this->cp["CREATED_BY"]->GetDBValue(), ccsText) . "', '" . $this->SQLValue($this->cp["UPDATED_BY"]->GetDBValue(), ccsText) . "', current_date, current_date, (select coalesce(nullif(max(p_area_id),0),0)+1 from ifp.p_area))";
+        $this->SQL = "INSERT INTO ifp.p_area(code, description, create_by, update_by, create_date, update_date, p_area_id) VALUES(upper('" . $this->SQLValue($this->cp["Code"]->GetDBValue(), ccsText) . "'), '" . $this->SQLValue($this->cp["Description"]->GetDBValue(), ccsText) . "', '" . $this->SQLValue($this->cp["CREATED_BY"]->GetDBValue(), ccsText) . "', '" . $this->SQLValue($this->cp["UPDATED_BY"]->GetDBValue(), ccsText) . "', sysdate, sysdate, (select NVL(max(p_area_id),0)+1 from ifp.p_area))";
         $this->CCSEventResult = CCGetEvent($this->CCSEvents, "BeforeExecuteInsert", $this->Parent);
         if($this->Errors->Count() == 0 && $this->CmdExecution) {
             $this->query($this->SQL);
@@ -968,7 +967,7 @@ class clsFORMDataSource extends clsDBConn {  //FORMDataSource Class @61-8EF59207
     }
 //End Insert Method
 
-//Update Method @61-2D70616C
+//Update Method @61-9C8B5492
     function Update()
     {
         global $CCSLocales;
@@ -1003,7 +1002,7 @@ class clsFORMDataSource extends clsDBConn {  //FORMDataSource Class @61-8EF59207
         "code=upper('" . $this->SQLValue($this->cp["Code"]->GetDBValue(), ccsText) . "'), \n" .
         "description='" . $this->SQLValue($this->cp["Description"]->GetDBValue(), ccsText) . "', \n" .
         "update_by='" . $this->SQLValue($this->cp["UPDATED_BY"]->GetDBValue(), ccsText) . "',  \n" .
-        "update_date=current_date, \n" .
+        "update_date=sysdate, \n" .
         "p_area_id=" . $this->SQLValue($this->cp["p_area_id"]->GetDBValue(), ccsFloat) . " WHERE  p_area_id = " . $this->SQLValue($this->cp["p_area_id"]->GetDBValue(), ccsFloat) . "";
         $this->CCSEventResult = CCGetEvent($this->CCSEvents, "BeforeExecuteUpdate", $this->Parent);
         if($this->Errors->Count() == 0 && $this->CmdExecution) {

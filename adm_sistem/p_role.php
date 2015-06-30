@@ -652,7 +652,7 @@ function GetPrimaryKey($keyName)
 }
 //End MasterDetail
 
-//Operation Method @19-AED6223D
+//Operation Method @19-47E281CA
     function Operation()
     {
         if(!$this->Visible)
@@ -681,7 +681,7 @@ function GetPrimaryKey($keyName)
         }
         $Redirect = $FileName . "?" . CCGetQueryString("QueryString", array("ccsForm"));
         if($this->PressedButton == "Button_Delete") {
-            $Redirect = $FileName . "?" . CCGetQueryString("QueryString", array("ccsForm", "FLAG", "P_APP_ROLE_ID"));
+            $Redirect = $FileName . "?" . CCGetQueryString("QueryString", array("ccsForm", "FLAG", "P_ROLE_ID"));
             if(!CCGetEvent($this->Button_Delete->CCSEvents, "OnClick", $this->Button_Delete) || !$this->DeleteRow()) {
                 $Redirect = "";
             }
@@ -724,7 +724,7 @@ function GetPrimaryKey($keyName)
     }
 //End InsertRow Method
 
-//UpdateRow Method @19-51FD0838
+//UpdateRow Method @19-AE8E8C2F
     function UpdateRow()
     {
         $this->CCSEventResult = CCGetEvent($this->CCSEvents, "BeforeUpdate", $this);
@@ -732,8 +732,9 @@ function GetPrimaryKey($keyName)
         $this->DataSource->CODE->SetValue($this->CODE->GetValue(true));
         $this->DataSource->IS_ACTIVE->SetValue($this->IS_ACTIVE->GetValue(true));
         $this->DataSource->DESCRIPTION->SetValue($this->DESCRIPTION->GetValue(true));
+        $this->DataSource->UPDATED_BY->SetValue($this->UPDATED_BY->GetValue(true));
         $this->DataSource->P_ROLE_ID->SetValue($this->P_ROLE_ID->GetValue(true));
-        $this->DataSource->P_APP_ROLE_ID->SetValue($this->P_APP_ROLE_ID->GetValue(true));
+        $this->DataSource->UPDATED_DATE->SetValue($this->UPDATED_DATE->GetValue(true));
         $this->DataSource->Update();
         $this->CCSEventResult = CCGetEvent($this->CCSEvents, "AfterUpdate", $this);
         return (!$this->CheckErrors());
@@ -939,7 +940,7 @@ class clsP_ROLEFormDataSource extends clsDBConn {  //P_ROLEFormDataSource Class 
     }
 //End SetValues Method
 
-//Insert Method @19-48D372E6
+//Insert Method @19-5480B961
     function Insert()
     {
         global $CCSLocales;
@@ -961,8 +962,23 @@ class clsP_ROLEFormDataSource extends clsDBConn {  //P_ROLEFormDataSource Class 
             $this->cp["CREATED_BY"]->SetValue(CCGetSession("UserName", NULL));
         if (!is_null($this->cp["UPDATED_BY"]->GetValue()) and !strlen($this->cp["UPDATED_BY"]->GetText()) and !is_bool($this->cp["UPDATED_BY"]->GetValue())) 
             $this->cp["UPDATED_BY"]->SetValue(CCGetSession("UserName", NULL));
-        $this->SQL = "INSERT INTO P_ROLE(CODE, IS_ACTIVE, DESCRIPTION, CREATED_BY, CREATION_DATE, UPDATED_DATE, UPDATED_BY, P_ROLE_ID) \n" .
-        "VALUES(UPPER('" . $this->SQLValue($this->cp["CODE"]->GetDBValue(), ccsText) . "'), '" . $this->SQLValue($this->cp["IS_ACTIVE"]->GetDBValue(), ccsText) . "', '" . $this->SQLValue($this->cp["DESCRIPTION"]->GetDBValue(), ccsText) . "', '" . $this->SQLValue($this->cp["CREATED_BY"]->GetDBValue(), ccsText) . "', sysdate, sysdate, '" . $this->SQLValue($this->cp["UPDATED_BY"]->GetDBValue(), ccsText) . "', generate_id('','P_ROLE','P_ROLE_ID'))";
+        $this->SQL = "INSERT INTO IFL.P_ROLE(\n" .
+        "CODE, \n" .
+        "IS_ACTIVE, \n" .
+        "DESCRIPTION, \n" .
+        "CREATED_BY, \n" .
+        "CREATION_DATE, \n" .
+        "UPDATED_DATE, \n" .
+        "UPDATED_BY, \n" .
+        "P_ROLE_ID)VALUES(\n" .
+        "UPPER('" . $this->SQLValue($this->cp["CODE"]->GetDBValue(), ccsText) . "'), \n" .
+        "'" . $this->SQLValue($this->cp["IS_ACTIVE"]->GetDBValue(), ccsText) . "', \n" .
+        "'" . $this->SQLValue($this->cp["DESCRIPTION"]->GetDBValue(), ccsText) . "', \n" .
+        "'" . $this->SQLValue($this->cp["CREATED_BY"]->GetDBValue(), ccsText) . "', \n" .
+        "sysdate, \n" .
+        "sysdate, \n" .
+        "'" . $this->SQLValue($this->cp["UPDATED_BY"]->GetDBValue(), ccsText) . "', \n" .
+        "IFL.generate_id('IFL','P_ROLE','P_ROLE_ID'))";
         $this->CCSEventResult = CCGetEvent($this->CCSEvents, "BeforeExecuteInsert", $this->Parent);
         if($this->Errors->Count() == 0 && $this->CmdExecution) {
             $this->query($this->SQL);
@@ -971,7 +987,7 @@ class clsP_ROLEFormDataSource extends clsDBConn {  //P_ROLEFormDataSource Class 
     }
 //End Insert Method
 
-//Update Method @19-AC95A79F
+//Update Method @19-AADC5AFA
     function Update()
     {
         global $CCSLocales;
@@ -980,8 +996,9 @@ class clsP_ROLEFormDataSource extends clsDBConn {  //P_ROLEFormDataSource Class 
         $this->cp["CODE"] = new clsSQLParameter("ctrlCODE", ccsText, "", "", $this->CODE->GetValue(true), "", false, $this->ErrorBlock);
         $this->cp["IS_ACTIVE"] = new clsSQLParameter("ctrlIS_ACTIVE", ccsText, "", "", $this->IS_ACTIVE->GetValue(true), "", false, $this->ErrorBlock);
         $this->cp["DESCRIPTION"] = new clsSQLParameter("ctrlDESCRIPTION", ccsText, "", "", $this->DESCRIPTION->GetValue(true), "", false, $this->ErrorBlock);
-        $this->cp["UPDATED_BY"] = new clsSQLParameter("sesUserName", ccsText, "", "", CCGetSession("UserName", NULL), "", false, $this->ErrorBlock);
+        $this->cp["UPDATED_BY"] = new clsSQLParameter("ctrlUPDATED_BY", ccsText, "", "", $this->UPDATED_BY->GetValue(true), "", false, $this->ErrorBlock);
         $this->cp["P_ROLE_ID"] = new clsSQLParameter("ctrlP_ROLE_ID", ccsFloat, "", "", $this->P_ROLE_ID->GetValue(true), 0, false, $this->ErrorBlock);
+        $this->cp["UPDATED_DATE"] = new clsSQLParameter("ctrlUPDATED_DATE", ccsText, "", "", $this->UPDATED_DATE->GetValue(true), "", false, $this->ErrorBlock);
         $this->CCSEventResult = CCGetEvent($this->CCSEvents, "BeforeBuildUpdate", $this->Parent);
         if (!is_null($this->cp["CODE"]->GetValue()) and !strlen($this->cp["CODE"]->GetText()) and !is_bool($this->cp["CODE"]->GetValue())) 
             $this->cp["CODE"]->SetValue($this->CODE->GetValue(true));
@@ -990,12 +1007,21 @@ class clsP_ROLEFormDataSource extends clsDBConn {  //P_ROLEFormDataSource Class 
         if (!is_null($this->cp["DESCRIPTION"]->GetValue()) and !strlen($this->cp["DESCRIPTION"]->GetText()) and !is_bool($this->cp["DESCRIPTION"]->GetValue())) 
             $this->cp["DESCRIPTION"]->SetValue($this->DESCRIPTION->GetValue(true));
         if (!is_null($this->cp["UPDATED_BY"]->GetValue()) and !strlen($this->cp["UPDATED_BY"]->GetText()) and !is_bool($this->cp["UPDATED_BY"]->GetValue())) 
-            $this->cp["UPDATED_BY"]->SetValue(CCGetSession("UserName", NULL));
+            $this->cp["UPDATED_BY"]->SetValue($this->UPDATED_BY->GetValue(true));
         if (!is_null($this->cp["P_ROLE_ID"]->GetValue()) and !strlen($this->cp["P_ROLE_ID"]->GetText()) and !is_bool($this->cp["P_ROLE_ID"]->GetValue())) 
             $this->cp["P_ROLE_ID"]->SetValue($this->P_ROLE_ID->GetValue(true));
         if (!strlen($this->cp["P_ROLE_ID"]->GetText()) and !is_bool($this->cp["P_ROLE_ID"]->GetValue(true))) 
             $this->cp["P_ROLE_ID"]->SetText(0);
-        $this->SQL = "UPDATE P_ROLE SET CODE=UPPER('" . $this->SQLValue($this->cp["CODE"]->GetDBValue(), ccsText) . "'), IS_ACTIVE='" . $this->SQLValue($this->cp["IS_ACTIVE"]->GetDBValue(), ccsText) . "', DESCRIPTION='" . $this->SQLValue($this->cp["DESCRIPTION"]->GetDBValue(), ccsText) . "', UPDATED_DATE=sysdate, UPDATED_BY='" . $this->SQLValue($this->cp["UPDATED_BY"]->GetDBValue(), ccsText) . "' WHERE  P_ROLE_ID = " . $this->SQLValue($this->cp["P_ROLE_ID"]->GetDBValue(), ccsFloat) . "";
+        if (!is_null($this->cp["UPDATED_DATE"]->GetValue()) and !strlen($this->cp["UPDATED_DATE"]->GetText()) and !is_bool($this->cp["UPDATED_DATE"]->GetValue())) 
+            $this->cp["UPDATED_DATE"]->SetValue($this->UPDATED_DATE->GetValue(true));
+        $this->SQL = "UPDATE IFL.P_ROLE \n" .
+        "SET \n" .
+        "CODE=UPPER('" . $this->SQLValue($this->cp["CODE"]->GetDBValue(), ccsText) . "'), \n" .
+        "IS_ACTIVE='" . $this->SQLValue($this->cp["IS_ACTIVE"]->GetDBValue(), ccsText) . "', \n" .
+        "DESCRIPTION='" . $this->SQLValue($this->cp["DESCRIPTION"]->GetDBValue(), ccsText) . "', \n" .
+        "UPDATED_DATE=sysdate, \n" .
+        "UPDATED_BY='" . $this->SQLValue($this->cp["UPDATED_BY"]->GetDBValue(), ccsText) . "' \n" .
+        "WHERE  P_ROLE_ID = " . $this->SQLValue($this->cp["P_ROLE_ID"]->GetDBValue(), ccsFloat) . "";
         $this->CCSEventResult = CCGetEvent($this->CCSEvents, "BeforeExecuteUpdate", $this->Parent);
         if($this->Errors->Count() == 0 && $this->CmdExecution) {
             $this->query($this->SQL);
@@ -1004,7 +1030,7 @@ class clsP_ROLEFormDataSource extends clsDBConn {  //P_ROLEFormDataSource Class 
     }
 //End Update Method
 
-//Delete Method @19-1BC2E4CE
+//Delete Method @19-E37FC7AE
     function Delete()
     {
         global $CCSLocales;
@@ -1016,7 +1042,7 @@ class clsP_ROLEFormDataSource extends clsDBConn {  //P_ROLEFormDataSource Class 
             $this->cp["P_ROLE_ID"]->SetValue($this->P_ROLE_ID->GetValue(true));
         if (!strlen($this->cp["P_ROLE_ID"]->GetText()) and !is_bool($this->cp["P_ROLE_ID"]->GetValue(true))) 
             $this->cp["P_ROLE_ID"]->SetText(0);
-        $this->SQL = "DELETE FROM P_ROLE WHERE P_ROLE_ID = " . $this->SQLValue($this->cp["P_ROLE_ID"]->GetDBValue(), ccsFloat) . "";
+        $this->SQL = "DELETE FROM IFL.P_ROLE WHERE P_ROLE_ID = " . $this->SQLValue($this->cp["P_ROLE_ID"]->GetDBValue(), ccsFloat) . "";
         $this->CCSEventResult = CCGetEvent($this->CCSEvents, "BeforeExecuteDelete", $this->Parent);
         if($this->Errors->Count() == 0 && $this->CmdExecution) {
             $this->query($this->SQL);

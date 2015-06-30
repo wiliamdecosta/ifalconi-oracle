@@ -12,7 +12,9 @@ function clickReturn(retVal) {
                 
                 arrVal = retVal.split('#~#');
                 arrForm = strObj.split(',');
+				
                 for (x=0;x<arrForm.length;x++) {
+					//alert(arrVal[x]);
 					//alert(document.getElementById(strForm+arrForm[x]).value = arrVal[x]);
                    window.opener.document.getElementById(strForm+arrForm[x]).value = arrVal[x];
                 }
@@ -25,7 +27,7 @@ function clickReturn(retVal) {
 <body>
 <!-- BEGIN Record LOV -->
 <form id="LOV" method="post" name="{HTMLFormName}" action="{Action}">
-  <table cellspacing="0" cellpadding="0" border="0">
+  <table cellspacing="0" cellpadding="0" border="0" align="center">
     <tr>
       <td valign="top">
         <table class="Record" cellspacing="0" cellpadding="0">
@@ -46,7 +48,7 @@ function clickReturn(retVal) {
 </form>
 <!-- END Record LOV --><br>
 <!-- BEGIN Grid GRID -->
-<table cellspacing="0" cellpadding="0" border="0">
+<table cellspacing="0" cellpadding="0" border="0" align="center">
   <tr>
     <td valign="top">
       <table class="Header" cellspacing="0" cellpadding="0" border="0">

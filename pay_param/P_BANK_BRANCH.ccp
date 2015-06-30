@@ -177,7 +177,9 @@ upper(a.description) like upper('%{s_keyword}%')
 			<Attributes/>
 			<Features/>
 		</Record>
-		<Record id="61" sourceType="Table" urlType="Relative" secured="False" allowInsert="True" allowUpdate="True" allowDelete="True" validateData="True" preserveParameters="GET" returnValueType="Number" returnValueTypeForDelete="Number" returnValueTypeForInsert="Number" returnValueTypeForUpdate="Number" connection="Conn" name="FORM" errorSummator="Error" wizardCaption=" P Company " wizardFormMethod="post" PathID="FORM" pasteActions="pasteActions" customInsertType="SQL" parameterTypeListName="ParameterTypeList" activeCollection="DSQLParameters" customUpdateType="SQL" customDeleteType="SQL" returnPage="P_BANK_BRANCH.ccp" dataSource="ifp.v_p_bank_branch" customInsert="INSERT INTO ifp.p_bank_branch(code, 
+		<Record id="61" sourceType="SQL" urlType="Relative" secured="False" allowInsert="True" allowUpdate="True" allowDelete="True" validateData="True" preserveParameters="GET" returnValueType="Number" returnValueTypeForDelete="Number" returnValueTypeForInsert="Number" returnValueTypeForUpdate="Number" connection="Conn" name="FORM" errorSummator="Error" wizardCaption=" P Company " wizardFormMethod="post" PathID="FORM" pasteActions="pasteActions" customInsertType="SQL" parameterTypeListName="ParameterTypeList" activeCollection="DSQLParameters" customUpdateType="SQL" customDeleteType="SQL" returnPage="P_BANK_BRANCH.ccp" dataSource="SELECT * 
+FROM ifp.v_p_bank_branch
+WHERE p_bank_branch_id = {p_bank_branch_id} " customInsert="INSERT INTO ifp.p_bank_branch(code, 
 description, 
 create_by, 
 update_by, 
@@ -194,9 +196,9 @@ status) VALUES(upper('{Code}'),
 '{Description}', 
 '{CREATED_BY}', 
 '{UPDATED_BY}', 
-current_date, 
-current_date, 
-(select COALESCE(NULLIF(MAX(p_bank_branch_id) ,0),0)+1 from ifp.p_bank_branch),
+sysdate, 
+sysdate, 
+(select NVL(MAX(p_bank_branch_id) ,0)+1 from ifp.p_bank_branch),
 {p_bank_id}, 
 {p_area_id}, 
 '{address}', 
@@ -208,7 +210,7 @@ SET
 code=upper('{Code}'), 
 description='{Description}', 
 update_by='{UPDATED_BY}',  
-update_date='{UPDATED_DATE}',
+update_date=sysdate,
 p_bank_id={p_bank_id}, 
 p_area_id={p_area_id}, 
 address='{address}', 
@@ -343,11 +345,11 @@ WHERE  p_bank_branch_id = {p_bank_branch_id}" activeTableType="customUpdate" cus
 			</TableParameters>
 			<SPParameters/>
 			<SQLParameters>
-				<SQLParameter id="161" parameterType="URL" variable="P_COMPANY_ID" dataType="Float" parameterSource="P_COMPANY_ID"/>
-			</SQLParameters>
+				<SQLParameter id="275" parameterType="URL" variable="p_bank_branch_id" dataType="Float" parameterSource="p_bank_branch_id"/>
+</SQLParameters>
 			<JoinTables>
-				<JoinTable id="204" tableName="v_p_bank_branch" schemaName="ifp" posLeft="10" posTop="10" posWidth="139" posHeight="180"/>
-			</JoinTables>
+				<JoinTable id="274" tableName="ifp.v_p_bank_branch" posLeft="10" posTop="10" posWidth="20" posHeight="40"/>
+</JoinTables>
 			<JoinLinks/>
 			<Fields/>
 			<ISPParameters/>

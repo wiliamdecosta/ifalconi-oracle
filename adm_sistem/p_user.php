@@ -757,42 +757,50 @@ function GetPrimaryKey($keyName)
     }
 //End Operation Method
 
-//InsertRow Method @28-0E27AC8E
+//InsertRow Method @28-26C15637
     function InsertRow()
     {
         $this->CCSEventResult = CCGetEvent($this->CCSEvents, "BeforeInsert", $this);
         if(!$this->InsertAllowed) return false;
         $this->DataSource->USER_NAME->SetValue($this->USER_NAME->GetValue(true));
-        $this->DataSource->DESCRIPTION->SetValue($this->DESCRIPTION->GetValue(true));
+        $this->DataSource->CREATED_BY->SetValue($this->CREATED_BY->GetValue(true));
+        $this->DataSource->UPDATED_BY->SetValue($this->UPDATED_BY->GetValue(true));
         $this->DataSource->EMAIL_ADDRESS->SetValue($this->EMAIL_ADDRESS->GetValue(true));
         $this->DataSource->P_USER_ID->SetValue($this->P_USER_ID->GetValue(true));
-        $this->DataSource->P_USER_STATUS_ID->SetValue($this->P_USER_STATUS_ID->GetValue(true));
+        $this->DataSource->USER_STATUS->SetValue($this->USER_STATUS->GetValue(true));
         $this->DataSource->IS_NEW_USER->SetValue($this->IS_NEW_USER->GetValue(true));
         $this->DataSource->LAST_LOGIN_TIME->SetValue($this->LAST_LOGIN_TIME->GetValue(true));
         $this->DataSource->FULL_NAME->SetValue($this->FULL_NAME->GetValue(true));
         $this->DataSource->EMPLOYEE_NO->SetValue($this->EMPLOYEE_NO->GetValue(true));
         $this->DataSource->IS_EMPLOYEE->SetValue($this->IS_EMPLOYEE->GetValue(true));
-        $this->DataSource->USER_NAME->SetValue($this->USER_NAME->GetValue(true));
+        $this->DataSource->CREATION_DATE->SetValue($this->CREATION_DATE->GetValue(true));
+        $this->DataSource->UPDATED_DATE->SetValue($this->UPDATED_DATE->GetValue(true));
+        $this->DataSource->DESCRIPTION->SetValue($this->DESCRIPTION->GetValue(true));
         $this->DataSource->Insert();
         $this->CCSEventResult = CCGetEvent($this->CCSEvents, "AfterInsert", $this);
         return (!$this->CheckErrors());
     }
 //End InsertRow Method
 
-//UpdateRow Method @28-B411E4DD
+//UpdateRow Method @28-21B47B96
     function UpdateRow()
     {
         $this->CCSEventResult = CCGetEvent($this->CCSEvents, "BeforeUpdate", $this);
         if(!$this->UpdateAllowed) return false;
         $this->DataSource->USER_NAME->SetValue($this->USER_NAME->GetValue(true));
-        $this->DataSource->DESCRIPTION->SetValue($this->DESCRIPTION->GetValue(true));
-        $this->DataSource->FULL_NAME->SetValue($this->FULL_NAME->GetValue(true));
-        $this->DataSource->IS_NEW_USER->SetValue($this->IS_NEW_USER->GetValue(true));
+        $this->DataSource->CREATED_BY->SetValue($this->CREATED_BY->GetValue(true));
+        $this->DataSource->UPDATED_BY->SetValue($this->UPDATED_BY->GetValue(true));
         $this->DataSource->EMAIL_ADDRESS->SetValue($this->EMAIL_ADDRESS->GetValue(true));
         $this->DataSource->P_USER_ID->SetValue($this->P_USER_ID->GetValue(true));
-        $this->DataSource->P_USER_STATUS_ID->SetValue($this->P_USER_STATUS_ID->GetValue(true));
+        $this->DataSource->USER_STATUS->SetValue($this->USER_STATUS->GetValue(true));
+        $this->DataSource->IS_NEW_USER->SetValue($this->IS_NEW_USER->GetValue(true));
+        $this->DataSource->LAST_LOGIN_TIME->SetValue($this->LAST_LOGIN_TIME->GetValue(true));
+        $this->DataSource->FULL_NAME->SetValue($this->FULL_NAME->GetValue(true));
         $this->DataSource->EMPLOYEE_NO->SetValue($this->EMPLOYEE_NO->GetValue(true));
         $this->DataSource->IS_EMPLOYEE->SetValue($this->IS_EMPLOYEE->GetValue(true));
+        $this->DataSource->CREATION_DATE->SetValue($this->CREATION_DATE->GetValue(true));
+        $this->DataSource->UPDATED_DATE->SetValue($this->UPDATED_DATE->GetValue(true));
+        $this->DataSource->DESCRIPTION->SetValue($this->DESCRIPTION->GetValue(true));
         $this->DataSource->Update();
         $this->CCSEventResult = CCGetEvent($this->CCSEvents, "AfterUpdate", $this);
         return (!$this->CheckErrors());
@@ -1044,40 +1052,39 @@ class clsP_USERFormDataSource extends clsDBConn {  //P_USERFormDataSource Class 
     }
 //End SetValues Method
 
-//Insert Method @28-120A64F6
+//Insert Method @28-BD44B974
     function Insert()
     {
         global $CCSLocales;
         global $DefaultDateFormat;
         $this->CmdExecution = true;
         $this->cp["USER_NAME"] = new clsSQLParameter("ctrlUSER_NAME", ccsText, "", "", $this->USER_NAME->GetValue(true), "", false, $this->ErrorBlock);
-        $this->cp["CREATED_BY"] = new clsSQLParameter("sesUserName", ccsText, "", "", CCGetSession("UserName", NULL), "", false, $this->ErrorBlock);
-        $this->cp["UPDATED_BY"] = new clsSQLParameter("sesUserName", ccsText, "", "", CCGetSession("UserName", NULL), "", false, $this->ErrorBlock);
-        $this->cp["DESCRIPTION"] = new clsSQLParameter("ctrlDESCRIPTION", ccsText, "", "", $this->DESCRIPTION->GetValue(true), "", false, $this->ErrorBlock);
+        $this->cp["CREATED_BY"] = new clsSQLParameter("ctrlCREATED_BY", ccsText, "", "", $this->CREATED_BY->GetValue(true), "", false, $this->ErrorBlock);
+        $this->cp["UPDATED_BY"] = new clsSQLParameter("ctrlUPDATED_BY", ccsText, "", "", $this->UPDATED_BY->GetValue(true), "", false, $this->ErrorBlock);
         $this->cp["EMAIL_ADDRESS"] = new clsSQLParameter("ctrlEMAIL_ADDRESS", ccsText, "", "", $this->EMAIL_ADDRESS->GetValue(true), "", false, $this->ErrorBlock);
         $this->cp["P_USER_ID"] = new clsSQLParameter("ctrlP_USER_ID", ccsText, "", "", $this->P_USER_ID->GetValue(true), "", false, $this->ErrorBlock);
-        $this->cp["P_USER_STATUS_ID"] = new clsSQLParameter("ctrlP_USER_STATUS_ID", ccsFloat, "", "", $this->P_USER_STATUS_ID->GetValue(true), "", false, $this->ErrorBlock);
+        $this->cp["USER_STATUS"] = new clsSQLParameter("ctrlUSER_STATUS", ccsFloat, "", "", $this->USER_STATUS->GetValue(true), "", false, $this->ErrorBlock);
         $this->cp["IS_NEW_USER"] = new clsSQLParameter("ctrlIS_NEW_USER", ccsText, "", "", $this->IS_NEW_USER->GetValue(true), "", false, $this->ErrorBlock);
-        $this->cp["LAST_LOGIN_TIME"] = new clsSQLParameter("ctrlLAST_LOGIN_TIME", ccsText, "", "", $this->LAST_LOGIN_TIME->GetValue(true), "", false, $this->ErrorBlock);
+        $this->cp["LAST_LOGIN_TIME"] = new clsSQLParameter("ctrlLAST_LOGIN_TIME", ccsDate, array("dd", "-", "mmm", "-", "yyyy", " ", "HH", ":", "nn", ":", "ss"), $this->DateFormat, $this->LAST_LOGIN_TIME->GetValue(true), "", false, $this->ErrorBlock);
         $this->cp["FULL_NAME"] = new clsSQLParameter("ctrlFULL_NAME", ccsText, "", "", $this->FULL_NAME->GetValue(true), "", false, $this->ErrorBlock);
         $this->cp["EMPLOYEE_NO"] = new clsSQLParameter("ctrlEMPLOYEE_NO", ccsText, "", "", $this->EMPLOYEE_NO->GetValue(true), "", false, $this->ErrorBlock);
         $this->cp["IS_EMPLOYEE"] = new clsSQLParameter("ctrlIS_EMPLOYEE", ccsText, "", "", $this->IS_EMPLOYEE->GetValue(true), "", false, $this->ErrorBlock);
-        $this->cp["USER_PWD"] = new clsSQLParameter("ctrlUSER_NAME", ccsText, "", "", $this->USER_NAME->GetValue(true), "", false, $this->ErrorBlock);
+        $this->cp["CREATION_DATE"] = new clsSQLParameter("ctrlCREATION_DATE", ccsDate, array("dd", "-", "mmm", "-", "yyyy"), $this->DateFormat, $this->CREATION_DATE->GetValue(true), "", false, $this->ErrorBlock);
+        $this->cp["UPDATED_DATE"] = new clsSQLParameter("ctrlUPDATED_DATE", ccsDate, array("dd", "-", "mmm", "-", "yyyy"), $this->DateFormat, $this->UPDATED_DATE->GetValue(true), "", false, $this->ErrorBlock);
+        $this->cp["DESCRIPTION"] = new clsSQLParameter("ctrlDESCRIPTION", ccsText, "", "", $this->DESCRIPTION->GetValue(true), "", false, $this->ErrorBlock);
         $this->CCSEventResult = CCGetEvent($this->CCSEvents, "BeforeBuildInsert", $this->Parent);
         if (!is_null($this->cp["USER_NAME"]->GetValue()) and !strlen($this->cp["USER_NAME"]->GetText()) and !is_bool($this->cp["USER_NAME"]->GetValue())) 
             $this->cp["USER_NAME"]->SetValue($this->USER_NAME->GetValue(true));
         if (!is_null($this->cp["CREATED_BY"]->GetValue()) and !strlen($this->cp["CREATED_BY"]->GetText()) and !is_bool($this->cp["CREATED_BY"]->GetValue())) 
-            $this->cp["CREATED_BY"]->SetValue(CCGetSession("UserName", NULL));
+            $this->cp["CREATED_BY"]->SetValue($this->CREATED_BY->GetValue(true));
         if (!is_null($this->cp["UPDATED_BY"]->GetValue()) and !strlen($this->cp["UPDATED_BY"]->GetText()) and !is_bool($this->cp["UPDATED_BY"]->GetValue())) 
-            $this->cp["UPDATED_BY"]->SetValue(CCGetSession("UserName", NULL));
-        if (!is_null($this->cp["DESCRIPTION"]->GetValue()) and !strlen($this->cp["DESCRIPTION"]->GetText()) and !is_bool($this->cp["DESCRIPTION"]->GetValue())) 
-            $this->cp["DESCRIPTION"]->SetValue($this->DESCRIPTION->GetValue(true));
+            $this->cp["UPDATED_BY"]->SetValue($this->UPDATED_BY->GetValue(true));
         if (!is_null($this->cp["EMAIL_ADDRESS"]->GetValue()) and !strlen($this->cp["EMAIL_ADDRESS"]->GetText()) and !is_bool($this->cp["EMAIL_ADDRESS"]->GetValue())) 
             $this->cp["EMAIL_ADDRESS"]->SetValue($this->EMAIL_ADDRESS->GetValue(true));
         if (!is_null($this->cp["P_USER_ID"]->GetValue()) and !strlen($this->cp["P_USER_ID"]->GetText()) and !is_bool($this->cp["P_USER_ID"]->GetValue())) 
             $this->cp["P_USER_ID"]->SetValue($this->P_USER_ID->GetValue(true));
-        if (!is_null($this->cp["P_USER_STATUS_ID"]->GetValue()) and !strlen($this->cp["P_USER_STATUS_ID"]->GetText()) and !is_bool($this->cp["P_USER_STATUS_ID"]->GetValue())) 
-            $this->cp["P_USER_STATUS_ID"]->SetValue($this->P_USER_STATUS_ID->GetValue(true));
+        if (!is_null($this->cp["USER_STATUS"]->GetValue()) and !strlen($this->cp["USER_STATUS"]->GetText()) and !is_bool($this->cp["USER_STATUS"]->GetValue())) 
+            $this->cp["USER_STATUS"]->SetValue($this->USER_STATUS->GetValue(true));
         if (!is_null($this->cp["IS_NEW_USER"]->GetValue()) and !strlen($this->cp["IS_NEW_USER"]->GetText()) and !is_bool($this->cp["IS_NEW_USER"]->GetValue())) 
             $this->cp["IS_NEW_USER"]->SetValue($this->IS_NEW_USER->GetValue(true));
         if (!is_null($this->cp["LAST_LOGIN_TIME"]->GetValue()) and !strlen($this->cp["LAST_LOGIN_TIME"]->GetText()) and !is_bool($this->cp["LAST_LOGIN_TIME"]->GetValue())) 
@@ -1088,9 +1095,40 @@ class clsP_USERFormDataSource extends clsDBConn {  //P_USERFormDataSource Class 
             $this->cp["EMPLOYEE_NO"]->SetValue($this->EMPLOYEE_NO->GetValue(true));
         if (!is_null($this->cp["IS_EMPLOYEE"]->GetValue()) and !strlen($this->cp["IS_EMPLOYEE"]->GetText()) and !is_bool($this->cp["IS_EMPLOYEE"]->GetValue())) 
             $this->cp["IS_EMPLOYEE"]->SetValue($this->IS_EMPLOYEE->GetValue(true));
-        if (!is_null($this->cp["USER_PWD"]->GetValue()) and !strlen($this->cp["USER_PWD"]->GetText()) and !is_bool($this->cp["USER_PWD"]->GetValue())) 
-            $this->cp["USER_PWD"]->SetValue($this->USER_NAME->GetValue(true));
-        $this->SQL = "INSERT INTO P_USER(P_USER_ID, USER_NAME, USER_PWD, DESCRIPTION, EMAIL_ADDRESS, P_USER_STATUS_ID, IS_NEW_USER, FULL_NAME, EMPLOYEE_NO, IS_EMPLOYEE, CREATION_DATE, CREATED_BY,  UPDATED_DATE, UPDATED_BY ) VALUES( GENERATE_ID('','P_USER','P_USER_ID'), '" . $this->SQLValue($this->cp["USER_NAME"]->GetDBValue(), ccsText) . "', '" . md5($this->SQLValue($this->cp["USER_PWD"]->GetDBValue()), ccsText) . "', '" . $this->SQLValue($this->cp["DESCRIPTION"]->GetDBValue(), ccsText) . "', '" . $this->SQLValue($this->cp["EMAIL_ADDRESS"]->GetDBValue(), ccsText) . "', " . $this->SQLValue($this->cp["P_USER_STATUS_ID"]->GetDBValue(), ccsFloat) . ", '" . $this->SQLValue($this->cp["IS_NEW_USER"]->GetDBValue(), ccsText) . "', '" . $this->SQLValue($this->cp["FULL_NAME"]->GetDBValue(), ccsText) . "', '" . $this->SQLValue($this->cp["EMPLOYEE_NO"]->GetDBValue(), ccsText) . "', '" . $this->SQLValue($this->cp["IS_EMPLOYEE"]->GetDBValue(), ccsText) . "', sysdate, '" . $this->SQLValue($this->cp["CREATED_BY"]->GetDBValue(), ccsText) . "', sysdate,'" . $this->SQLValue($this->cp["UPDATED_BY"]->GetDBValue(), ccsText) . "')";
+        if (!is_null($this->cp["CREATION_DATE"]->GetValue()) and !strlen($this->cp["CREATION_DATE"]->GetText()) and !is_bool($this->cp["CREATION_DATE"]->GetValue())) 
+            $this->cp["CREATION_DATE"]->SetValue($this->CREATION_DATE->GetValue(true));
+        if (!is_null($this->cp["UPDATED_DATE"]->GetValue()) and !strlen($this->cp["UPDATED_DATE"]->GetText()) and !is_bool($this->cp["UPDATED_DATE"]->GetValue())) 
+            $this->cp["UPDATED_DATE"]->SetValue($this->UPDATED_DATE->GetValue(true));
+        if (!is_null($this->cp["DESCRIPTION"]->GetValue()) and !strlen($this->cp["DESCRIPTION"]->GetText()) and !is_bool($this->cp["DESCRIPTION"]->GetValue())) 
+            $this->cp["DESCRIPTION"]->SetValue($this->DESCRIPTION->GetValue(true));
+        $this->SQL = "INSERT INTO IFL.P_USER(USER_NAME, \n" .
+        "CREATED_BY, \n" .
+        "UPDATED_BY, \n" .
+        "EMAIL_ADDRESS, \n" .
+        "P_USER_ID, \n" .
+        "USER_STATUS, \n" .
+        "IS_NEW_USER, \n" .
+        "LAST_LOGIN_TIME, \n" .
+        "FULL_NAME, \n" .
+        "EMPLOYEE_NO, \n" .
+        "IS_EMPLOYEE, \n" .
+        "CREATION_DATE, \n" .
+        "UPDATED_DATE, \n" .
+        "DESCRIPTION) VALUES(\n" .
+        "'" . $this->SQLValue($this->cp["USER_NAME"]->GetDBValue(), ccsText) . "', \n" .
+        "'" . $this->SQLValue($this->cp["CREATED_BY"]->GetDBValue(), ccsText) . "', \n" .
+        "'" . $this->SQLValue($this->cp["UPDATED_BY"]->GetDBValue(), ccsText) . "', \n" .
+        "'" . $this->SQLValue($this->cp["EMAIL_ADDRESS"]->GetDBValue(), ccsText) . "', \n" .
+        "GENERATE_ID('IFL','P_USER','P_USER_ID'), \n" .
+        "" . $this->SQLValue($this->cp["USER_STATUS"]->GetDBValue(), ccsFloat) . ", \n" .
+        "'" . $this->SQLValue($this->cp["IS_NEW_USER"]->GetDBValue(), ccsText) . "', \n" .
+        "TO_DATE('" . $this->SQLValue($this->cp["LAST_LOGIN_TIME"]->GetDBValue(), ccsDate) . "', 'DD-MON-YYYY'),\n" .
+        "'" . $this->SQLValue($this->cp["FULL_NAME"]->GetDBValue(), ccsText) . "', \n" .
+        "'" . $this->SQLValue($this->cp["EMPLOYEE_NO"]->GetDBValue(), ccsText) . "', \n" .
+        "'" . $this->SQLValue($this->cp["IS_EMPLOYEE"]->GetDBValue(), ccsText) . "', \n" .
+        "SYSDATE, \n" .
+        "SYSDATE, \n" .
+        "'" . $this->SQLValue($this->cp["DESCRIPTION"]->GetDBValue(), ccsText) . "')";
         $this->CCSEventResult = CCGetEvent($this->CCSEvents, "BeforeExecuteInsert", $this->Parent);
         if($this->Errors->Count() == 0 && $this->CmdExecution) {
             $this->query($this->SQL);
@@ -1100,47 +1138,57 @@ class clsP_USERFormDataSource extends clsDBConn {  //P_USERFormDataSource Class 
 //End Insert Method
 
 
-//Update Method @28-2EBB4810
+//Update Method @28-CE95A37F
     function Update()
     {
         global $CCSLocales;
         global $DefaultDateFormat;
         $this->CmdExecution = true;
         $this->cp["USER_NAME"] = new clsSQLParameter("ctrlUSER_NAME", ccsText, "", "", $this->USER_NAME->GetValue(true), "", false, $this->ErrorBlock);
-        $this->cp["DESCRIPTION"] = new clsSQLParameter("ctrlDESCRIPTION", ccsText, "", "", $this->DESCRIPTION->GetValue(true), "", false, $this->ErrorBlock);
-        $this->cp["FULL_NAME"] = new clsSQLParameter("ctrlFULL_NAME", ccsText, "", "", $this->FULL_NAME->GetValue(true), "", false, $this->ErrorBlock);
-        $this->cp["IS_NEW_USER"] = new clsSQLParameter("ctrlIS_NEW_USER", ccsText, "", "", $this->IS_NEW_USER->GetValue(true), "", false, $this->ErrorBlock);
+        $this->cp["CREATED_BY"] = new clsSQLParameter("ctrlCREATED_BY", ccsText, "", "", $this->CREATED_BY->GetValue(true), "", false, $this->ErrorBlock);
+        $this->cp["UPDATED_BY"] = new clsSQLParameter("ctrlUPDATED_BY", ccsText, "", "", $this->UPDATED_BY->GetValue(true), "", false, $this->ErrorBlock);
         $this->cp["EMAIL_ADDRESS"] = new clsSQLParameter("ctrlEMAIL_ADDRESS", ccsText, "", "", $this->EMAIL_ADDRESS->GetValue(true), "", false, $this->ErrorBlock);
-        $this->cp["UPDATED_BY"] = new clsSQLParameter("sesUserName", ccsText, "", "", CCGetSession("UserName", NULL), "", false, $this->ErrorBlock);
         $this->cp["P_USER_ID"] = new clsSQLParameter("ctrlP_USER_ID", ccsFloat, "", "", $this->P_USER_ID->GetValue(true), 0, false, $this->ErrorBlock);
-        $this->cp["P_USER_STATUS_ID"] = new clsSQLParameter("ctrlP_USER_STATUS_ID", ccsFloat, "", "", $this->P_USER_STATUS_ID->GetValue(true), 0, false, $this->ErrorBlock);
+        $this->cp["USER_STATUS"] = new clsSQLParameter("ctrlUSER_STATUS", ccsFloat, "", "", $this->USER_STATUS->GetValue(true), "", false, $this->ErrorBlock);
+        $this->cp["IS_NEW_USER"] = new clsSQLParameter("ctrlIS_NEW_USER", ccsText, "", "", $this->IS_NEW_USER->GetValue(true), "", false, $this->ErrorBlock);
+        $this->cp["LAST_LOGIN_TIME"] = new clsSQLParameter("ctrlLAST_LOGIN_TIME", ccsDate, array("dd", "-", "mmm", "-", "yyyy", " ", "HH", ":", "nn", ":", "ss"), $this->DateFormat, $this->LAST_LOGIN_TIME->GetValue(true), "", false, $this->ErrorBlock);
+        $this->cp["FULL_NAME"] = new clsSQLParameter("ctrlFULL_NAME", ccsText, "", "", $this->FULL_NAME->GetValue(true), "", false, $this->ErrorBlock);
         $this->cp["EMPLOYEE_NO"] = new clsSQLParameter("ctrlEMPLOYEE_NO", ccsText, "", "", $this->EMPLOYEE_NO->GetValue(true), "", false, $this->ErrorBlock);
         $this->cp["IS_EMPLOYEE"] = new clsSQLParameter("ctrlIS_EMPLOYEE", ccsText, "", "", $this->IS_EMPLOYEE->GetValue(true), "", false, $this->ErrorBlock);
+        $this->cp["CREATION_DATE"] = new clsSQLParameter("ctrlCREATION_DATE", ccsDate, array("dd", "-", "mmm", "-", "yyyy"), $this->DateFormat, $this->CREATION_DATE->GetValue(true), "", false, $this->ErrorBlock);
+        $this->cp["UPDATED_DATE"] = new clsSQLParameter("ctrlUPDATED_DATE", ccsDate, array("dd", "-", "mmm", "-", "yyyy"), $this->DateFormat, $this->UPDATED_DATE->GetValue(true), "", false, $this->ErrorBlock);
+        $this->cp["DESCRIPTION"] = new clsSQLParameter("ctrlDESCRIPTION", ccsText, "", "", $this->DESCRIPTION->GetValue(true), "", false, $this->ErrorBlock);
         $this->CCSEventResult = CCGetEvent($this->CCSEvents, "BeforeBuildUpdate", $this->Parent);
         if (!is_null($this->cp["USER_NAME"]->GetValue()) and !strlen($this->cp["USER_NAME"]->GetText()) and !is_bool($this->cp["USER_NAME"]->GetValue())) 
             $this->cp["USER_NAME"]->SetValue($this->USER_NAME->GetValue(true));
-        if (!is_null($this->cp["DESCRIPTION"]->GetValue()) and !strlen($this->cp["DESCRIPTION"]->GetText()) and !is_bool($this->cp["DESCRIPTION"]->GetValue())) 
-            $this->cp["DESCRIPTION"]->SetValue($this->DESCRIPTION->GetValue(true));
-        if (!is_null($this->cp["FULL_NAME"]->GetValue()) and !strlen($this->cp["FULL_NAME"]->GetText()) and !is_bool($this->cp["FULL_NAME"]->GetValue())) 
-            $this->cp["FULL_NAME"]->SetValue($this->FULL_NAME->GetValue(true));
-        if (!is_null($this->cp["IS_NEW_USER"]->GetValue()) and !strlen($this->cp["IS_NEW_USER"]->GetText()) and !is_bool($this->cp["IS_NEW_USER"]->GetValue())) 
-            $this->cp["IS_NEW_USER"]->SetValue($this->IS_NEW_USER->GetValue(true));
+        if (!is_null($this->cp["CREATED_BY"]->GetValue()) and !strlen($this->cp["CREATED_BY"]->GetText()) and !is_bool($this->cp["CREATED_BY"]->GetValue())) 
+            $this->cp["CREATED_BY"]->SetValue($this->CREATED_BY->GetValue(true));
+        if (!is_null($this->cp["UPDATED_BY"]->GetValue()) and !strlen($this->cp["UPDATED_BY"]->GetText()) and !is_bool($this->cp["UPDATED_BY"]->GetValue())) 
+            $this->cp["UPDATED_BY"]->SetValue($this->UPDATED_BY->GetValue(true));
         if (!is_null($this->cp["EMAIL_ADDRESS"]->GetValue()) and !strlen($this->cp["EMAIL_ADDRESS"]->GetText()) and !is_bool($this->cp["EMAIL_ADDRESS"]->GetValue())) 
             $this->cp["EMAIL_ADDRESS"]->SetValue($this->EMAIL_ADDRESS->GetValue(true));
-        if (!is_null($this->cp["UPDATED_BY"]->GetValue()) and !strlen($this->cp["UPDATED_BY"]->GetText()) and !is_bool($this->cp["UPDATED_BY"]->GetValue())) 
-            $this->cp["UPDATED_BY"]->SetValue(CCGetSession("UserName", NULL));
         if (!is_null($this->cp["P_USER_ID"]->GetValue()) and !strlen($this->cp["P_USER_ID"]->GetText()) and !is_bool($this->cp["P_USER_ID"]->GetValue())) 
             $this->cp["P_USER_ID"]->SetValue($this->P_USER_ID->GetValue(true));
         if (!strlen($this->cp["P_USER_ID"]->GetText()) and !is_bool($this->cp["P_USER_ID"]->GetValue(true))) 
             $this->cp["P_USER_ID"]->SetText(0);
-        if (!is_null($this->cp["P_USER_STATUS_ID"]->GetValue()) and !strlen($this->cp["P_USER_STATUS_ID"]->GetText()) and !is_bool($this->cp["P_USER_STATUS_ID"]->GetValue())) 
-            $this->cp["P_USER_STATUS_ID"]->SetValue($this->P_USER_STATUS_ID->GetValue(true));
-        if (!strlen($this->cp["P_USER_STATUS_ID"]->GetText()) and !is_bool($this->cp["P_USER_STATUS_ID"]->GetValue(true))) 
-            $this->cp["P_USER_STATUS_ID"]->SetText(0);
+        if (!is_null($this->cp["USER_STATUS"]->GetValue()) and !strlen($this->cp["USER_STATUS"]->GetText()) and !is_bool($this->cp["USER_STATUS"]->GetValue())) 
+            $this->cp["USER_STATUS"]->SetValue($this->USER_STATUS->GetValue(true));
+        if (!is_null($this->cp["IS_NEW_USER"]->GetValue()) and !strlen($this->cp["IS_NEW_USER"]->GetText()) and !is_bool($this->cp["IS_NEW_USER"]->GetValue())) 
+            $this->cp["IS_NEW_USER"]->SetValue($this->IS_NEW_USER->GetValue(true));
+        if (!is_null($this->cp["LAST_LOGIN_TIME"]->GetValue()) and !strlen($this->cp["LAST_LOGIN_TIME"]->GetText()) and !is_bool($this->cp["LAST_LOGIN_TIME"]->GetValue())) 
+            $this->cp["LAST_LOGIN_TIME"]->SetValue($this->LAST_LOGIN_TIME->GetValue(true));
+        if (!is_null($this->cp["FULL_NAME"]->GetValue()) and !strlen($this->cp["FULL_NAME"]->GetText()) and !is_bool($this->cp["FULL_NAME"]->GetValue())) 
+            $this->cp["FULL_NAME"]->SetValue($this->FULL_NAME->GetValue(true));
         if (!is_null($this->cp["EMPLOYEE_NO"]->GetValue()) and !strlen($this->cp["EMPLOYEE_NO"]->GetText()) and !is_bool($this->cp["EMPLOYEE_NO"]->GetValue())) 
             $this->cp["EMPLOYEE_NO"]->SetValue($this->EMPLOYEE_NO->GetValue(true));
         if (!is_null($this->cp["IS_EMPLOYEE"]->GetValue()) and !strlen($this->cp["IS_EMPLOYEE"]->GetText()) and !is_bool($this->cp["IS_EMPLOYEE"]->GetValue())) 
             $this->cp["IS_EMPLOYEE"]->SetValue($this->IS_EMPLOYEE->GetValue(true));
+        if (!is_null($this->cp["CREATION_DATE"]->GetValue()) and !strlen($this->cp["CREATION_DATE"]->GetText()) and !is_bool($this->cp["CREATION_DATE"]->GetValue())) 
+            $this->cp["CREATION_DATE"]->SetValue($this->CREATION_DATE->GetValue(true));
+        if (!is_null($this->cp["UPDATED_DATE"]->GetValue()) and !strlen($this->cp["UPDATED_DATE"]->GetText()) and !is_bool($this->cp["UPDATED_DATE"]->GetValue())) 
+            $this->cp["UPDATED_DATE"]->SetValue($this->UPDATED_DATE->GetValue(true));
+        if (!is_null($this->cp["DESCRIPTION"]->GetValue()) and !strlen($this->cp["DESCRIPTION"]->GetText()) and !is_bool($this->cp["DESCRIPTION"]->GetValue())) 
+            $this->cp["DESCRIPTION"]->SetValue($this->DESCRIPTION->GetValue(true));
         $this->SQL = "UPDATE P_USER SET \n" .
         "DESCRIPTION='" . $this->SQLValue($this->cp["DESCRIPTION"]->GetDBValue(), ccsText) . "',\n" .
         "FULL_NAME='" . $this->SQLValue($this->cp["FULL_NAME"]->GetDBValue(), ccsText) . "',  \n" .
@@ -1148,7 +1196,7 @@ class clsP_USERFormDataSource extends clsDBConn {  //P_USERFormDataSource Class 
         "EMAIL_ADDRESS='" . $this->SQLValue($this->cp["EMAIL_ADDRESS"]->GetDBValue(), ccsText) . "', \n" .
         "UPDATED_BY='" . $this->SQLValue($this->cp["UPDATED_BY"]->GetDBValue(), ccsText) . "', \n" .
         "UPDATED_DATE=sysdate, \n" .
-        "P_USER_STATUS_ID=" . $this->SQLValue($this->cp["P_USER_STATUS_ID"]->GetDBValue(), ccsFloat) . ", \n" .
+        "USER_STATUS=" . $this->SQLValue($this->cp["USER_STATUS"]->GetDBValue(), ccsFloat) . ", \n" .
         "EMPLOYEE_NO = '" . $this->SQLValue($this->cp["EMPLOYEE_NO"]->GetDBValue(), ccsText) . "',\n" .
         "IS_EMPLOYEE = '" . $this->SQLValue($this->cp["IS_EMPLOYEE"]->GetDBValue(), ccsText) . "'\n" .
         "WHERE P_USER_ID = " . $this->SQLValue($this->cp["P_USER_ID"]->GetDBValue(), ccsFloat) . "";
@@ -1160,7 +1208,7 @@ class clsP_USERFormDataSource extends clsDBConn {  //P_USERFormDataSource Class 
     }
 //End Update Method
 
-//Delete Method @28-8436FDC1
+//Delete Method @28-AACE7EE9
     function Delete()
     {
         global $CCSLocales;
@@ -1172,7 +1220,7 @@ class clsP_USERFormDataSource extends clsDBConn {  //P_USERFormDataSource Class 
             $this->cp["P_USER_ID"]->SetValue($this->P_USER_ID->GetValue(true));
         if (!strlen($this->cp["P_USER_ID"]->GetText()) and !is_bool($this->cp["P_USER_ID"]->GetValue(true))) 
             $this->cp["P_USER_ID"]->SetText(0);
-        $this->SQL = "DELETE FROM P_USER WHERE  P_USER_ID = " . $this->SQLValue($this->cp["P_USER_ID"]->GetDBValue(), ccsFloat) . "";
+        $this->SQL = "DELETE FROM IFL.P_USER WHERE  P_USER_ID = " . $this->SQLValue($this->cp["P_USER_ID"]->GetDBValue(), ccsFloat) . "";
         $this->CCSEventResult = CCGetEvent($this->CCSEvents, "BeforeExecuteDelete", $this->Parent);
         if($this->Errors->Count() == 0 && $this->CmdExecution) {
             $this->query($this->SQL);

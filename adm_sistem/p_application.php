@@ -42,7 +42,7 @@ class clsGridP_APPLGrid { //P_APPLGrid class @2-5B0AA2F2
     var $RowControls;
 //End Variables
 
-//Class_Initialize Event @2-11D655CD
+//Class_Initialize Event @2-645099CB
     function clsGridP_APPLGrid($RelativePath, & $Parent)
     {
         global $FileName;
@@ -70,18 +70,23 @@ class clsGridP_APPLGrid { //P_APPLGrid class @2-5B0AA2F2
         if ($this->PageNumber <= 0) $this->PageNumber = 1;
 
         $this->CODE = & new clsControl(ccsLabel, "CODE", "CODE", ccsText, "", CCGetRequestParam("CODE", ccsGet, NULL), $this);
+        $this->P_APPLICATION_ID = & new clsControl(ccsHidden, "P_APPLICATION_ID", "P_APPLICATION_ID", ccsText, "", CCGetRequestParam("P_APPLICATION_ID", ccsGet, NULL), $this);
+        $this->DESCRIPTION = & new clsControl(ccsLabel, "DESCRIPTION", "DESCRIPTION", ccsText, "", CCGetRequestParam("DESCRIPTION", ccsGet, NULL), $this);
         $this->DLink = & new clsControl(ccsLink, "DLink", "DLink", ccsText, "", CCGetRequestParam("DLink", ccsGet, NULL), $this);
         $this->DLink->HTML = true;
         $this->DLink->Page = "p_application.php";
-        $this->P_APPLICATION_ID = & new clsControl(ccsHidden, "P_APPLICATION_ID", "P_APPLICATION_ID", ccsText, "", CCGetRequestParam("P_APPLICATION_ID", ccsGet, NULL), $this);
-        $this->DESCRIPTION = & new clsControl(ccsLabel, "DESCRIPTION", "DESCRIPTION", ccsText, "", CCGetRequestParam("DESCRIPTION", ccsGet, NULL), $this);
-        $this->Navigator = & new clsNavigator($this->ComponentName, "Navigator", $FileName, 5, tpCentered, $this, "P_APPLICATION_ID");
+        $this->ADLink = & new clsControl(ccsLink, "ADLink", "ADLink", ccsText, "", CCGetRequestParam("ADLink", ccsGet, NULL), $this);
+        $this->ADLink->HTML = true;
+        $this->ADLink->Page = "p_application.php";
+        $this->Navigator = & new clsNavigator($this->ComponentName, "Navigator", $FileName, 5, tpCentered, $this);
         $this->Navigator->PageSizes = array("1", "5", "10", "25", "50");
         $this->P_APPL_Insert = & new clsControl(ccsLink, "P_APPL_Insert", "P_APPL_Insert", ccsText, "", CCGetRequestParam("P_APPL_Insert", ccsGet, NULL), $this);
         $this->P_APPL_Insert->HTML = true;
         $this->P_APPL_Insert->Page = "p_application.php";
     }
 //End Class_Initialize Event
+
+
 
 //Initialize Method @2-90E704C5
     function Initialize()
@@ -94,7 +99,7 @@ class clsGridP_APPLGrid { //P_APPLGrid class @2-5B0AA2F2
     }
 //End Initialize Method
 
-//Show Method @2-70C0AA6A
+//Show Method @2-A6ECCB41
     function Show()
     {
         global $Tpl;
@@ -124,9 +129,10 @@ class clsGridP_APPLGrid { //P_APPLGrid class @2-5B0AA2F2
 
         if (!$this->IsEmpty) {
             $this->ControlsVisible["CODE"] = $this->CODE->Visible;
-            $this->ControlsVisible["DLink"] = $this->DLink->Visible;
             $this->ControlsVisible["P_APPLICATION_ID"] = $this->P_APPLICATION_ID->Visible;
             $this->ControlsVisible["DESCRIPTION"] = $this->DESCRIPTION->Visible;
+            $this->ControlsVisible["DLink"] = $this->DLink->Visible;
+            $this->ControlsVisible["ADLink"] = $this->ADLink->Visible;
             while ($this->ForceIteration || (($this->RowNumber < $this->PageSize) &&  ($this->HasRecord = $this->DataSource->has_next_record()))) {
                 $this->RowNumber++;
                 if ($this->HasRecord) {
@@ -135,17 +141,20 @@ class clsGridP_APPLGrid { //P_APPLGrid class @2-5B0AA2F2
                 }
                 $Tpl->block_path = $ParentPath . "/" . $GridBlock . "/Row";
                 $this->CODE->SetValue($this->DataSource->CODE->GetValue());
-                $this->DLink->Parameters = CCGetQueryString("QueryString", array("FLAG", "ccsForm"));
-                $this->DLink->Parameters = CCAddParam($this->DLink->Parameters, "P_APPLICATION_ID", $this->DataSource->f("P_APPLICATION_ID"));
                 $this->P_APPLICATION_ID->SetValue($this->DataSource->P_APPLICATION_ID->GetValue());
                 $this->DESCRIPTION->SetValue($this->DataSource->DESCRIPTION->GetValue());
+                $this->DLink->Parameters = CCGetQueryString("QueryString", array("FLAG", "TAMBAH", "ccsForm"));
+                $this->DLink->Parameters = CCAddParam($this->DLink->Parameters, "P_APPLICATION_ID", $this->DataSource->f("P_APPLICATION_ID"));
+                $this->ADLink->Parameters = CCGetQueryString("QueryString", array("FLAG", "TAMBAH", "ccsForm"));
+                $this->ADLink->Parameters = CCAddParam($this->ADLink->Parameters, "P_APPLICATION_ID", $this->DataSource->f("P_APPLICATION_ID"));
                 $this->Attributes->SetValue("rowNumber", $this->RowNumber);
                 $this->CCSEventResult = CCGetEvent($this->CCSEvents, "BeforeShowRow", $this);
                 $this->Attributes->Show();
                 $this->CODE->Show();
-                $this->DLink->Show();
                 $this->P_APPLICATION_ID->Show();
                 $this->DESCRIPTION->Show();
+                $this->DLink->Show();
+                $this->ADLink->Show();
                 $Tpl->block_path = $ParentPath . "/" . $GridBlock;
                 $Tpl->parse("Row", true);
             }
@@ -172,7 +181,7 @@ class clsGridP_APPLGrid { //P_APPLGrid class @2-5B0AA2F2
             $this->Navigator->Visible = false;
         }
         $this->P_APPL_Insert->Parameters = CCGetQueryString("QueryString", array("P_APPLICATION_ID", "ccsForm"));
-        $this->P_APPL_Insert->Parameters = CCAddParam($this->P_APPL_Insert->Parameters, "TAMBAH", 1);
+        $this->P_APPL_Insert->Parameters = CCAddParam($this->P_APPL_Insert->Parameters, "FLAG", "ADD");
         $this->Navigator->Show();
         $this->P_APPL_Insert->Show();
         $Tpl->parse();
@@ -181,14 +190,15 @@ class clsGridP_APPLGrid { //P_APPLGrid class @2-5B0AA2F2
     }
 //End Show Method
 
-//GetErrors Method @2-8F0042A9
+//GetErrors Method @2-3A63546E
     function GetErrors()
     {
         $errors = "";
         $errors = ComposeStrings($errors, $this->CODE->Errors->ToString());
-        $errors = ComposeStrings($errors, $this->DLink->Errors->ToString());
         $errors = ComposeStrings($errors, $this->P_APPLICATION_ID->Errors->ToString());
         $errors = ComposeStrings($errors, $this->DESCRIPTION->Errors->ToString());
+        $errors = ComposeStrings($errors, $this->DLink->Errors->ToString());
+        $errors = ComposeStrings($errors, $this->ADLink->Errors->ToString());
         $errors = ComposeStrings($errors, $this->Errors->ToString());
         $errors = ComposeStrings($errors, $this->DataSource->Errors->ToString());
         return $errors;
@@ -904,26 +914,24 @@ class clsP_APPLFormDataSource extends clsDBConn {  //P_APPLFormDataSource Class 
     }
 //End DataSourceClass_Initialize Event
 
-//Prepare Method @37-ED10E012
+//Prepare Method @37-5D1C286B
     function Prepare()
     {
         global $CCSLocales;
         global $DefaultDateFormat;
         $this->wp = new clsSQLParameters($this->ErrorBlock);
-        $this->wp->AddParameter("1", "urlP_APPLICATION_ID", ccsFloat, "", "", $this->Parameters["urlP_APPLICATION_ID"], "", false);
+        $this->wp->AddParameter("1", "urlP_APPLICATION_ID", ccsFloat, "", "", $this->Parameters["urlP_APPLICATION_ID"], -99, false);
         $this->AllParametersSet = $this->wp->AllParamsSet();
-        $this->wp->Criterion[1] = $this->wp->Operation(opEqual, "P_APPLICATION_ID", $this->wp->GetDBValue("1"), $this->ToSQL($this->wp->GetDBValue("1"), ccsFloat),false);
-        $this->Where = 
-             $this->wp->Criterion[1];
     }
 //End Prepare Method
 
-//Open Method @37-A96BF7CD
+//Open Method @37-CEF632B0
     function Open()
     {
         $this->CCSEventResult = CCGetEvent($this->CCSEvents, "BeforeBuildSelect", $this->Parent);
-        $this->SQL = "SELECT * \n\n" .
-        "FROM P_APPLICATION {SQL_Where} {SQL_OrderBy}";
+        $this->SQL = "select * from ifl.p_application\n" .
+        "where P_APPLICATION_ID=" . $this->SQLValue($this->wp->GetDBValue("1"), ccsFloat) . "";
+        $this->Order = "";
         $this->CCSEventResult = CCGetEvent($this->CCSEvents, "BeforeExecuteSelect", $this->Parent);
         $this->query(CCBuildSQL($this->SQL, $this->Where, $this->Order));
         $this->CCSEventResult = CCGetEvent($this->CCSEvents, "AfterExecuteSelect", $this->Parent);
@@ -945,7 +953,7 @@ class clsP_APPLFormDataSource extends clsDBConn {  //P_APPLFormDataSource Class 
     }
 //End SetValues Method
 
-//Insert Method @37-30C12046
+//Insert Method @37-7A9906BF
     function Insert()
     {
         global $CCSLocales;
@@ -970,8 +978,25 @@ class clsP_APPLFormDataSource extends clsDBConn {  //P_APPLFormDataSource Class 
             $this->cp["LISTING_NO"]->SetValue($this->LISTING_NO->GetValue(true));
         if (!is_null($this->cp["IS_ACTIVE"]->GetValue()) and !strlen($this->cp["IS_ACTIVE"]->GetText()) and !is_bool($this->cp["IS_ACTIVE"]->GetValue())) 
             $this->cp["IS_ACTIVE"]->SetValue($this->IS_ACTIVE->GetValue(true));
-        $this->SQL = "INSERT INTO P_APPLICATION(P_APPLICATION_ID,CODE,DESCRIPTION,CREATION_DATE,CREATED_BY,UPDATED_DATE,UPDATED_BY, LISTING_NO, IS_ACTIVE)VALUES \n" .
-        "(generate_id('','P_APPLICATION','P_APPLICATION_ID'),TRIM(UPPER('" . $this->SQLValue($this->cp["CODE"]->GetDBValue(), ccsText) . "')),TRIM('" . $this->SQLValue($this->cp["DESCRIPTION"]->GetDBValue(), ccsText) . "'),sysdate,'" . $this->SQLValue($this->cp["CREATED_BY"]->GetDBValue(), ccsText) . "',sysdate,'" . $this->SQLValue($this->cp["UPDATED_BY"]->GetDBValue(), ccsText) . "',LISTING_NO, 'IS_ACTIVE')";
+        $this->SQL = "INSERT INTO IFL.P_APPLICATION(\n" .
+        "P_APPLICATION_ID,\n" .
+        "CODE,\n" .
+        "DESCRIPTION,\n" .
+        "CREATION_DATE,\n" .
+        "CREATED_BY,\n" .
+        "UPDATED_DATE,\n" .
+        "UPDATED_BY, \n" .
+        "LISTING_NO, \n" .
+        "IS_ACTIVE)VALUES(\n" .
+        "generate_id('IFL','P_APPLICATION','P_APPLICATION_ID'),\n" .
+        "TRIM(UPPER('" . $this->SQLValue($this->cp["CODE"]->GetDBValue(), ccsText) . "')),\n" .
+        "TRIM('" . $this->SQLValue($this->cp["DESCRIPTION"]->GetDBValue(), ccsText) . "'),\n" .
+        "sysdate,\n" .
+        "'" . $this->SQLValue($this->cp["CREATED_BY"]->GetDBValue(), ccsText) . "',\n" .
+        "sysdate,\n" .
+        "'" . $this->SQLValue($this->cp["UPDATED_BY"]->GetDBValue(), ccsText) . "',\n" .
+        "" . $this->SQLValue($this->cp["LISTING_NO"]->GetDBValue(), ccsFloat) . ", \n" .
+        "'" . $this->SQLValue($this->cp["IS_ACTIVE"]->GetDBValue(), ccsText) . "')";
         $this->CCSEventResult = CCGetEvent($this->CCSEvents, "BeforeExecuteInsert", $this->Parent);
         if($this->Errors->Count() == 0 && $this->CmdExecution) {
             $this->query($this->SQL);
@@ -980,7 +1005,7 @@ class clsP_APPLFormDataSource extends clsDBConn {  //P_APPLFormDataSource Class 
     }
 //End Insert Method
 
-//Update Method @37-447F8D2B
+//Update Method @37-91881A7E
     function Update()
     {
         global $CCSLocales;
@@ -1007,7 +1032,8 @@ class clsP_APPLFormDataSource extends clsDBConn {  //P_APPLFormDataSource Class 
             $this->cp["LISTING_NO"]->SetValue($this->LISTING_NO->GetValue(true));
         if (!is_null($this->cp["IS_ACTIVE"]->GetValue()) and !strlen($this->cp["IS_ACTIVE"]->GetText()) and !is_bool($this->cp["IS_ACTIVE"]->GetValue())) 
             $this->cp["IS_ACTIVE"]->SetValue($this->IS_ACTIVE->GetValue(true));
-        $this->SQL = "UPDATE P_APPLICATION SET \n" .
+        $this->SQL = "UPDATE IFL.P_APPLICATION \n" .
+        "SET \n" .
         "CODE=UPPER(TRIM('" . $this->SQLValue($this->cp["CODE"]->GetDBValue(), ccsText) . "')),\n" .
         "DESCRIPTION=TRIM('" . $this->SQLValue($this->cp["DESCRIPTION"]->GetDBValue(), ccsText) . "'),\n" .
         "LISTING_NO=" . $this->SQLValue($this->cp["LISTING_NO"]->GetDBValue(), ccsFloat) . ",\n" .
@@ -1023,7 +1049,7 @@ class clsP_APPLFormDataSource extends clsDBConn {  //P_APPLFormDataSource Class 
     }
 //End Update Method
 
-//Delete Method @37-B5A793C0
+//Delete Method @37-E77F6862
     function Delete()
     {
         global $CCSLocales;
@@ -1035,7 +1061,7 @@ class clsP_APPLFormDataSource extends clsDBConn {  //P_APPLFormDataSource Class 
             $this->cp["P_APPLICATION_ID"]->SetValue($this->P_APPLICATION_ID->GetValue(true));
         if (!strlen($this->cp["P_APPLICATION_ID"]->GetText()) and !is_bool($this->cp["P_APPLICATION_ID"]->GetValue(true))) 
             $this->cp["P_APPLICATION_ID"]->SetText(0);
-        $this->SQL = "DELETE FROM P_APPLICATION WHERE P_APPLICATION_ID=" . $this->SQLValue($this->cp["P_APPLICATION_ID"]->GetDBValue(), ccsFloat) . "";
+        $this->SQL = "DELETE FROM IFL.P_APPLICATION WHERE P_APPLICATION_ID=" . $this->SQLValue($this->cp["P_APPLICATION_ID"]->GetDBValue(), ccsFloat) . "";
         $this->CCSEventResult = CCGetEvent($this->CCSEvents, "BeforeExecuteDelete", $this->Parent);
         if($this->Errors->Count() == 0 && $this->CmdExecution) {
             $this->query($this->SQL);
@@ -1045,6 +1071,8 @@ class clsP_APPLFormDataSource extends clsDBConn {  //P_APPLFormDataSource Class 
 //End Delete Method
 
 } //End P_APPLFormDataSource Class @37-FCB6E20C
+
+
 
 //Initialize Page @1-170322E8
 // Variables

@@ -1,12 +1,14 @@
 <?php
-//BindEvents Method @1-75AB999B
+//BindEvents Method @1-6E29DF1B
 function BindEvents()
 {
     global $P_APPLGrid;
     global $CCSEvents;
     $P_APPLGrid->Navigator->CCSEvents["BeforeShow"] = "P_APPLGrid_Navigator_BeforeShow";
+    $P_APPLGrid->P_APPL_Insert->CCSEvents["BeforeShow"] = "P_APPLGrid_P_APPL_Insert_BeforeShow";
     $P_APPLGrid->CCSEvents["BeforeShowRow"] = "P_APPLGrid_BeforeShowRow";
     $CCSEvents["OnInitializeView"] = "Page_OnInitializeView";
+    $CCSEvents["BeforeShow"] = "Page_BeforeShow";
 }
 //End BindEvents Method
 
@@ -22,14 +24,43 @@ function P_APPLGrid_Navigator_BeforeShow(& $sender)
 //Custom Code @175-2A29BDB7
 // -------------------------
     // Write your own code here.
-	$Component->Visible = true;
 // -------------------------
 //End Custom Code
+
+  // -------------------------
+      // Write your own code here.
+  	$Component->Visible = true;
+  // -------------------------
+
 
 //Close P_APPLGrid_Navigator_BeforeShow @7-F7579B59
     return $P_APPLGrid_Navigator_BeforeShow;
 }
 //End Close P_APPLGrid_Navigator_BeforeShow
+
+//P_APPLGrid_P_APPL_Insert_BeforeShow @128-F24DDE72
+function P_APPLGrid_P_APPL_Insert_BeforeShow(& $sender)
+{
+    $P_APPLGrid_P_APPL_Insert_BeforeShow = true;
+    $Component = & $sender;
+    $Container = & CCGetParentContainer($sender);
+    global $P_APPLGrid; //Compatibility
+//End P_APPLGrid_P_APPL_Insert_BeforeShow
+
+//Custom Code @215-2A29BDB7
+// -------------------------
+  	global $FileName;
+  	$P_APPLGrid->P_APPL_Insert->Page = $FileName;
+  	$P_APPLGrid->P_APPL_Insert->Parameters = CCGetQueryString("QueryString", "");
+  	$P_APPLGrid->P_APPL_Insert->Parameters = CCRemoveParam($P_APPLGrid->P_APPL_Insert->Parameters, "P_APPLICATION_ID");
+  	$P_APPLGrid->P_APPL_Insert->Parameters = CCAddParam($P_APPLGrid->P_APPL_Insert->Parameters, "TAMBAH", "1");
+// -------------------------
+//End Custom Code
+
+//Close P_APPLGrid_P_APPL_Insert_BeforeShow @128-A6381BAE
+    return $P_APPLGrid_P_APPL_Insert_BeforeShow;
+}
+//End Close P_APPLGrid_P_APPL_Insert_BeforeShow
 
 //P_APPLGrid_BeforeShowRow @2-505D0004
 function P_APPLGrid_BeforeShowRow(& $sender)
@@ -40,37 +71,49 @@ function P_APPLGrid_BeforeShowRow(& $sender)
     global $P_APPLGrid; //Compatibility
 //End P_APPLGrid_BeforeShowRow
 
-    global $P_APPLForm;
-    global $selected_id;
-    global $add_flag;
-
-    if ($selected_id<0 && $add_flag!="ADD") {
-    	$selected_id = $Component->DataSource->P_APPLICATION_ID->GetValue();
-        $P_APPLForm->DataSource->Parameters["urlP_APPLICATION_ID"] = $selected_id;
-        $P_APPLForm->DataSource->Prepare();
-        $P_APPLForm->EditMode = $P_APPLForm->DataSource->AllParametersSet;
-        
-   }
-   
-    $img_radio= "<img border='0' src='../images/radio.gif'>";
-
 //Set Row Style @94-982C9472
     $styles = array("Row", "AltRow");
-
-    $Style = $styles[0];
-    if ($Component->DataSource->P_APPLICATION_ID->GetValue()== $selected_id) {
-    	$img_radio= "<img border='0' src='../images/radio_s.gif'>";
-        $Style = $styles[1];
-    }	
-    
     if (count($styles)) {
-//        $Style = $styles[($Component->RowNumber - 1) % count($styles)];
+        $Style = $styles[($Component->RowNumber - 1) % count($styles)];
         if (strlen($Style) && !strpos($Style, "="))
             $Style = (strpos($Style, ":") ? 'style="' : 'class="'). $Style . '"';
         $Component->Attributes->SetValue("rowStyle", $Style);
     }
 //End Set Row Style
-    $Component->DLink->SetValue($img_radio);  // Bdr
+
+//Custom Code @214-2A29BDB7
+// -------------------------
+   $keyId = CCGetFromGet("P_APPLICATION_ID", "");
+  	$sCode = CCGetFromGet("s_keyword", "");
+  	global $id;
+  	if (empty($keyId)) {
+  		if (empty($id)) {
+  			$id = $P_APPLGrid->P_APPLICATION_ID->GetValue();
+  		}
+  		global $FileName;
+  		global $PathToCurrentPage;
+  		$param = CCGetQueryString("QueryString", "");
+  		$param = CCAddParam($param, "P_APPLICATION_ID", $id);
+  		
+  		$Redirect = $FileName."?".$param;
+  		//die($Redirect);
+  		header("Location: ".$Redirect);
+  		return;
+  	}
+  
+  	if ($P_APPLGrid->P_APPLICATION_ID->GetValue() == $keyId) {
+  		$P_APPLGrid->ADLink->Visible = true;
+  		$P_APPLGrid->DLink->Visible = false;
+  		$Component->Attributes->SetValue("rowStyle", "class=AltRow");
+  	} else {
+  		$P_APPLGrid->ADLink->Visible = false;
+  		$P_APPLGrid->DLink->Visible = true;
+  		$Component->Attributes->SetValue("rowStyle", "class=Row");
+  	}
+// -------------------------
+//End Custom Code
+
+    
 
 
 //Close P_APPLGrid_BeforeShowRow @2-ECAC2641
@@ -90,18 +133,52 @@ function Page_OnInitializeView(& $sender)
 //Custom Code @174-2A29BDB7
 // -------------------------
     // Write your own code here.
-    global $selected_id;
-    global $add_flag;
-    $selected_id = -1;
-    $selected_id=CCGetFromGet("P_APPLICATION_ID", $selected_id);
-    $add_flag=CCGetFromGet("FLAG", "NONE");
 // -------------------------
 //End Custom Code
+
+
+
 
 //Close Page_OnInitializeView @1-81DF8332
     return $Page_OnInitializeView;
 }
 //End Close Page_OnInitializeView
+
+//Page_BeforeShow @1-C1C8BF00
+function Page_BeforeShow(& $sender)
+{
+    $Page_BeforeShow = true;
+    $Component = & $sender;
+    $Container = & CCGetParentContainer($sender);
+    global $p_application; //Compatibility
+//End Page_BeforeShow
+
+//Custom Code @216-2A29BDB7
+// -------------------------
+  	global $P_APPLSearch;
+  	global $P_APPLGrid;
+  	global $P_APPLForm;
+  	global $id;
+  	$tambah = CCGetFromGet("TAMBAH", "");
+  
+  	if($tambah == "1") {
+  		$P_APPLSearch->Visible = false;
+  		$P_APPLGrid->Visible = false;
+  		$P_APPLForm->Visible = true;
+  		$P_APPLForm->ds->SQL = "";
+  	} else {
+  		$P_APPLSearch->Visible = true;
+  		$P_APPLGrid->Visible = true;
+  		$P_APPLForm->Visible = true;
+  	}
+  // -------------------------
+// -------------------------
+//End Custom Code
+
+//Close Page_BeforeShow @1-4BC230CD
+    return $Page_BeforeShow;
+}
+//End Close Page_BeforeShow
 
 
 ?>

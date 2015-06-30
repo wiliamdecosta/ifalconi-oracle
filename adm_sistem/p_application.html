@@ -68,9 +68,9 @@ $(document).ready(function()
 });
 </script>
 </head>
-<body leftmargin="0" topmargin="0" marginheight="0" marginwidth="0">
-<div id="tabtop" style="WIDTH: 100%; POSITION: absolute">
-  <table border="0" cellspacing="0" cellpadding="0" width="100%" style="background-color:#89a5f7">
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<div id="tabtop" style="POSITION: absolute; WIDTH: 100%">
+  <table style="BACKGROUND-COLOR: #89a5f7" cellspacing="0" cellpadding="0" width="100%" border="0">
     <tr>
       <td><img border="0" src="../images/tab_s_on.gif"></td> 
       <td class="th" background="../images/tab_on.gif" nowrap align="center">MODUL</td> 
@@ -80,27 +80,29 @@ $(document).ready(function()
       <td><img border="0" src="../images/tab_e_off.gif"></td> 
       <td background="../images/tab_back.gif" width="100%"></td> 
     </tr>
+ 
   </table>
 </div>
 <br>
 <br>
-<table border="0" cellspacing="0" cellpadding="0" align="center">
+<table cellspacing="0" cellpadding="0" align="center" border="0">
   <tr>
     <td>
       <!-- BEGIN Record P_APPLSearch -->
       <form id="P_APPLSearch" method="post" name="{HTMLFormName}" action="{Action}">
-        <table border="0" cellspacing="0" cellpadding="0">
+        <table cellspacing="0" cellpadding="0" border="0">
           <tr>
             <td valign="top">
-              <table  cellspacing="0" cellpadding="0">
+              <table cellspacing="0" cellpadding="0">
                 <!-- BEGIN Error -->
                 <tr class="Error">
                   <td colspan="2">{Error}</td> 
                 </tr>
  <!-- END Error -->
                 <tr class="Row">
-                  <td><input id="P_APPLSearchs_keyword" class="ControlsIN" value="{s_keyword}" maxlength="32" size="32" name="{s_keyword_Name}"></td>
-                  <td><!-- BEGIN Button Button_DoSearch --><input style="BORDER:0px" id="P_APPLSearchButton_DoSearch" value="" alt="" src="../Styles/trb/Images/en/ButtonSearch.gif" type="image" name="{Button_Name}"><!-- END Button Button_DoSearch --></td> 
+                  <td><input id="P_APPLSearchs_keyword" class="ControlsIN" maxlength="32" size="32" value="{s_keyword}" name="{s_keyword_Name}"></td> 
+                  <td>
+                    <!-- BEGIN Button Button_DoSearch --><input id="P_APPLSearchButton_DoSearch" style="BORDER-TOP: 0px; BORDER-RIGHT: 0px; BORDER-BOTTOM: 0px; BORDER-LEFT: 0px" alt="" src="../Styles/trb/Images/en/ButtonSearch.gif" type="image" value="" name="{Button_Name}"><!-- END Button Button_DoSearch --></td> 
                 </tr>
  
               </table>
@@ -112,10 +114,10 @@ $(document).ready(function()
       </form>
  <!-- END Record P_APPLSearch -->
       <!-- BEGIN Grid P_APPLGrid -->
-      <table border="0" cellspacing="0" cellpadding="0" width="100%" align="center">
+      <table cellspacing="0" cellpadding="0" width="100%" align="center" border="0">
         <tr>
           <td valign="top">
-            <table class="Header" border="0" cellspacing="0" cellpadding="0">
+            <table class="Header" cellspacing="0" cellpadding="0" border="0">
               <tr>
                 <td class="HeaderLeft"><img border="0" alt="" src="../Styles/trb/images/Spacer.gif"></td> 
                 <td class="th"><strong>DAFTAR MODUL&nbsp;</strong></td> 
@@ -127,7 +129,7 @@ $(document).ready(function()
  
             <table class="Grid" cellspacing="0" cellpadding="0">
               <tr class="Caption">
-                <th style="TEXT-ALIGN: center" width="1" scope="col" align="middle">#</th>
+                <th style="TEXT-ALIGN: center" width="1" scope="col" align="center">#</th>
  
                 <th scope="col">Nama Modul</th>
  
@@ -138,8 +140,9 @@ $(document).ready(function()
               <!-- BEGIN Row -->
               <tr {P_APPLGrid:rowStyle}>
                 <td style="TEXT-ALIGN: center">
-                  <!-- BEGIN Link DLink --><a href="{DLink_Src}" id="P_APPLGridDLink_{P_APPLGrid:rowNumber}">{DLink}</a><!-- END Link DLink --></td> 
-                <td>{CODE}&nbsp;<input id="P_APPLGridP_APPLICATION_ID_{P_APPLGrid:rowNumber}" value="{P_APPLICATION_ID}" type="hidden" name="{P_APPLICATION_ID_Name}"></td> 
+                  <!-- BEGIN Link DLink --><a href="{DLink_Src}" id="GRIDDLink_{P_APP_ROLE:rowNumber}"><img border="0" src="../images/radio.gif"></a><!-- END Link DLink -->
+                  <!-- BEGIN Link ADLink --><a href="{ADLink_Src}" id="GRIDADLink_{P_APP_ROLE:rowNumber}"><img border="0" src="../images/radio_s.gif" width="16" height="16"></a><!-- END Link ADLink --></td> 
+                <td>{CODE}&nbsp;<input id="P_APPLGridP_APPLICATION_ID_{P_APPLGrid:rowNumber}" type="hidden" value="{P_APPLICATION_ID}" name="{P_APPLICATION_ID_Name}"></td> 
                 <td>{DESCRIPTION}&nbsp;</td> 
               </tr>
  <!-- END Row -->
@@ -149,7 +152,7 @@ $(document).ready(function()
               </tr>
  <!-- END NoRecords -->
               <tr class="Footer">
-                <td style="border-right:0px"><a href="{P_APPL_Insert_Src}" id="P_APPLGridP_APPL_Insert_{P_APPLGrid:rowNumber}"><img border="0" src="../Styles/trb/Images/en/ButtonTambah.gif"></a></td> 
+                <td style="BORDER-RIGHT: 0px"><a href="{P_APPL_Insert_Src}" id="P_APPLGridP_APPL_Insert_{P_APPLGrid:rowNumber}"><img border="0" src="../Styles/trb/Images/en/ButtonTambah.gif"></a></td> 
                 <td colspan="2">
                   <!-- BEGIN Navigator Navigator -->
                   <!-- BEGIN First_On --><a href="{First_URL}"><img border="0" alt="{First_URL}" src="../Styles/trb/Images/First.gif"></a> <!-- END First_On -->
@@ -173,10 +176,10 @@ $(document).ready(function()
  <!-- END Grid P_APPLGrid --><br>
       <!-- BEGIN Record P_APPLForm -->
       <form id="P_APPLForm" method="post" name="{HTMLFormName}" action="{Action}">
-        <table border="0" cellspacing="0" cellpadding="0" width="100%" align="center">
+        <table cellspacing="0" cellpadding="0" width="100%" align="center" border="0">
           <tr>
             <td valign="top">
-              <table class="Header" border="0" cellspacing="0" cellpadding="0">
+              <table class="Header" cellspacing="0" cellpadding="0" border="0">
                 <tr>
                   <td class="HeaderLeft"><img border="0" alt="" src="../Styles/trb/images/Spacer.gif"></td> 
                   <td class="th"><strong>MODUL</strong></td> 
@@ -194,12 +197,12 @@ $(document).ready(function()
  <!-- END Error -->
                 <tr class="Controls">
                   <td class="th"><label for="P_APPLFormCODE">Nama Modul&nbsp;</label></td> 
-                  <td><input style="TEXT-TRANSFORM: uppercase" id="P_APPLFormCODE" class="ControlsRQ" value="{CODE}" maxlength="32" size="32" name="{CODE_Name}">&nbsp;<label for="P_APPLFormP_APPLICATION_ID" style="display: none;">&nbsp;</label> </td> 
+                  <td><input id="P_APPLFormCODE" class="ControlsRQ" style="TEXT-TRANSFORM: uppercase" maxlength="32" size="32" value="{CODE}" name="{CODE_Name}">&nbsp;<label for="P_APPLFormP_APPLICATION_ID" style="display: none;">&nbsp;</label> </td> 
                 </tr>
  
                 <tr class="Controls">
                   <td class="th">Urutan&nbsp;</td> 
-                  <td><input id="P_APPLFormLISTING_NO" class="ControlsIN" value="{LISTING_NO}" size="4" name="{LISTING_NO_Name}">&nbsp;</td> 
+                  <td><input id="P_APPLFormLISTING_NO" class="ControlsIN" size="4" value="{LISTING_NO}" name="{LISTING_NO_Name}">&nbsp;</td> 
                 </tr>
  
                 <tr class="Controls">
@@ -218,16 +221,16 @@ $(document).ready(function()
  
                 <tr class="Controls">
                   <td class="th"><label for="P_APPLFormCREATION_DATE">Dibuat Oleh&nbsp;</label></td> 
-                  <td><input style="TEXT-TRANSFORM: uppercase" id="P_APPLFormCREATED_BY" class="ControlsRO" value="{CREATED_BY}" readonly maxlength="12" size="12" name="{CREATED_BY_Name}">&nbsp;Tgl&nbsp;<input style="TEXT-TRANSFORM: uppercase" id="P_APPLFormCREATION_DATE" class="ControlsRO" value="{CREATION_DATE}" readonly maxlength="12" size="12" name="{CREATION_DATE_Name}"></td> 
+                  <td><input id="P_APPLFormCREATED_BY" class="ControlsRO" readonly maxlength="12" size="12" value="{CREATED_BY}" name="{CREATED_BY_Name}">&nbsp;Tgl&nbsp;<input id="P_APPLFormCREATION_DATE" class="ControlsRO" style="TEXT-TRANSFORM: uppercase" readonly maxlength="12" size="12" value="{CREATION_DATE}" name="{CREATION_DATE_Name}"></td> 
                 </tr>
  
                 <tr class="Controls">
                   <td class="th">Updated Date&nbsp;</td> 
-                  <td><input style="TEXT-TRANSFORM: uppercase" id="P_APPLFormUPDATED_BY" class="ControlsRO" value="{UPDATED_BY}" readonly maxlength="12" size="12" name="{UPDATED_BY_Name}">&nbsp;By <input style="TEXT-TRANSFORM: uppercase" id="P_APPLFormUPDATED_DATE" class="ControlsRO" value="{UPDATED_DATE}" readonly maxlength="12" size="12" name="{UPDATED_DATE_Name}"></td> 
+                  <td><input id="P_APPLFormUPDATED_BY" class="ControlsRO" readonly maxlength="12" size="12" value="{UPDATED_BY}" name="{UPDATED_BY_Name}">&nbsp;By <input id="P_APPLFormUPDATED_DATE" class="ControlsRO" style="TEXT-TRANSFORM: uppercase" readonly maxlength="12" size="12" value="{UPDATED_DATE}" name="{UPDATED_DATE_Name}"></td> 
                 </tr>
  
                 <tr class="Bottom">
-                  <td colspan="2" align="right"><input id="P_APPLFormP_APPLICATION_ID" value="{P_APPLICATION_ID}" type="hidden" name="{P_APPLICATION_ID_Name}">
+                  <td colspan="2" align="right"><input id="P_APPLFormP_APPLICATION_ID" type="hidden" value="{P_APPLICATION_ID}" name="{P_APPLICATION_ID_Name}">
                     <!-- BEGIN Button Button_Insert --><input id="P_APPLFormButton_Insert" alt="SIMPAN" src="../Styles/trb/Images/en/ButtonUpdate.gif" type="image" name="{Button_Name}"><!-- END Button Button_Insert -->
                     <!-- BEGIN Button Button_Update --><input id="P_APPLFormButton_Update" alt="SIMPAN" src="../Styles/trb/Images/en/ButtonUpdate.gif" type="image" name="{Button_Name}"><!-- END Button Button_Update -->
                     <!-- BEGIN Button Button_Delete --><input id="P_APPLFormButton_Delete" alt="HAPUS" src="../Styles/trb/Images/en/ButtonDelete.gif" type="image" name="{Button_Name}"><!-- END Button Button_Delete -->
@@ -245,7 +248,6 @@ $(document).ready(function()
     </td> 
   </tr>
 </table>
-</body>
 <script language="javascript">
 
 function toMenu()
@@ -271,4 +273,5 @@ function close_page()
 }
 
 </script>
+</body>
 </html>

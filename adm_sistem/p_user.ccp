@@ -127,17 +127,44 @@ ORDER BY P_USER_ID" orderBy="P_USER_ID">
 			<Attributes/>
 			<Features/>
 		</Record>
-		<Record id="28" sourceType="Table" urlType="Relative" secured="False" allowInsert="True" allowUpdate="True" allowDelete="True" validateData="True" preserveParameters="GET" returnValueType="Number" returnValueTypeForDelete="Number" returnValueTypeForInsert="Number" returnValueTypeForUpdate="Number" connection="Conn" name="P_USERForm" errorSummator="Error" wizardCaption="Add/Edit P App User " wizardFormMethod="post" PathID="P_USERForm" activeCollection="ISQLParameters" pasteAsReplace="pasteAsReplace" pasteActions="pasteActions" customInsertType="SQL" parameterTypeListName="ParameterTypeList" customUpdateType="SQL" customUpdate="UPDATE P_USER SET 
+		<Record id="28" sourceType="Table" urlType="Relative" secured="False" allowInsert="True" allowUpdate="True" allowDelete="True" validateData="True" preserveParameters="GET" returnValueType="Number" returnValueTypeForDelete="Number" returnValueTypeForInsert="Number" returnValueTypeForUpdate="Number" connection="Conn" name="P_USERForm" errorSummator="Error" wizardCaption="Add/Edit P App User " wizardFormMethod="post" PathID="P_USERForm" activeCollection="DSQLParameters" pasteAsReplace="pasteAsReplace" pasteActions="pasteActions" customInsertType="SQL" parameterTypeListName="ParameterTypeList" customUpdateType="SQL" customDeleteType="SQL" customDelete="DELETE FROM IFL.P_USER WHERE  P_USER_ID = {P_USER_ID}" dataSource="P_USER" customInsert="INSERT INTO IFL.P_USER(USER_NAME, 
+CREATED_BY, 
+UPDATED_BY, 
+EMAIL_ADDRESS, 
+P_USER_ID, 
+USER_STATUS, 
+IS_NEW_USER, 
+LAST_LOGIN_TIME, 
+FULL_NAME, 
+EMPLOYEE_NO, 
+IS_EMPLOYEE, 
+CREATION_DATE, 
+UPDATED_DATE, 
+DESCRIPTION) VALUES(
+'{USER_NAME}', 
+'{CREATED_BY}', 
+'{UPDATED_BY}', 
+'{EMAIL_ADDRESS}', 
+GENERATE_ID('IFL','P_USER','P_USER_ID'), 
+{USER_STATUS}, 
+'{IS_NEW_USER}', 
+TO_DATE('{LAST_LOGIN_TIME}', 'DD-MON-YYYY'),
+'{FULL_NAME}', 
+'{EMPLOYEE_NO}', 
+'{IS_EMPLOYEE}', 
+SYSDATE, 
+SYSDATE, 
+'{DESCRIPTION}')" customUpdate="UPDATE P_USER SET 
 DESCRIPTION='{DESCRIPTION}',
 FULL_NAME='{FULL_NAME}',  
 IS_NEW_USER='{IS_NEW_USER}', 
 EMAIL_ADDRESS='{EMAIL_ADDRESS}', 
 UPDATED_BY='{UPDATED_BY}', 
 UPDATED_DATE=sysdate, 
-P_USER_STATUS_ID={P_USER_STATUS_ID}, 
+USER_STATUS={USER_STATUS}, 
 EMPLOYEE_NO = '{EMPLOYEE_NO}',
 IS_EMPLOYEE = '{IS_EMPLOYEE}'
-WHERE P_USER_ID = {P_USER_ID}" customDeleteType="SQL" customDelete="DELETE FROM P_USER WHERE  P_USER_ID = {P_USER_ID}" dataSource="P_USER" customInsert="INSERT INTO P_USER(P_USER_ID, USER_NAME, USER_PWD, DESCRIPTION, PHONE_NO, EMAIL_ADDRESS, P_USER_STATUS_ID, IS_NEW_USER, FULL_NAME, EMPLOYEE_NO, IS_EMPLOYEE, CREATION_DATE, CREATED_BY,  UPDATED_DATE, UPDATED_BY ) VALUES( GENERATE_ID('','P_USER','P_USER_ID'), '{USER_NAME}', '{USER_PWD}', '{DESCRIPTION}', '{PHONE_NO}', '{EMAIL_ADDRESS}', {P_USER_STATUS_ID}, '{IS_NEW_USER}', '{FULL_NAME}', '{EMPLOYEE_NO}', '{IS_EMPLOYEE}', sysdate, '{CREATED_BY}', sysdate,'{UPDATED_BY}')">
+WHERE P_USER_ID = {P_USER_ID}">
 			<Components>
 				<Button id="29" urlType="Relative" enableValidation="True" isDefault="False" name="Button_Insert" operation="Insert" wizardCaption="Add" PathID="P_USERFormButton_Insert" removeParameters="FLAG">
 					<Components/>
@@ -315,75 +342,73 @@ WHERE P_USER_ID = {P_USER_ID}" customDeleteType="SQL" customDelete="DELETE FROM 
 			<Fields/>
 			<ISPParameters/>
 			<ISQLParameters>
-				<SQLParameter id="236" variable="USER_NAME" dataType="Text" parameterType="Control" parameterSource="USER_NAME"/>
-				<SQLParameter id="237" variable="CREATED_BY" dataType="Text" parameterType="Session" parameterSource="UserName"/>
-				<SQLParameter id="238" variable="UPDATED_BY" dataType="Text" parameterType="Session" parameterSource="UserName"/>
-				<SQLParameter id="239" variable="DESCRIPTION" dataType="Text" parameterType="Control" parameterSource="DESCRIPTION"/>
-				<SQLParameter id="241" variable="EMAIL_ADDRESS" dataType="Text" parameterType="Control" parameterSource="EMAIL_ADDRESS"/>
-				<SQLParameter id="242" variable="P_USER_ID" dataType="Text" parameterType="Control" parameterSource="P_USER_ID"/>
-				<SQLParameter id="243" variable="P_USER_STATUS_ID" dataType="Float" parameterType="Control" parameterSource="P_USER_STATUS_ID"/>
-				<SQLParameter id="244" variable="IS_NEW_USER" dataType="Text" parameterType="Control" parameterSource="IS_NEW_USER"/>
-				<SQLParameter id="245" variable="LAST_LOGIN_TIME" dataType="Text" parameterType="Control" parameterSource="LAST_LOGIN_TIME" format="dd-mmm-yyyy"/>
-				<SQLParameter id="246" variable="FULL_NAME" dataType="Text" parameterType="Control" parameterSource="FULL_NAME"/>
-				<SQLParameter id="247" variable="EMPLOYEE_NO" dataType="Text" parameterType="Control" parameterSource="EMPLOYEE_NO"/>
-				<SQLParameter id="248" variable="IS_EMPLOYEE" dataType="Text" parameterType="Control" parameterSource="IS_EMPLOYEE"/>
-				<SQLParameter id="249" variable="USER_PWD" parameterType="Control" dataType="Text" parameterSource="USER_NAME"/>
-			</ISQLParameters>
+				<SQLParameter id="235" variable="USER_NAME" dataType="Text" parameterType="Control" parameterSource="USER_NAME"/>
+<SQLParameter id="236" variable="CREATED_BY" dataType="Text" parameterType="Control" parameterSource="CREATED_BY"/>
+<SQLParameter id="237" variable="UPDATED_BY" dataType="Text" parameterType="Control" parameterSource="UPDATED_BY"/>
+<SQLParameter id="238" variable="EMAIL_ADDRESS" dataType="Text" parameterType="Control" parameterSource="EMAIL_ADDRESS"/>
+<SQLParameter id="239" variable="P_USER_ID" dataType="Text" parameterType="Control" parameterSource="P_USER_ID"/>
+<SQLParameter id="240" variable="USER_STATUS" dataType="Float" parameterType="Control" parameterSource="USER_STATUS"/>
+<SQLParameter id="241" variable="IS_NEW_USER" dataType="Text" parameterType="Control" parameterSource="IS_NEW_USER"/>
+<SQLParameter id="242" variable="LAST_LOGIN_TIME" dataType="Date" parameterType="Control" parameterSource="LAST_LOGIN_TIME" format="dd-mmm-yyyy HH:nn:ss"/>
+<SQLParameter id="243" variable="FULL_NAME" dataType="Text" parameterType="Control" parameterSource="FULL_NAME"/>
+<SQLParameter id="244" variable="EMPLOYEE_NO" dataType="Text" parameterType="Control" parameterSource="EMPLOYEE_NO"/>
+<SQLParameter id="245" variable="IS_EMPLOYEE" dataType="Text" parameterType="Control" parameterSource="IS_EMPLOYEE"/>
+<SQLParameter id="246" variable="CREATION_DATE" dataType="Date" parameterType="Control" parameterSource="CREATION_DATE" format="dd-mmm-yyyy"/>
+<SQLParameter id="247" variable="UPDATED_DATE" dataType="Date" parameterType="Control" parameterSource="UPDATED_DATE" format="dd-mmm-yyyy"/>
+<SQLParameter id="248" variable="DESCRIPTION" dataType="Text" parameterType="Control" parameterSource="DESCRIPTION"/>
+</ISQLParameters>
 			<IFormElements>
 				<CustomParameter id="221" field="USER_NAME" dataType="Text" parameterType="Control" parameterSource="USER_NAME"/>
-				<CustomParameter id="222" field="CREATED_BY" dataType="Text" parameterType="Control" parameterSource="CREATED_BY"/>
-				<CustomParameter id="223" field="UPDATED_BY" dataType="Text" parameterType="Control" parameterSource="UPDATED_BY"/>
-				<CustomParameter id="224" field="DESCRIPTION" dataType="Text" parameterType="Control" parameterSource="DESCRIPTION"/>
-				<CustomParameter id="225" field="PHONE_NO" dataType="Text" parameterType="Control" parameterSource="PHONE_NO"/>
-				<CustomParameter id="226" field="EMAIL_ADDRESS" dataType="Text" parameterType="Control" parameterSource="EMAIL_ADDRESS"/>
-				<CustomParameter id="227" field="P_USER_ID" dataType="Text" parameterType="Control" parameterSource="P_USER_ID"/>
-				<CustomParameter id="228" field="P_USER_STATUS_ID" dataType="Float" parameterType="Control" parameterSource="P_USER_STATUS_ID"/>
-				<CustomParameter id="229" field="IS_NEW_USER" dataType="Text" parameterType="Control" parameterSource="IS_NEW_USER"/>
-				<CustomParameter id="230" field="LAST_LOGIN_TIME" dataType="Text" parameterType="Control" parameterSource="LAST_LOGIN_TIME" format="dd-mmm-yyyy"/>
-				<CustomParameter id="231" field="FULL_NAME" dataType="Text" parameterType="Control" parameterSource="FULL_NAME"/>
-				<CustomParameter id="232" field="EMPLOYEE_NO" dataType="Text" parameterType="Control" parameterSource="EMPLOYEE_NO"/>
-				<CustomParameter id="233" field="IS_EMPLOYEE" dataType="Text" parameterType="Control" parameterSource="IS_EMPLOYEE"/>
-				<CustomParameter id="234" field="CREATION_DATE" dataType="Text" parameterType="Control" parameterSource="CREATION_DATE" format="dd-mmm-yyyy"/>
-				<CustomParameter id="235" field="UPDATED_DATE" dataType="Text" parameterType="Control" parameterSource="UPDATED_DATE" format="dd-mmm-yyyy"/>
-			</IFormElements>
+<CustomParameter id="222" field="CREATED_BY" dataType="Text" parameterType="Control" parameterSource="CREATED_BY"/>
+<CustomParameter id="223" field="UPDATED_BY" dataType="Text" parameterType="Control" parameterSource="UPDATED_BY"/>
+<CustomParameter id="224" field="EMAIL_ADDRESS" dataType="Text" parameterType="Control" parameterSource="EMAIL_ADDRESS"/>
+<CustomParameter id="225" field="P_USER_ID" dataType="Text" parameterType="Control" parameterSource="P_USER_ID"/>
+<CustomParameter id="226" field="USER_STATUS" dataType="Float" parameterType="Control" parameterSource="USER_STATUS"/>
+<CustomParameter id="227" field="IS_NEW_USER" dataType="Text" parameterType="Control" parameterSource="IS_NEW_USER"/>
+<CustomParameter id="228" field="LAST_LOGIN_TIME" dataType="Date" parameterType="Control" parameterSource="LAST_LOGIN_TIME" format="dd-mmm-yyyy HH:nn:ss"/>
+<CustomParameter id="229" field="FULL_NAME" dataType="Text" parameterType="Control" parameterSource="FULL_NAME"/>
+<CustomParameter id="230" field="EMPLOYEE_NO" dataType="Text" parameterType="Control" parameterSource="EMPLOYEE_NO"/>
+<CustomParameter id="231" field="IS_EMPLOYEE" dataType="Text" parameterType="Control" parameterSource="IS_EMPLOYEE"/>
+<CustomParameter id="232" field="CREATION_DATE" dataType="Date" parameterType="Control" parameterSource="CREATION_DATE" format="dd-mmm-yyyy"/>
+<CustomParameter id="233" field="UPDATED_DATE" dataType="Date" parameterType="Control" parameterSource="UPDATED_DATE" format="dd-mmm-yyyy"/>
+<CustomParameter id="234" field="DESCRIPTION" dataType="Text" parameterType="Control" parameterSource="DESCRIPTION"/>
+</IFormElements>
 			<USPParameters/>
 			<USQLParameters>
-				<SQLParameter id="158" variable="USER_NAME" dataType="Text" parameterType="Control" parameterSource="USER_NAME"/>
-				<SQLParameter id="159" variable="DESCRIPTION" dataType="Text" parameterType="Control" parameterSource="DESCRIPTION"/>
-				<SQLParameter id="160" variable="FULL_NAME" dataType="Text" parameterType="Control" parameterSource="FULL_NAME"/>
-				<SQLParameter id="161" variable="IS_NEW_USER" dataType="Text" parameterType="Control" parameterSource="IS_NEW_USER"/>
-				<SQLParameter id="162" variable="EMAIL_ADDRESS" dataType="Text" parameterType="Control" parameterSource="EMAIL_ADDRESS"/>
-				<SQLParameter id="163" variable="UPDATED_BY" dataType="Text" parameterType="Session" parameterSource="UserName"/>
-				<SQLParameter id="165" variable="P_USER_ID" dataType="Float" parameterType="Control" parameterSource="P_USER_ID" defaultValue="0"/>
-				<SQLParameter id="166" variable="P_USER_STATUS_ID" dataType="Float" parameterType="Control" parameterSource="P_USER_STATUS_ID" defaultValue="0"/>
-				<SQLParameter id="169" variable="EMPLOYEE_NO" parameterType="Control" dataType="Text" parameterSource="EMPLOYEE_NO"/>
-				<SQLParameter id="204" variable="IS_EMPLOYEE" parameterType="Control" dataType="Text" parameterSource="IS_EMPLOYEE"/>
-			</USQLParameters>
+				<SQLParameter id="264" variable="USER_NAME" dataType="Text" parameterType="Control" parameterSource="USER_NAME"/>
+<SQLParameter id="265" variable="CREATED_BY" dataType="Text" parameterType="Control" parameterSource="CREATED_BY"/>
+<SQLParameter id="266" variable="UPDATED_BY" dataType="Text" parameterType="Control" parameterSource="UPDATED_BY"/>
+<SQLParameter id="267" variable="EMAIL_ADDRESS" dataType="Text" parameterType="Control" parameterSource="EMAIL_ADDRESS"/>
+<SQLParameter id="268" variable="P_USER_ID" dataType="Float" parameterType="Control" parameterSource="P_USER_ID" defaultValue="0"/>
+<SQLParameter id="269" variable="USER_STATUS" dataType="Float" parameterType="Control" parameterSource="USER_STATUS"/>
+<SQLParameter id="270" variable="IS_NEW_USER" dataType="Text" parameterType="Control" parameterSource="IS_NEW_USER"/>
+<SQLParameter id="271" variable="LAST_LOGIN_TIME" dataType="Date" parameterType="Control" parameterSource="LAST_LOGIN_TIME" format="dd-mmm-yyyy HH:nn:ss"/>
+<SQLParameter id="272" variable="FULL_NAME" dataType="Text" parameterType="Control" parameterSource="FULL_NAME"/>
+<SQLParameter id="273" variable="EMPLOYEE_NO" dataType="Text" parameterType="Control" parameterSource="EMPLOYEE_NO"/>
+<SQLParameter id="274" variable="IS_EMPLOYEE" dataType="Text" parameterType="Control" parameterSource="IS_EMPLOYEE"/>
+<SQLParameter id="275" variable="CREATION_DATE" dataType="Date" parameterType="Control" parameterSource="CREATION_DATE" format="dd-mmm-yyyy"/>
+<SQLParameter id="276" variable="UPDATED_DATE" dataType="Date" parameterType="Control" parameterSource="UPDATED_DATE" format="dd-mmm-yyyy"/>
+<SQLParameter id="277" variable="DESCRIPTION" dataType="Text" parameterType="Control" parameterSource="DESCRIPTION"/>
+</USQLParameters>
 			<UConditions>
-				<TableParameter id="170" conditionType="Parameter" useIsNull="False" field="P_APP_USER_ID" dataType="Float" parameterType="URL" parameterSource="P_APP_USER_ID" defaultValue="SELECTED_ID" searchConditionType="Equal" logicOperator="And" orderNumber="1"/>
-			</UConditions>
+				<TableParameter id="249" conditionType="Parameter" useIsNull="False" field="P_USER_ID" dataType="Float" parameterType="URL" parameterSource="P_USER_ID" searchConditionType="Equal" logicOperator="And"/>
+</UConditions>
 			<UFormElements>
-				<CustomParameter id="125" field="USER_NAME" dataType="Text" parameterType="Control" parameterSource="USER_NAME"/>
-				<CustomParameter id="126" field="DESCRIPTION" dataType="Text" parameterType="Control" parameterSource="DESCRIPTION"/>
-				<CustomParameter id="171" field="IP_ADDRESS" dataType="Text" parameterType="Control" parameterSource="IP_ADDRESS"/>
-				<CustomParameter id="172" field="EXPIRED_USER" dataType="Date" parameterType="Control" parameterSource="EXPIRED_USER" format="dd-mmm-yyyy"/>
-				<CustomParameter id="173" field="CREATED_BY" dataType="Text" parameterType="Control" parameterSource="CREATED_BY"/>
-				<CustomParameter id="130" field="VERIFIED_BY" dataType="Text" parameterType="Control" parameterSource="VERIFIED_BY"/>
-				<CustomParameter id="131" field="FULL_NAME" dataType="Text" parameterType="Control" parameterSource="FULL_NAME"/>
-				<CustomParameter id="132" field="IS_PERMANENT_EMPLOYEE" dataType="Text" parameterType="Control" parameterSource="IS_PERMANENT_EMPLOYEE"/>
-				<CustomParameter id="133" field="IS_NEW_USER" dataType="Text" parameterType="Control" parameterSource="IS_NEW_USER"/>
-				<CustomParameter id="174" field="EMAIL_ADDRESS" dataType="Text" parameterType="Control" parameterSource="EMAIL_ADDRESS"/>
-				<CustomParameter id="175" field="LAST_LOGIN_TIME" dataType="Date" parameterType="Control" parameterSource="LAST_LOGIN_TIME" format="dd-mmm-yyyy"/>
-				<CustomParameter id="176" field="EXPIRED_PWD" dataType="Date" parameterType="Control" parameterSource="EXPIRED_PWD" format="dd-mmm-yyyy"/>
-				<CustomParameter id="137" field="CREATION_DATE" dataType="Date" parameterType="Control" parameterSource="CREATION_DATE" format="dd-mmm-yyyy"/>
-				<CustomParameter id="177" field="UPDATED_BY" dataType="Text" parameterType="Control" parameterSource="UPDATED_BY"/>
-				<CustomParameter id="178" field="UPDATED_DATE" dataType="Date" parameterType="Control" parameterSource="UPDATED_DATE" format="dd-mmm-yyyy"/>
-				<CustomParameter id="179" field="VERIFICATION_DATE" dataType="Date" parameterType="Control" parameterSource="VERIFICATION_DATE" format="dd-mmm-yyyy"/>
-				<CustomParameter id="180" field="APPROVED_BY" dataType="Text" parameterType="Control" parameterSource="APPROVED_BY"/>
-				<CustomParameter id="181" field="APPROVAL_DATE" dataType="Date" parameterType="Control" parameterSource="APPROVAL_DATE" format="dd-mmm-yyyy"/>
-				<CustomParameter id="182" field="P_APP_USER_ID" dataType="Text" parameterType="Control" parameterSource="P_APP_USER_ID"/>
-				<CustomParameter id="183" field="P_USER_STATUS_ID" dataType="Float" parameterType="Control" parameterSource="P_USER_STATUS_ID"/>
-			</UFormElements>
+				<CustomParameter id="250" field="USER_NAME" dataType="Text" parameterType="Control" parameterSource="USER_NAME"/>
+<CustomParameter id="251" field="CREATED_BY" dataType="Text" parameterType="Control" parameterSource="CREATED_BY"/>
+<CustomParameter id="252" field="UPDATED_BY" dataType="Text" parameterType="Control" parameterSource="UPDATED_BY"/>
+<CustomParameter id="253" field="EMAIL_ADDRESS" dataType="Text" parameterType="Control" parameterSource="EMAIL_ADDRESS"/>
+<CustomParameter id="254" field="P_USER_ID" dataType="Text" parameterType="Control" parameterSource="P_USER_ID"/>
+<CustomParameter id="255" field="USER_STATUS" dataType="Float" parameterType="Control" parameterSource="USER_STATUS"/>
+<CustomParameter id="256" field="IS_NEW_USER" dataType="Text" parameterType="Control" parameterSource="IS_NEW_USER"/>
+<CustomParameter id="257" field="LAST_LOGIN_TIME" dataType="Date" parameterType="Control" parameterSource="LAST_LOGIN_TIME" format="dd-mmm-yyyy HH:nn:ss"/>
+<CustomParameter id="258" field="FULL_NAME" dataType="Text" parameterType="Control" parameterSource="FULL_NAME"/>
+<CustomParameter id="259" field="EMPLOYEE_NO" dataType="Text" parameterType="Control" parameterSource="EMPLOYEE_NO"/>
+<CustomParameter id="260" field="IS_EMPLOYEE" dataType="Text" parameterType="Control" parameterSource="IS_EMPLOYEE"/>
+<CustomParameter id="261" field="CREATION_DATE" dataType="Date" parameterType="Control" parameterSource="CREATION_DATE" format="dd-mmm-yyyy"/>
+<CustomParameter id="262" field="UPDATED_DATE" dataType="Date" parameterType="Control" parameterSource="UPDATED_DATE" format="dd-mmm-yyyy"/>
+<CustomParameter id="263" field="DESCRIPTION" dataType="Text" parameterType="Control" parameterSource="DESCRIPTION"/>
+</UFormElements>
 			<DSPParameters/>
 			<DSQLParameters>
 				<SQLParameter id="184" variable="P_USER_ID" parameterType="Control" dataType="Float" parameterSource="P_USER_ID" defaultValue="0"/>

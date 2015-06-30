@@ -45,7 +45,7 @@ upper(a.description) like upper('%{s_keyword}%')
 					<Events/>
 					<LinkParameters>
 						<LinkParameter id="196" sourceType="DataField" name="p_area_id" source="p_area_id"/>
-</LinkParameters>
+					</LinkParameters>
 					<Attributes/>
 					<Features/>
 				</Link>
@@ -54,7 +54,7 @@ upper(a.description) like upper('%{s_keyword}%')
 					<Events/>
 					<LinkParameters>
 						<LinkParameter id="197" sourceType="DataField" name="p_area_id" source="p_area_id"/>
-</LinkParameters>
+					</LinkParameters>
 					<Attributes/>
 					<Features/>
 				</Link>
@@ -130,13 +130,15 @@ upper(a.description) like upper('%{s_keyword}%')
 			<Attributes/>
 			<Features/>
 		</Record>
-		<Record id="61" sourceType="Table" urlType="Relative" secured="False" allowInsert="True" allowUpdate="True" allowDelete="True" validateData="True" preserveParameters="GET" returnValueType="Number" returnValueTypeForDelete="Number" returnValueTypeForInsert="Number" returnValueTypeForUpdate="Number" connection="Conn" name="FORM" errorSummator="Error" wizardCaption=" P Company " wizardFormMethod="post" PathID="FORM" pasteActions="pasteActions" customInsertType="SQL" parameterTypeListName="ParameterTypeList" activeCollection="USQLParameters" customUpdateType="SQL" customDeleteType="SQL" returnPage="P_AREA.ccp" dataSource="p_area" customDelete="DELETE FROM ifp.p_area WHERE  p_area_id = {p_area_id}" activeTableType="customDelete" customUpdate="UPDATE ifp.p_area 
+		<Record id="61" sourceType="SQL" urlType="Relative" secured="False" allowInsert="True" allowUpdate="True" allowDelete="True" validateData="True" preserveParameters="GET" returnValueType="Number" returnValueTypeForDelete="Number" returnValueTypeForInsert="Number" returnValueTypeForUpdate="Number" connection="Conn" name="FORM" errorSummator="Error" wizardCaption=" P Company " wizardFormMethod="post" PathID="FORM" pasteActions="pasteActions" customInsertType="SQL" parameterTypeListName="ParameterTypeList" activeCollection="USQLParameters" customUpdateType="SQL" customDeleteType="SQL" returnPage="P_AREA.ccp" dataSource="SELECT * 
+FROM ifp.p_area
+WHERE p_area_id = {p_area_id} " customDelete="DELETE FROM ifp.p_area WHERE  p_area_id = {p_area_id}" activeTableType="customDelete" customUpdate="UPDATE ifp.p_area 
 SET 
 code=upper('{Code}'), 
 description='{Description}', 
 update_by='{UPDATED_BY}',  
-update_date=current_date, 
-p_area_id={p_area_id} WHERE  p_area_id = {p_area_id}" customInsert="INSERT INTO ifp.p_area(code, description, create_by, update_by, create_date, update_date, p_area_id) VALUES(upper('{Code}'), '{Description}', '{CREATED_BY}', '{UPDATED_BY}', current_date, current_date, (select coalesce(nullif(max(p_area_id),0),0)+1 from ifp.p_area))">
+update_date=sysdate, 
+p_area_id={p_area_id} WHERE  p_area_id = {p_area_id}" customInsert="INSERT INTO ifp.p_area(code, description, create_by, update_by, create_date, update_date, p_area_id) VALUES(upper('{Code}'), '{Description}', '{CREATED_BY}', '{UPDATED_BY}', sysdate, sysdate, (select NVL(max(p_area_id),0)+1 from ifp.p_area))">
 			<Components>
 				<TextBox id="68" visible="Yes" fieldSourceType="DBColumn" dataType="Text" name="Code" fieldSource="code" required="True" caption="Code" wizardCaption="CODE" wizardSize="50" wizardMaxLength="64" wizardIsPassword="False" wizardUseTemplateBlock="False" PathID="FORMCode">
 					<Components/>
@@ -214,64 +216,64 @@ p_area_id={p_area_id} WHERE  p_area_id = {p_area_id}" customInsert="INSERT INTO 
 			<Events/>
 			<TableParameters>
 				<TableParameter id="199" conditionType="Parameter" useIsNull="False" field="p_area_id" dataType="Float" searchConditionType="Equal" parameterType="URL" logicOperator="And" parameterSource="p_area_id"/>
-</TableParameters>
+			</TableParameters>
 			<SPParameters/>
 			<SQLParameters>
-				<SQLParameter id="161" parameterType="URL" variable="P_COMPANY_ID" dataType="Float" parameterSource="P_COMPANY_ID"/>
-			</SQLParameters>
+				<SQLParameter id="232" parameterType="URL" variable="p_area_id" dataType="Float" parameterSource="p_area_id"/>
+</SQLParameters>
 			<JoinTables>
-				<JoinTable id="198" tableName="p_area" schemaName="ifp" posLeft="10" posTop="10" posWidth="115" posHeight="168"/>
+				<JoinTable id="231" tableName="ifp.p_area" posLeft="10" posTop="10" posWidth="20" posHeight="40"/>
 </JoinTables>
 			<JoinLinks/>
 			<Fields/>
 			<ISPParameters/>
 			<ISQLParameters>
 				<SQLParameter id="224" variable="Code" dataType="Text" parameterType="Control" parameterSource="Code"/>
-<SQLParameter id="225" variable="Description" dataType="Text" parameterType="Control" parameterSource="Description"/>
-<SQLParameter id="226" variable="CREATED_BY" dataType="Text" parameterType="Control" parameterSource="CREATED_BY"/>
-<SQLParameter id="227" variable="UPDATED_BY" dataType="Text" parameterType="Control" parameterSource="UPDATED_BY"/>
-<SQLParameter id="228" variable="CREATION_DATE" dataType="Date" parameterType="Control" parameterSource="CREATION_DATE" format="dd-mmm-yyyy"/>
-<SQLParameter id="229" variable="UPDATED_DATE" dataType="Date" parameterType="Control" parameterSource="UPDATED_DATE" format="dd-mmm-yyyy"/>
-<SQLParameter id="230" variable="p_area_id" dataType="Float" parameterType="Control" parameterSource="p_area_id"/>
-</ISQLParameters>
+				<SQLParameter id="225" variable="Description" dataType="Text" parameterType="Control" parameterSource="Description"/>
+				<SQLParameter id="226" variable="CREATED_BY" dataType="Text" parameterType="Control" parameterSource="CREATED_BY"/>
+				<SQLParameter id="227" variable="UPDATED_BY" dataType="Text" parameterType="Control" parameterSource="UPDATED_BY"/>
+				<SQLParameter id="228" variable="CREATION_DATE" dataType="Date" parameterType="Control" parameterSource="CREATION_DATE" format="dd-mmm-yyyy"/>
+				<SQLParameter id="229" variable="UPDATED_DATE" dataType="Date" parameterType="Control" parameterSource="UPDATED_DATE" format="dd-mmm-yyyy"/>
+				<SQLParameter id="230" variable="p_area_id" dataType="Float" parameterType="Control" parameterSource="p_area_id"/>
+			</ISQLParameters>
 			<IFormElements>
 				<CustomParameter id="217" field="code" dataType="Text" parameterType="Control" parameterSource="Code"/>
-<CustomParameter id="218" field="description" dataType="Text" parameterType="Control" parameterSource="Description"/>
-<CustomParameter id="219" field="create_by" dataType="Text" parameterType="Control" parameterSource="CREATED_BY"/>
-<CustomParameter id="220" field="update_by" dataType="Text" parameterType="Control" parameterSource="UPDATED_BY"/>
-<CustomParameter id="221" field="create_date" dataType="Date" parameterType="Control" parameterSource="CREATION_DATE" format="dd-mmm-yyyy"/>
-<CustomParameter id="222" field="update_date" dataType="Date" parameterType="Control" parameterSource="UPDATED_DATE" format="dd-mmm-yyyy"/>
-<CustomParameter id="223" field="p_area_id" dataType="Float" parameterType="Control" parameterSource="p_area_id"/>
-</IFormElements>
+				<CustomParameter id="218" field="description" dataType="Text" parameterType="Control" parameterSource="Description"/>
+				<CustomParameter id="219" field="create_by" dataType="Text" parameterType="Control" parameterSource="CREATED_BY"/>
+				<CustomParameter id="220" field="update_by" dataType="Text" parameterType="Control" parameterSource="UPDATED_BY"/>
+				<CustomParameter id="221" field="create_date" dataType="Date" parameterType="Control" parameterSource="CREATION_DATE" format="dd-mmm-yyyy"/>
+				<CustomParameter id="222" field="update_date" dataType="Date" parameterType="Control" parameterSource="UPDATED_DATE" format="dd-mmm-yyyy"/>
+				<CustomParameter id="223" field="p_area_id" dataType="Float" parameterType="Control" parameterSource="p_area_id"/>
+			</IFormElements>
 			<USPParameters/>
 			<USQLParameters>
 				<SQLParameter id="210" variable="Code" dataType="Text" parameterType="Control" parameterSource="Code"/>
-<SQLParameter id="211" variable="Description" dataType="Text" parameterType="Control" parameterSource="Description"/>
-<SQLParameter id="212" variable="CREATED_BY" dataType="Text" parameterType="Control" parameterSource="CREATED_BY"/>
-<SQLParameter id="213" variable="UPDATED_BY" dataType="Text" parameterType="Control" parameterSource="UPDATED_BY"/>
-<SQLParameter id="214" variable="CREATION_DATE" dataType="Date" parameterType="Control" parameterSource="CREATION_DATE" format="dd-mmm-yyyy"/>
-<SQLParameter id="215" variable="UPDATED_DATE" dataType="Date" parameterType="Control" parameterSource="UPDATED_DATE" format="dd-mmm-yyyy"/>
-<SQLParameter id="216" variable="p_area_id" dataType="Float" parameterType="URL" parameterSource="p_area_id" defaultValue="0"/>
-</USQLParameters>
+				<SQLParameter id="211" variable="Description" dataType="Text" parameterType="Control" parameterSource="Description"/>
+				<SQLParameter id="212" variable="CREATED_BY" dataType="Text" parameterType="Control" parameterSource="CREATED_BY"/>
+				<SQLParameter id="213" variable="UPDATED_BY" dataType="Text" parameterType="Control" parameterSource="UPDATED_BY"/>
+				<SQLParameter id="214" variable="CREATION_DATE" dataType="Date" parameterType="Control" parameterSource="CREATION_DATE" format="dd-mmm-yyyy"/>
+				<SQLParameter id="215" variable="UPDATED_DATE" dataType="Date" parameterType="Control" parameterSource="UPDATED_DATE" format="dd-mmm-yyyy"/>
+				<SQLParameter id="216" variable="p_area_id" dataType="Float" parameterType="URL" parameterSource="p_area_id" defaultValue="0"/>
+			</USQLParameters>
 			<UConditions>
 				<TableParameter id="202" conditionType="Parameter" useIsNull="False" field="p_area_id" dataType="Float" parameterType="URL" parameterSource="p_area_id" searchConditionType="Equal" logicOperator="And"/>
-</UConditions>
+			</UConditions>
 			<UFormElements>
 				<CustomParameter id="203" field="code" dataType="Text" parameterType="Control" parameterSource="Code"/>
-<CustomParameter id="204" field="description" dataType="Text" parameterType="Control" parameterSource="Description"/>
-<CustomParameter id="205" field="create_by" dataType="Text" parameterType="Control" parameterSource="CREATED_BY"/>
-<CustomParameter id="206" field="update_by" dataType="Text" parameterType="Control" parameterSource="UPDATED_BY"/>
-<CustomParameter id="207" field="create_date" dataType="Date" parameterType="Control" parameterSource="CREATION_DATE" format="dd-mmm-yyyy"/>
-<CustomParameter id="208" field="update_date" dataType="Date" parameterType="Control" parameterSource="UPDATED_DATE" format="dd-mmm-yyyy"/>
-<CustomParameter id="209" field="p_area_id" dataType="Float" parameterType="Control" parameterSource="p_area_id"/>
-</UFormElements>
+				<CustomParameter id="204" field="description" dataType="Text" parameterType="Control" parameterSource="Description"/>
+				<CustomParameter id="205" field="create_by" dataType="Text" parameterType="Control" parameterSource="CREATED_BY"/>
+				<CustomParameter id="206" field="update_by" dataType="Text" parameterType="Control" parameterSource="UPDATED_BY"/>
+				<CustomParameter id="207" field="create_date" dataType="Date" parameterType="Control" parameterSource="CREATION_DATE" format="dd-mmm-yyyy"/>
+				<CustomParameter id="208" field="update_date" dataType="Date" parameterType="Control" parameterSource="UPDATED_DATE" format="dd-mmm-yyyy"/>
+				<CustomParameter id="209" field="p_area_id" dataType="Float" parameterType="Control" parameterSource="p_area_id"/>
+			</UFormElements>
 			<DSPParameters/>
 			<DSQLParameters>
 				<SQLParameter id="201" variable="p_area_id" parameterType="URL" dataType="Float" parameterSource="p_area_id" defaultValue="0"/>
-</DSQLParameters>
+			</DSQLParameters>
 			<DConditions>
 				<TableParameter id="200" conditionType="Parameter" useIsNull="False" field="p_area_id" dataType="Float" parameterType="URL" searchConditionType="Equal" logicOperator="And" parameterSource="p_area_id"/>
-</DConditions>
+			</DConditions>
 			<SecurityGroups/>
 			<Attributes/>
 			<Features/>
