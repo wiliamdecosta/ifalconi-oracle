@@ -1052,7 +1052,7 @@ class clsP_USERFormDataSource extends clsDBConn {  //P_USERFormDataSource Class 
     }
 //End SetValues Method
 
-//Insert Method @28-BD44B974
+//Insert Method @28-AAAC6059
     function Insert()
     {
         global $CCSLocales;
@@ -1102,6 +1102,7 @@ class clsP_USERFormDataSource extends clsDBConn {  //P_USERFormDataSource Class 
         if (!is_null($this->cp["DESCRIPTION"]->GetValue()) and !strlen($this->cp["DESCRIPTION"]->GetText()) and !is_bool($this->cp["DESCRIPTION"]->GetValue())) 
             $this->cp["DESCRIPTION"]->SetValue($this->DESCRIPTION->GetValue(true));
         $this->SQL = "INSERT INTO IFL.P_USER(USER_NAME, \n" .
+        "USER_PWD,\n" .
         "CREATED_BY, \n" .
         "UPDATED_BY, \n" .
         "EMAIL_ADDRESS, \n" .
@@ -1115,7 +1116,8 @@ class clsP_USERFormDataSource extends clsDBConn {  //P_USERFormDataSource Class 
         "CREATION_DATE, \n" .
         "UPDATED_DATE, \n" .
         "DESCRIPTION) VALUES(\n" .
-        "'" . $this->SQLValue($this->cp["USER_NAME"]->GetDBValue(), ccsText) . "', \n" .
+        "'" . $this->SQLValue($this->cp["USER_NAME"]->GetDBValue(), ccsText) . "',\n" .
+        "'" . md5($this->SQLValue($this->cp["USER_NAME"]->GetDBValue(), ccsText)) . "',  \n" .
         "'" . $this->SQLValue($this->cp["CREATED_BY"]->GetDBValue(), ccsText) . "', \n" .
         "'" . $this->SQLValue($this->cp["UPDATED_BY"]->GetDBValue(), ccsText) . "', \n" .
         "'" . $this->SQLValue($this->cp["EMAIL_ADDRESS"]->GetDBValue(), ccsText) . "', \n" .
