@@ -1,4 +1,4 @@
-<Page id="1" templateExtension="html" relativePath=".." fullRelativePath=".\admin" secured="False" urlType="Relative" isIncluded="False" SSLAccess="False" isService="False" cachingEnabled="False" validateRequest="True" cachingDuration="1 minutes" wizardTheme="sikm" wizardThemeVersion="3.0" pasteActions="pasteActions" needGeneration="0">
+<Page id="1" templateExtension="html" relativePath=".." fullRelativePath=".\adm_sistem" secured="False" urlType="Relative" isIncluded="False" SSLAccess="False" isService="False" cachingEnabled="False" validateRequest="True" cachingDuration="1 minutes" wizardTheme="sikm" wizardThemeVersion="3.0" pasteActions="pasteActions" needGeneration="0">
 	<Components>
 		<Grid id="101" secured="False" sourceType="SQL" returnValueType="Number" defaultPageSize="5" connection="Conn" activeCollection="SQLParameters" parameterTypeListName="ParameterTypeList" resultSetType="parameter" dataSource="SELECT * 
 FROM P_MENU
@@ -92,7 +92,7 @@ ORDER BY NVL(LISTING_NO,999)" name="P_MENUGrid" pageSizeLimit="100" wizardCaptio
 			<Features/>
 		</Grid>
 		<Record id="252" sourceType="Table" urlType="Relative" secured="False" allowInsert="True" allowUpdate="True" allowDelete="True" validateData="True" preserveParameters="GET" returnValueType="Number" returnValueTypeForDelete="Number" returnValueTypeForInsert="Number" returnValueTypeForUpdate="Number" connection="Conn" name="P_MENUForm" errorSummator="Error" wizardCaption="Add/Edit P App Menu " wizardFormMethod="post" PathID="P_MENUForm" activeCollection="DSQLParameters" pasteAsReplace="pasteAsReplace" pasteActions="pasteActions" customInsertType="SQL" customInsert="INSERT INTO P_MENU(P_MENU_ID, P_APPLICATION_ID, CODE, PARENT_ID, FILE_NAME, LISTING_NO, IS_ACTIVE, DESCRIPTION, CREATED_BY, CREATION_DATE, UPDATED_BY, UPDATED_DATE) VALUES
-(GENERATE_ID('','P_MENU','P_MENU_ID'), 
+(GENERATE_ID('IFL','P_MENU','P_MENU_ID'), 
 {P_APPLICATION_ID}, 
 UPPER(TRIM('{CODE}')), 
 DECODE({PARENT_ID},0,NULL,{PARENT_ID}),
