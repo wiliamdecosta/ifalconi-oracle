@@ -803,7 +803,7 @@ class clsP_MENUFormDataSource extends clsDBConn {  //P_MENUFormDataSource Class 
     }
 //End SetValues Method
 
-//Insert Method @252-94F7C7C7
+//Insert Method @252-4187A4BD
     function Insert()
     {
         global $CCSLocales;
@@ -842,7 +842,7 @@ class clsP_MENUFormDataSource extends clsDBConn {  //P_MENUFormDataSource Class 
         if (!is_null($this->cp["UPDATED_BY"]->GetValue()) and !strlen($this->cp["UPDATED_BY"]->GetText()) and !is_bool($this->cp["UPDATED_BY"]->GetValue())) 
             $this->cp["UPDATED_BY"]->SetValue(CCGetSession("UserName", NULL));
         $this->SQL = "INSERT INTO P_MENU(P_MENU_ID, P_APPLICATION_ID, CODE, PARENT_ID, FILE_NAME, LISTING_NO, IS_ACTIVE, DESCRIPTION, CREATED_BY, CREATION_DATE, UPDATED_BY, UPDATED_DATE) VALUES\n" .
-        "(GENERATE_ID('','P_MENU','P_MENU_ID'), \n" .
+        "(GENERATE_ID('IFL','P_MENU','P_MENU_ID'), \n" .
         "" . $this->SQLValue($this->cp["P_APPLICATION_ID"]->GetDBValue(), ccsFloat) . ", \n" .
         "UPPER(TRIM('" . $this->SQLValue($this->cp["CODE"]->GetDBValue(), ccsText) . "')), \n" .
         "DECODE(" . $this->SQLValue($this->cp["PARENT_ID"]->GetDBValue(), ccsFloat) . ",0,NULL," . $this->SQLValue($this->cp["PARENT_ID"]->GetDBValue(), ccsFloat) . "),\n" .
