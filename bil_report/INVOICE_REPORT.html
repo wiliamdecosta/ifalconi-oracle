@@ -1,0 +1,137 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<title>T_BUDGET</title>
+<meta name="GENERATOR" content="CodeCharge Studio 4.1.00.031">
+<!--#include File="../include/sessi.inc"-->
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script language="JavaScript" src="../js/calendarWidget.js" type="text/javascript"></script>
+<script language="JavaScript" src="../js/qs.js"></script>
+<script language="JavaScript" type="text/javascript">
+function getFrom_LOV(formName,fieldList,LOV_NM)
+{
+    //view_LOV(formName,fieldList,LOV_NM)
+        arrLOV = LOV_NM.split("?");
+        window.open("../bil_lov/"+arrLOV[0]+"?FORM="+formName+"&OBJ="+fieldList+"&"+arrLOV[1],"LOV","width=600,height=500,toolbar=no,scrollbars=yes,resizable=yes");
+}
+
+function lovInvoice()
+{
+        classname = "INVOICEREPORT_SEARCH";
+        fieldname = "INPUT_DATA_CONTROL_ID,bill_cycle_code,Invoice_date,finance_period_code";
+        filename = "LOV_REPORT_INVOICE.php";
+                
+        getFrom_LOV(classname,fieldname,filename)
+}
+
+function lovAccount()
+{
+        classname = "INVOICEREPORT_SEARCH";
+        fieldname = "CUSTOMER_ACCOUNT_ID, ACCOUNT_NO";
+        filename = "LOV_CUSTOMER_ACCOUNT.php";
+                
+        getFrom_LOV(classname,fieldname,filename)
+}
+
+</script>
+<script language="JavaScript" type="text/javascript">
+//Begin CCS script
+//Include Common JSFunctions @1-9722A627
+</script>
+<script language="JavaScript" src="../ClientI18N.php?file=Functions.js&amp;locale={res:CCS_LocaleID}" type="text/javascript" charset="utf-8"></script>
+<script language="JavaScript" type="text/javascript">
+//End Include Common JSFunctions
+
+//_OnLoad @1-9C4F01C0
+function _OnLoad()
+{
+    var result = true;
+//End _OnLoad
+
+//Custom Code @57-2A29BDB7
+    // -------------------------
+    // Write your own code here.
+    // -------------------------
+//End Custom Code
+
+//Close _OnLoad @1-BC33A33A
+    return result;
+}
+//End Close _OnLoad
+
+//bind_events @1-B4BAE7CE
+function bind_events() {
+    addEventHandler("", "load", _OnLoad);
+}
+//End bind_events
+
+window.onload = bind_events; //Assign bind_events @1-19F7B649
+
+//End CCS script
+
+function toCetak(){
+        var INPUT_DATA_CONTROL_ID = document.getElementById("INPUT_DATA_CONTROL_ID").value;
+        var CUSTOMER_ACCOUNT_ID = document.getElementById("CUSTOMER_ACCOUNT_ID").value;
+    	location.href = "report_invoice_ver2_pdf.php.php?INPUT_DATA_CONTROL_ID="+INPUT_DATA_CONTROL_ID+"&CUSTOMER_ACCOUNT_ID="+CUSTOMER_ACCOUNT_ID;
+}
+
+</script>
+<link rel="stylesheet" type="text/css" href="../Styles/{CCS_Style}/Style_doctype.css">
+</head>
+<body border="0">
+<table cellspacing="0" cellpadding="0" width="100%" border="0">
+  <tr>
+    <td><img border="0" src="../images/tab_s_on.gif"></td> 
+    <td class="th" background="../images/tab_on.gif" nowrap align="center">INVOICE REPORT</td> 
+    <td><img border="0" src="../images/tab_e_on.gif"></td> 
+    <td background="../images/tab_back.gif" width="100%"></td>
+  </tr>
+</table>
+<br>
+<table align="center">
+  <tr>
+    <td>
+      <!-- BEGIN Record INVOICEREPORT_SEARCH -->
+      <form id="INVOICEREPORT_SEARCH" method="post" name="{HTMLFormName}" action="{Action}">
+        <table cellspacing="0" cellpadding="0" border="0">
+          <tr>
+            <td valign="top">
+              <table class="Record" cellspacing="0" cellpadding="0">
+                <!-- BEGIN Error -->
+                <tr class="Error">
+                  <td>&nbsp;{Error}</td> 
+                  <td></td>
+                </tr>
+                <!-- END Error -->
+                <tr class="Controls">
+                  <td class="th">Invoice Period&nbsp;</td> 
+                  <td class="th"><input id="INVOICEREPORT_SEARCHInvoice_date" class="ControlsRO" readonly value="{Invoice_date}" name="{Invoice_date_Name}"><input id="INVOICEREPORT_SEARCHbill_cycle_code" class="ControlsRO" readonly value="{bill_cycle_code}" name="{bill_cycle_code_Name}">&nbsp;<img onclick="lovInvoice()" border="0" src="../bil_lov/iconsearch1.png"><input id="INVOICEREPORT_SEARCHINPUT_DATA_CONTROL_ID" type="hidden" value="{INPUT_DATA_CONTROL_ID}" name="{INPUT_DATA_CONTROL_ID_Name}"></td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th">Finance Period</td> 
+                  <td class="th"><input id="INVOICEREPORT_SEARCHfinance_period_code" class="ControlsRO" readonly value="{finance_period_code}" name="{finance_period_code_Name}"></td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th">Account Number</td> 
+                  <td class="th"><input id="INVOICEREPORT_SEARCHACCOUNT_NO" class="ControlsRQ" value="{ACCOUNT_NO}" name="{ACCOUNT_NO_Name}">&nbsp;<img onclick="lovAccount()" border="0" src="../bil_lov/iconsearch1.png"><input id="INVOICEREPORT_SEARCHCUSTOMER_ACCOUNT_ID" type="hidden" value="{CUSTOMER_ACCOUNT_ID}" name="{CUSTOMER_ACCOUNT_ID_Name}"></td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th" style="TEXT-ALIGN: right" colspan="2">
+                    <!-- BEGIN Button Button_DoSearch --><input onclick="toCetak()" id="INVOICEREPORT_SEARCHButton_DoSearch" class="Button" style="HEIGHT: 21px; WIDTH: 72px" alt="Search" size="37" type="submit" value="Print" name="{Button_Name}"><!-- END Button Button_DoSearch --></td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </form>
+      <!-- END Record INVOICEREPORT_SEARCH --><br>
+    </td>
+  </tr>
+</table>
+<!--#include File="../include/function.inc"-->
+</body>
+</html>
